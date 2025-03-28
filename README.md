@@ -1,0 +1,1 @@
+Trône est un jeu de carte compétitif, jouable de 2 à 6 joueurs et dont le but est de conquérir le trône en possédant l'armée la plus puissante. Ce projet à pour objectif d'industrialiser la génération de cartes.
