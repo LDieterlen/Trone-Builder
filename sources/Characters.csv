@@ -1,0 +1,65 @@
+﻿Faction;Name;Count;Location;Score;Type;Effect
+Humain;Villageois;4;ANY;X;Joué;Donnez l'altération Encouragé à ce personnage.
+Humain;Soldat;3;TOP;2;Joué;Piocher 2 cartes puis défaussez 2 cartes.
+Humain;Prêtre;2;BOT EXT;2;Joué;Copier effet avant
+Humain;Archer;2;Arr;1;Joué;Détruire derrière
+Humain;Chevalier;2;Av;3;Permanent;Protéger derrière
+Humain;Roi;1;D&G;0;Unique;Donner Encouragé
+Humain;Reine;1;;0;Unique;1PP lorsque effet Joué
+Humain;Barde;1;;2;Unique;Révèle 1, si Humain joué
+Morts;Mort;4;;1;Joué;Détruire devant
+Morts;Moire;3;;2;Joué;Prendre cimetière
+Morts;Corbeau;2;;2;Permanent;En début tour, détruire 1 allié = 1 PP
+Morts;Hydre;2;;4;Joué;Détruire allié coté
+Morts;Compagnon;2;;1;Joué;Copier effet cimetière
+Morts;Enfant;1;;6;Unique;Est détruit au prochain tour
+Morts;Monarque;1;;X;Unique;X = Nb carte cimetière
+Morts;Impératrice;1;;1;Unique;Jouer carte cimetière
+Désert;Moine;5;;0;Joué;Donner 2 Forces
+Désert;Créature;2;;3;Joué;Détruire allié 0 PB
+Désert;Dresseur;2;;2;Permanent;Gagne altération => Pioche
+Désert;Gladiateur;2;;2;Permanent;Altération force x2
+Désert;Punisseur;2;;1;Joué;Détruire avec altération
+Désert;Ver;1;;6;Unique;Ne plus piocher
+Désert;Orphelins;1;;0;Unique;1 force par fin de tour
+Désert;Prince;1;;0;Unique;1 force par allié faction
+Démons;Mignon;4;;0;Joué;Gagner 2 PP
+Démons;Bestiole;3;;1;Joué;Renvoyer dans la main coté
+Démons;Cornu;2;;3;Joué;Renvoyer dans la main un allié bas
+Démons;Œil;2;;2;Joué;Défausser N => Piocher N
+Démons;Malins;2;;1;Joué;Jouer un personnage sup
+Démons;Cyclope;1;;6;Unique;Donner 2 PP à un adv
+Démons;Poulpe;1;;1;Unique;En fin de tour, Défausser 1 => Gagner 2 PP
+Démons;Protecteur;1;;X;Unique;X=nb PP
+Montagne;Bonhome;4;;1;Joué;Donner Gel
+Montagne;Yéti;3;;2;Permanent;Si Gel => 2 PP
+Montagne;Sorcière;2;;3;Joué;Donner Gel allié
+Montagne;Ancêtre;2;;0;Joué;Supprimer alt + 1 PP
+Montagne;Marchand;2;;2;Permanent;Echanger votre main
+Montagne;Bête;1;;X;Unique;X=nb perso 0 PB
+Montagne;Lézard;1;;X;Unique;X=nb perso avec une altération
+Montagne;Géant;1;;5;Unique;En fin de tour, Gel un allié
+Mages;Elève;5;;2;Joué;Déplacer 1 allié et 1 adv.
+Mages;Apprentie;2;;X;Permanent;X=1 ou 4 si devant
+Mages;Comploteur;2;;X;Permanent;X=nb perso a droite
+Mages;Espion;2;;2;Permanent;Déplacer => Piocher 1 carte
+Mages;Rats;2;;1;Joué;Détruire pas à sa position
+Mages;Divinité;1;;5;Unique;S'autodétruit si pas à sa position
+Mages;Sournois;1;;2;Unique;Copier coté
+Mages;Professeur;1;;2;Unique;Placer les perso où on veut
+Nains;Simple;4;;2;Joué;Donner Protection
+Nains;Nerveux;3;;3;Joué;Gagne Protection
+Nains;Ravi;2;;2;Joué;Détruit allié => Détruit adv.
+Nains;Allergique;2;;1;Joué;Déplacer 1 altération
+Nains;Peureux;2;;X;Permanent;Protection sur lui => X=4 sinon 0
+Nains;Fainéant;1;;0;Unique;Protection sur allié coté
+Nains;Patron;1;;X;Unique;X=nb perso arrière
+Nains;Mascotte;1;;0;Unique;1PP lorsque altération gagnée
+Halloween;Epouvante;4;;3;Joué;Défausser 2 cartes de la pioche
+Halloween;Squelette;3;;2;Joué;Prendre une carte de la défausse en main
+Halloween;Fantome;2;;1;Joué;Tous les autres défausse de leur main
+Halloween;Profanateur;2;;X;?;??
+Halloween;Coffre;2;;2;Permanent;En fin de tour, défaussez 1 => piocher 1
+Halloween;Vieille;1;;0;Unique;Jouer carte défausse
+Halloween;Fêtard;1;;0;Unique;Lorsque défausse 1 => 1 PP
+Halloween;Temps;1;;2;Unique;Mélanger défausse et pioche + pioche

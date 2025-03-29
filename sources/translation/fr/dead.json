@@ -1,0 +1,71 @@
+{
+    "keywords": [
+    ],
+    "legends": "",
+    "cards": [
+        {
+            "Name": "Mort",
+            "Count": 4,
+            "Location": "ANY",
+            "Score": 1,
+            "Type": "Joué",
+            "Effect": "Détruisez un personnage en position avant."
+        },
+        {
+            "Name": "Moire",
+            "Count": 3,
+            "Location": "ANY",
+            "Score": 2,
+            "Type": "Joué",
+            "Effect": "Prenez une carte de votre cimetière dans votre main."
+        },
+        {
+            "Name": "Corbeau",
+            "Count": 2,
+            "Location": "ANY",
+            "Score": 2,
+            "Type": "Permanent",
+            "Effect": "À la fin de votre tour, vous pouvez détruire un allié pour gagner 1 point permanent."
+        },
+        {
+            "Name": "Hydre",
+            "Count": 2,
+            "Location": "ANY",
+            "Score": 4,
+            "Type": "Joué",
+            "Effect": "Vous devez détruire un allié en position extérieure pour jouer ce personnage."
+        },
+        {
+            "Name": "Compagnon",
+            "Count": 2,
+            "Location": "ANY",
+            "Score": 1,
+            "Type": "Joué",
+            "Effect": "Copiez l'effet Joué d'un allié de votre cimetière."
+        },
+        {
+            "Name": "Enfant",
+            "Count": 1,
+            "Location": "ANY",
+            "Score": 6,
+            "Type": "Unique",
+            "Effect": "À la fin de votre prochain tour, détruisez ce personnage."
+        },
+        {
+            "Name": "Monarque",
+            "Count": 1,
+            "Location": "ANY",
+            "Score": "X",
+            "Type": "Unique",
+            "Effect": "X vaut le nombre de cartes dans votre cimetière."
+        },
+        {
+            "Name": "Impératrice",
+            "Count": 1,
+            "Location": "ANY",
+            "Score": 1,
+            "Type": "Unique",
+            "Effect": "Jouez un personnage de votre cimetière sur votre terrain."
+        }
+    ]
+}

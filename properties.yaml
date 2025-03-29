@@ -1,0 +1,48 @@
+width: 750
+height: 1050
+
+
+title:
+  x: 0.5
+  y: 0.05
+  # y: 0.06
+  font_size: 48
+  color: black
+  font: font/Cinzel/static/Cinzel-Bold.ttf
+  align: center
+count:
+  x: 0.83
+  y: 0.015
+  # y: 0.02
+  font_size: 36
+  color: black
+  font: font\Cinzel\static\Cinzel-ExtraBold.ttf
+  align: center
+score:
+  x: 0.50
+  y: 0.635
+  font_size: 160
+  color: black
+  font: font/Cinzel/static/Cinzel-Bold.ttf
+  align: center
+effect_type:
+  x: 0.5
+  y: 0.77
+  font_size: 48
+  color: black
+  font: font/Cinzel/static/Cinzel-Bold.ttf
+  align: center
+effect:
+  x: 0.5
+  y: 0.88
+  font_size: 60
+  color: black
+  font: Gabriola
+  align: center
+legend:
+  x: 0.5
+  y: 0.985
+  font_size: 24
+  color: black
+  font: Gabriola
+  align: center
