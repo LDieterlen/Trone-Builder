@@ -1,0 +1,37 @@
+{
+    "name": "Désert",
+    "cards": {
+        "monk": {
+            "name": "Moine",
+            "effect": "Donnez l'altération {{strength}} à 2 personnages."
+        },
+        "creature": {
+            "name": "Créature",
+            "effect": "Détruisez un allié avec 0 point de base. Ce personnage doit être joué à la même position que l'allié détruit."
+        },
+        "trainer": {
+            "name": "Dresseur",
+            "effect": "Lorsque ce personnage reçoit une altération, piochez une carte."
+        },
+        "gladiator": {
+            "name": "Gladiateur",
+            "effect": "Sur ce personnage, l'effet de l'altération {{strength}} est doublé."
+        },
+        "punisher": {
+            "name": "Punisseur",
+            "effect": "Détruisez un personnage avec une altération."
+        },
+        "worm": {
+            "name": "Ver",
+            "effect": "Vous ne pouvez plus piocher de cartes."
+        },
+        "orphans": {
+            "name": "Orphelins",
+            "effect": "À la fin de votre tour, donnez l'altération {{strength}} à un personnage en position {{front}}."
+        },
+        "prince": {
+            "name": "Prince",
+            "effect": "Donnez l'altération {{strength}} à tous les autres alliés {{desert}}."
+        }
+    }
+}

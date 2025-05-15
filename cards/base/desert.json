@@ -1,0 +1,71 @@
+{
+    "name": "Desert",
+    "faction_path": "assets/sprites/factions/desert.png",
+    "images_folder": "assets/images/desert/",
+    "cards": {
+        "monk": {
+            "name": "Monk",
+            "count": "5",
+            "position": "{{any}}",
+            "points": "0",
+            "type": "{{play}}",
+            "effect": "Give the alteration {{strength}} to 2 characters."
+        },
+        "creature": {
+            "name": "Creature",
+            "count": "2",
+            "position": "{{any}}",
+            "points": "3",
+            "type": "{{play}}",
+            "effect": "Destroy an ally with 0 base point. This character must be played in the same position as the destroyed ally."
+        },
+        "trainer": {
+            "name": "Trainer",
+            "count": "2",
+            "position": "{{back}}",
+            "points": "2",
+            "type": "{{permanent}}",
+            "effect": "When this character gets an alteration, draw a card."
+        },
+        "gladiator": {
+            "name": "Gladiator",
+            "count": "2",
+            "position": "{{front}}",
+            "points": "2",
+            "type": "{{permanent}}",
+            "effect": "On this character, the effect of the {{strength}} alteration is doubled."
+        },
+        "punisher": {
+            "name": "Punisher",
+            "count": "2",
+            "position": "{{front}}",
+            "points": "1",
+            "type": "{{play}}",
+            "effect": "Destroy a character with an alteration."
+        },
+        "worm": {
+            "name": "Worm",
+            "count": "1",
+            "position": "{{back}}",
+            "points": "6",
+            "type": "{{permanent}}",
+            "effect": "You can no longer draw cards."
+        },
+        "orphans": {
+            "name": "Orphans",
+            "count": "1",
+            "position": "{{back}}",
+            "points": "0",
+            "type": "{{permanent}}",
+            "effect": "At the end of your turn, give the {{strength}} alteration to a character in {{front}} position."
+        },
+        "prince": {
+            "name": "Prince",
+            "count": "1",
+            "position": "{{any}}",
+            "points": "0",
+            "type": "{{play}}",
+            "effect": "Give the {{strength}} alteration to all other {{desert}} allies."
+        }
+    }
+}

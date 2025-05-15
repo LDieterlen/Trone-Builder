@@ -1,0 +1,37 @@
+{
+    "name": "Démons",
+    "cards": {
+        "creature": {
+            "name": "Bestiole",
+            "effect": "Renvoyez un personnage en position {{front}} dans la main de son propriétaire."
+        },
+        "minion": {
+            "name": "Mignon",
+            "effect": "Gagnez 2 points permanents."
+        },
+        "horned": {
+            "name": "Cornu",
+            "effect": "Vous devez renvoyer un allié en position {{back}} dans votre main."
+        },
+        "eye": {
+            "name": "Œil",
+            "effect": "Vous pouvez défausser des cartes de votre main pour piocher le même nombre de cartes."
+        },
+        "clever": {
+            "name": "Malins",
+            "effect": "Jouez un personnage supplémentaire ce tour."
+        },
+        "cyclops": {
+            "name": "Cyclope",
+            "effect": "Les autres joueurs gagnent 1 point permanent."
+        },
+        "octopus": {
+            "name": "Poulpe",
+            "effect": "À la fin de votre tour, vous pouvez défausser une carte de votre main pour gagner 2 points permanents."
+        },
+        "collector": {
+            "name": "Protecteur",
+            "effect": "X est égal à la moitié (inférieure) de votre total de points permanents."
+        }
+    }
+}

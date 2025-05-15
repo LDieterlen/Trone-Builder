@@ -1,10 +1,70 @@
-import yaml
 import math
-import pandas as pd
-import sys
 import os
 import json
-from src.card import Card, TextProperties
+from scripts.card import CardTemplate
+
+
+def build_card(global_properties: dict, card_info: dict):
+    properties = global_properties["card"]
+    title_properties = TextProperties(properties["title"])
+    count_properties = TextProperties(properties["count"])
+    score_properties = TextProperties(properties["score"])
+    effect_type_properties = TextProperties(properties["effect_type"])
+    effect_properties = TextProperties(properties["effect"])
+    legend_properties = TextProperties(properties["legend"])
+
+    name = card_info["Name"]
+    faction = card_info["Faction"]
+    print(f"Building card {name} for {faction}")
+
+    card = Card(global_properties)
+    width = card.width
+    height = card.height
+    sprite_core = "sprites"
+    faction_index = 1
+
+    image_path = f"{sprite_core}/Images/{faction}/{faction_index}.png"
+    if not os.path.exists(image_path):
+        image_path = f"{sprite_core}/Images/default.png"
+    card.add_image(image_path, (0, math.floor(height * 0.1)), True)
+
+    card_model = f"{sprite_core}/Models/{faction}.png"
+    card.add_image(card_model, (0, 0), True)
+
+    faction_sprite = f"{sprite_core}/Factions/Large/{faction}.png"
+    card.add_image(
+        faction_sprite,
+        (math.ceil(width * 0.071), math.ceil(height * 0.05)),
+        True,
+        centered=True,
+    )
+
+    locations = card_info["Location"].split(" ")
+    for location in locations:
+        position_sprite = f"{sprite_core}/Position/{location} LARGE.png"
+        card.add_image(
+            position_sprite,
+            (math.floor(width * 0.929), math.ceil(height * 0.05)),
+            True,
+            centered=True,
+        )
+
+    card.write(name, title_properties)
+
+    count = card_info["Count"]
+    card.write(str(count), count_properties)
+
+    score = card_info["Score"]
+    card.write(str(score), score_properties)
+
+    effect_type = card_info["Type"]
+    card.write(effect_type, effect_type_properties)
+
+    effect = card_info["Effect"]
+    card.write(effect, effect_properties, add_new_lines=True)
+
+    print(f"Building card {name} for {faction}")
+    return card
 
 
 def build_cards(properties, data: pd.DataFrame, output_path):
@@ -92,10 +152,14 @@ if __name__ == "__main__":
 
         for root, dirs, files in os.walk(f"{source_path}/{directory}"):
             for file in files:
-                if file.endswith(".json"):
-                    file_data = pd.read_json(f"{root}/{file}")
-                    file_data["Faction"] = file.split(".")[0]
-                    data.append(file_data)
+                if file.endswith("human.json"):
+                    with open(f"{root}/{file}", "r", encoding="utf-8") as f:
+                        file_data = json.load(f)
+                    cards: list = file_data["cards"]
+                    for card in cards:
+                        card["Faction"] = "human"
+                    df = pd.DataFrame(cards)
+                    data.append(df)
 
         data = pd.concat(data)
         build_cards(properties, data, f"output/{directory}")

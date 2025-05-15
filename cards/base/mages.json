@@ -1,0 +1,71 @@
+{
+    "name": "Mages",
+    "faction_path": "assets/sprites/factions/mages.png",
+    "images_folder": "assets/images/mages/",
+    "cards": {
+        "student": {
+            "name": "Student",
+            "count": "5",
+            "position": "{{any}}",
+            "points": "2",
+            "type": "{{play}}",
+            "effect": "You can {{move}} up to 2 characters."
+        },
+        "apprentice": {
+            "name": "Apprentice",
+            "count": "2",
+            "position": "{{front}}",
+            "points": "X",
+            "type": "{{permanent}}",
+            "effect": "X equals 4 if this character is in {{back}} position, otherwise X equals 1."
+        },
+        "plotter": {
+            "name": "Plotter",
+            "count": "2",
+            "position": "{{back}}",
+            "points": "1",
+            "type": "{{permanent}}",
+            "effect": "When you move this ally, destroy a character in {{front}} position."
+        },
+        "spy": {
+            "name": "Spy",
+            "count": "2",
+            "position": "{{any}}",
+            "points": "2",
+            "type": "{{play}}",
+            "effect": "Discard 1 card, then draw 2 cards."
+        },
+        "rats": {
+            "name": "Rats",
+            "count": "2",
+            "position": "{{back}}",
+            "points": "1",
+            "type": "{{play}}",
+            "effect": "Destroy a character that is not in its natural position."
+        },
+        "divinity": {
+            "name": "Divinity",
+            "count": "1",
+            "position": "{{any}}",
+            "points": "3",
+            "type": "{{permanent}}",
+            "effect": "This character cannot be targeted by an opponent's effect."
+        },
+        "cunning": {
+            "name": "Cunning",
+            "count": "1",
+            "position": "{{any}}",
+            "points": "2",
+            "type": "{{play}}",
+            "effect": "Copy the {{play}} effect of a character in your hand."
+        },
+        "professor": {
+            "name": "Professor",
+            "count": "1",
+            "position": "{{any}}",
+            "points": "2",
+            "type": "{{permanent}}",
+            "effect": "When you play a character, you can ignore his natural position."
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Montagne",
+    "cards": {
+        "snowman": {
+            "name": "Bonhome",
+            "effect": "Donnez l'altération {{frozen}} à un personnage."
+        },
+        "yeti": {
+            "name": "Yéti",
+            "effect": "Lorsque ce personnage reçoit l'altération {{frozen}}, gagnez 2 points permanents."
+        },
+        "witch": {
+            "name": "Sorcière",
+            "effect": "Donnez l'altération {{frozen}} à un allié."
+        },
+        "ancestor": {
+            "name": "Ancêtre",
+            "effect": "Supprimez une altération d'un personnage et gagnez 1 point permanent."
+        },
+        "merchant": {
+            "name": "Marchand",
+            "effect": "Échangez votre main avec celle d'un autre joueur."
+        },
+        "beast": {
+            "name": "Bête",
+            "effect": "X est égal au nombre d'alliés avec une ou plusieurs altérations."
+        },
+        "lizard": {
+            "name": "Lézard",
+            "effect": "Supprimez jusqu'à 3 altérations aux ennemis en position {{front}} ou aux alliés."
+        },
+        "giant": {
+            "name": "Géant",
+            "effect": "À la fin de votre tour, donnez l'altération {{frozen}} à un allié."
+        }
+    }
+}

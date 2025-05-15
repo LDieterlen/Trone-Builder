@@ -1,0 +1,37 @@
+{
+    "name": "Mages",
+    "cards": {
+        "student": {
+            "name": "Élève",
+            "effect": "Vous pouvez {{move}} jusqu'à 2 personnages."
+        },
+        "apprentice": {
+            "name": "Apprentie",
+            "effect": "X vaut 4 si ce personnage est en position {{back}}, sinon X vaut 1."
+        },
+        "plotter": {
+            "name": "Comploteur",
+            "effect": "Lorsque vous déplacez cet allié, détruisez un personnage en position {{front}}."
+        },
+        "spy": {
+            "name": "Espion",
+            "effect": "Défaussez 1 carte, puis piochez 2 cartes."
+        },
+        "rats": {
+            "name": "Rats",
+            "effect": "Détruisez un personnage qui n'est pas dans sa position naturelle."
+        },
+        "divinity": {
+            "name": "Divinité",
+            "effect": "Ce personnage ne peut pas être ciblé par un effet adverse."
+        },
+        "cunning": {
+            "name": "Sournois",
+            "effect": "Copiez l'effet {{play}} d'un personnage dans votre main."
+        },
+        "professor": {
+            "name": "Professeur",
+            "effect": "Lorsque vous jouez un personnage, vous pouvez ignorer sa position naturelle."
+        }
+    }
+}

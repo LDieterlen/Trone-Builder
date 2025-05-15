@@ -1,0 +1,71 @@
+{
+    "name": "Dead",
+    "faction_path": "assets/sprites/factions/dead.png",
+    "images_folder": "assets/images/dead/",
+    "cards": {
+        "death": {
+            "name": "Death",
+            "count": "4",
+            "position": "{{any}}",
+            "points": "1",
+            "type": "{{play}}",
+            "effect": "Destroy a character in {{front}} position."
+        },
+        "moire": {
+            "name": "Moire",
+            "count": "3",
+            "position": "{{any}}",
+            "points": "2",
+            "type": "{{play}}",
+            "effect": "Take a card from your graveyard into your hand."
+        },
+        "raven": {
+            "name": "Raven",
+            "count": "2",
+            "position": "{{back}}",
+            "points": "2",
+            "type": "{{permanent}}",
+            "effect": "At the end of your turn, you can destroy an ally to gain 1 permanent point."
+        },
+        "hydra": {
+            "name": "Hydra",
+            "count": "2",
+            "position": "{{front}}",
+            "points": "4",
+            "type": "{{play}}",
+            "effect": "You must destroy an ally in {{back}} position."
+        },
+        "companion": {
+            "name": "Companion",
+            "count": "2",
+            "position": "{{any}}",
+            "points": "1",
+            "type": "{{play}}",
+            "effect": "Copy the {{play}} effect of an ally in your graveyard."
+        },
+        "child": {
+            "name": "Child",
+            "count": "1",
+            "position": "{{back}}",
+            "points": "6",
+            "type": "{{play}}",
+            "effect": "At the end of your next turn, destroy this character."
+        },
+        "monarch": {
+            "name": "Monarch",
+            "count": "1",
+            "position": "{{front}}",
+            "points": "X",
+            "type": "{{permanent}}",
+            "effect": "X equals the number of cards in your graveyard."
+        },
+        "empress": {
+            "name": "Empress",
+            "count": "1",
+            "position": "{{back}}",
+            "points": "1",
+            "type": "{{play}}",
+            "effect": "Play a character from your graveyard onto your field."
+        }
+    }
+}

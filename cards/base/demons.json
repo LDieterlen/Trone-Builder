@@ -1,0 +1,71 @@
+{
+    "name": "Demons",
+    "faction_path": "assets/sprites/factions/demons.png",
+    "images_folder": "assets/images/demons/",
+    "cards": {
+        "creature": {
+            "name": "Creature",
+            "count": "4",
+            "position": "{{back}}",
+            "points": "1",
+            "type": "{{play}}",
+            "effect": "Return a character in {{front}} position to its owner's hand."
+        },
+        "minion": {
+            "name": "Minion",
+            "count": "3",
+            "position": "{{any}}",
+            "points": "0",
+            "type": "{{play}}",
+            "effect": "Gain 2 permanent points."
+        },
+        "horned": {
+            "name": "Horned",
+            "count": "2",
+            "position": "{{front}}",
+            "points": "3",
+            "type": "{{play}}",
+            "effect": "You must return an ally in {{back}} position to your hand."
+        },
+        "eye": {
+            "name": "Eye",
+            "count": "2",
+            "position": "{{back}}",
+            "points": "2",
+            "type": "{{play}}",
+            "effect": "You can discard cards from your hand to draw the same number of cards."
+        },
+        "clever": {
+            "name": "Clever",
+            "count": "2",
+            "position": "{{back}}",
+            "points": "1",
+            "type": "{{play}}",
+            "effect": "Play an additional character this turn."
+        },
+        "cyclops": {
+            "name": "Cyclops",
+            "count": "1",
+            "position": "{{front}}",
+            "points": "5",
+            "type": "{{play}}",
+            "effect": "Other players gains 1 permanent point."
+        },
+        "octopus": {
+            "name": "Octopus",
+            "count": "1",
+            "position": "{{back}}",
+            "points": "1",
+            "type": "{{permanent}}",
+            "effect": "At the end of your turn, you can discard a card from your hand to gain 2 permanent points."
+        },
+        "collector": {
+            "name": "Collector",
+            "count": "1",
+            "position": "{{front}}",
+            "points": "X",
+            "type": "{{permanent}}",
+            "effect": "X equals half (inferior) of your total permanent points."
+        }
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "name": "Human",
+    "faction_path": "assets/sprites/factions/human.png",
+    "images_folder": "assets/images/humans/",
+    "cards": {
+        "villagers": {
+            "name": "Villagers",
+            "count": "4",
+            "position": "{{any}}",
+            "points": "0",
+            "type": "{{play}}",
+            "effect": "Give the alteration {{encouraged}} to this character."
+        },
+        "soldier": {
+            "name": "Soldier",
+            "count": "3",
+            "position": "{{front}}",
+            "points": "2",
+            "type": "{{play}}",
+            "effect": "Draw 2 cards then discard 2 cards."
+        },
+        "priest": {
+            "name": "Priest",
+            "count": "2",
+            "position": "{{back}}",
+            "points": "1",
+            "type": "{{play}}",
+            "effect": "Copy the {{play}} effect of an ally in {{front}} position."
+        },
+        "archer": {
+            "name": "Archer",
+            "count": "2",
+            "position": "{{front}}",
+            "points": "1",
+            "type": "{{play}}",
+            "effect": "Destroy a character in {{back}} position."
+        },
+        "knight": {
+            "name": "Knight",
+            "count": "2",
+            "position": "{{front}}",
+            "points": "3",
+            "type": "{{permanent}}",
+            "effect": "If an ally in {{back}} position is destroyed, destroy this ally instead."
+        },
+        "king": {
+            "name": "King",
+            "count": "1",
+            "position": "{{back}}",
+            "points": "X",
+            "type": "{{permanent}}",
+            "effect": "If you have more than 3 other {{human}} allies, X is 5, otherwise X is 0."
+        },
+        "queen": {
+            "name": "Queen",
+            "count": "1",
+            "position": "{{any}}",
+            "points": "0",
+            "type": "{{play}}",
+            "effect": "Give the alteration {{encouraged}} to another ally."
+        },
+        "bard": {
+            "name": "Bard",
+            "count": "1",
+            "position": "{{any}}",
+            "points": "2",
+            "type": "{{play}}",
+            "effect": "Reveal 1 card from the deck, you can play it if it's a {{human}}, otherwise keep it in hand."
+        }
+    }
+}

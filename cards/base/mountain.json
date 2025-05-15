@@ -1,0 +1,71 @@
+{
+    "name": "Mountain",
+    "faction_path": "assets/sprites/factions/mountain.png",
+    "images_folder": "assets/images/mountain/",
+    "cards": {
+        "snowman": {
+            "name": "Snowman",
+            "count": "4",
+            "position": "{{back}}",
+            "points": "1",
+            "type": "{{play}}",
+            "effect": "Give the {{frozen}} alteration to a character."
+        },
+        "yeti": {
+            "name": "Yeti",
+            "count": "3",
+            "position": "{{front}}",
+            "points": "2",
+            "type": "{{permanent}}",
+            "effect": "When this character gains the {{frozen}} alteration, gain 2 permanent points."
+        },
+        "witch": {
+            "name": "Witch",
+            "count": "2",
+            "position": "{{front}}",
+            "points": "3",
+            "type": "{{play}}",
+            "effect": "Give the {{frozen}} alteration to an ally."
+        },
+        "ancestor": {
+            "name": "Ancestor",
+            "count": "2",
+            "position": "{{any}}",
+            "points": "0",
+            "type": "{{play}}",
+            "effect": "Remove an alteration from a character and gain 1 permanent point."
+        },
+        "merchant": {
+            "name": "Merchant",
+            "count": "2",
+            "position": "{{back}}",
+            "points": "2",
+            "type": "{{play}}",
+            "effect": "Exchange your hand with another player's hand."
+        },
+        "beast": {
+            "name": "Beast",
+            "count": "1",
+            "position": "{{front}}",
+            "points": "X",
+            "type": "{{permanent}}",
+            "effect": "X equals the number of allies with one or more alteration"
+        },
+        "lizard": {
+            "name": "Lizard",
+            "count": "1",
+            "position": "{{any}}",
+            "points": "0",
+            "type": "{{play}}",
+            "effect": "Remove up to 3 alterations to enemies in {{front}} position or allies."
+        },
+        "giant": {
+            "name": "Giant",
+            "count": "1",
+            "position": "{{back}}",
+            "points": "5",
+            "type": "{{permanent}}",
+            "effect": "At the end of your turn, give the {{frozen}} alteration to an ally."
+        }
+    }
+}

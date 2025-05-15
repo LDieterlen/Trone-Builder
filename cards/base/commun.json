@@ -1,0 +1,45 @@
+{
+    "effect_types": {
+        "play": "Play",
+        "permanent": "Permanent",
+        "unique": "Unique"
+    },
+    "positons": {
+        "any": {
+            "name": "Any",
+            "icon_path": "assets/positions/any.png",
+            "description": "The card can be played in any positions."
+        },
+        "front": {
+            "name": "Front",
+            "icon_path": "assets/positions/front.png",
+            "description": "The card must be played in the front lane."
+        },
+        "back": {
+            "name": "Back",
+            "icon_path": "assets/positions/back.png",
+            "description": "The card must be played in the back lane."
+        }
+    },
+    "alterations": {
+        "encouraged": {
+            "name": "Encouraged",
+            "description": "Increase your points by 1 for each other ally of the same faction."
+        },
+        "strength": {
+            "name": "Strength",
+            "description": "Increase the character's base point to 1."
+        },
+        "frozen": {
+            "name": "Frozen",
+            "description": "The character base point become 0."
+        },
+        "protection": {
+            "name": "Protection",
+            "description": "When a character is targeted by an oppenent's effect, you can destroy this alteration instead."
+        }
+    },
+    "keywords": {
+        ""
+    }
+}

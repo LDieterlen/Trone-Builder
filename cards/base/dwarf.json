@@ -1,0 +1,71 @@
+{
+    "name": "Dwarf",
+    "faction_path": "assets/sprites/factions/dwarf.png",
+    "images_folder": "assets/images/dwarf/",
+    "cards": {
+        "simple": {
+            "name": "Simple",
+            "count": "4",
+            "position": "{{any}}",
+            "points": "2",
+            "type": "{{play}}",
+            "effect": "Give the {{protection}} alteration to a character."
+        },
+        "nervous": {
+            "name": "Nervous",
+            "count": "3",
+            "position": "{{any}}",
+            "points": "2",
+            "type": "{{play}}",
+            "effect": "Destroy an other ally then destroy an opponent's character in {{front}} position."
+        },
+        "joyful": {
+            "name": "Joyful",
+            "count": "2",
+            "position": "{{front}}",
+            "points": "3",
+            "type": "{{play}}",
+            "effect": "This character gains the {{protection}} alteration."
+        },
+        "allergic": {
+            "name": "Allergic",
+            "count": "2",
+            "position": "{{back}}",
+            "points": "0",
+            "type": "{{play}}",
+            "effect": "Move an alteration from one character to another."
+        },
+        "fearful": {
+            "name": "Fearful",
+            "count": "2",
+            "position": "{{back}}",
+            "points": "X",
+            "type": "{{permanent}}",
+            "effect": "If this character has the {{protection}} alteration, X equals 4, otherwise X equals 0."
+        },
+        "lazy": {
+            "name": "Lazy",
+            "count": "1",
+            "position": "{{back}}",
+            "points": "0",
+            "type": "{{play}}",
+            "effect": "Give the {{protection}} alteration to 3 allies."
+        },
+        "boss": {
+            "name": "Boss",
+            "count": "1",
+            "position": "{{any}}",
+            "points": "4",
+            "type": "{{play}}",
+            "effect": "This card cannot be played during the first turn. All other players can add the {{protection}} alteration to a character."
+        },
+        "mascot": {
+            "name": "Mascot",
+            "count": "1",
+            "position": "{{front}}",
+            "points": "X",
+            "type": "{{permanent}}",
+            "effect": "X equals the number of ally in {{back}} position."
+        }
+    }
+}

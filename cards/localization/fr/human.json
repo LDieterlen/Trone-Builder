@@ -1,0 +1,37 @@
+{
+    "name": "Humain",
+    "cards": {
+        "villagers": {
+            "name": "Villageois",
+            "effect": "Donnez l'altération {{encouraged}} à ce personnage."
+        },
+        "soldier": {
+            "name": "Soldat",
+            "effect": "Piochez 2 cartes puis défaussez 2 cartes."
+        },
+        "priest": {
+            "name": "Prêtre",
+            "effect": "Copiez l'effet d'un allié en position {{front}}."
+        },
+        "archer": {
+            "name": "Archer",
+            "effect": "Détruisez un personnage en position {{back}}."
+        },
+        "knight": {
+            "name": "Chevalier",
+            "effect": "Si un allié en position {{back}} est détruit par un effet adverse, détruisez ce personnage à la place."
+        },
+        "king": {
+            "name": "Roi",
+            "effect": "Si vous avez plus de 3 autres alliés {{human}}, X vaut 5, sinon X vaut 0."
+        },
+        "queen": {
+            "name": "Reine",
+            "effect": "Donnez l'altération {{encouraged}} à un autre allié."
+        },
+        "bard": {
+            "name": "Barde",
+            "effect": "Révélez 1 carte de la pioche, vous pouvez la jouer si c'est un {{human}}, sinon gardez-la en main."
+        }
+    }
+}
