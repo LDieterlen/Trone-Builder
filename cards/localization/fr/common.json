@@ -1,0 +1,43 @@
+{
+    "keywords": {
+        "play": "joué",
+        "permanent": "permanent",
+        "unique": "unique",
+        "encouraged": "encouragé",
+        "strength": "force",
+        "frozen": "gelé",
+        "protection": "protection"
+    },
+    "positons": {
+        "any": {
+            "name": "Accune",
+            "description": "La carte peut être jouée dans n'importe quelle position."
+        },
+        "front": {
+            "name": "Avant",
+            "description": "La carte doit être jouée sur la ligne avant."
+        },
+        "back": {
+            "name": "Arrière",
+            "description": "La carte doit être jouée sur la ligne arrière."
+        }
+    },
+    "alterations": {
+        "encouraged": {
+            "name": "Encouragé",
+            "description": "Augmente vos points de 1 pour chaque autre allié de la même faction."
+        },
+        "strength": {
+            "name": "Force",
+            "description": "Augmente les points de base du personnage à 1."
+        },
+        "frozen": {
+            "name": "Gelé",
+            "description": "Les points de base du personnage passent à 0."
+        },
+        "protection": {
+            "name": "Protection",
+            "description": "Lorsque le personnage est ciblé par un effet adverse, vous pouvez retirer cette altération à la place."
+        }
+    }
+}

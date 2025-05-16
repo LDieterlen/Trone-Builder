@@ -13,6 +13,8 @@ LAYERS_LOCATIONS = {
     "position": (math.floor(CARD_WIDTH * 0.929), math.ceil(CARD_HEIGHT * 0.05)),
 }
 
+FONT_BASE_PATH = "assets/font/"
+
 
 # Text configurations
 class TextProperties:
@@ -24,6 +26,9 @@ class TextProperties:
         self.font = font
         self.align = align
 
+    def __repr__(self):
+        return f"TextProperties(x={self.x}, y={self.y}, font_size={self.font_size}, color='{self.color}', font='{self.font}', align='{self.align}')"
+
 
 # Text configurations
 TITLE_CONFIG = TextProperties(
@@ -31,7 +36,7 @@ TITLE_CONFIG = TextProperties(
     y=0.05,
     font_size=48,
     color="black",
-    font="font/Cinzel-Bold.ttf",
+    font=FONT_BASE_PATH + "Cinzel-Bold.ttf",
     align="center",
 )
 
@@ -40,16 +45,16 @@ COUNT_CONFIG = TextProperties(
     y=0.015,
     font_size=36,
     color="black",
-    font="font/Cinzel-ExtraBold.ttf",
+    font=FONT_BASE_PATH + "Cinzel-ExtraBold.ttf",
     align="center",
 )
 
-SCORE_CONFIG = TextProperties(
+POINTS_CONFIG = TextProperties(
     x=0.50,
     y=0.635,
     font_size=160,
     color="black",
-    font="font/Cinzel-Bold.ttf",
+    font=FONT_BASE_PATH + "Cinzel-Bold.ttf",
     align="center",
 )
 
@@ -58,7 +63,7 @@ EFFECT_TYPE_CONFIG = TextProperties(
     y=0.77,
     font_size=48,
     color="black",
-    font="font/Cinzel-Bold.ttf",
+    font=FONT_BASE_PATH + "Cinzel-Bold.ttf",
     align="center",
 )
 
@@ -73,7 +78,7 @@ LEGEND_CONFIG = TextProperties(
 TEXT_PROPERTIES = {
     "title": TITLE_CONFIG,
     "count": COUNT_CONFIG,
-    "score": SCORE_CONFIG,
+    "points": POINTS_CONFIG,
     "effect_type": EFFECT_TYPE_CONFIG,
     "effect": EFFECT_CONFIG,
     "legend": LEGEND_CONFIG,

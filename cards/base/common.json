@@ -1,8 +1,18 @@
 {
-    "effect_types": {
-        "play": "Play",
-        "permanent": "Permanent",
-        "unique": "Unique"
+    "keywords": {
+        "play": "play",
+        "permanent": "permanent",
+        "unique": "unique",
+        "encouraged": "encouraged",
+        "strength": "strength",
+        "frozen": "frozen",
+        "protection": "protection"
+    },
+    "images": {
+        "any": "assets/positions/any.png",
+        "front": "assets/positions/front.png",
+        "back": "assets/positions/back.png",
+        "human_fac": "assets/sprites/factions/humans.png"
     },
     "positons": {
         "any": {
@@ -38,8 +48,5 @@
             "name": "Protection",
             "description": "When a character is targeted by an oppenent's effect, you can destroy this alteration instead."
         }
-    },
-    "keywords": {
-        ""
     }
 }

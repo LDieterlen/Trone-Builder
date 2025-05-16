@@ -1,7 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 import scripts.utils as utils
-import yaml
-import constant as C
+import scripts.constant as C
 
 
 class CardTemplate:
@@ -16,27 +15,47 @@ class CardTemplate:
         self,
         image_path: str,
         identifier: str,
-        resize: bool = False,
         centered: bool = False,
+        fit_method: str = "crop",
     ):
-        try:
-            position = C.LAYERS_LOCATIONS[identifier]
-        except KeyError:
-            raise ValueError(
-                f"Invalid identifier: {identifier}. Valid identifiers are: {list(C.LAYERS_LOCATIONS.keys())}"
-            )
-
         image = Image.open(image_path)
-        if resize:
+        # Load the position of the image on the card
+        layer_location = C.LAYERS_LOCATIONS[identifier]
+
+        # Resize the image
+        if fit_method == "thumbnail":
+            # Complete resizing while preserving aspect ratio
             image.thumbnail((self.width, self.height))
+        elif fit_method == "fill":
+            # Complete resizing without preserving aspect ratio
+            image = image.resize((self.width, self.height))
+        elif fit_method == "crop":
+            # Resize the image proportionally then crop it to fill the frame
+            img_ratio = image.width / image.height
+            card_ratio = self.width / self.height
+
+            if img_ratio > card_ratio:
+                # Image wider than the frame
+                new_width = int(self.height * img_ratio)
+                image = image.resize((new_width, self.height))
+                # Crop to center
+                left = (image.width - self.width) // 2
+                image = image.crop((left, 0, left + self.width, self.height))
+            else:
+                # Image taller than the frame
+                new_height = int(self.width / img_ratio)
+                image = image.resize((self.width, new_height))
+                # Crop to center
+                top = (image.height - self.height) // 2
+                image = image.crop((0, top, self.width, top + self.height))
 
         if centered:
-            position = (
-                position[0] - image.width // 2,
-                position[1] - image.height // 2,
+            layer_location = (
+                layer_location[0] - image.width // 2,
+                layer_location[1] - image.height // 2,
             )
         self.card.paste(
-            image, position, image.split()[3] if image.mode == "RGBA" else None
+            image, layer_location, image.split()[3] if image.mode == "RGBA" else None
         )
 
     def add_text(
@@ -97,6 +116,9 @@ class CardTemplate:
                         fill=properties.color,
                         width=2,
                     )
+
+    def save(self, path):
+        self.card.save(path, "PNG", dpi=(300, 300))
 
 
 # # class TroneDrawer(ImageDraw.ImageDraw):

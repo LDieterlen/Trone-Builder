@@ -1,165 +1,189 @@
-import math
+import re
 import os
 import json
 from scripts.card import CardTemplate
 
+FACTIONS = [
+    "humans",
+]
 
-def build_card(global_properties: dict, card_info: dict):
-    properties = global_properties["card"]
-    title_properties = TextProperties(properties["title"])
-    count_properties = TextProperties(properties["count"])
-    score_properties = TextProperties(properties["score"])
-    effect_type_properties = TextProperties(properties["effect_type"])
-    effect_properties = TextProperties(properties["effect"])
-    legend_properties = TextProperties(properties["legend"])
+LANGUAGE = "fr"
 
-    name = card_info["Name"]
-    faction = card_info["Faction"]
-    print(f"Building card {name} for {faction}")
 
-    card = Card(global_properties)
-    width = card.width
-    height = card.height
-    sprite_core = "sprites"
-    faction_index = 1
+def replace_placeholders(text: str, data_dict: dict) -> str:
+    # Traitement des placeholders de texte normaux
+    def replace_text_match(match):
+        key = match.group(1).strip()
+        return str(data_dict.get(key, f"{{{{{key}}}}}"))
 
-    image_path = f"{sprite_core}/Images/{faction}/{faction_index}.png"
-    if not os.path.exists(image_path):
-        image_path = f"{sprite_core}/Images/default.png"
-    card.add_image(image_path, (0, math.floor(height * 0.1)), True)
+    text_pattern = r"\{\{([^}]+)\}\}"
+    matches = re.finditer(text_pattern, text)
+    match_positions = []
 
-    card_model = f"{sprite_core}/Models/{faction}.png"
-    card.add_image(card_model, (0, 0), True)
+    for match in matches:
+        key = match.group(1).strip()
+        start_idx = match.start()
+        end_idx = match.end()
+        match_positions.append((key, start_idx, end_idx))
 
-    faction_sprite = f"{sprite_core}/Factions/Large/{faction}.png"
-    card.add_image(
-        faction_sprite,
-        (math.ceil(width * 0.071), math.ceil(height * 0.05)),
-        True,
-        centered=True,
-    )
+    print("Match positions:", match_positions)
+    import sys
 
-    locations = card_info["Location"].split(" ")
-    for location in locations:
-        position_sprite = f"{sprite_core}/Position/{location} LARGE.png"
-        card.add_image(
-            position_sprite,
-            (math.floor(width * 0.929), math.ceil(height * 0.05)),
+    sys.exit(0)
+    text_result = re.sub(text_pattern, replace_text_match, text)
+
+    # # Si on ne s'intéresse pas aux images, on retourne juste le texte
+    # if image_dict is None:
+    #     return text_result
+
+    # Extraction des références d'images
+    # image_matches = []
+    # image_pattern = r"\[\[image:([^\]]+)\]\]"
+
+    # def collect_image_match(match):
+    #     key = match.group(1).strip()
+    #     if key in image_dict:
+    #         image_matches.append((match.group(0), image_dict[key]))
+    #     return match.group(0)  # On garde le placeholder pour l'instant
+
+    # re.sub(image_pattern, collect_image_match, text_result)
+
+    # return (text_result, image_matches)
+
+
+def deep_merge(dict1: dict, dict2: dict) -> dict:
+    for key, value in dict2.items():
+        if key in dict1 and isinstance(dict1[key], dict) and isinstance(value, dict):
+            deep_merge(dict1[key], value)
+        else:
+            dict1[key] = value
+    return dict1
+
+
+def load_data(file_name: str, language: str = "fr") -> dict:
+    base_folder = "cards/base"
+    localization_folder = f"cards/localization/{language}"
+
+    # Load base data
+    base_path = f"{base_folder}/{file_name}.json"
+    with open(base_path, "r", encoding="utf-8") as f:
+        base_data = json.load(f)
+
+    # Load translation data
+    translation_path = f"{localization_folder}/{file_name}.json"
+    with open(translation_path, "r", encoding="utf-8") as f:
+        translation_data = json.load(f)
+
+    # Merge and return
+    return deep_merge(base_data, translation_data)
+
+
+def load_global_data(language: str = "fr") -> dict:
+    return load_data("common", language)
+
+
+def load_faction(faction_name: str, language: str = "fr") -> dict:
+    return load_data(faction_name, language)
+
+
+def build_faction(global_data: dict, faction_details: dict):
+    # Load properties of the faction
+    faction_name: str = faction_details["name"]
+    card_layer_path = faction_details["card_layer_path"]
+    image_base_path = faction_details["images_folder"]
+    faction_path = faction_details["faction_path"]
+    cards = faction_details["cards"]
+
+    # Create the output folder for the faction
+    output_folder_path = f"output/{faction_name}"
+    os.makedirs(output_folder_path, exist_ok=True)
+
+    # Building cards for each character
+    for character_id in cards:
+        card_template = CardTemplate()
+        character_info = cards[character_id]
+
+        character_image = image_base_path + character_info["image"]
+        character_position = character_info["position"]
+
+        position_icon_path = f"assets/sprites/positions/{character_position}.png"
+
+        card_template.add_image(character_image, "character", True)
+        card_template.add_image(card_layer_path, "core", True)
+        card_template.add_image(
+            faction_path, "faction", True, centered=True, fit_method="thumbnail"
+        )
+        card_template.add_image(
+            position_icon_path,
+            "position",
             True,
             centered=True,
+            fit_method="thumbnail",
         )
 
-    card.write(name, title_properties)
+        # Title
+        name: str = character_info["name"]
+        count: str = character_info["count"]
+        points: str = character_info["points"]
+        effect_type: str = character_info["type"]
+        effect: str = character_info["effect"]
 
-    count = card_info["Count"]
-    card.write(str(count), count_properties)
-
-    score = card_info["Score"]
-    card.write(str(score), score_properties)
-
-    effect_type = card_info["Type"]
-    card.write(effect_type, effect_type_properties)
-
-    effect = card_info["Effect"]
-    card.write(effect, effect_properties, add_new_lines=True)
-
-    print(f"Building card {name} for {faction}")
-    return card
-
-
-def build_cards(properties, data: pd.DataFrame, output_path):
-    title_properties = TextProperties(properties["title"])
-    count_properties = TextProperties(properties["count"])
-    score_properties = TextProperties(properties["score"])
-    effect_type_properties = TextProperties(properties["effect_type"])
-    effect_properties = TextProperties(properties["effect"])
-    legend_properties = TextProperties(properties["legend"])
-
-    for index, row in data.iterrows():
-        name = row["Name"]
-        faction = row["Faction"]
-        print(f"Building card {name} for {faction}")
-
-        card = Card(properties)
-        width = card.width
-        height = card.height
-        sprite_core = "sprites"
-        faction_index = index % 8 + 1
-
-        image_path = f"{sprite_core}/Images/{faction}/{faction_index}.png"
-        if not os.path.exists(image_path):
-            image_path = f"{sprite_core}/Images/default.png"
-        card.add_image(image_path, (0, math.floor(height * 0.1)), True)
-
-        card_model = f"{sprite_core}/Models/{faction}.png"
-        card.add_image(card_model, (0, 0), True)
-
-        faction_sprite = f"{sprite_core}/Factions/Large/{faction}.png"
-        card.add_image(
-            faction_sprite,
-            (math.ceil(width * 0.071), math.ceil(height * 0.05)),
-            True,
-            centered=True,
+        card_template.add_text(
+            name.upper(),
+            "title",
+            h_center=True,
+            v_center=True,
+        )
+        # Count
+        card_template.add_text(
+            count,
+            "count",
+            h_center=True,
+            v_center=True,
+        )
+        # Points
+        card_template.add_text(
+            points,
+            "points",
+            h_center=True,
+            v_center=True,
+        )
+        # Effect type
+        card_template.add_text(
+            effect_type,
+            "effect_type",
+            h_center=True,
+            v_center=True,
+        )
+        # Effect
+        card_template.add_text(
+            effect,
+            "effect",
+            h_center=True,
+            v_center=True,
+            auto_indentation=True,
+        )
+        # Legend
+        card_template.add_text(
+            "HOW TO DO THIS ?",
+            "legend",
+            h_center=True,
+            v_center=True,
         )
 
-        locations = row["Location"].split(" ")
-        for location in locations:
-            position_sprite = f"{sprite_core}/Position/{location} LARGE.png"
-            card.add_image(
-                position_sprite,
-                (math.floor(width * 0.929), math.ceil(height * 0.05)),
-                True,
-                centered=True,
-            )
-
-        card.write(name, title_properties)
-
-        count = row["Count"]
-        card.write(str(count), count_properties)
-
-        score = row["Score"]
-        card.write(str(score), score_properties)
-
-        effect_type = row["Type"]
-        card.write(effect_type, effect_type_properties)
-
-        effect = row["Effect"]
-        card.write(effect, effect_properties, add_new_lines=True)
-
-        print(f"Building card {name} for {faction}")
-        os.makedirs(f"{output_path}/{faction}", exist_ok=True)
-        card.save(f"{output_path}/{faction}/{name}.png")
+        card_template.save(output_folder_path + f"/{name}.png")
+        print(f"Card for {name} created successfully.")
 
 
 if __name__ == "__main__":
 
-    properties = yaml.safe_load(open("properties.yaml"))
+    global_data = load_global_data(LANGUAGE)
+    for faction in FACTIONS:
+        faction_data = load_faction(faction, LANGUAGE)
 
-    os.makedirs("output", exist_ok=True)
+        faction_name = faction_data["name"]
+        print(f"Loaded data for faction: {faction_name}")
 
-    source_path = "sources/translation/"
-    directories = [
-        d
-        for d in os.listdir(source_path)
-        if os.path.isdir(os.path.join(source_path, d))
-    ]
-    print("Available translations:", ", ".join(directories))
+        replace_placeholders()
 
-    directories = ["fr"]
-
-    for directory in directories:
-        data = []
-
-        for root, dirs, files in os.walk(f"{source_path}/{directory}"):
-            for file in files:
-                if file.endswith("human.json"):
-                    with open(f"{root}/{file}", "r", encoding="utf-8") as f:
-                        file_data = json.load(f)
-                    cards: list = file_data["cards"]
-                    for card in cards:
-                        card["Faction"] = "human"
-                    df = pd.DataFrame(cards)
-                    data.append(df)
-
-        data = pd.concat(data)
-        build_cards(properties, data, f"output/{directory}")
+        build_faction(global_data, faction_data)

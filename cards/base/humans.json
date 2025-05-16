@@ -1,10 +1,12 @@
 {
-    "name": "Human",
-    "faction_path": "assets/sprites/factions/human.png",
+    "name": "humans",
+    "faction_path": "assets/sprites/factions/humans.png",
+    "card_layer_path": "assets/sprites/cards/humans.png",
     "images_folder": "assets/images/humans/",
     "cards": {
         "villagers": {
             "name": "Villagers",
+            "image": "villagers.png",
             "count": "4",
             "position": "{{any}}",
             "points": "0",
@@ -13,59 +15,66 @@
         },
         "soldier": {
             "name": "Soldier",
+            "image": "soldier.png",
             "count": "3",
-            "position": "{{front}}",
+            "position": "front",
             "points": "2",
             "type": "{{play}}",
             "effect": "Draw 2 cards then discard 2 cards."
         },
         "priest": {
             "name": "Priest",
+            "image": "priest.png",
             "count": "2",
-            "position": "{{back}}",
+            "position": "back",
             "points": "1",
             "type": "{{play}}",
             "effect": "Copy the {{play}} effect of an ally in {{front}} position."
         },
         "archer": {
             "name": "Archer",
+            "image": "archer.png",
             "count": "2",
-            "position": "{{front}}",
+            "position": "front",
             "points": "1",
             "type": "{{play}}",
             "effect": "Destroy a character in {{back}} position."
         },
         "knight": {
             "name": "Knight",
+            "image": "knight.png",
             "count": "2",
-            "position": "{{front}}",
+            "position": "front",
             "points": "3",
             "type": "{{permanent}}",
             "effect": "If an ally in {{back}} position is destroyed, destroy this ally instead."
         },
         "king": {
             "name": "King",
+            "image": "king.png",
             "count": "1",
-            "position": "{{back}}",
+            "position": "back",
             "points": "X",
             "type": "{{permanent}}",
-            "effect": "If you have more than 3 other {{human}} allies, X is 5, otherwise X is 0."
+            "effect": "If you have more than 3 other {{human_fac}} allies, X is 5, otherwise X is 0."
         },
         "queen": {
             "name": "Queen",
+            "image": "queen.png",
             "count": "1",
-            "position": "{{any}}",
+            "position": "any",
             "points": "0",
             "type": "{{play}}",
             "effect": "Give the alteration {{encouraged}} to another ally."
         },
         "bard": {
             "name": "Bard",
+            "image": "bard.png",
             "count": "1",
-            "position": "{{any}}",
+            "position": "any",
             "points": "2",
             "type": "{{play}}",
-            "effect": "Reveal 1 card from the deck, you can play it if it's a {{human}}, otherwise keep it in hand."
+            "effect": "Reveal 1 card from the deck, you can play it if it's a {{human_fac}}, otherwise keep it in hand."
         }
     }
 }
