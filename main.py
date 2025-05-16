@@ -48,7 +48,7 @@ def load_faction(faction_name: str, language: str = "fr") -> dict:
 
 def extract_icon_name(text: str):
     """Extract the icon identifier from a position string in format {{icon:name}}"""
-    match = re.search(r'{{icon:([^}]+)}}', text)
+    match = re.search(r"{{icon:([^}]+)}}", text)
     if match:
         return match.group(1)
     return text
@@ -72,7 +72,7 @@ def build_faction(global_data: dict, faction_details: dict):
         character_info = cards[character_id]
 
         character_image = image_base_path + character_info["image"]
-        
+
         # Handle position with the new format
         character_position = character_info["position"]
         position_icon_name = extract_icon_name(character_position)
@@ -117,29 +117,32 @@ def build_faction(global_data: dict, faction_details: dict):
             h_center=True,
             v_center=True,
         )
-        
+
         # Process effect_type with keywords
         card_template.add_text(
-            effect_type, 
+            effect_type,
             "effect_type",
             h_center=True,
             v_center=True,
             global_data=global_data,
         )
-        
+
         # Process effect with keywords
-        # First process keywords, then do auto-indentation
-        processed_effect, icons_info = scripts.utils.process_keywords(effect, global_data)
-        card_template.add_text_with_icons(
-            processed_effect,
+        # First process keywords to replace them with actual text or spaces for icons
+        # processed_effect, icons_info = scripts.utils.process_keywords(
+        #     effect, global_data
+        # )
+
+        # The auto-indentation will be applied inside add_text_with_icons AFTER we've recorded icon positions
+        card_template.add_text(
+            effect,
             "effect",
             h_center=True,
             v_center=True,
             auto_indentation=True,
-            icons_info=icons_info,
             global_data=global_data,
         )
-        
+
         # Legend
         card_template.add_text(
             "HOW TO DO THIS ?",

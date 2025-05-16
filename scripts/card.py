@@ -58,89 +58,6 @@ class CardTemplate:
             image, layer_location, image.split()[3] if image.mode == "RGBA" else None
         )
 
-    def add_text_with_icons(
-        self,
-        text: str,
-        identifier: str,
-        h_center=True,
-        v_center=True,
-        auto_indentation: bool = False,
-        icons_info: list = None,
-        global_data: dict = None,
-    ):
-        """
-        Add text with embedded icons to the card.
-        
-        Args:
-            text: Text to add
-            identifier: Identifier for text properties
-            h_center: Whether to horizontally center the text
-            v_center: Whether to vertically center the text
-            auto_indentation: Whether to add line breaks automatically
-            icons_info: List of tuples (icon_path, position) for icons to embed in text
-            global_data: Global data for keywords
-        """
-        try:
-            properties = C.TEXT_PROPERTIES[identifier]
-        except KeyError:
-            raise ValueError(
-                f"Invalid identifier: {identifier}. Valid identifiers are: {list(C.TEXT_PROPERTIES.keys())}"
-            )
-
-        font = ImageFont.truetype(properties.font, properties.font_size)
-
-        # Apply auto-indentation if needed
-        if auto_indentation:
-            text = utils.add_new_lines(self.width * 0.9, text, font)
-
-        position = (properties.x * self.width, properties.y * self.height)
-
-        # Adjust position for centering
-        _, _, w, h = self.drawer.textbbox((0, 0), text, font=font)
-        if h_center:
-            position = (position[0] - w // 2, position[1])
-        if v_center:
-            position = (position[0], position[1] - h // 2)
-
-        # Draw the text
-        self.drawer.text(
-            position,
-            text,
-            font=font,
-            fill=properties.color,
-            align=properties.align,
-        )
-
-        # Add icons if provided
-        if icons_info and len(icons_info) > 0:
-            font_height = font.getbbox("Ay")[3] - font.getbbox("Ay")[1]
-            icon_size = int(font_height * 1.2)  # Make the icon slightly larger than text height
-            
-            for icon_path, pos_in_text in icons_info:
-                # Calculate icon position based on text position and position in text
-                lines = text[:pos_in_text].split('\n')
-                line_number = len(lines) - 1
-                pos_in_line = len(lines[-1])
-                
-                icon_x = position[0] + self.drawer.textlength(lines[-1][:pos_in_line], font=font)
-                icon_y = position[1] + line_number * font_height
-                
-                # Load and resize icon
-                try:
-                    icon = Image.open(icon_path)
-                    icon.thumbnail((icon_size, icon_size))
-                    # Center the icon vertically with the text line
-                    icon_y = icon_y - (icon.height - font_height) // 2
-                    
-                    # Paste the icon
-                    self.card.paste(
-                        icon, 
-                        (int(icon_x), int(icon_y)), 
-                        icon.split()[3] if icon.mode == "RGBA" else None
-                    )
-                except Exception as e:
-                    print(f"Error embedding icon {icon_path}: {e}")
-
     def add_text(
         self,
         text: str,
@@ -152,18 +69,18 @@ class CardTemplate:
         global_data: dict = None,
     ):
         """Original add_text method for backwards compatibility"""
-        # If global_data is provided, process keywords
-        if global_data:
-            processed_text, icons_info = utils.process_keywords(text, global_data)
-            return self.add_text_with_icons(
-                processed_text, 
-                identifier, 
-                h_center, 
-                v_center, 
-                auto_indentation, 
-                icons_info, 
-                global_data
-            )
+        # # If global_data is provided, process keywords
+        # if global_data:
+        #     processed_text, icons_info = utils.process_keywords(text, global_data)
+        #     return self.add_text_with_icons(
+        #         processed_text,
+        #         identifier,
+        #         h_center,
+        #         v_center,
+        #         auto_indentation,
+        #         icons_info,
+        #         global_data,
+        #     )
 
         try:
             properties = C.TEXT_PROPERTIES[identifier]
