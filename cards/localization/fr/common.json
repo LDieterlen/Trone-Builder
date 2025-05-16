@@ -1,5 +1,5 @@
 {
-    "keywords": {
+    "text": {
         "play": "joué",
         "permanent": "permanent",
         "unique": "unique",
@@ -10,7 +10,7 @@
     },
     "positons": {
         "any": {
-            "name": "Accune",
+            "name": "Aucune",
             "description": "La carte peut être jouée dans n'importe quelle position."
         },
         "front": {

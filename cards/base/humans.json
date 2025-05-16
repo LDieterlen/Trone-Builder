@@ -8,73 +8,73 @@
             "name": "Villagers",
             "image": "villagers.png",
             "count": "4",
-            "position": "{{any}}",
+            "position": "{{icon:any}}",
             "points": "0",
-            "type": "{{play}}",
-            "effect": "Give the alteration {{encouraged}} to this character."
+            "type": "{{text:play}}",
+            "effect": "Give the alteration {{text:encouraged}} to this character."
         },
         "soldier": {
             "name": "Soldier",
             "image": "soldier.png",
             "count": "3",
-            "position": "front",
+            "position": "{{icon:front}}",
             "points": "2",
-            "type": "{{play}}",
+            "type": "{{text:play}}",
             "effect": "Draw 2 cards then discard 2 cards."
         },
         "priest": {
             "name": "Priest",
             "image": "priest.png",
             "count": "2",
-            "position": "back",
+            "position": "{{icon:back}}",
             "points": "1",
-            "type": "{{play}}",
-            "effect": "Copy the {{play}} effect of an ally in {{front}} position."
+            "type": "{{text:play}}",
+            "effect": "Copy the {{text:play}} effect of an ally in {{icon:front}} position."
         },
         "archer": {
             "name": "Archer",
             "image": "archer.png",
             "count": "2",
-            "position": "front",
+            "position": "{{icon:back}}",
             "points": "1",
-            "type": "{{play}}",
-            "effect": "Destroy a character in {{back}} position."
+            "type": "{{text:play}}",
+            "effect": "Destroy a character in {{icon:back}} position."
         },
         "knight": {
             "name": "Knight",
             "image": "knight.png",
             "count": "2",
-            "position": "front",
+            "position": "{{icon:front}}",
             "points": "3",
-            "type": "{{permanent}}",
-            "effect": "If an ally in {{back}} position is destroyed, destroy this ally instead."
+            "type": "{{text:permanent}}",
+            "effect": "If an ally in {{icon:back}} position is destroyed, destroy this ally instead."
         },
         "king": {
             "name": "King",
             "image": "king.png",
             "count": "1",
-            "position": "back",
+            "position": "{{icon:back}}",
             "points": "X",
-            "type": "{{permanent}}",
-            "effect": "If you have more than 3 other {{human_fac}} allies, X is 5, otherwise X is 0."
+            "type": "{{text:permanent}}",
+            "effect": "If you have more than 3 other {{icon:human_fac}} allies, X is 5, otherwise X is 0."
         },
         "queen": {
             "name": "Queen",
             "image": "queen.png",
             "count": "1",
-            "position": "any",
+            "position": "{{icon:any}}",
             "points": "0",
-            "type": "{{play}}",
-            "effect": "Give the alteration {{encouraged}} to another ally."
+            "type": "{{text:play}}",
+            "effect": "Give the alteration {{text:encouraged}} to another ally."
         },
         "bard": {
             "name": "Bard",
             "image": "bard.png",
             "count": "1",
-            "position": "any",
+            "position": "{{icon:any}}",
             "points": "2",
-            "type": "{{play}}",
-            "effect": "Reveal 1 card from the deck, you can play it if it's a {{human_fac}}, otherwise keep it in hand."
+            "type": "{{text:play}}",
+            "effect": "Reveal 1 card from the deck, you can play it if it's a {{icon:human_fac}}, otherwise keep it in hand."
         }
     }
 }

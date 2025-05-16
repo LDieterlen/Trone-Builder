@@ -58,6 +58,89 @@ class CardTemplate:
             image, layer_location, image.split()[3] if image.mode == "RGBA" else None
         )
 
+    def add_text_with_icons(
+        self,
+        text: str,
+        identifier: str,
+        h_center=True,
+        v_center=True,
+        auto_indentation: bool = False,
+        icons_info: list = None,
+        global_data: dict = None,
+    ):
+        """
+        Add text with embedded icons to the card.
+        
+        Args:
+            text: Text to add
+            identifier: Identifier for text properties
+            h_center: Whether to horizontally center the text
+            v_center: Whether to vertically center the text
+            auto_indentation: Whether to add line breaks automatically
+            icons_info: List of tuples (icon_path, position) for icons to embed in text
+            global_data: Global data for keywords
+        """
+        try:
+            properties = C.TEXT_PROPERTIES[identifier]
+        except KeyError:
+            raise ValueError(
+                f"Invalid identifier: {identifier}. Valid identifiers are: {list(C.TEXT_PROPERTIES.keys())}"
+            )
+
+        font = ImageFont.truetype(properties.font, properties.font_size)
+
+        # Apply auto-indentation if needed
+        if auto_indentation:
+            text = utils.add_new_lines(self.width * 0.9, text, font)
+
+        position = (properties.x * self.width, properties.y * self.height)
+
+        # Adjust position for centering
+        _, _, w, h = self.drawer.textbbox((0, 0), text, font=font)
+        if h_center:
+            position = (position[0] - w // 2, position[1])
+        if v_center:
+            position = (position[0], position[1] - h // 2)
+
+        # Draw the text
+        self.drawer.text(
+            position,
+            text,
+            font=font,
+            fill=properties.color,
+            align=properties.align,
+        )
+
+        # Add icons if provided
+        if icons_info and len(icons_info) > 0:
+            font_height = font.getbbox("Ay")[3] - font.getbbox("Ay")[1]
+            icon_size = int(font_height * 1.2)  # Make the icon slightly larger than text height
+            
+            for icon_path, pos_in_text in icons_info:
+                # Calculate icon position based on text position and position in text
+                lines = text[:pos_in_text].split('\n')
+                line_number = len(lines) - 1
+                pos_in_line = len(lines[-1])
+                
+                icon_x = position[0] + self.drawer.textlength(lines[-1][:pos_in_line], font=font)
+                icon_y = position[1] + line_number * font_height
+                
+                # Load and resize icon
+                try:
+                    icon = Image.open(icon_path)
+                    icon.thumbnail((icon_size, icon_size))
+                    # Center the icon vertically with the text line
+                    icon_y = icon_y - (icon.height - font_height) // 2
+                    
+                    # Paste the icon
+                    self.card.paste(
+                        icon, 
+                        (int(icon_x), int(icon_y)), 
+                        icon.split()[3] if icon.mode == "RGBA" else None
+                    )
+                except Exception as e:
+                    print(f"Error embedding icon {icon_path}: {e}")
+
     def add_text(
         self,
         text: str,
@@ -66,7 +149,22 @@ class CardTemplate:
         v_center=True,
         auto_indentation: bool = False,
         keywords: list = None,
+        global_data: dict = None,
     ):
+        """Original add_text method for backwards compatibility"""
+        # If global_data is provided, process keywords
+        if global_data:
+            processed_text, icons_info = utils.process_keywords(text, global_data)
+            return self.add_text_with_icons(
+                processed_text, 
+                identifier, 
+                h_center, 
+                v_center, 
+                auto_indentation, 
+                icons_info, 
+                global_data
+            )
+
         try:
             properties = C.TEXT_PROPERTIES[identifier]
         except KeyError:
@@ -119,205 +217,3 @@ class CardTemplate:
 
     def save(self, path):
         self.card.save(path, "PNG", dpi=(300, 300))
-
-
-# # class TroneDrawer(ImageDraw.ImageDraw):
-# #     def __init__(self, image: Image.Image):
-# #         super().__init__(image)
-# #         origin = (0, 0)
-# #         width = image.width
-# #         height = image.height
-# #         end = (width, height)
-
-# #         # Draw the header
-# #         self.rectangle(
-# #             (origin, end),
-# #             fill="green",
-# #         )
-
-# #         # Draw the body
-# #         body_origin = (0, height * 0.1)
-# #         self.rectangle(
-# #             (body_origin, end),
-# #             fill="blue",
-# #         )
-
-# #         # Add line between header and body
-# #         self.line(
-# #             (0, height * 0.1, width, height * 0.1),
-# #             fill="black",
-# #             width=BORDER_WIDTH,
-# #         )
-
-# #         # Draw the footer
-# #         self.draw_footer(width, height)
-
-# #         # Draw the borders
-# #         self.rectangle(
-# #             (origin, end),
-# #             outline="black",
-# #             width=BORDER_WIDTH,
-# #         )
-
-# #         self.line((0, height / 2, width, height / 2), fill="black")
-# #         self.line((width / 2, 0, width / 2, height), fill="black")
-
-# #     def draw_footer(self, width: int, height: int):
-# #         # Ellipse constants
-# #         x0 = width / 2
-# #         y0 = height * 0.62
-# #         r = 60
-
-# #         # Other constants
-# #         side_height = height * 0.75
-
-# #         # Draw the footer text container
-# #         self.polygon(
-# #             [
-# #                 0,
-# #                 height,
-# #                 0,
-# #                 side_height,
-# #                 x0 - r,
-# #                 y0,
-# #                 x0 + r,
-# #                 y0,
-# #                 width,
-# #                 side_height,
-# #                 width,
-# #                 height,
-# #             ],
-# #             fill="red",
-# #         )
-
-# #         # Draw the sphere on top
-# #         self.ellipse(
-# #             (x0 - r, y0 - r, x0 + r, y0 + r),
-# #             fill="yellow",
-# #             outline="black",
-# #             width=BORDER_WIDTH,
-# #         )
-
-# #         # Add lines arround the sphere
-# #         self.line(
-# #             (0, side_height, x0 - r, y0),
-# #             fill="black",
-# #             width=BORDER_WIDTH,
-# #         )
-# #         self.line(
-# #             (x0 + r, y0, width, side_height),
-# #             fill="black",
-# #             width=BORDER_WIDTH,
-# #         )
-
-
-# # class LayoutProperties:
-# #     def __init__(self, properties: dict):
-
-# #         self.width_ratio = properties.get("width", 1)
-# #         self.height_ratio = properties["height"]
-
-# #         self.background_color = properties.get("background_color", "white")
-# #         self.border_color = properties.get("border_color", "black")
-# #         self.border_width = properties.get("border_width", 4)
-
-
-# # class TextProperties:
-# #     def __init__(self, properties: dict):
-# #         self.font_type = properties["font"]
-# #         self.font_size = properties["font_size"]
-# #         self.x = properties["x"]
-# #         self.y = properties["y"]
-# #         self.font_color = properties.get("font_color", "black")
-# #         self.align = properties.get("align", "center")
-# #         self.keywords = properties.get("keywords", [])
-
-
-# class Card:
-
-#     def __init__(
-#         self,
-#         properties: dict,
-#     ) -> None:
-
-#         self.width = properties["width"]
-#         self.height = properties["height"]
-
-#         self.image = Image.new("RGBA", (self.width, self.height), "red")
-#         self.image_drawer = TroneDrawer(self.image)
-
-#     def add_image(
-#         self,
-#         image_path: str,
-#         position: tuple,
-#         thumbnail: bool = False,
-#         centered: bool = False,
-#     ):
-#         image = Image.open(image_path)
-#         if thumbnail:
-#             image.thumbnail((self.width, self.height))
-
-#         if centered:
-#             position = (
-#                 position[0] - image.width // 2,
-#                 position[1] - image.height // 2,
-#             )
-#         self.image.paste(
-#             image, position, image.split()[3] if image.mode == "RGBA" else None
-#         )
-
-#     def write(
-#         self,
-#         text: str,
-#         properties: TextProperties,
-#         h_center=True,
-#         v_center=True,
-#         add_new_lines: bool = False,
-#         keywords: list = None,
-#     ):
-#         font = ImageFont.truetype(properties.font_type, properties.font_size)
-#         if add_new_lines:
-#             text = utils.add_new_lines(self.width * 0.9, text, font)
-
-#         position = (properties.x * self.width, properties.y * self.height)
-
-#         _, _, w, h = self.image_drawer.textbbox((0, 0), text, font=font)
-#         if h_center:
-#             position = (position[0] - w // 2, position[1])
-#         if v_center:
-#             position = (position[0], position[1] - h // 2)
-
-#         self.image_drawer.text(
-#             position,
-#             text,
-#             font=font,
-#             fill=properties.font_color,
-#             align=properties.align,
-#         )
-
-#         # Underline specific keywords in the text
-#         if keywords:
-#             for keyword in keywords:
-#                 start_idx = text.find(keyword)
-#                 if start_idx != -1:
-#                     keyword_bbox = font.getbbox(keyword)
-#                     keyword_width = keyword_bbox[2] - keyword_bbox[0]
-#                     keyword_height = keyword_bbox[3] - keyword_bbox[1]
-#                     underline_start = (
-#                         position[0]
-#                         + self.image_drawer.textlength(text[:start_idx], font=font),
-#                         position[1] + keyword_height,
-#                     )
-#                     underline_end = (
-#                         underline_start[0] + keyword_width,
-#                         underline_start[1],
-#                     )
-#                     self.image_drawer.line(
-#                         [underline_start, underline_end],
-#                         fill=properties.font_color,
-#                         width=2,
-#                     )
-
-#     def save(self, path):
-#         self.image.save(path, "PNG", dpi=(300, 300))
-#         print("Image saved successfully!")

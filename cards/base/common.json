@@ -1,5 +1,5 @@
 {
-    "keywords": {
+    "text": {
         "play": "play",
         "permanent": "permanent",
         "unique": "unique",
@@ -8,7 +8,7 @@
         "frozen": "frozen",
         "protection": "protection"
     },
-    "images": {
+    "icon": {
         "any": "assets/positions/any.png",
         "front": "assets/positions/front.png",
         "back": "assets/positions/back.png",

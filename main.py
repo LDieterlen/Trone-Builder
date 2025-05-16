@@ -1,6 +1,7 @@
 import re
 import os
 import json
+import scripts.utils
 from scripts.card import CardTemplate
 
 FACTIONS = [
@@ -8,47 +9,6 @@ FACTIONS = [
 ]
 
 LANGUAGE = "fr"
-
-
-def replace_placeholders(text: str, data_dict: dict) -> str:
-    # Traitement des placeholders de texte normaux
-    def replace_text_match(match):
-        key = match.group(1).strip()
-        return str(data_dict.get(key, f"{{{{{key}}}}}"))
-
-    text_pattern = r"\{\{([^}]+)\}\}"
-    matches = re.finditer(text_pattern, text)
-    match_positions = []
-
-    for match in matches:
-        key = match.group(1).strip()
-        start_idx = match.start()
-        end_idx = match.end()
-        match_positions.append((key, start_idx, end_idx))
-
-    print("Match positions:", match_positions)
-    import sys
-
-    sys.exit(0)
-    text_result = re.sub(text_pattern, replace_text_match, text)
-
-    # # Si on ne s'intéresse pas aux images, on retourne juste le texte
-    # if image_dict is None:
-    #     return text_result
-
-    # Extraction des références d'images
-    # image_matches = []
-    # image_pattern = r"\[\[image:([^\]]+)\]\]"
-
-    # def collect_image_match(match):
-    #     key = match.group(1).strip()
-    #     if key in image_dict:
-    #         image_matches.append((match.group(0), image_dict[key]))
-    #     return match.group(0)  # On garde le placeholder pour l'instant
-
-    # re.sub(image_pattern, collect_image_match, text_result)
-
-    # return (text_result, image_matches)
 
 
 def deep_merge(dict1: dict, dict2: dict) -> dict:
@@ -86,6 +46,14 @@ def load_faction(faction_name: str, language: str = "fr") -> dict:
     return load_data(faction_name, language)
 
 
+def extract_icon_name(text: str):
+    """Extract the icon identifier from a position string in format {{icon:name}}"""
+    match = re.search(r'{{icon:([^}]+)}}', text)
+    if match:
+        return match.group(1)
+    return text
+
+
 def build_faction(global_data: dict, faction_details: dict):
     # Load properties of the faction
     faction_name: str = faction_details["name"]
@@ -104,19 +72,20 @@ def build_faction(global_data: dict, faction_details: dict):
         character_info = cards[character_id]
 
         character_image = image_base_path + character_info["image"]
+        
+        # Handle position with the new format
         character_position = character_info["position"]
+        position_icon_name = extract_icon_name(character_position)
+        position_icon_path = f"assets/sprites/positions/{position_icon_name}.png"
 
-        position_icon_path = f"assets/sprites/positions/{character_position}.png"
-
-        card_template.add_image(character_image, "character", True)
-        card_template.add_image(card_layer_path, "core", True)
+        card_template.add_image(character_image, "character")
+        card_template.add_image(card_layer_path, "core")
         card_template.add_image(
-            faction_path, "faction", True, centered=True, fit_method="thumbnail"
+            faction_path, "faction", centered=True, fit_method="thumbnail"
         )
         card_template.add_image(
             position_icon_path,
             "position",
-            True,
             centered=True,
             fit_method="thumbnail",
         )
@@ -148,21 +117,29 @@ def build_faction(global_data: dict, faction_details: dict):
             h_center=True,
             v_center=True,
         )
-        # Effect type
+        
+        # Process effect_type with keywords
         card_template.add_text(
-            effect_type,
+            effect_type, 
             "effect_type",
             h_center=True,
             v_center=True,
+            global_data=global_data,
         )
-        # Effect
-        card_template.add_text(
-            effect,
+        
+        # Process effect with keywords
+        # First process keywords, then do auto-indentation
+        processed_effect, icons_info = scripts.utils.process_keywords(effect, global_data)
+        card_template.add_text_with_icons(
+            processed_effect,
             "effect",
             h_center=True,
             v_center=True,
             auto_indentation=True,
+            icons_info=icons_info,
+            global_data=global_data,
         )
+        
         # Legend
         card_template.add_text(
             "HOW TO DO THIS ?",
@@ -183,7 +160,5 @@ if __name__ == "__main__":
 
         faction_name = faction_data["name"]
         print(f"Loaded data for faction: {faction_name}")
-
-        replace_placeholders()
 
         build_faction(global_data, faction_data)
