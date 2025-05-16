@@ -3,7 +3,7 @@
     "cards": {
         "villagers": {
             "name": "Villageois",
-            "effect": "Donnez l'altération {{encouraged}} à ce personnage."
+            "effect": "Donnez l'altération {{text:encouraged}} à ce personnage."
         },
         "soldier": {
             "name": "Soldat",
@@ -11,27 +11,27 @@
         },
         "priest": {
             "name": "Prêtre",
-            "effect": "Copiez l'effet d'un allié en position {{front}}."
+            "effect": "Copiez l'effet d'un allié en position {{icon:front}}."
         },
         "archer": {
             "name": "Archer",
-            "effect": "Détruisez un personnage en position {{back}}."
+            "effect": "Détruisez un personnage en position {{icon:back}}."
         },
         "knight": {
             "name": "Chevalier",
-            "effect": "Si un allié en position {{back}} est détruit par un effet adverse, détruisez ce personnage à la place."
+            "effect": "Si un allié en position {{icon:back}} est détruit par un effet adverse, détruisez ce personnage à la place."
         },
         "king": {
             "name": "Roi",
-            "effect": "Si vous avez plus de 3 autres alliés {{human}}, X vaut 5, sinon X vaut 0."
+            "effect": "Si vous avez plus de 3 autres alliés {{icon:human_fac}}, X vaut 5, sinon X vaut 0."
         },
         "queen": {
             "name": "Reine",
-            "effect": "Donnez l'altération {{encouraged}} à un autre allié."
+            "effect": "Donnez l'altération {{text:encouraged}} à un autre allié."
         },
         "bard": {
             "name": "Barde",
-            "effect": "Révélez 1 carte de la pioche, vous pouvez la jouer si c'est un {{human}}, sinon gardez-la en main."
+            "effect": "Révélez 1 carte de la pioche, vous pouvez la jouer si c'est un {{icon:human_fac}}, sinon gardez-la en main."
         }
     }
 }
