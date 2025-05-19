@@ -1,14 +1,53 @@
 import re
 import os
 import json
-import scripts.utils
 from scripts.card import CardTemplate
+from PIL import Image
 
 FACTIONS = [
     "humans",
 ]
 
 LANGUAGE = "fr"
+
+
+def replace_icons(text: str, global_data: dict) -> str:
+    processed_text = text
+
+    # Only handle {{text:key}} format
+    pattern = r"{{icon:([^}]+)}}"
+
+    icons_path = {}
+    # Find and process each match
+    for match in re.finditer(pattern, processed_text):
+        key = match.group(1)
+        keyword = match.group(0)
+
+        # Text replacement
+        count = 0
+        if key in global_data.get("icon", {}):
+            replacement = f"  {count}  "
+            icons_path[replacement] = Image.open(global_data["icon"][key])
+            processed_text = processed_text.replace(keyword, replacement, 1)
+            count += 1
+    return processed_text, icons_path
+
+
+def replace_keywords(text: str, global_data: dict) -> str:
+    processed_text = text
+
+    # Only handle {{text:key}} format
+    pattern = r"{{text:([^}]+)}}"
+    # Find and process each match
+    for match in re.finditer(pattern, processed_text):
+        key = match.group(1)
+        keyword = match.group(0)
+
+        # Text replacement
+        if key in global_data.get("text", {}):
+            replacement = global_data["text"][key]
+            processed_text = processed_text.replace(keyword, replacement, 1)
+    return processed_text
 
 
 def deep_merge(dict1: dict, dict2: dict) -> dict:
@@ -95,8 +134,13 @@ def build_faction(global_data: dict, faction_details: dict):
         count: str = character_info["count"]
         points: str = character_info["points"]
         effect_type: str = character_info["type"]
-        effect: str = character_info["effect"]
+        effect_type = replace_keywords(effect_type, global_data)
 
+        effect: str = character_info["effect"]
+        effect = replace_keywords(effect, global_data)
+        effect, icons_path = replace_icons(effect, global_data)
+
+        # Tytle
         card_template.add_text(
             name.upper(),
             "title",
@@ -118,29 +162,22 @@ def build_faction(global_data: dict, faction_details: dict):
             v_center=True,
         )
 
-        # Process effect_type with keywords
+        # Effect type
         card_template.add_text(
             effect_type,
             "effect_type",
             h_center=True,
             v_center=True,
-            global_data=global_data,
         )
 
-        # Process effect with keywords
-        # First process keywords to replace them with actual text or spaces for icons
-        # processed_effect, icons_info = scripts.utils.process_keywords(
-        #     effect, global_data
-        # )
-
-        # The auto-indentation will be applied inside add_text_with_icons AFTER we've recorded icon positions
+        # Effect
         card_template.add_text(
             effect,
             "effect",
             h_center=True,
             v_center=True,
             auto_indentation=True,
-            global_data=global_data,
+            icons=icons_path,
         )
 
         # Legend

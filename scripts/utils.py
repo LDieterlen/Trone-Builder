@@ -1,5 +1,4 @@
 from PIL.ImageFont import FreeTypeFont
-from PIL import Image
 import math
 
 

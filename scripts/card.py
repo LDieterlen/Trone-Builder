@@ -65,29 +65,10 @@ class CardTemplate:
         h_center=True,
         v_center=True,
         auto_indentation: bool = False,
+        icons: dict = None,
         keywords: list = None,
-        global_data: dict = None,
     ):
-        """Original add_text method for backwards compatibility"""
-        # # If global_data is provided, process keywords
-        # if global_data:
-        #     processed_text, icons_info = utils.process_keywords(text, global_data)
-        #     return self.add_text_with_icons(
-        #         processed_text,
-        #         identifier,
-        #         h_center,
-        #         v_center,
-        #         auto_indentation,
-        #         icons_info,
-        #         global_data,
-        #     )
-
-        try:
-            properties = C.TEXT_PROPERTIES[identifier]
-        except KeyError:
-            raise ValueError(
-                f"Invalid identifier: {identifier}. Valid identifiers are: {list(C.TEXT_PROPERTIES.keys())}"
-            )
+        properties = C.TEXT_PROPERTIES[identifier]
 
         font = ImageFont.truetype(properties.font, properties.font_size)
         if auto_indentation:
@@ -108,6 +89,10 @@ class CardTemplate:
             fill=properties.color,
             align=properties.align,
         )
+
+        # Insert icons into the text
+        if icons:
+            pass
 
         # Underline specific keywords in the text
         if keywords:
