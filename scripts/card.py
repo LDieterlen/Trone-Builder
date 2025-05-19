@@ -1,6 +1,12 @@
 from PIL import Image, ImageDraw, ImageFont
 import scripts.utils as utils
 import scripts.constant as C
+import pytesseract
+
+# Configuration du chemin vers l'exécutable Tesseract
+pytesseract.pytesseract.tesseract_cmd = (
+    r"C:\Program Files\Tesseract-OCR\tesseract.exe"  # Ajustez ce chemin
+)
 
 
 class CardTemplate:
@@ -88,42 +94,43 @@ class CardTemplate:
             font=font,
             fill=properties.color,
             align=properties.align,
+            spacing=12,
         )
 
-        if icons:
-            x_start = position[0]
-            y_cursor = position[1]
-            line_spacing = font.size + 5
+        # if icons:
+        #     x_start = position[0]
+        #     y_cursor = position[1]
+        #     line_spacing = font.size + 5
 
-            for line in text.split("\n"):
-                x_cursor = x_start
+        #     for line in text.split("\n"):
+        #         x_cursor = x_start
 
-                for word in line.split(" "):
-                    cleaned = word.strip()
-                    if cleaned in icons:
-                        icon_img = icons[cleaned]
-                        icon_size = font.size
-                        icon_img = icon_img.resize(
-                            (icon_size, icon_size), Image.LANCZOS
-                        )
+        #         for word in line.split(" "):
+        #             cleaned = word.strip()
+        #             if cleaned in icons:
+        #                 icon_img = icons[cleaned]
+        #                 icon_size = font.size
+        #                 icon_img = icon_img.resize(
+        #                     (icon_size, icon_size), Image.LANCZOS
+        #                 )
 
-                        # Centrage vertical
-                        icon_y = int(
-                            y_cursor + (font.getbbox("A")[3] - icon_img.height)
-                        )
-                        self.card.paste(icon_img, (int(x_cursor), icon_y), icon_img)
+        #                 # Centrage vertical
+        #                 icon_y = int(
+        #                     y_cursor + (font.getbbox("A")[3] - icon_img.height)
+        #                 )
+        #                 self.card.paste(icon_img, (int(x_cursor), icon_y), icon_img)
 
-                        x_cursor += icon_img.width + 5
-                    else:
-                        # self.drawer.text(
-                        #     (x_cursor, y_cursor),
-                        #     word + " ",
-                        #     font=font,
-                        #     fill=properties.color,
-                        # )
-                        x_cursor += font.getlength(word + " ")
+        #                 x_cursor += icon_img.width + 5
+        #             else:
+        #                 # self.drawer.text(
+        #                 #     (x_cursor, y_cursor),
+        #                 #     word + " ",
+        #                 #     font=font,
+        #                 #     fill=properties.color,
+        #                 # )
+        #                 x_cursor += font.getlength(word + " ")
 
-                y_cursor += line_spacing
+        #         y_cursor += line_spacing
 
         # Underline specific keywords in the text
         if keywords:
@@ -147,6 +154,38 @@ class CardTemplate:
                         fill=properties.color,
                         width=2,
                     )
+
+    def test(self, icon_order: list):
+        pytesseract.pytesseract.tesseract_cmd = (
+            r"C:\Users\E115606\AppData\Local\Programs\Tesseract-OCR\tesseract"
+        )
+
+        boxes = pytesseract.image_to_data(
+            self.card, output_type=pytesseract.Output.DICT
+        )
+
+        import re
+
+        pattern = re.compile(r"><")
+
+        pattern_count = 0
+        for i, word in enumerate(boxes["text"]):
+            if re.fullmatch(pattern, word):
+                x = boxes["left"][i]
+                y = boxes["top"][i]
+                w = boxes["width"][i]
+                h = boxes["height"][i]
+
+                print("Icon found at:", x, y, w, h)
+                icon = icon_order[pattern_count]
+                max_size = max(w, h) + 15
+                icon.thumbnail((max_size, max_size), Image.LANCZOS)
+
+                # Calculate position to center the icon at (x,y)
+                x_centered = x - (icon.width // 2) + (w // 2)
+                y_centered = y - (icon.height // 2) + (h // 2) - 5
+
+                self.card.paste(icon, (x_centered, y_centered), icon)
 
     def save(self, path):
         self.card.save(path, "PNG", dpi=(300, 300))

@@ -3,7 +3,7 @@
     "cards": {
         "villagers": {
             "name": "Villageois",
-            "effect": "Donnez l'altération {{text:encouraged}} à ce personnage."
+            "effect": "Donnez l'altération {{keyword:encouraged}} à ce personnage."
         },
         "soldier": {
             "name": "Soldat",
@@ -27,7 +27,7 @@
         },
         "queen": {
             "name": "Reine",
-            "effect": "Donnez l'altération {{text:encouraged}} à un autre allié."
+            "effect": "Donnez l'altération {{keyword:encouraged}} à un autre allié."
         },
         "bard": {
             "name": "Barde",

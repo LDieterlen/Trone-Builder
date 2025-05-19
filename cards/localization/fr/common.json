@@ -2,11 +2,19 @@
     "text": {
         "play": "joué",
         "permanent": "permanent",
-        "unique": "unique",
+        "unique": "unique"
+    },
+    "keyword": {
         "encouraged": "encouragé",
         "strength": "force",
         "frozen": "gelé",
         "protection": "protection"
+    },
+    "legends": {
+        "encouraged": "Augmente vos points de 1 pour chaque autre allié de la même faction.",
+        "strength": "Augmente les points de base du personnage à 1.",
+        "frozen": "Les points de base du personnage passent à 0.",
+        "protection": "Lorsque le personnage est ciblé par un effet adverse, kvous pouvez retirer cette altération à la place."
     },
     "positons": {
         "any": {

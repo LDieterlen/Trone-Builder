@@ -2,7 +2,9 @@
     "text": {
         "play": "play",
         "permanent": "permanent",
-        "unique": "unique",
+        "unique": "unique"
+    },
+    "keyword": {
         "encouraged": "encouraged",
         "strength": "strength",
         "frozen": "frozen",
@@ -13,6 +15,12 @@
         "front": "assets/sprites/positions/front.png",
         "back": "assets/sprites/positions/back.png",
         "human_fac": "assets/sprites/factions/humans.png"
+    },
+    "legends": {
+        "encouraged": "Increase your points by 1 for each other ally of the same faction.",
+        "strength": "Increase the character's base point to 1.",
+        "frozen": "The character base point become 0.",
+        "protection": "When a character is targeted by an oppenent's effect, you can destroy this alteration instead."
     },
     "positons": {
         "any": {

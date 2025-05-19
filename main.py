@@ -18,7 +18,7 @@ def replace_icons(text: str, global_data: dict) -> str:
     # Only handle {{text:key}} format
     pattern = r"{{icon:([^}]+)}}"
 
-    icons_path = {}
+    icons_order = []
     # Find and process each match
     for match in re.finditer(pattern, processed_text):
         key = match.group(1)
@@ -27,15 +27,14 @@ def replace_icons(text: str, global_data: dict) -> str:
         # Text replacement
         count = 0
         if key in global_data.get("icon", {}):
-            key_replacement = f"!{count}!"
-            replacement = f" {key_replacement} "
-            icons_path[key_replacement] = Image.open(global_data["icon"][key])
+            replacement = "  ><  "
+            icons_order.append(Image.open(global_data["icon"][key]).convert("RGBA"))
             processed_text = processed_text.replace(keyword, replacement, 1)
             count += 1
-    return processed_text, icons_path
+    return processed_text, icons_order
 
 
-def replace_keywords(text: str, global_data: dict) -> str:
+def replace_text(text: str, global_data: dict) -> str:
     processed_text = text
 
     # Only handle {{text:key}} format
@@ -50,6 +49,26 @@ def replace_keywords(text: str, global_data: dict) -> str:
             replacement = global_data["text"][key]
             processed_text = processed_text.replace(keyword, replacement, 1)
     return processed_text
+
+
+def replace_keywords(text: str, global_data: dict) -> str:
+    processed_text = text
+
+    pattern = r"{{keyword:([^}]+)}}"
+    keywords = []
+    keywords_keys = []
+    # Find and process each match
+    for match in re.finditer(pattern, processed_text):
+        key = match.group(1)
+        keyword = match.group(0)
+
+        # Text replacement
+        if key in global_data.get("keyword", {}):
+            replacement = global_data["keyword"][key]
+            keywords.append(replacement)
+            keywords_keys.append(key)
+            processed_text = processed_text.replace(keyword, replacement, 1)
+    return processed_text, keywords, keywords_keys
 
 
 def deep_merge(dict1: dict, dict2: dict) -> dict:
@@ -136,11 +155,12 @@ def build_faction(global_data: dict, faction_details: dict):
         count: str = character_info["count"]
         points: str = character_info["points"]
         effect_type: str = character_info["type"]
-        effect_type = replace_keywords(effect_type, global_data)
+        effect_type = replace_text(effect_type, global_data)
 
         effect: str = character_info["effect"]
-        effect = replace_keywords(effect, global_data)
-        effect, icons_path = replace_icons(effect, global_data)
+        effect = replace_text(effect, global_data)
+        effect, keywords, keyword_keys = replace_keywords(effect, global_data)
+        effect, icons_order = replace_icons(effect, global_data)
 
         # Tytle
         card_template.add_text(
@@ -179,17 +199,20 @@ def build_faction(global_data: dict, faction_details: dict):
             h_center=True,
             v_center=True,
             auto_indentation=True,
-            icons=icons_path,
+            keywords=keywords,
         )
 
         # Legend
-        card_template.add_text(
-            "HOW TO DO THIS ?",
-            "legend",
-            h_center=True,
-            v_center=True,
-        )
-
+        for i, key in enumerate(keyword_keys):
+            legend_text = global_data["legends"][key]
+            legend_text = f"{keywords[i].upper()} : {legend_text}"
+            card_template.add_text(
+                legend_text,
+                "legend",
+                h_center=True,
+                v_center=True,
+            )
+        card_template.test(icons_order)
         card_template.save(output_folder_path + f"/{name}.png")
         print(f"Card for {name} created successfully.")
 
