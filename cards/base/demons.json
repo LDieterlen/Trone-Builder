@@ -4,7 +4,7 @@
     "images_folder": "assets/images/demons/",
     "cards": {
         "creature": {
-            "name": "Creature",
+            "name": "Bugs",
             "count": "4",
             "position": "{{back}}",
             "points": "1",
