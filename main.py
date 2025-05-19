@@ -1,5 +1,6 @@
 import re
 import os
+import sys
 import json
 from scripts.card import CardTemplate
 from PIL import Image
@@ -26,8 +27,9 @@ def replace_icons(text: str, global_data: dict) -> str:
         # Text replacement
         count = 0
         if key in global_data.get("icon", {}):
-            replacement = f"  {count}  "
-            icons_path[replacement] = Image.open(global_data["icon"][key])
+            key_replacement = f"!{count}!"
+            replacement = f" {key_replacement} "
+            icons_path[key_replacement] = Image.open(global_data["icon"][key])
             processed_text = processed_text.replace(keyword, replacement, 1)
             count += 1
     return processed_text, icons_path

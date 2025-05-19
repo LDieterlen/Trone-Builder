@@ -90,9 +90,40 @@ class CardTemplate:
             align=properties.align,
         )
 
-        # Insert icons into the text
         if icons:
-            pass
+            x_start = position[0]
+            y_cursor = position[1]
+            line_spacing = font.size + 5
+
+            for line in text.split("\n"):
+                x_cursor = x_start
+
+                for word in line.split(" "):
+                    cleaned = word.strip()
+                    if cleaned in icons:
+                        icon_img = icons[cleaned]
+                        icon_size = font.size
+                        icon_img = icon_img.resize(
+                            (icon_size, icon_size), Image.LANCZOS
+                        )
+
+                        # Centrage vertical
+                        icon_y = int(
+                            y_cursor + (font.getbbox("A")[3] - icon_img.height)
+                        )
+                        self.card.paste(icon_img, (int(x_cursor), icon_y), icon_img)
+
+                        x_cursor += icon_img.width + 5
+                    else:
+                        # self.drawer.text(
+                        #     (x_cursor, y_cursor),
+                        #     word + " ",
+                        #     font=font,
+                        #     fill=properties.color,
+                        # )
+                        x_cursor += font.getlength(word + " ")
+
+                y_cursor += line_spacing
 
         # Underline specific keywords in the text
         if keywords:
