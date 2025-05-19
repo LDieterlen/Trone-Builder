@@ -11,8 +11,8 @@
             "type": "{{play}}",
             "effect": "Destroy a character in {{front}} position."
         },
-        "moire": {
-            "name": "Moire",
+        "moires": {
+            "name": "Moires",
             "count": "3",
             "position": "{{any}}",
             "points": "2",
