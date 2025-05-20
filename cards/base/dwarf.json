@@ -21,7 +21,7 @@
             "type": "{{text:play}}",
             "effect": "Destroy an other ally then destroy an opponent's character in {{icon:front_i}} position.",
             "image": "nervous.png",
-            "h_location": 0.1
+            "h_location": 0.04
         },
         "joyful": {
             "name": "Joyful",
@@ -40,7 +40,7 @@
             "type": "{{text:play}}",
             "effect": "Move an alteration from one character to another.",
             "image": "allergic.png",
-            "h_location": -0.05
+            "h_location": 0.05
         },
         "fearful": {
             "name": "Fearful",
@@ -50,7 +50,7 @@
             "type": "{{text:permanent}}",
             "effect": "If this character has the {{keyword:protection}} alteration, X equals 4, otherwise X equals 0.",
             "image": "fearful.png",
-            "h_location": -0.05
+            "h_location": 0.03
         },
         "lazy": {
             "name": "Lazy",
@@ -79,7 +79,7 @@
             "type": "{{text:permanent}}",
             "effect": "X equals the number of ally in {{icon:back_i}} position.",
             "image": "mascott.png",
-            "h_location": -0.05
+            "h_location": 0
         }
     }
 }
