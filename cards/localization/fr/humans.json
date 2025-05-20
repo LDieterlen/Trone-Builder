@@ -23,7 +23,7 @@
         },
         "king": {
             "name": "Roi",
-            "effect": "Si vous avez plus de 3 autres alliés {{icon:human_fac}}, X vaut 5, sinon X vaut 0."
+            "effect": "Si vous avez plus de 3 autres {{icon:human_fac}} alliés, X vaut 5, sinon X vaut 0."
         },
         "queen": {
             "name": "Reine",

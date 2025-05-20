@@ -26,7 +26,7 @@
             "effect": "Ce personnage ne peut pas être ciblé par un effet adverse."
         },
         "cunning": {
-            "name": "Sournois",
+            "name": "Sage",
             "effect": "Copiez l'effet {{text:play}} d'un personnage dans votre main."
         },
         "professor": {

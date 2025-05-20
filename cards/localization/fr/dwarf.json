@@ -7,7 +7,7 @@
         },
         "nervous": {
             "name": "Nerveux",
-            "effect": "Détruisez un autre allié puis détruisez un personnage adverse en position {{icon:front_i}}."
+            "effect": "Détruisez un autre allié puis détruisez un personnage adverse en position {{icon:front_i}} ."
         },
         "joyful": {
             "name": "Ravi",

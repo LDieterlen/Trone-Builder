@@ -12,7 +12,7 @@
             "type": "{{text:play}}",
             "effect": "You can {{text:move}} up to 2 characters.",
             "image": "student.png",
-            "h_location": 0.1
+            "h_location": 0
         },
         "apprentice": {
             "name": "Apprentice",
@@ -22,7 +22,7 @@
             "type": "{{text:permanent}}",
             "effect": "X equals 4 if this character is in {{icon:back_i}} position, otherwise X equals 1.",
             "image": "apprentice.png",
-            "h_location": 0.1
+            "h_location": -0.15
         },
         "plotter": {
             "name": "Plotter",
@@ -40,7 +40,8 @@
             "points": "2",
             "type": "{{text:play}}",
             "effect": "Discard 1 card, then draw 2 cards.",
-            "image": "spy.png"
+            "image": "spy.png",
+            "h_location": 0.1
         },
         "rats": {
             "name": "Rats",
@@ -50,7 +51,7 @@
             "type": "{{text:play}}",
             "effect": "Destroy a character that is not in its natural position.",
             "image": "rats.png",
-            "h_location": 0
+            "h_location": 0.1
         },
         "divinity": {
             "name": "Divinity",
@@ -60,10 +61,10 @@
             "type": "{{text:permanent}}",
             "effect": "This character cannot be targeted by an opponent's effect.",
             "image": "divinity.png",
-            "h_location": 0.1
+            "h_location": -0.07
         },
         "cunning": {
-            "name": "Cunning",
+            "name": "Sage",
             "count": "1",
             "position": "{{icon:any}}",
             "points": "2",
@@ -78,7 +79,8 @@
             "points": "2",
             "type": "{{text:permanent}}",
             "effect": "When you play a character, you can ignore his natural position.",
-            "image": "professor.png"
+            "image": "professor.png",
+            "h_location": 0.08
         }
     }
 }

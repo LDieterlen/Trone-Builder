@@ -145,7 +145,7 @@ class CardTemplate:
 
         import re
 
-        pattern = re.compile(r"><")
+        pattern = re.compile(r"XX")
 
         pattern_count = 0
         for i, word in enumerate(boxes["text"]):
@@ -157,12 +157,12 @@ class CardTemplate:
 
                 print("Icon found at:", x, y, w, h)
                 icon = icon_order[pattern_count]
-                max_size = max(w, h) + 15
+                max_size = max(w, h) + 10
                 icon.thumbnail((max_size, max_size), Image.LANCZOS)
 
                 # Calculate position to center the icon at (x,y)
                 x_centered = x - (icon.width // 2) + (w // 2)
-                y_centered = y - (icon.height // 2) + (h // 2) - 5
+                y_centered = y - (icon.height // 2) + (h // 2)
 
                 self.card.paste(icon, (x_centered, y_centered), icon)
 

@@ -12,7 +12,7 @@
             "type": "{{text:play}}",
             "effect": "Return a character in {{icon:front_i}} position to its owner's hand.",
             "image": "bugs.png",
-            "h_location": -0.05
+            "h_location": 0.02
         },
         "minion": {
             "name": "Minion",
@@ -22,7 +22,7 @@
             "type": "{{text:play}}",
             "effect": "Gain 2 permanent points.",
             "image": "minions.png",
-            "h_location": 0
+            "h_location": -0.03
         },
         "horned": {
             "name": "Horned",
@@ -32,7 +32,7 @@
             "type": "{{text:play}}",
             "effect": "You must return an ally in {{icon:back_i}} position to your hand.",
             "image": "horned.png",
-            "h_location": -0.05
+            "h_location": 0.05
         },
         "eye": {
             "name": "Eye",
@@ -42,7 +42,7 @@
             "type": "{{text:play}}",
             "effect": "You can discard cards from your hand to draw the same number of cards.",
             "image": "eye.png",
-            "h_location": 0
+            "h_location": -0.03
         },
         "clever": {
             "name": "Clever",
@@ -52,7 +52,7 @@
             "type": "{{text:play}}",
             "effect": "Play an additional character this turn.",
             "image": "clever.png",
-            "h_location": 0
+            "h_location": -0.03
         },
         "cyclops": {
             "name": "Cyclops",
@@ -61,7 +61,8 @@
             "points": "5",
             "type": "{{text:play}}",
             "effect": "Other players gains 1 permanent point.",
-            "image": "cyclops.png"
+            "image": "cyclops.png",
+            "h_location": 0
         },
         "octopus": {
             "name": "Octopus",
@@ -70,7 +71,8 @@
             "points": "1",
             "type": "{{text:permanent}}",
             "effect": "At the end of your turn, you can discard a card from your hand to gain 2 permanent points.",
-            "image": "octopus.png"
+            "image": "octopus.png",
+            "h_location": 0
         },
         "collector": {
             "name": "Collector",
@@ -80,7 +82,7 @@
             "type": "{{text:permanent}}",
             "effect": "X equals half (inferior) of your total permanent points.",
             "image": "collector.png",
-            "h_location": -0.05
+            "h_location": -0.1
         }
     }
 }

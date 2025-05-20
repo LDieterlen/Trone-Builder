@@ -12,7 +12,7 @@
             "type": "{{text:play}}",
             "effect": "Destroy a character in {{icon:front_i}} position.",
             "image": "death.png",
-            "h_location": 0.1
+            "h_location": 0.06
         },
         "moires": {
             "name": "Moires",
@@ -21,7 +21,8 @@
             "points": "2",
             "type": "{{text:play}}",
             "effect": "Take a card from your graveyard into your hand.",
-            "image": "moires.png"
+            "image": "moires.png",
+            "h_location": 0
         },
         "raven": {
             "name": "Raven",
@@ -30,7 +31,8 @@
             "points": "2",
             "type": "{{text:permanent}}",
             "effect": "At the end of your turn, you can destroy an ally to gain 1 permanent point.",
-            "image": "raven.png"
+            "image": "raven.png",
+            "h_location": 0
         },
         "hydra": {
             "name": "Hydra",
@@ -40,7 +42,7 @@
             "type": "{{text:play}}",
             "effect": "You must destroy an ally in {{icon:back_i}} position.",
             "image": "hydra.png",
-            "h_location": 0
+            "h_location": 0.03
         },
         "companion": {
             "name": "Companion",
@@ -49,7 +51,8 @@
             "points": "1",
             "type": "{{text:play}}",
             "effect": "Copy the {{text:play}} effect of an ally in your graveyard.",
-            "image": "companion.png"
+            "image": "companion.png",
+            "h_location": 0.01
         },
         "child": {
             "name": "Child",
@@ -68,7 +71,7 @@
             "type": "{{text:permanent}}",
             "effect": "X equals the number of cards in your graveyard.",
             "image": "monarch.png",
-            "h_location": 0.1
+            "h_location": -0.01
         },
         "empress": {
             "name": "Empress",
@@ -78,7 +81,7 @@
             "type": "{{text:play}}",
             "effect": "Play a character from your graveyard onto your field.",
             "image": "empress.png",
-            "h_location": 0.1
+            "h_location": 0.08
         }
     }
 }

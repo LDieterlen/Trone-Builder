@@ -10,9 +10,9 @@ FACTIONS = [
     # "dead",
     # "demons",
     # "desert",
-    # "mages",
-    "mountain",
-    "humans",
+    "mages",
+    # "mountain",
+    # "humans",
 ]
 
 LANGUAGE = "fr"
@@ -33,7 +33,7 @@ def replace_icons(text: str, global_data: dict) -> str:
         # Text replacement
         count = 0
         if key in global_data.get("icon", {}):
-            replacement = "  ><  "
+            replacement = "  XX  "
             icons_order.append(Image.open(global_data["icon"][key]).convert("RGBA"))
             processed_text = processed_text.replace(keyword, replacement, 1)
             count += 1

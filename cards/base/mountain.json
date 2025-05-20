@@ -20,7 +20,8 @@
             "points": "2",
             "type": "{{text:permanent}}",
             "effect": "When this character gains the {{keyword:frozen}} alteration, gain 2 permanent points.",
-            "image": "yeti.png"
+            "image": "yeti.png",
+            "h_location": -0.03
         },
         "witch": {
             "name": "Witch",
@@ -30,7 +31,7 @@
             "type": "{{text:play}}",
             "effect": "Give the {{keyword:frozen}} alteration to an ally.",
             "image": "witch.png",
-            "h_location": 0
+            "h_location": -0.02
         },
         "ancestor": {
             "name": "Ancestor",
@@ -39,7 +40,8 @@
             "points": "0",
             "type": "{{text:play}}",
             "effect": "Remove an alteration from a character and gain 1 permanent point.",
-            "image": "ancestor.png"
+            "image": "ancestor.png",
+            "h_location": 0.02
         },
         "merchant": {
             "name": "Merchant",
@@ -49,7 +51,7 @@
             "type": "{{text:play}}",
             "effect": "Exchange your hand with another player's hand.",
             "image": "merchant.png",
-            "h_location": 0.06
+            "h_location": -0.03
         },
         "beast": {
             "name": "Beast",
@@ -68,7 +70,7 @@
             "type": "{{text:play}}",
             "effect": "Remove up to 3 alterations to enemies in {{icon:front_i}} position or allies.",
             "image": "lizard.png",
-            "h_location": 0
+            "h_location": -0.02
         },
         "giant": {
             "name": "Giant",
@@ -78,7 +80,7 @@
             "type": "{{text:permanent}}",
             "effect": "At the end of your turn, give the {{keyword:frozen}} alteration to an ally.",
             "image": "giant.png",
-            "h_location": 0
+            "h_location": -0.02
         }
     }
 }
