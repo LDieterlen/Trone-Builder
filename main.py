@@ -6,6 +6,7 @@ from scripts.card import CardTemplate
 from PIL import Image
 
 FACTIONS = [
+    # "dwarf",
     "humans",
     # "dead",
     "demons",
