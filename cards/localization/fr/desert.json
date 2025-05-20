@@ -5,8 +5,8 @@
             "name": "Moine",
             "effect": "Donnez l'altération {{strength}} à 2 personnages."
         },
-        "creature": {
-            "name": "Créature",
+        "monster": {
+            "name": "Monstre",
             "effect": "Détruisez un allié avec 0 point de base. Ce personnage doit être joué à la même position que l'allié détruit."
         },
         "trainer": {

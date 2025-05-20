@@ -1,71 +1,80 @@
 {
     "name": "Dead",
     "faction_path": "assets/sprites/factions/dead.png",
+    "card_layer_path": "assets/sprites/cards/dead.png",
     "images_folder": "assets/images/dead/",
     "cards": {
         "death": {
             "name": "Death",
             "count": "4",
-            "position": "{{any}}",
+            "position": "{{icon:any}}",
             "points": "1",
-            "type": "{{play}}",
-            "effect": "Destroy a character in {{front}} position."
+            "type": "{{text:play}}",
+            "effect": "Destroy a character in {{icon:front}} position.",
+            "image": "death.png"
         },
         "moires": {
             "name": "Moires",
             "count": "3",
-            "position": "{{any}}",
+            "position": "{{icon:any}}",
             "points": "2",
-            "type": "{{play}}",
-            "effect": "Take a card from your graveyard into your hand."
+            "type": "{{text:play}}",
+            "effect": "Take a card from your graveyard into your hand.",
+            "image": "moires.png"
         },
         "raven": {
             "name": "Raven",
             "count": "2",
-            "position": "{{back}}",
+            "position": "{{icon:back}}",
             "points": "2",
-            "type": "{{permanent}}",
-            "effect": "At the end of your turn, you can destroy an ally to gain 1 permanent point."
+            "type": "{{text:permanent}}",
+            "effect": "At the end of your turn, you can destroy an ally to gain 1 permanent point.",
+            "image": "raven.png"
         },
         "hydra": {
             "name": "Hydra",
             "count": "2",
-            "position": "{{front}}",
+            "position": "{{icon:front}}",
             "points": "4",
-            "type": "{{play}}",
-            "effect": "You must destroy an ally in {{back}} position."
+            "type": "{{text:play}}",
+            "effect": "You must destroy an ally in {{icon:back}} position.",
+            "image": "hydra.png"
         },
         "companion": {
             "name": "Companion",
             "count": "2",
-            "position": "{{any}}",
+            "position": "{{icon:any}}",
             "points": "1",
-            "type": "{{play}}",
-            "effect": "Copy the {{play}} effect of an ally in your graveyard."
+            "type": "{{text:play}}",
+            "effect": "Copy the {{text:play}} effect of an ally in your graveyard.",
+            "image": "companion.png"
         },
         "child": {
             "name": "Child",
             "count": "1",
-            "position": "{{back}}",
+            "position": "{{icon:back}}",
             "points": "6",
-            "type": "{{play}}",
-            "effect": "At the end of your next turn, destroy this character."
+            "type": "{{text:play}}",
+            "effect": "At the end of your next turn, destroy this character.",
+            "image": "child.png"
         },
         "monarch": {
             "name": "Monarch",
             "count": "1",
-            "position": "{{front}}",
+            "position": "{{icon:front}}",
             "points": "X",
-            "type": "{{permanent}}",
-            "effect": "X equals the number of cards in your graveyard."
+            "type": "{{text:permanent}}",
+            "effect": "X equals the number of cards in your graveyard.",
+            "image": "monarch.png"
         },
         "empress": {
             "name": "Empress",
             "count": "1",
-            "position": "{{back}}",
+            "position": "{{icon:back}}",
             "points": "1",
-            "type": "{{play}}",
-            "effect": "Play a character from your graveyard onto your field."
+            "type": "{{text:play}}",
+            "effect": "Play a character from your graveyard onto your field.",
+            "image": "empress.png"
         }
     }
 }

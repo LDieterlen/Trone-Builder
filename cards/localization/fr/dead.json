@@ -5,8 +5,8 @@
             "name": "Mort",
             "effect": "Détruisez un personnage en position {{front}}."
         },
-        "moire": {
-            "name": "Moire",
+        "moires": {
+            "name": "Moires",
             "effect": "Prenez une carte de votre cimetière dans votre main."
         },
         "raven": {

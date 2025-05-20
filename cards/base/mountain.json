@@ -1,71 +1,80 @@
 {
     "name": "Mountain",
     "faction_path": "assets/sprites/factions/mountain.png",
+    "card_layer_path": "assets/sprites/cards/mountain.png",
     "images_folder": "assets/images/mountain/",
     "cards": {
         "snowman": {
             "name": "Snowman",
             "count": "4",
-            "position": "{{back}}",
+            "position": "{{icon:back}}",
             "points": "1",
-            "type": "{{play}}",
-            "effect": "Give the {{frozen}} alteration to a character."
+            "type": "{{text:play}}",
+            "effect": "Give the {{keyword:frozen}} alteration to a character.",
+            "image": "snowman.png"
         },
         "yeti": {
             "name": "Yeti",
             "count": "3",
-            "position": "{{front}}",
+            "position": "{{icon:front}}",
             "points": "2",
-            "type": "{{permanent}}",
-            "effect": "When this character gains the {{frozen}} alteration, gain 2 permanent points."
+            "type": "{{text:permanent}}",
+            "effect": "When this character gains the {{keyword:frozen}} alteration, gain 2 permanent points.",
+            "image": "yeti.png"
         },
         "witch": {
             "name": "Witch",
             "count": "2",
-            "position": "{{front}}",
+            "position": "{{icon:front}}",
             "points": "3",
-            "type": "{{play}}",
-            "effect": "Give the {{frozen}} alteration to an ally."
+            "type": "{{text:play}}",
+            "effect": "Give the {{keyword:frozen}} alteration to an ally.",
+            "image": "witch.png"
         },
         "ancestor": {
             "name": "Ancestor",
             "count": "2",
-            "position": "{{any}}",
+            "position": "{{icon:any}}",
             "points": "0",
-            "type": "{{play}}",
-            "effect": "Remove an alteration from a character and gain 1 permanent point."
+            "type": "{{text:play}}",
+            "effect": "Remove an alteration from a character and gain 1 permanent point.",
+            "image": "ancestor.png"
         },
         "merchant": {
             "name": "Merchant",
             "count": "2",
-            "position": "{{back}}",
+            "position": "{{icon:back}}",
             "points": "2",
-            "type": "{{play}}",
-            "effect": "Exchange your hand with another player's hand."
+            "type": "{{text:play}}",
+            "effect": "Exchange your hand with another player's hand.",
+            "image": "merchant.png"
         },
         "beast": {
             "name": "Beast",
             "count": "1",
-            "position": "{{front}}",
+            "position": "{{icon:front}}",
             "points": "X",
-            "type": "{{permanent}}",
-            "effect": "X equals the number of allies with one or more alteration"
+            "type": "{{text:permanent}}",
+            "effect": "X equals the number of allies with one or more alteration.",
+            "image": "beast.png"
         },
         "lizard": {
             "name": "Lizard",
             "count": "1",
-            "position": "{{any}}",
+            "position": "{{icon:any}}",
             "points": "0",
-            "type": "{{play}}",
-            "effect": "Remove up to 3 alterations to enemies in {{front}} position or allies."
+            "type": "{{text:play}}",
+            "effect": "Remove up to 3 alterations to enemies in {{icon:front}} position or allies.",
+            "image": "lizard.png"
         },
         "giant": {
             "name": "Giant",
             "count": "1",
-            "position": "{{back}}",
+            "position": "{{icon:back}}",
             "points": "5",
-            "type": "{{permanent}}",
-            "effect": "At the end of your turn, give the {{frozen}} alteration to an ally."
+            "type": "{{text:permanent}}",
+            "effect": "At the end of your turn, give the {{keyword:frozen}} alteration to an ally.",
+            "image": "giant.png"
         }
     }
 }

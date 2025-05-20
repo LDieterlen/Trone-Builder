@@ -1,71 +1,80 @@
 {
     "name": "Dwarf",
     "faction_path": "assets/sprites/factions/dwarf.png",
+    "card_layer_path": "assets/sprites/cards/dwarf.png",
     "images_folder": "assets/images/dwarf/",
     "cards": {
         "simple": {
             "name": "Simple",
             "count": "4",
-            "position": "{{any}}",
+            "position": "{{icon:any}}",
             "points": "2",
-            "type": "{{play}}",
-            "effect": "Give the {{protection}} alteration to a character."
+            "type": "{{text:play}}",
+            "effect": "Give the {{keyword:protection}} alteration to a character.",
+            "image": "simple.png"
         },
         "nervous": {
             "name": "Nervous",
             "count": "3",
-            "position": "{{any}}",
+            "position": "{{icon:any}}",
             "points": "2",
-            "type": "{{play}}",
-            "effect": "Destroy an other ally then destroy an opponent's character in {{front}} position."
+            "type": "{{text:play}}",
+            "effect": "Destroy an other ally then destroy an opponent's character in {{icon:front}} position.",
+            "image": "nervous.png"
         },
         "joyful": {
             "name": "Joyful",
             "count": "2",
-            "position": "{{front}}",
+            "position": "{{icon:front}}",
             "points": "3",
-            "type": "{{play}}",
-            "effect": "This character gains the {{protection}} alteration."
+            "type": "{{text:play}}",
+            "effect": "This character gains the {{keyword:protection}} alteration.",
+            "image": "joyful.png"
         },
         "allergic": {
             "name": "Allergic",
             "count": "2",
-            "position": "{{back}}",
+            "position": "{{icon:back}}",
             "points": "0",
-            "type": "{{play}}",
-            "effect": "Move an alteration from one character to another."
+            "type": "{{text:play}}",
+            "effect": "Move an alteration from one character to another.",
+            "image": "allergic.png"
         },
         "fearful": {
             "name": "Fearful",
             "count": "2",
-            "position": "{{back}}",
+            "position": "{{icon:back}}",
             "points": "X",
-            "type": "{{permanent}}",
-            "effect": "If this character has the {{protection}} alteration, X equals 4, otherwise X equals 0."
+            "type": "{{text:permanent}}",
+            "effect": "If this character has the {{keyword:protection}} alteration, X equals 4, otherwise X equals 0.",
+            "image": "fearful.png"
         },
         "lazy": {
             "name": "Lazy",
             "count": "1",
-            "position": "{{back}}",
+            "position": "{{icon:back}}",
             "points": "0",
-            "type": "{{play}}",
-            "effect": "Give the {{protection}} alteration to 3 allies."
+            "type": "{{text:play}}",
+            "effect": "Give the {{keyword:protection}} alteration to 3 allies.",
+            "image": "lazy.png"
         },
         "boss": {
             "name": "Boss",
             "count": "1",
-            "position": "{{any}}",
+            "position": "{{icon:any}}",
             "points": "4",
-            "type": "{{play}}",
-            "effect": "This card cannot be played during the first turn. All other players can add the {{protection}} alteration to a character."
+            "type": "{{text:play}}",
+            "effect": "This card cannot be played during the first turn. All other players can add the {{keyword:protection}} alteration to a character.",
+            "image": "boss.png"
         },
         "mascot": {
             "name": "Mascot",
             "count": "1",
-            "position": "{{front}}",
+            "position": "{{icon:front}}",
             "points": "X",
-            "type": "{{permanent}}",
-            "effect": "X equals the number of ally in {{back}} position."
+            "type": "{{text:permanent}}",
+            "effect": "X equals the number of ally in {{icon:back}} position.",
+            "image": "mascott.png"
         }
     }
 }

@@ -7,6 +7,11 @@ from PIL import Image
 
 FACTIONS = [
     "humans",
+    # "dead",
+    "demons",
+    # "desert",
+    # "mages",
+    # "mountain",
 ]
 
 LANGUAGE = "fr"
@@ -128,10 +133,11 @@ def build_faction(global_data: dict, faction_details: dict):
 
     # Building cards for each character
     for character_id in cards:
+        print(f"Building card for {character_id}...")
         card_template = CardTemplate()
         character_info = cards[character_id]
 
-        character_image = image_base_path + character_info["image"]
+        character_image = image_base_path + character_info["image"].lower()
 
         # Handle position with the new format
         character_position = character_info["position"]

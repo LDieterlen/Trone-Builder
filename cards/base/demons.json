@@ -1,71 +1,80 @@
 {
     "name": "Demons",
     "faction_path": "assets/sprites/factions/demons.png",
+    "card_layer_path": "assets/sprites/cards/demons.png",
     "images_folder": "assets/images/demons/",
     "cards": {
         "creature": {
             "name": "Bugs",
             "count": "4",
-            "position": "{{back}}",
+            "position": "{{icon:back}}",
             "points": "1",
-            "type": "{{play}}",
-            "effect": "Return a character in {{front}} position to its owner's hand."
+            "type": "{{text:play}}",
+            "effect": "Return a character in {{icon:front}} position to its owner's hand.",
+            "image": "bugs.png"
         },
         "minion": {
             "name": "Minion",
             "count": "3",
-            "position": "{{any}}",
+            "position": "{{icon:any}}",
             "points": "0",
-            "type": "{{play}}",
-            "effect": "Gain 2 permanent points."
+            "type": "{{text:play}}",
+            "effect": "Gain 2 permanent points.",
+            "image": "minions.png"
         },
         "horned": {
             "name": "Horned",
             "count": "2",
-            "position": "{{front}}",
+            "position": "{{icon:front}}",
             "points": "3",
-            "type": "{{play}}",
-            "effect": "You must return an ally in {{back}} position to your hand."
+            "type": "{{text:play}}",
+            "effect": "You must return an ally in {{icon:back}} position to your hand.",
+            "image": "horned.png"
         },
         "eye": {
             "name": "Eye",
             "count": "2",
-            "position": "{{back}}",
+            "position": "{{icon:back}}",
             "points": "2",
-            "type": "{{play}}",
-            "effect": "You can discard cards from your hand to draw the same number of cards."
+            "type": "{{text:play}}",
+            "effect": "You can discard cards from your hand to draw the same number of cards.",
+            "image": "eye.png"
         },
         "clever": {
             "name": "Clever",
             "count": "2",
-            "position": "{{back}}",
+            "position": "{{icon:back}}",
             "points": "1",
-            "type": "{{play}}",
-            "effect": "Play an additional character this turn."
+            "type": "{{text:play}}",
+            "effect": "Play an additional character this turn.",
+            "image": "clever.png"
         },
         "cyclops": {
             "name": "Cyclops",
             "count": "1",
-            "position": "{{front}}",
+            "position": "{{icon:front}}",
             "points": "5",
-            "type": "{{play}}",
-            "effect": "Other players gains 1 permanent point."
+            "type": "{{text:play}}",
+            "effect": "Other players gains 1 permanent point.",
+            "image": "cyclops.png"
         },
         "octopus": {
             "name": "Octopus",
             "count": "1",
-            "position": "{{back}}",
+            "position": "{{icon:back}}",
             "points": "1",
-            "type": "{{permanent}}",
-            "effect": "At the end of your turn, you can discard a card from your hand to gain 2 permanent points."
+            "type": "{{text:permanent}}",
+            "effect": "At the end of your turn, you can discard a card from your hand to gain 2 permanent points.",
+            "image": "octopus.png"
         },
         "collector": {
             "name": "Collector",
             "count": "1",
-            "position": "{{front}}",
+            "position": "{{icon:front}}",
             "points": "X",
-            "type": "{{permanent}}",
-            "effect": "X equals half (inferior) of your total permanent points."
+            "type": "{{text:permanent}}",
+            "effect": "X equals half (inferior) of your total permanent points.",
+            "image": "collector.png"
         }
     }
 }
