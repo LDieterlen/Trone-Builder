@@ -11,7 +11,7 @@
             "position": "{{icon:any}}",
             "points": "0",
             "type": "{{text:play}}",
-            "effect": "Give the alteration {{text:encouraged}} to this character."
+            "effect": "Give the alteration {{keyword:encouraged}} to this character."
         },
         "soldier": {
             "name": "Soldier",
@@ -65,7 +65,7 @@
             "position": "{{icon:any}}",
             "points": "0",
             "type": "{{text:play}}",
-            "effect": "Give the alteration {{text:encouraged}} to another ally."
+            "effect": "Give the alteration {{keyword:encouraged}} to another ally."
         },
         "bard": {
             "name": "Bard",
