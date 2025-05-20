@@ -3,15 +3,15 @@
     "cards": {
         "snowman": {
             "name": "Bonhome",
-            "effect": "Donnez l'altération {{frozen}} à un personnage."
+            "effect": "Donnez l'altération {{keyword:frozen}} à un personnage."
         },
         "yeti": {
             "name": "Yéti",
-            "effect": "Lorsque ce personnage reçoit l'altération {{frozen}}, gagnez 2 points permanents."
+            "effect": "Lorsque ce personnage reçoit l'altération {{keyword:frozen}}, gagnez 2 points permanents."
         },
         "witch": {
             "name": "Sorcière",
-            "effect": "Donnez l'altération {{frozen}} à un allié."
+            "effect": "Donnez l'altération {{keyword:frozen}} à un allié."
         },
         "ancestor": {
             "name": "Ancêtre",
@@ -27,11 +27,11 @@
         },
         "lizard": {
             "name": "Lézard",
-            "effect": "Supprimez jusqu'à 3 altérations aux ennemis en position {{front}} ou aux alliés."
+            "effect": "Supprimez jusqu'à 3 altérations aux ennemis en position {{icon:front}} ou aux alliés."
         },
         "giant": {
             "name": "Géant",
-            "effect": "À la fin de votre tour, donnez l'altération {{frozen}} à un allié."
+            "effect": "À la fin de votre tour, donnez l'altération {{keyword:frozen}} à un allié."
         }
     }
 }

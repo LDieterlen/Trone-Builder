@@ -11,7 +11,8 @@
             "points": "1",
             "type": "{{text:play}}",
             "effect": "Destroy a character in {{icon:front}} position.",
-            "image": "death.png"
+            "image": "death.png",
+            "h_location": 0.1
         },
         "moires": {
             "name": "Moires",
@@ -38,7 +39,8 @@
             "points": "4",
             "type": "{{text:play}}",
             "effect": "You must destroy an ally in {{icon:back}} position.",
-            "image": "hydra.png"
+            "image": "hydra.png",
+            "h_location": 0
         },
         "companion": {
             "name": "Companion",
@@ -65,7 +67,8 @@
             "points": "X",
             "type": "{{text:permanent}}",
             "effect": "X equals the number of cards in your graveyard.",
-            "image": "monarch.png"
+            "image": "monarch.png",
+            "h_location": 0.1
         },
         "empress": {
             "name": "Empress",
@@ -74,7 +77,8 @@
             "points": "1",
             "type": "{{text:play}}",
             "effect": "Play a character from your graveyard onto your field.",
-            "image": "empress.png"
+            "image": "empress.png",
+            "h_location": 0.1
         }
     }
 }

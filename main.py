@@ -7,12 +7,12 @@ from PIL import Image
 
 FACTIONS = [
     # "dwarf",
-    "humans",
     # "dead",
-    "demons",
+    # "demons",
     # "desert",
     # "mages",
-    # "mountain",
+    "mountain",
+    "humans",
 ]
 
 LANGUAGE = "fr"
@@ -145,7 +145,9 @@ def build_faction(global_data: dict, faction_details: dict):
         position_icon_name = extract_icon_name(character_position)
         position_icon_path = f"assets/sprites/positions/{position_icon_name}.png"
 
-        card_template.add_image(character_image, "character")
+        card_template.add_image(
+            character_image, "character", h_location=character_info.get("h_location")
+        )
         card_template.add_image(card_layer_path, "core")
         card_template.add_image(
             faction_path, "faction", centered=True, fit_method="thumbnail"
@@ -219,7 +221,7 @@ def build_faction(global_data: dict, faction_details: dict):
                 h_center=True,
                 v_center=True,
             )
-        card_template.test(icons_order)
+        card_template.insert_icons(icons_order)
         card_template.save(output_folder_path + f"/{name}.png")
         print(f"Card for {name} created successfully.")
 

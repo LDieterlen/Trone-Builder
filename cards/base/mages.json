@@ -11,7 +11,8 @@
             "points": "2",
             "type": "{{text:play}}",
             "effect": "You can {{text:move}} up to 2 characters.",
-            "image": "student.png"
+            "image": "student.png",
+            "h_location": 0.1
         },
         "apprentice": {
             "name": "Apprentice",
@@ -20,7 +21,8 @@
             "points": "X",
             "type": "{{text:permanent}}",
             "effect": "X equals 4 if this character is in {{icon:back}} position, otherwise X equals 1.",
-            "image": "apprentice.png"
+            "image": "apprentice.png",
+            "h_location": 0.1
         },
         "plotter": {
             "name": "Plotter",
@@ -47,7 +49,8 @@
             "points": "1",
             "type": "{{text:play}}",
             "effect": "Destroy a character that is not in its natural position.",
-            "image": "rats.png"
+            "image": "rats.png",
+            "h_location": 0
         },
         "divinity": {
             "name": "Divinity",
@@ -56,7 +59,8 @@
             "points": "3",
             "type": "{{text:permanent}}",
             "effect": "This character cannot be targeted by an opponent's effect.",
-            "image": "divinity.png"
+            "image": "divinity.png",
+            "h_location": 0.1
         },
         "cunning": {
             "name": "Cunning",

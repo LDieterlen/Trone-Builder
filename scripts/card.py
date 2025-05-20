@@ -2,6 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 import scripts.utils as utils
 import scripts.constant as C
 import pytesseract
+import math
 
 # Configuration du chemin vers l'exécutable Tesseract
 pytesseract.pytesseract.tesseract_cmd = (
@@ -23,11 +24,13 @@ class CardTemplate:
         identifier: str,
         centered: bool = False,
         fit_method: str = "crop",
+        h_location: float = None,
     ):
         image = Image.open(image_path)
         # Load the position of the image on the card
         layer_location = C.LAYERS_LOCATIONS[identifier]
-
+        if h_location is not None:
+            layer_location = (layer_location[0], math.floor(self.height * h_location))
         # Resize the image
         if fit_method == "thumbnail":
             # Complete resizing while preserving aspect ratio
@@ -71,7 +74,6 @@ class CardTemplate:
         h_center=True,
         v_center=True,
         auto_indentation: bool = False,
-        icons: dict = None,
         keywords: list = None,
     ):
         properties = C.TEXT_PROPERTIES[identifier]
@@ -96,54 +98,36 @@ class CardTemplate:
             align=properties.align,
             spacing=12,
         )
-
-        # if icons:
-        #     x_start = position[0]
-        #     y_cursor = position[1]
-        #     line_spacing = font.size + 5
-
-        #     for line in text.split("\n"):
-        #         x_cursor = x_start
-
-        #         for word in line.split(" "):
-        #             cleaned = word.strip()
-        #             if cleaned in icons:
-        #                 icon_img = icons[cleaned]
-        #                 icon_size = font.size
-        #                 icon_img = icon_img.resize(
-        #                     (icon_size, icon_size), Image.LANCZOS
-        #                 )
-
-        #                 # Centrage vertical
-        #                 icon_y = int(
-        #                     y_cursor + (font.getbbox("A")[3] - icon_img.height)
-        #                 )
-        #                 self.card.paste(icon_img, (int(x_cursor), icon_y), icon_img)
-
-        #                 x_cursor += icon_img.width + 5
-        #             else:
-        #                 # self.drawer.text(
-        #                 #     (x_cursor, y_cursor),
-        #                 #     word + " ",
-        #                 #     font=font,
-        #                 #     fill=properties.color,
-        #                 # )
-        #                 x_cursor += font.getlength(word + " ")
-
-        #         y_cursor += line_spacing
-
         # Underline specific keywords in the text
         if keywords:
             for keyword in keywords:
                 start_idx = text.find(keyword)
                 if start_idx != -1:
+                    before_keyword = text[:start_idx]
+                    lines = before_keyword.split("\n")
+                    keyword_line_idx = len(lines) - 1
+                    keyword_line_start = sum(len(line) + 1 for line in lines[:-1])
+                    keyword_in_line_idx = start_idx - keyword_line_start
+                    text_lines = text.split("\n")
+                    # Position de départ de la ligne
+                    line_y = position[1] + sum(
+                        font.getbbox(line)[3] - font.getbbox(line)[1] + 12
+                        for line in text_lines[:keyword_line_idx]
+                    )
+                    line_text = text_lines[keyword_line_idx]
+                    prefix = line_text[:keyword_in_line_idx]
+                    prefix_width = font.getlength(prefix)
                     keyword_bbox = font.getbbox(keyword)
                     keyword_width = keyword_bbox[2] - keyword_bbox[0]
                     keyword_height = keyword_bbox[3] - keyword_bbox[1]
+                    # Correction align center
+                    line_width = font.getlength(line_text)
+                    x_offset = 0
+                    if properties.align == "center":
+                        x_offset = (w - line_width) / 2
                     underline_start = (
-                        position[0]
-                        + self.drawer.textlength(text[:start_idx], font=font),
-                        position[1] + keyword_height,
+                        position[0] + x_offset + prefix_width,
+                        line_y + keyword_height,
                     )
                     underline_end = (
                         underline_start[0] + keyword_width,
@@ -155,7 +139,7 @@ class CardTemplate:
                         width=2,
                     )
 
-    def test(self, icon_order: list):
+    def insert_icons(self, icon_order: list):
         pytesseract.pytesseract.tesseract_cmd = (
             r"C:\Users\E115606\AppData\Local\Programs\Tesseract-OCR\tesseract"
         )

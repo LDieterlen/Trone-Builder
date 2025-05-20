@@ -20,7 +20,8 @@
             "points": "3",
             "type": "{{text:play}}",
             "effect": "Destroy an ally with 0 base point. This character must be played in the same position as the destroyed ally.",
-            "image": "monster.png"
+            "image": "monster.png",
+            "h_location": 0.03
         },
         "trainer": {
             "name": "Trainer",
@@ -29,7 +30,8 @@
             "points": "2",
             "type": "{{text:permanent}}",
             "effect": "When this character gets an alteration, draw a card.",
-            "image": "trainer.png"
+            "image": "trainer.png",
+            "h_location": 0.1
         },
         "gladiator": {
             "name": "Gladiator",
@@ -56,7 +58,8 @@
             "points": "6",
             "type": "{{text:permanent}}",
             "effect": "You can no longer draw cards.",
-            "image": "worm.png"
+            "image": "worm.png",
+            "h_location": 0
         },
         "orphans": {
             "name": "Orphans",
@@ -65,7 +68,8 @@
             "points": "0",
             "type": "{{text:permanent}}",
             "effect": "At the end of your turn, give the {{keyword:strength}} alteration to a character in {{icon:front}} position.",
-            "image": "orphans.png"
+            "image": "orphans.png",
+            "h_location": -0.05
         },
         "prince": {
             "name": "Prince",
@@ -74,7 +78,8 @@
             "points": "0",
             "type": "{{text:play}}",
             "effect": "Give the {{keyword:strength}} alteration to all other {{icon:desert}} allies.",
-            "image": "prince.png"
+            "image": "prince.png",
+            "h_location": 0.1
         }
     }
 }

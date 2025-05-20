@@ -20,7 +20,8 @@
             "position": "{{icon:front}}",
             "points": "2",
             "type": "{{text:play}}",
-            "effect": "Draw 2 cards then discard 2 cards."
+            "effect": "Draw 2 cards then discard 2 cards.",
+            "h_location": 0.1
         },
         "priest": {
             "name": "Priest",
@@ -56,7 +57,8 @@
             "position": "{{icon:back}}",
             "points": "X",
             "type": "{{text:permanent}}",
-            "effect": "If you have more than 3 other {{icon:human_fac}} allies, X is 5, otherwise X is 0."
+            "effect": "If you have more than 3 other {{icon:human_fac}} allies, X is 5, otherwise X is 0.",
+            "h_location": 0.08
         },
         "queen": {
             "name": "Queen",
@@ -65,7 +67,8 @@
             "position": "{{icon:any}}",
             "points": "0",
             "type": "{{text:play}}",
-            "effect": "Give the alteration {{keyword:encouraged}} to another ally."
+            "effect": "Give the alteration {{keyword:encouraged}} to another ally.",
+            "h_location": 0.1
         },
         "bard": {
             "name": "Bard",

@@ -8,7 +8,7 @@ BORDER_WIDTH = 10
 
 LAYERS_LOCATIONS = {
     "core": (0, 0),
-    "character": (0, math.floor(CARD_HEIGHT * 0.1)),
+    "character": (0, math.floor(CARD_HEIGHT * 0.05)),
     "faction": (math.ceil(CARD_WIDTH * 0.071), math.ceil(CARD_HEIGHT * 0.05)),
     "position": (math.floor(CARD_WIDTH * 0.929), math.ceil(CARD_HEIGHT * 0.05)),
 }

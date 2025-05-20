@@ -3,7 +3,7 @@
     "cards": {
         "monk": {
             "name": "Moine",
-            "effect": "Donnez l'altération {{strength}} à 2 personnages."
+            "effect": "Donnez l'altération {{keyword:strength}} à 2 personnages."
         },
         "monster": {
             "name": "Monstre",
@@ -15,7 +15,7 @@
         },
         "gladiator": {
             "name": "Gladiateur",
-            "effect": "Sur ce personnage, l'effet de l'altération {{strength}} est doublé."
+            "effect": "Sur ce personnage, l'effet de l'altération {{keyword:strength}} est doublé."
         },
         "punisher": {
             "name": "Punisseur",
@@ -27,11 +27,11 @@
         },
         "orphans": {
             "name": "Orphelins",
-            "effect": "À la fin de votre tour, donnez l'altération {{strength}} à un personnage en position {{front}}."
+            "effect": "À la fin de votre tour, donnez l'altération {{keyword:strength}} à un personnage en position {{icon:front}}."
         },
         "prince": {
             "name": "Prince",
-            "effect": "Donnez l'altération {{strength}} à tous les autres alliés {{desert}}."
+            "effect": "Donnez l'altération {{keyword:strength}} à tous les autres alliés {{icon:desert}}."
         }
     }
 }

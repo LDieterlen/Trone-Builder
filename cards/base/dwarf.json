@@ -20,7 +20,8 @@
             "points": "2",
             "type": "{{text:play}}",
             "effect": "Destroy an other ally then destroy an opponent's character in {{icon:front}} position.",
-            "image": "nervous.png"
+            "image": "nervous.png",
+            "h_location": 0.1
         },
         "joyful": {
             "name": "Joyful",
@@ -38,7 +39,8 @@
             "points": "0",
             "type": "{{text:play}}",
             "effect": "Move an alteration from one character to another.",
-            "image": "allergic.png"
+            "image": "allergic.png",
+            "h_location": -0.05
         },
         "fearful": {
             "name": "Fearful",
@@ -47,7 +49,8 @@
             "points": "X",
             "type": "{{text:permanent}}",
             "effect": "If this character has the {{keyword:protection}} alteration, X equals 4, otherwise X equals 0.",
-            "image": "fearful.png"
+            "image": "fearful.png",
+            "h_location": -0.05
         },
         "lazy": {
             "name": "Lazy",
@@ -65,7 +68,8 @@
             "points": "4",
             "type": "{{text:play}}",
             "effect": "This card cannot be played during the first turn. All other players can add the {{keyword:protection}} alteration to a character.",
-            "image": "boss.png"
+            "image": "boss.png",
+            "h_location": -0.07
         },
         "mascot": {
             "name": "Mascot",
@@ -74,7 +78,8 @@
             "points": "X",
             "type": "{{text:permanent}}",
             "effect": "X equals the number of ally in {{icon:back}} position.",
-            "image": "mascott.png"
+            "image": "mascott.png",
+            "h_location": -0.05
         }
     }
 }

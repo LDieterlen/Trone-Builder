@@ -29,7 +29,8 @@
             "points": "3",
             "type": "{{text:play}}",
             "effect": "Give the {{keyword:frozen}} alteration to an ally.",
-            "image": "witch.png"
+            "image": "witch.png",
+            "h_location": 0
         },
         "ancestor": {
             "name": "Ancestor",
@@ -47,7 +48,8 @@
             "points": "2",
             "type": "{{text:play}}",
             "effect": "Exchange your hand with another player's hand.",
-            "image": "merchant.png"
+            "image": "merchant.png",
+            "h_location": 0.1
         },
         "beast": {
             "name": "Beast",
@@ -65,7 +67,8 @@
             "points": "0",
             "type": "{{text:play}}",
             "effect": "Remove up to 3 alterations to enemies in {{icon:front}} position or allies.",
-            "image": "lizard.png"
+            "image": "lizard.png",
+            "h_location": 0
         },
         "giant": {
             "name": "Giant",
@@ -74,7 +77,8 @@
             "points": "5",
             "type": "{{text:permanent}}",
             "effect": "At the end of your turn, give the {{keyword:frozen}} alteration to an ally.",
-            "image": "giant.png"
+            "image": "giant.png",
+            "h_location": 0
         }
     }
 }

@@ -11,7 +11,8 @@
             "points": "1",
             "type": "{{text:play}}",
             "effect": "Return a character in {{icon:front}} position to its owner's hand.",
-            "image": "bugs.png"
+            "image": "bugs.png",
+            "h_location": -0.05
         },
         "minion": {
             "name": "Minion",
@@ -20,7 +21,8 @@
             "points": "0",
             "type": "{{text:play}}",
             "effect": "Gain 2 permanent points.",
-            "image": "minions.png"
+            "image": "minions.png",
+            "h_location": 0
         },
         "horned": {
             "name": "Horned",
@@ -29,7 +31,8 @@
             "points": "3",
             "type": "{{text:play}}",
             "effect": "You must return an ally in {{icon:back}} position to your hand.",
-            "image": "horned.png"
+            "image": "horned.png",
+            "h_location": -0.05
         },
         "eye": {
             "name": "Eye",
@@ -38,7 +41,8 @@
             "points": "2",
             "type": "{{text:play}}",
             "effect": "You can discard cards from your hand to draw the same number of cards.",
-            "image": "eye.png"
+            "image": "eye.png",
+            "h_location": 0
         },
         "clever": {
             "name": "Clever",
@@ -47,7 +51,8 @@
             "points": "1",
             "type": "{{text:play}}",
             "effect": "Play an additional character this turn.",
-            "image": "clever.png"
+            "image": "clever.png",
+            "h_location": 0
         },
         "cyclops": {
             "name": "Cyclops",
@@ -74,7 +79,8 @@
             "points": "X",
             "type": "{{text:permanent}}",
             "effect": "X equals half (inferior) of your total permanent points.",
-            "image": "collector.png"
+            "image": "collector.png",
+            "h_location": -0.05
         }
     }
 }
