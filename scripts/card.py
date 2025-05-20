@@ -4,11 +4,6 @@ import scripts.constant as C
 import pytesseract
 import math
 
-# Configuration du chemin vers l'exécutable Tesseract
-pytesseract.pytesseract.tesseract_cmd = (
-    r"C:\Program Files\Tesseract-OCR\tesseract.exe"  # Ajustez ce chemin
-)
-
 
 class CardTemplate:
     def __init__(self):
@@ -140,9 +135,9 @@ class CardTemplate:
                     )
 
     def insert_icons(self, icon_order: list):
-        pytesseract.pytesseract.tesseract_cmd = (
-            r"C:\Users\E115606\AppData\Local\Programs\Tesseract-OCR\tesseract"
-        )
+        # pytesseract.pytesseract.tesseract_cmd = (
+        #     r"C:\Users\E115606\AppData\Local\Programs\Tesseract-OCR\tesseract"
+        # )
 
         boxes = pytesseract.image_to_data(
             self.card, output_type=pytesseract.Output.DICT
