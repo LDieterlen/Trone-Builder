@@ -11,15 +11,15 @@
         },
         "priest": {
             "name": "Prêtre",
-            "effect": "Copiez l'effet d'un allié en position {{icon:front}}."
+            "effect": "Copiez l'effet d'un allié en position {{icon:front_i}}."
         },
         "archer": {
             "name": "Archer",
-            "effect": "Détruisez un personnage en position {{icon:back}}."
+            "effect": "Détruisez un personnage en position {{icon:back_i}}."
         },
         "knight": {
             "name": "Chevalier",
-            "effect": "Si un allié en position {{icon:back}} est détruit par un effet adverse, détruisez ce personnage à la place."
+            "effect": "Si un allié en position {{icon:back_i}} est détruit par un effet adverse, détruisez ce personnage à la place."
         },
         "king": {
             "name": "Roi",

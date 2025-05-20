@@ -10,7 +10,7 @@
             "position": "{{icon:any}}",
             "points": "1",
             "type": "{{text:play}}",
-            "effect": "Destroy a character in {{icon:front}} position.",
+            "effect": "Destroy a character in {{icon:front_i}} position.",
             "image": "death.png",
             "h_location": 0.1
         },
@@ -38,7 +38,7 @@
             "position": "{{icon:front}}",
             "points": "4",
             "type": "{{text:play}}",
-            "effect": "You must destroy an ally in {{icon:back}} position.",
+            "effect": "You must destroy an ally in {{icon:back_i}} position.",
             "image": "hydra.png",
             "h_location": 0
         },

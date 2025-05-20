@@ -10,7 +10,7 @@
             "position": "{{icon:back}}",
             "points": "1",
             "type": "{{text:play}}",
-            "effect": "Return a character in {{icon:front}} position to its owner's hand.",
+            "effect": "Return a character in {{icon:front_i}} position to its owner's hand.",
             "image": "bugs.png",
             "h_location": -0.05
         },
@@ -30,7 +30,7 @@
             "position": "{{icon:front}}",
             "points": "3",
             "type": "{{text:play}}",
-            "effect": "You must return an ally in {{icon:back}} position to your hand.",
+            "effect": "You must return an ally in {{icon:back_i}} position to your hand.",
             "image": "horned.png",
             "h_location": -0.05
         },

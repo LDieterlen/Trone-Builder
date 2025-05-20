@@ -13,7 +13,9 @@
     "icon": {
         "any": "assets/sprites/positions/any.png",
         "front": "assets/sprites/positions/front.png",
+        "front_i": "assets/sprites/positions/front_i.png",
         "back": "assets/sprites/positions/back.png",
+        "back_i": "assets/sprites/positions/back_i.png",
         "human_fac": "assets/sprites/factions/humans.png"
     },
     "legends": {

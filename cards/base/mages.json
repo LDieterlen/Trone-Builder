@@ -20,7 +20,7 @@
             "position": "{{icon:front}}",
             "points": "X",
             "type": "{{text:permanent}}",
-            "effect": "X equals 4 if this character is in {{icon:back}} position, otherwise X equals 1.",
+            "effect": "X equals 4 if this character is in {{icon:back_i}} position, otherwise X equals 1.",
             "image": "apprentice.png",
             "h_location": 0.1
         },
@@ -30,7 +30,7 @@
             "position": "{{icon:back}}",
             "points": "1",
             "type": "{{text:permanent}}",
-            "effect": "When you move this ally, destroy a character in {{icon:front}} position.",
+            "effect": "When you move this ally, destroy a character in {{icon:front_i}} position.",
             "image": "plotter.png"
         },
         "spy": {

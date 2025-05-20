@@ -27,7 +27,7 @@
         },
         "orphans": {
             "name": "Orphelins",
-            "effect": "À la fin de votre tour, donnez l'altération {{keyword:strength}} à un personnage en position {{icon:front}}."
+            "effect": "À la fin de votre tour, donnez l'altération {{keyword:strength}} à un personnage en position {{icon:front_i}}."
         },
         "prince": {
             "name": "Prince",

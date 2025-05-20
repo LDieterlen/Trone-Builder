@@ -7,7 +7,7 @@
         },
         "nervous": {
             "name": "Nerveux",
-            "effect": "Détruisez un autre allié puis détruisez un personnage adverse en position {{icon:front}}."
+            "effect": "Détruisez un autre allié puis détruisez un personnage adverse en position {{icon:front_i}}."
         },
         "joyful": {
             "name": "Ravi",
@@ -31,7 +31,7 @@
         },
         "mascot": {
             "name": "Mascotte",
-            "effect": "X est égal au nombre d'alliés en position {{icon:back}}."
+            "effect": "X est égal au nombre d'alliés en position {{icon:back_i}}."
         }
     }
 }

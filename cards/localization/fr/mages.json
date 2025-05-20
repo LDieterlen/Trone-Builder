@@ -7,11 +7,11 @@
         },
         "apprentice": {
             "name": "Apprentie",
-            "effect": "X vaut 4 si ce personnage est en position {{icon:back}}, sinon X vaut 1."
+            "effect": "X vaut 4 si ce personnage est en position {{icon:back_i}}, sinon X vaut 1."
         },
         "plotter": {
             "name": "Comploteur",
-            "effect": "Lorsque vous déplacez cet allié, détruisez un personnage en position {{icon:front}}."
+            "effect": "Lorsque vous déplacez cet allié, détruisez un personnage en position {{icon:front_i}}."
         },
         "spy": {
             "name": "Espion",

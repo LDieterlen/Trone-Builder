@@ -67,7 +67,7 @@
             "position": "{{icon:back}}",
             "points": "0",
             "type": "{{text:permanent}}",
-            "effect": "At the end of your turn, give the {{keyword:strength}} alteration to a character in {{icon:front}} position.",
+            "effect": "At the end of your turn, give the {{keyword:strength}} alteration to a character in {{icon:front_i}} position.",
             "image": "orphans.png",
             "h_location": -0.05
         },

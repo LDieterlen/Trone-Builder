@@ -19,7 +19,7 @@
             "position": "{{icon:any}}",
             "points": "2",
             "type": "{{text:play}}",
-            "effect": "Destroy an other ally then destroy an opponent's character in {{icon:front}} position.",
+            "effect": "Destroy an other ally then destroy an opponent's character in {{icon:front_i}} position.",
             "image": "nervous.png",
             "h_location": 0.1
         },
@@ -77,7 +77,7 @@
             "position": "{{icon:front}}",
             "points": "X",
             "type": "{{text:permanent}}",
-            "effect": "X equals the number of ally in {{icon:back}} position.",
+            "effect": "X equals the number of ally in {{icon:back_i}} position.",
             "image": "mascott.png",
             "h_location": -0.05
         }

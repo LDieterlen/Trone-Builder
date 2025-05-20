@@ -3,7 +3,7 @@
     "cards": {
         "death": {
             "name": "Mort",
-            "effect": "Détruisez un personnage en position {{icon:front}}."
+            "effect": "Détruisez un personnage en position {{icon:front_i}}."
         },
         "moires": {
             "name": "Moires",
@@ -15,7 +15,7 @@
         },
         "hydra": {
             "name": "Hydre",
-            "effect": "Vous devez détruire un allié en position {{icon:back}}."
+            "effect": "Vous devez détruire un allié en position {{icon:back_i}}."
         },
         "companion": {
             "name": "Compagnon",

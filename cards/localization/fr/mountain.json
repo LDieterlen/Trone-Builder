@@ -3,7 +3,7 @@
     "cards": {
         "snowman": {
             "name": "Bonhome",
-            "effect": "Donnez l'altération {{keyword:frozen}} à un personnage."
+            "effect": "Donnez l'altération {{keyword:frozen}} à un personnage en position {{icon:front_i}}."
         },
         "yeti": {
             "name": "Yéti",
@@ -18,7 +18,7 @@
             "effect": "Supprimez une altération d'un personnage et gagnez 1 point permanent."
         },
         "merchant": {
-            "name": "Marchand",
+            "name": "Barbare",
             "effect": "Échangez votre main avec celle d'un autre joueur."
         },
         "beast": {
@@ -27,7 +27,7 @@
         },
         "lizard": {
             "name": "Lézard",
-            "effect": "Supprimez jusqu'à 3 altérations aux ennemis en position {{icon:front}} ou aux alliés."
+            "effect": "Supprimez jusqu'à 3 altérations aux ennemis en position {{icon:front_i}} ou aux alliés."
         },
         "giant": {
             "name": "Géant",
