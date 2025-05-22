@@ -14,8 +14,7 @@ LAYERS_LOCATIONS = {
 }
 
 FONT_BASE_PATH = "assets/font/"
-PATTERNS = ["XX", "YY", "ZZ", "WW"]
-PATTERNS_LEGEND = ["kk", "tt", "mm", "bb"]
+PATTERNS = ["XX", "ZZ", "XY", "YX"]
 
 
 # Text configurations

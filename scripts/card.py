@@ -1,4 +1,3 @@
-from typing import List
 from PIL import Image, ImageDraw, ImageFont
 import scripts.utils as utils
 import scripts.constant as C
@@ -136,21 +135,22 @@ class CardTemplate:
                         width=2,
                     )
 
-    def insert_icons(self, icon_order: List[str]):
+    def insert_icons(self, icon_order: dict):
         pytesseract.pytesseract.tesseract_cmd = (
             r"C:\Users\E115606\AppData\Local\Programs\Tesseract-OCR\tesseract"
         )
-        print(icon_order)
-
         boxes = pytesseract.image_to_data(
-            self.card, output_type=pytesseract.Output.DICT
+            self.card,
+            output_type=pytesseract.Output.DICT,
+            lang="eng",
+            config="--psm 6",
         )
 
         import re
 
         pattern_found = 0
-        for i, icon_path in enumerate(icon_order):
-            pattern_to_find = C.PATTERNS[i]
+        for key, icon_path in icon_order.items():
+            pattern_to_find = key
             print(f"Pattern to find: {pattern_to_find}")
             for j, word in enumerate(boxes["text"]):
                 pattern = re.compile(pattern_to_find)
@@ -181,3 +181,61 @@ class CardTemplate:
 
     def save(self, path):
         self.card.save(path, "PNG", dpi=(300, 300))
+
+    def underline_words(
+        self,
+        words_to_underline: list,
+        psm: int = 6,
+        lang: str = "eng",
+        threshold: bool = True,
+        scale: float = 2.0,
+        color: str = "black",
+        width: int = 2,
+    ):
+        """
+        Souligne les mots présents dans words_to_underline sur la carte.
+        Améliore la détection OCR avec binarisation et redimensionnement.
+        """
+        pytesseract.pytesseract.tesseract_cmd = (
+            r"C:\Users\E115606\AppData\Local\Programs\Tesseract-OCR\tesseract"
+        )
+
+        # Amélioration de l'image pour l'OCR
+        ocr_img = self.card.convert("L")
+        if threshold:
+            ocr_img = ocr_img.point(lambda x: 0 if x < 180 else 255, "1")
+        if scale != 1.0:
+            new_size = (int(ocr_img.width * scale), int(ocr_img.height * scale))
+            ocr_img = ocr_img.resize(new_size, Image.LANCZOS)
+
+        custom_config = f"--psm {psm}"
+        boxes = pytesseract.image_to_data(
+            ocr_img,
+            output_type=pytesseract.Output.DICT,
+            lang=lang,
+            config=custom_config,
+        )
+
+        import re
+
+        for word in words_to_underline:
+            found = False
+            pattern = re.compile(word)
+            for j, ocr_word in enumerate(boxes["text"]):
+                if re.fullmatch(pattern, ocr_word):
+                    # Adapter les coordonnées si l'image a été redimensionnée
+                    x = int(boxes["left"][j] / scale)
+                    y = int(boxes["top"][j] / scale)
+                    w = int(boxes["width"][j] / scale)
+                    h = int(boxes["height"][j] / scale)
+                    # Ligne sous le mot
+                    underline_y = y + h + 2
+                    self.drawer.line(
+                        [(x, underline_y), (x + w, underline_y)],
+                        fill=color,
+                        width=width,
+                    )
+                    found = True
+                    break
+            if not found:
+                print(f"Mot non trouvé pour soulignement : {word}")

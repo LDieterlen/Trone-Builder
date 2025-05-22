@@ -3,7 +3,7 @@ import os
 import sys
 import json
 from scripts.card import CardTemplate
-from scripts.constant import PATTERNS, PATTERNS_LEGEND
+from scripts.constant import PATTERNS
 from PIL import Image
 
 
@@ -20,14 +20,13 @@ FACTIONS = [
 LANGUAGE = "fr"
 
 
-def replace_icons(text: str, global_data: dict, legend=False) -> str:
+def replace_icons(text: str, global_data: dict, count=0) -> str:
     processed_text = text
 
     # Only handle {{text:key}} format
     pattern = r"{{icon:([^}]+)}}"
 
-    icons_order = []
-    count = 0
+    icons_order = {}
     # Find and process each match
     for match in re.finditer(pattern, processed_text):
         key = match.group(1)
@@ -35,17 +34,14 @@ def replace_icons(text: str, global_data: dict, legend=False) -> str:
 
         # Text replacement
         if key in global_data.get("icon", {}):
-            if legend:
-                current_pattern = PATTERNS_LEGEND[count]
-            else:
-                current_pattern = PATTERNS[count]
+            current_pattern = PATTERNS[count]
             replacement = f"  {current_pattern}  "
             icon_path = global_data["icon"][key]
-            icons_order.append(icon_path)
+            icons_order[current_pattern] = icon_path
 
             processed_text = processed_text.replace(keyword, replacement, 1)
             count += 1
-    return processed_text, icons_order
+    return processed_text, icons_order, count
 
 
 def replace_text(text: str, global_data: dict) -> str:
@@ -177,7 +173,7 @@ def build_faction(global_data: dict, faction_details: dict):
         effect: str = character_info["effect"]
         effect = replace_text(effect, global_data)
         effect, keywords, keyword_keys = replace_keywords(effect, global_data)
-        effect, icons_order = replace_icons(effect, global_data)
+        effect, icons_order, icon_count = replace_icons(effect, global_data)
 
         # Tytle
         card_template.add_text(
@@ -223,8 +219,10 @@ def build_faction(global_data: dict, faction_details: dict):
         for i, key in enumerate(keyword_keys):
             legend_text = global_data["legends"][key]
             legend_text = f"{keywords[i].upper()} : {legend_text}"
-            legend_text, legend_icons = replace_icons(legend_text, global_data, True)
-            icons_order += legend_icons
+            legend_text, legend_icons, icon_count = replace_icons(
+                legend_text, global_data, icon_count
+            )
+            icons_order = {**icons_order, **legend_icons}
             card_template.add_text(
                 legend_text,
                 "legend",
