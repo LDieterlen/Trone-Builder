@@ -8,13 +8,15 @@
         "encouraged": "encouragé",
         "strength": "force",
         "frozen": "gelé",
-        "protection": "protection"
+        "protection": "protection",
+        "move": "déplacer"
     },
     "legends": {
         "encouraged": "Augmente vos points de 1 pour chaque autre allié de la même faction.",
         "strength": "Augmente les points de base du personnage à 1.",
         "frozen": "Les points de base du personnage passent à 0.",
-        "protection": "Lorsque le personnage est ciblé par un effet adverse, kvous pouvez retirer cette altération à la place."
+        "protection": "Lorsque le personnage est ciblé par un effet adverse, vous pouvez retirer cette altération à la place.",
+        "move": "Un personnage en position {{icon:front_i}} passe à la position {{icon:back_i}} et réciproquement."
     },
     "positons": {
         "any": {

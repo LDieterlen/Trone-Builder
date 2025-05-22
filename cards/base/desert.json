@@ -37,9 +37,9 @@
             "name": "Gladiator",
             "count": "2",
             "position": "{{icon:front}}",
-            "points": "2",
+            "points": "X",
             "type": "{{text:permanent}}",
-            "effect": "On this character, the effect of the {{keyword:strength}} alteration is doubled.",
+            "effect": "X equals the number of {{keyword:strength}} alterations on this character +2.",
             "image": "gladiator.png",
             "h_location": 0.02
         },

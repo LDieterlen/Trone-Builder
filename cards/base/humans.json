@@ -39,7 +39,7 @@
             "position": "{{icon:back}}",
             "points": "1",
             "type": "{{text:play}}",
-            "effect": "Destroy a character in {{icon:back_i}} position."
+            "effect": "Destroy a character in {{icon:front_i}} position."
         },
         "knight": {
             "name": "Knight",

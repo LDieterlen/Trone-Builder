@@ -3,14 +3,16 @@ import os
 import sys
 import json
 from scripts.card import CardTemplate
+from scripts.constant import PATTERNS
 from PIL import Image
 
+
 FACTIONS = [
-    "dwarf",
+    # "dwarf",
     # "dead",
     # "demons",
     # "desert",
-    # "mages",
+    "mages",
     # "mountain",
     # "humans",
 ]
@@ -26,15 +28,18 @@ def replace_icons(text: str, global_data: dict) -> str:
 
     icons_order = []
     # Find and process each match
+    count = 0
     for match in re.finditer(pattern, processed_text):
         key = match.group(1)
         keyword = match.group(0)
 
         # Text replacement
-        count = 0
         if key in global_data.get("icon", {}):
-            replacement = "  XX  "
-            icons_order.append(Image.open(global_data["icon"][key]).convert("RGBA"))
+            current_pattern = PATTERNS[count]
+            replacement = f"  {current_pattern}  "
+            icon_path = global_data["icon"][key]
+            icons_order.append(icon_path)
+
             processed_text = processed_text.replace(keyword, replacement, 1)
             count += 1
     return processed_text, icons_order
@@ -215,12 +220,15 @@ def build_faction(global_data: dict, faction_details: dict):
         for i, key in enumerate(keyword_keys):
             legend_text = global_data["legends"][key]
             legend_text = f"{keywords[i].upper()} : {legend_text}"
+            legend_text, legend_icons = replace_icons(legend_text, global_data)
+            icons_order += legend_icons
             card_template.add_text(
                 legend_text,
                 "legend",
                 h_center=True,
                 v_center=True,
             )
+
         card_template.insert_icons(icons_order)
         card_template.save(output_folder_path + f"/{name}.png")
         print(f"Card for {name} created successfully.")

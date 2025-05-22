@@ -1,3 +1,4 @@
+from typing import List
 from PIL import Image, ImageDraw, ImageFont
 import scripts.utils as utils
 import scripts.constant as C
@@ -134,10 +135,11 @@ class CardTemplate:
                         width=2,
                     )
 
-    def insert_icons(self, icon_order: list):
-        # pytesseract.pytesseract.tesseract_cmd = (
-        #     r"C:\Users\E115606\AppData\Local\Programs\Tesseract-OCR\tesseract"
-        # )
+    def insert_icons(self, icon_order: List[str]):
+        pytesseract.pytesseract.tesseract_cmd = (
+            r"C:\Users\E115606\AppData\Local\Programs\Tesseract-OCR\tesseract"
+        )
+        print(icon_order)
 
         boxes = pytesseract.image_to_data(
             self.card, output_type=pytesseract.Output.DICT
@@ -145,26 +147,36 @@ class CardTemplate:
 
         import re
 
-        pattern = re.compile(r"XX")
+        pattern_found = 0
+        for i, icon_path in enumerate(icon_order):
+            pattern_to_find = C.PATTERNS[i]
+            print(f"Pattern to find: {pattern_to_find}")
+            for j, word in enumerate(boxes["text"]):
+                pattern = re.compile(pattern_to_find)
+                if re.fullmatch(pattern, word):
+                    x = boxes["left"][j]
+                    y = boxes["top"][j]
+                    w = boxes["width"][j]
+                    h = boxes["height"][j]
 
-        pattern_count = 0
-        for i, word in enumerate(boxes["text"]):
-            if re.fullmatch(pattern, word):
-                x = boxes["left"][i]
-                y = boxes["top"][i]
-                w = boxes["width"][i]
-                h = boxes["height"][i]
+                    print("Pattern found at:", x, y, w, h)
+                    icon = Image.open(icon_path).convert("RGBA")
 
-                print("Icon found at:", x, y, w, h)
-                icon = icon_order[pattern_count]
-                max_size = max(w, h) + 10
-                icon.thumbnail((max_size, max_size), Image.LANCZOS)
+                    max_size = max(w, h) + 10
+                    icon.thumbnail((max_size, max_size), Image.LANCZOS)
 
-                # Calculate position to center the icon at (x,y)
-                x_centered = x - (icon.width // 2) + (w // 2)
-                y_centered = y - (icon.height // 2) + (h // 2)
+                    # Calculate position to center the icon at (x,y)
+                    x_centered = x - (icon.width // 2) + (w // 2)
+                    y_centered = y - (icon.height // 2) + (h // 2)
 
-                self.card.paste(icon, (x_centered, y_centered), icon)
+                    self.card.paste(icon, (x_centered, y_centered), icon)
+                    pattern_found += 1
+                    break
+
+        if pattern_found != len(icon_order):
+            raise Exception(
+                f"Not all patterns were found. Found {pattern_found} out of {len(icon_order)}."
+            )
 
     def save(self, path):
         self.card.save(path, "PNG", dpi=(300, 300))

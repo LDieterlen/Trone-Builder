@@ -15,7 +15,7 @@
         },
         "archer": {
             "name": "Archer",
-            "effect": "Détruisez un personnage en position {{icon:back_i}}."
+            "effect": "Détruisez un personnage en position {{icon:front_i}}."
         },
         "knight": {
             "name": "Chevalier",

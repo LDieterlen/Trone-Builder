@@ -7,7 +7,7 @@
         },
         "nervous": {
             "name": "Nerveux",
-            "effect": "Détruisez un autre allié puis détruisez un personnage adverse en position {{icon:front_i}} ."
+            "effect": "Détruisez un autre allié puis détruisez un ennemi en position {{icon:front_i}} ."
         },
         "joyful": {
             "name": "Ravi",
@@ -27,7 +27,7 @@
         },
         "boss": {
             "name": "Patron",
-            "effect": "Cette carte ne peut pas être jouée pendant le premier tour. Tous les autres joueurs peuvent ajouter l'altération {{protection}} à un personnage."
+            "effect": "Les effets adverse ciblent toujours ce personnage."
         },
         "mascot": {
             "name": "Mascotte",

@@ -67,7 +67,7 @@
             "position": "{{icon:any}}",
             "points": "4",
             "type": "{{text:play}}",
-            "effect": "This card cannot be played during the first turn. All other players can add the {{keyword:protection}} alteration to a character.",
+            "effect": "All oppent's effect target this character first.",
             "image": "boss.png",
             "h_location": -0.07
         },

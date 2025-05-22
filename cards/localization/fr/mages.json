@@ -3,7 +3,7 @@
     "cards": {
         "student": {
             "name": "Élève",
-            "effect": "Vous pouvez {{move}} jusqu'à 2 personnages."
+            "effect": "Vous pouvez {{keyword:move}} jusqu'à 2 personnages."
         },
         "apprentice": {
             "name": "Apprentie",
@@ -19,11 +19,11 @@
         },
         "rats": {
             "name": "Rats",
-            "effect": "Détruisez un personnage qui n'est pas dans sa position naturelle."
+            "effect": "Détruisez un personnage qui n'est pas à sa position naturelle."
         },
         "divinity": {
             "name": "Divinité",
-            "effect": "Ce personnage ne peut pas être ciblé par un effet adverse."
+            "effect": "X vaut le nombre de personnages qui ne sont pas à leur position naturelle."
         },
         "cunning": {
             "name": "Sage",
@@ -31,7 +31,7 @@
         },
         "professor": {
             "name": "Professeur",
-            "effect": "Lorsque vous jouez un personnage, vous pouvez ignorer sa position naturelle."
+            "effect": "À la fin de votre tour, vous pouvez {{keyword:move}} un personnage en position {{icon:back_i}} vers la position {{icon:front_i}}."
         }
     }
 }

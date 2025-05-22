@@ -3,7 +3,7 @@
     "cards": {
         "creature": {
             "name": "Bestiole",
-            "effect": "Renvoyez un personnage en position {{icon:front_i}} dans la main de son propriétaire."
+            "effect": "Renvoyez un ennemi en position {{icon:front_i}} dans la main de son propriétaire."
         },
         "minion": {
             "name": "Mignon",

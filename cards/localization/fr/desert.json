@@ -15,7 +15,7 @@
         },
         "gladiator": {
             "name": "Gladiateur",
-            "effect": "Sur ce personnage, l'effet de l'altération {{keyword:strength}} est doublé."
+            "effect": "X vaut le nombre d'altération {{keyword:strength}} présent sur ce personnage +2."
         },
         "punisher": {
             "name": "Punisseur",

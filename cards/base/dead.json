@@ -7,7 +7,7 @@
         "death": {
             "name": "Death",
             "count": "4",
-            "position": "{{icon:any}}",
+            "position": "{{icon:front}}",
             "points": "1",
             "type": "{{text:play}}",
             "effect": "Destroy a character in {{icon:front_i}} position.",

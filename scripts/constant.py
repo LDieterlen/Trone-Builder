@@ -14,6 +14,7 @@ LAYERS_LOCATIONS = {
 }
 
 FONT_BASE_PATH = "assets/font/"
+PATTERNS = ["XX", "YY", "SS", "ZZ"]
 
 
 # Text configurations
