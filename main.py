@@ -1,10 +1,12 @@
 import re
 import os
-import sys
 import json
 from scripts.card import CardTemplate
-from scripts.constant import PATTERNS
-from PIL import Image
+from scripts.utils import (
+    replace_text,
+    replace_keywords,
+    replace_icons,
+)
 
 
 FACTIONS = [
@@ -18,67 +20,6 @@ FACTIONS = [
 ]
 
 LANGUAGE = "fr"
-
-
-def replace_icons(text: str, global_data: dict, count=0) -> str:
-    processed_text = text
-
-    # Only handle {{text:key}} format
-    pattern = r"{{icon:([^}]+)}}"
-
-    icons_order = {}
-    # Find and process each match
-    for match in re.finditer(pattern, processed_text):
-        key = match.group(1)
-        keyword = match.group(0)
-
-        # Text replacement
-        if key in global_data.get("icon", {}):
-            current_pattern = PATTERNS[count]
-            replacement = f"  {current_pattern}  "
-            icon_path = global_data["icon"][key]
-            icons_order[current_pattern] = icon_path
-
-            processed_text = processed_text.replace(keyword, replacement, 1)
-            count += 1
-    return processed_text, icons_order, count
-
-
-def replace_text(text: str, global_data: dict) -> str:
-    processed_text = text
-
-    # Only handle {{text:key}} format
-    pattern = r"{{text:([^}]+)}}"
-    # Find and process each match
-    for match in re.finditer(pattern, processed_text):
-        key = match.group(1)
-        keyword = match.group(0)
-
-        # Text replacement
-        if key in global_data.get("text", {}):
-            replacement = global_data["text"][key]
-            processed_text = processed_text.replace(keyword, replacement, 1)
-    return processed_text
-
-
-def replace_keywords(text: str, global_data: dict) -> str:
-    processed_text = text
-
-    pattern = r"{{keyword:([^}]+)}}"
-    keywords = []
-    keywords_keys = []
-    # Find and process each match
-    for match in re.finditer(pattern, processed_text):
-        key = match.group(1)
-        keyword = match.group(0)
-
-        # Text replacement
-        if key in global_data.get("keyword", {}):
-            replacement = global_data["keyword"][key]
-            keywords.append(replacement)
-            keywords_keys.append(key)
-            processed_text = processed_text.replace(keyword, replacement, 1)
-    return processed_text, keywords, keywords_keys
 
 
 def deep_merge(dict1: dict, dict2: dict) -> dict:
