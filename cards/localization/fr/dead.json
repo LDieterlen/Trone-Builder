@@ -23,7 +23,7 @@
         },
         "child": {
             "name": "Enfant",
-            "effect": "À la fin de votre prochain tour, détruisez ce personnage."
+            "effect": "Si vous ne gagnez pas la partie au début de votre prochain tour, ce personnage est détuit."
         },
         "monarch": {
             "name": "Monarque",

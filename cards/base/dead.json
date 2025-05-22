@@ -59,8 +59,8 @@
             "count": "1",
             "position": "{{icon:back}}",
             "points": "6",
-            "type": "{{text:play}}",
-            "effect": "At the end of your next turn, destroy this character.",
+            "type": "{{text:permanent}}",
+            "effect": "If you do not win the game at the start of your next turn, this character is destroyed.",
             "image": "child.png"
         },
         "monarch": {

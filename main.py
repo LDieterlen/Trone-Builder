@@ -3,7 +3,7 @@ import os
 import sys
 import json
 from scripts.card import CardTemplate
-from scripts.constant import PATTERNS
+from scripts.constant import PATTERNS, PATTERNS_LEGEND
 from PIL import Image
 
 
@@ -20,22 +20,25 @@ FACTIONS = [
 LANGUAGE = "fr"
 
 
-def replace_icons(text: str, global_data: dict) -> str:
+def replace_icons(text: str, global_data: dict, legend=False) -> str:
     processed_text = text
 
     # Only handle {{text:key}} format
     pattern = r"{{icon:([^}]+)}}"
 
     icons_order = []
-    # Find and process each match
     count = 0
+    # Find and process each match
     for match in re.finditer(pattern, processed_text):
         key = match.group(1)
         keyword = match.group(0)
 
         # Text replacement
         if key in global_data.get("icon", {}):
-            current_pattern = PATTERNS[count]
+            if legend:
+                current_pattern = PATTERNS_LEGEND[count]
+            else:
+                current_pattern = PATTERNS[count]
             replacement = f"  {current_pattern}  "
             icon_path = global_data["icon"][key]
             icons_order.append(icon_path)
@@ -220,7 +223,7 @@ def build_faction(global_data: dict, faction_details: dict):
         for i, key in enumerate(keyword_keys):
             legend_text = global_data["legends"][key]
             legend_text = f"{keywords[i].upper()} : {legend_text}"
-            legend_text, legend_icons = replace_icons(legend_text, global_data)
+            legend_text, legend_icons = replace_icons(legend_text, global_data, True)
             icons_order += legend_icons
             card_template.add_text(
                 legend_text,

@@ -23,7 +23,7 @@
         },
         "worm": {
             "name": "Ver",
-            "effect": "Vous ne pouvez plus piocher de cartes."
+            "effect": "Vous devez détruire un allié avec une altération pour jouer ce personnage."
         },
         "orphans": {
             "name": "Orphelins",

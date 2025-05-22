@@ -55,10 +55,10 @@
         "worm": {
             "name": "Worm",
             "count": "1",
-            "position": "{{icon:back}}",
+            "position": "{{icon:front}}",
             "points": "6",
             "type": "{{text:permanent}}",
-            "effect": "You can no longer draw cards.",
+            "effect": "You must destroy an ally with an alteration to play this character.",
             "image": "worm.png",
             "h_location": -0.02
         },

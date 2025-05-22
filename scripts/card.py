@@ -94,6 +94,7 @@ class CardTemplate:
             align=properties.align,
             spacing=12,
         )
+
         # Underline specific keywords in the text
         if keywords:
             for keyword in keywords:
