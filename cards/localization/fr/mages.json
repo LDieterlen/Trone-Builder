@@ -23,7 +23,7 @@
         },
         "divinity": {
             "name": "Divinité",
-            "effect": "X vaut le nombre de personnages qui ne sont pas à leur position naturelle."
+            "effect": "X vaut le nombre d'alliés qui ne sont pas à leur position naturelle."
         },
         "cunning": {
             "name": "Sage",

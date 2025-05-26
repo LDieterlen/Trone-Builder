@@ -59,7 +59,7 @@
             "position": "{{icon:front}}",
             "points": "X",
             "type": "{{text:permanent}}",
-            "effect": "X equal the number of characters that are not in their natural position.",
+            "effect": "X equal the number of allies that are not in their natural position.",
             "image": "divinity.png",
             "h_location": -0.07
         },

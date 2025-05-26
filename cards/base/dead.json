@@ -28,7 +28,7 @@
             "name": "Raven",
             "count": "2",
             "position": "{{icon:back}}",
-            "points": "2",
+            "points": "1",
             "type": "{{text:permanent}}",
             "effect": "At the end of your turn, you can destroy an ally to gain 1 permanent point.",
             "image": "raven.png",
