@@ -23,7 +23,7 @@
         },
         "child": {
             "name": "Enfant",
-            "effect": "Si vous ne gagnez pas la partie au début de votre prochain tour, ce personnage est détuit."
+            "effect": "Si vous ne gagnez pas la partie au début de votre prochain tour, ce personnage est détruit."
         },
         "monarch": {
             "name": "Monarque",

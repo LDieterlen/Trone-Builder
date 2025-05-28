@@ -15,7 +15,7 @@
         },
         "gladiator": {
             "name": "Gladiateur",
-            "effect": "X vaut le nombre d'altération <u>force</u> présent sur ce personnage +2."
+            "effect": "X vaut le nombre d'altérations <u>force</u> présentes sur ce personnage +2."
         },
         "punisher": {
             "name": "Punisseur",

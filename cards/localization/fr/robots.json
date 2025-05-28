@@ -18,7 +18,7 @@
             "effect": "Vous devez défausser 1 carte de votre main."
         },
         "tracker": {
-            "name": "Traquer",
+            "name": "Traqueur",
             "effect": "Au début de votre tour, vous pouvez défausser 1 carte de votre main pour détruire un ennemi en position front_icon."
         },
         "mother": {

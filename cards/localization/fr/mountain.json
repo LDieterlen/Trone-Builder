@@ -2,7 +2,7 @@
     "name": "Montagne",
     "cards": {
         "snowman": {
-            "name": "Bonhome",
+            "name": "Bonhomme",
             "effect": "Donnez l'altération GEL à un personnage en position front_icon."
         },
         "yeti": {
