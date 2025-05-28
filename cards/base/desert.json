@@ -9,7 +9,7 @@
             "count": "5",
             "position": "{{icon:any}}",
             "points": "0",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Give the alteration {{keyword:strength}} to 2 characters.",
             "image": "monk.png"
         },
@@ -18,7 +18,7 @@
             "count": "2",
             "position": "{{icon:any}}",
             "points": "3",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Destroy an ally with 0 base point. This character must be played in the same position as the destroyed ally.",
             "image": "monster.png",
             "h_location": 0.07
@@ -28,7 +28,7 @@
             "count": "2",
             "position": "{{icon:back}}",
             "points": "2",
-            "type": "{{text:permanent}}",
+            "type": "PERMANENT",
             "effect": "When this character gets an alteration, draw a card.",
             "image": "trainer.png",
             "h_location": 0.07
@@ -38,7 +38,7 @@
             "count": "2",
             "position": "{{icon:front}}",
             "points": "X",
-            "type": "{{text:permanent}}",
+            "type": "PERMANENT",
             "effect": "X equals the number of {{keyword:strength}} alterations on this character +2.",
             "image": "gladiator.png",
             "h_location": 0.02
@@ -48,7 +48,7 @@
             "count": "2",
             "position": "{{icon:front}}",
             "points": "1",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Destroy a character with an alteration.",
             "image": "punisher.png"
         },
@@ -57,7 +57,7 @@
             "count": "1",
             "position": "{{icon:front}}",
             "points": "6",
-            "type": "{{text:permanent}}",
+            "type": "PERMANENT",
             "effect": "You must destroy an ally with an alteration to play this character.",
             "image": "worm.png",
             "h_location": -0.02
@@ -67,8 +67,8 @@
             "count": "1",
             "position": "{{icon:back}}",
             "points": "0",
-            "type": "{{text:permanent}}",
-            "effect": "At the end of your turn, give the {{keyword:strength}} alteration to a character in {{icon:front_i}} position.",
+            "type": "PERMANENT",
+            "effect": "At the end of your turn, give the {{keyword:strength}} alteration to a character in front_icon position.",
             "image": "orphans.png",
             "h_location": -0.15
         },
@@ -77,7 +77,7 @@
             "count": "1",
             "position": "{{icon:any}}",
             "points": "0",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Give the {{keyword:strength}} alteration to all other {{icon:desert}} allies.",
             "image": "prince.png",
             "h_location": 0.03

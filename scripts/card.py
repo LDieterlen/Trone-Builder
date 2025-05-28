@@ -1,241 +1,131 @@
-from PIL import Image, ImageDraw, ImageFont
-import scripts.utils as utils
-import scripts.constant as C
-import pytesseract
+from PIL import Image, ImageDraw
+from reportlab.pdfgen import canvas
+
+from reportlab.platypus import Paragraph
+from reportlab.lib.utils import ImageReader
+from reportlab.lib.styles import ParagraphStyle
+from reportlab.pdfbase.pdfmetrics import stringWidth
+import io
 import math
+from scripts.utils import resize_image, smart_box_size, remove_html_tags
+
+from pdf2image import convert_from_bytes
 
 
-class CardTemplate:
-    def __init__(self):
-        self.width = C.CARD_WIDTH
-        self.height = C.CARD_HEIGHT
+# Constants for image dimensions and DPI
+DPI = 300
+WIDTH_PX = 750
+HEIGHT_PX = 1050
 
-        self.card = Image.new("RGBA", (self.width, self.height), "red")
+
+class Card:
+    def __init__(self, path=None):
+
+        self.width = WIDTH_PX
+        self.height = HEIGHT_PX
+        self.dpi = DPI
+
+        self.width_pt = self.width * 72 / self.dpi
+        self.height_pt = self.height * 72 / self.dpi
+
+        self.card_buffer = io.BytesIO()
+        self.pdf_buffer = io.BytesIO()
+
+        if path:
+            self.card = Image.open(path).convert("RGBA")
+        else:
+            self.card = Image.new("RGBA", (self.width, self.height), "red")
         self.drawer = ImageDraw.ImageDraw(self.card)
+
+        self.canvas = canvas.Canvas(
+            self.pdf_buffer, pagesize=(self.width_pt, self.height_pt)
+        )
 
     def add_image(
         self,
         image_path: str,
-        identifier: str,
+        box: tuple,
         centered: bool = False,
         fit_method: str = "crop",
         h_location: float = None,
     ):
         image = Image.open(image_path)
         # Load the position of the image on the card
-        layer_location = C.LAYERS_LOCATIONS[identifier]
+        layer_box = (math.floor(self.width * box[0]), math.floor(self.height * box[1]))
         if h_location is not None:
-            layer_location = (layer_location[0], math.floor(self.height * h_location))
-        # Resize the image
-        if fit_method == "thumbnail":
-            # Complete resizing while preserving aspect ratio
-            image.thumbnail((self.width, self.height))
-        elif fit_method == "fill":
-            # Complete resizing without preserving aspect ratio
-            image = image.resize((self.width, self.height))
-        elif fit_method == "crop":
-            # Resize the image proportionally then crop it to fill the frame
-            img_ratio = image.width / image.height
-            card_ratio = self.width / self.height
+            layer_box = (layer_box[0], math.floor(self.height * h_location))
 
-            if img_ratio > card_ratio:
-                # Image wider than the frame
-                new_width = int(self.height * img_ratio)
-                image = image.resize((new_width, self.height))
-                # Crop to center
-                left = (image.width - self.width) // 2
-                image = image.crop((left, 0, left + self.width, self.height))
-            else:
-                # Image taller than the frame
-                new_height = int(self.width / img_ratio)
-                image = image.resize((self.width, new_height))
-                # Crop to center
-                top = (image.height - self.height) // 2
-                image = image.crop((0, top, self.width, top + self.height))
+        image = resize_image(image, self.width, self.height, fit_method)
 
         if centered:
-            layer_location = (
-                layer_location[0] - image.width // 2,
-                layer_location[1] - image.height // 2,
+            layer_box = (
+                layer_box[0] - image.width // 2,
+                layer_box[1] - image.height // 2,
             )
         self.card.paste(
-            image, layer_location, image.split()[3] if image.mode == "RGBA" else None
+            image, layer_box, image.split()[3] if image.mode == "RGBA" else None
         )
+
+    def pdf_from_card(self):
+        self.card.save(self.card_buffer, format="PNG")
+        self.card_buffer.seek(0)
+
+        self.canvas.drawImage(
+            ImageReader(self.card_buffer),
+            0,
+            0,
+            width=self.width_pt,
+            height=self.height_pt,
+        )
+
+    def card_from_pdf(self):
+        self.canvas.save()
+        pdf_bytes = self.pdf_buffer.getvalue()
+        poppler_path = (
+            "C:/Users/E115606/Documents/Perso/Programs/poppler-24.08.0/Library/bin"
+        )
+
+        self.card = convert_from_bytes(
+            pdf_bytes, poppler_path=poppler_path, size=(self.width, self.height)
+        )[0]
 
     def add_text(
         self,
-        text: str,
-        identifier: str,
-        h_center=True,
-        v_center=True,
-        auto_indentation: bool = False,
-        keywords: list = None,
+        text,
+        x_offset_ratio,
+        y_offset_ratio,
+        style: ParagraphStyle,
+        box=None,
+        reverse=True,
     ):
-        properties = C.TEXT_PROPERTIES[identifier]
+        font = style.fontName
+        size = style.fontSize
+        text_cleaned = remove_html_tags(text)
+        width = stringWidth(text_cleaned, font, size)
+        if box:
+            box_width = self.width_pt * box[0]
+            box_height = self.height_pt * box[1]
+        else:
+            box_width = self.width_pt * 0.92
+            box_height = self.height_pt * 0.25
 
-        font = ImageFont.truetype(properties.font, properties.font_size)
-        if auto_indentation:
-            text = utils.add_new_lines(self.width * 0.9, text, font)
+        if reverse:
+            y_offset_ratio = 1 - y_offset_ratio
 
-        position = (properties.x * self.width, properties.y * self.height)
+        box_width = smart_box_size(width, self.width_pt * 0.8, self.width_pt * 0.92)
 
-        _, _, w, h = self.drawer.textbbox((0, 0), text, font=font)
-        if h_center:
-            position = (position[0] - w // 2, position[1])
-        if v_center:
-            position = (position[0], position[1] - h // 2)
+        print(f"Largeur du texte : {width} points")
+        print(f"Largeur de la boîte : {box_width} points")
 
-        self.drawer.text(
-            position,
-            text,
-            font=font,
-            fill=properties.color,
-            align=properties.align,
-            spacing=12,
-        )
+        x_center = self.width_pt * x_offset_ratio
+        y_center = self.height_pt * y_offset_ratio
 
-        # Underline specific keywords in the text
-        if keywords:
-            for keyword in keywords:
-                start_idx = text.find(keyword)
-                if start_idx != -1:
-                    before_keyword = text[:start_idx]
-                    lines = before_keyword.split("\n")
-                    keyword_line_idx = len(lines) - 1
-                    keyword_line_start = sum(len(line) + 1 for line in lines[:-1])
-                    keyword_in_line_idx = start_idx - keyword_line_start
-                    text_lines = text.split("\n")
-                    # Position de départ de la ligne
-                    line_y = position[1] + sum(
-                        font.getbbox(line)[3] - font.getbbox(line)[1] + 12
-                        for line in text_lines[:keyword_line_idx]
-                    )
-                    line_text = text_lines[keyword_line_idx]
-                    prefix = line_text[:keyword_in_line_idx]
-                    prefix_width = font.getlength(prefix)
-                    keyword_bbox = font.getbbox(keyword)
-                    keyword_width = keyword_bbox[2] - keyword_bbox[0]
-                    keyword_height = keyword_bbox[3] - keyword_bbox[1]
-                    # Correction align center
-                    line_width = font.getlength(line_text)
-                    x_offset = 0
-                    if properties.align == "center":
-                        x_offset = (w - line_width) / 2
-                    underline_start = (
-                        position[0] + x_offset + prefix_width,
-                        line_y + keyword_height,
-                    )
-                    underline_end = (
-                        underline_start[0] + keyword_width,
-                        underline_start[1],
-                    )
-                    self.drawer.line(
-                        [underline_start, underline_end],
-                        fill=properties.color,
-                        width=2,
-                    )
+        para = Paragraph(text, style)
+        w, h = para.wrap(box_width, box_height)
 
-    def insert_icons(self, icon_order: dict):
-        pytesseract.pytesseract.tesseract_cmd = (
-            r"C:\Users\E115606\AppData\Local\Programs\Tesseract-OCR\tesseract"
-        )
-        boxes = pytesseract.image_to_data(
-            self.card,
-            output_type=pytesseract.Output.DICT,
-            lang="eng",
-            config="--psm 6",
-        )
+        x = x_center - w / 2
+        y = y_center - h / 2
+        para.drawOn(self.canvas, x, y)
 
-        import re
-
-        pattern_found = 0
-        for key, icon_path in icon_order.items():
-            pattern_to_find = key
-            print(f"Pattern to find: {pattern_to_find}")
-            for j, word in enumerate(boxes["text"]):
-                pattern = re.compile(pattern_to_find)
-                if re.fullmatch(pattern, word):
-                    x = boxes["left"][j]
-                    y = boxes["top"][j]
-                    w = boxes["width"][j]
-                    h = boxes["height"][j]
-
-                    print("Pattern found at:", x, y, w, h)
-                    icon = Image.open(icon_path).convert("RGBA")
-
-                    max_size = max(w, h) + 10
-                    icon.thumbnail((max_size, max_size), Image.LANCZOS)
-
-                    # Calculate position to center the icon at (x,y)
-                    x_centered = x - (icon.width // 2) + (w // 2)
-                    y_centered = y - (icon.height // 2) + (h // 2)
-
-                    self.card.paste(icon, (x_centered, y_centered), icon)
-                    pattern_found += 1
-                    break
-
-        if pattern_found != len(icon_order):
-            raise Exception(
-                f"Not all patterns were found. Found {pattern_found} out of {len(icon_order)}."
-            )
-
-    def save(self, path):
-        self.card.save(path, "PNG", dpi=(300, 300))
-
-    def underline_words(
-        self,
-        words_to_underline: list,
-        psm: int = 6,
-        lang: str = "eng",
-        threshold: bool = True,
-        scale: float = 2.0,
-        color: str = "black",
-        width: int = 2,
-    ):
-        """
-        Souligne les mots présents dans words_to_underline sur la carte.
-        Améliore la détection OCR avec binarisation et redimensionnement.
-        """
-        pytesseract.pytesseract.tesseract_cmd = (
-            r"C:\Users\E115606\AppData\Local\Programs\Tesseract-OCR\tesseract"
-        )
-
-        # Amélioration de l'image pour l'OCR
-        ocr_img = self.card.convert("L")
-        if threshold:
-            ocr_img = ocr_img.point(lambda x: 0 if x < 180 else 255, "1")
-        if scale != 1.0:
-            new_size = (int(ocr_img.width * scale), int(ocr_img.height * scale))
-            ocr_img = ocr_img.resize(new_size, Image.LANCZOS)
-
-        custom_config = f"--psm {psm}"
-        boxes = pytesseract.image_to_data(
-            ocr_img,
-            output_type=pytesseract.Output.DICT,
-            lang=lang,
-            config=custom_config,
-        )
-
-        import re
-
-        for word in words_to_underline:
-            found = False
-            pattern = re.compile(word)
-            for j, ocr_word in enumerate(boxes["text"]):
-                if re.fullmatch(pattern, ocr_word):
-                    # Adapter les coordonnées si l'image a été redimensionnée
-                    x = int(boxes["left"][j] / scale)
-                    y = int(boxes["top"][j] / scale)
-                    w = int(boxes["width"][j] / scale)
-                    h = int(boxes["height"][j] / scale)
-                    # Ligne sous le mot
-                    underline_y = y + h + 2
-                    self.drawer.line(
-                        [(x, underline_y), (x + w, underline_y)],
-                        fill=color,
-                        width=width,
-                    )
-                    found = True
-                    break
-            if not found:
-                print(f"Mot non trouvé pour soulignement : {word}")
+    def save(self, path, format="PNG"):
+        self.card.save(path, format, dpi=(self.dpi, self.dpi))

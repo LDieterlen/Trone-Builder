@@ -17,7 +17,8 @@
         "front_i": "assets/sprites/positions/front_i.png",
         "back": "assets/sprites/positions/back.png",
         "back_i": "assets/sprites/positions/back_i.png",
-        "human_fac": "assets/sprites/factions/humans.png"
+        "human_fac": "assets/sprites/factions/humans.png",
+        "desert_fac": "assets/sprites/factions/desert.png"
     },
     "legends": {
         "encouraged": "Increase your points by 1 for each other ally of the same faction.",

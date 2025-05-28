@@ -1,25 +1,62 @@
 import re
 import os
 import json
-from scripts.card import CardTemplate
+
+from scripts.card import Card
 from scripts.utils import (
-    replace_text,
-    replace_keywords,
-    replace_icons,
+    replace_keywords_with_bold,
+    replace_keywords_with_icons,
+)
+
+from scripts.constants import (
+    TITLE_STYLE,
+    COUNT_STYLE,
+    POINTS_STYLE,
+    EFFECT_TYPE_STYLE,
+    EFFECT_STYLE,
+    LEGEND_STYLE,
+    LEGEND_NAME_STYLE,
 )
 
 
+ICONS = {
+    "dead_fac": "assets/sprites/factions/dead.png",
+    "humans_fac": "assets/sprites/factions/humans.png",
+    "mages_fac": "assets/sprites/factions/mages.png",
+    "dwarf_fac": "assets/sprites/factions/dwarf.png",
+    "demons_fac": "assets/sprites/factions/demons.png",
+    "desert_fac": "assets/sprites/factions/desert.png",
+    "mountain_fac": "assets/sprites/factions/mountain.png",
+    "front_icon": "assets/sprites/positions/front_i.png",
+    "back_icon": "assets/sprites/positions/back_i.png",
+}
+
+BOLD_TEXT = {
+    "JOUÉ": "font face='Cinzel-ExtraBold' size='10'",
+    "PERMANENT": "font face='Cinzel-ExtraBold' size='10'",
+    "X": "font face='Cinzel-ExtraBold' size='10'",
+}
+
+
 FACTIONS = [
-    # "dwarf",
-    # "dead",
-    # "demons",
-    # "desert",
+    "dwarf",
+    "humans",
+    "desert",
     "mages",
-    # "mountain",
-    # "humans",
+    "mountain",
+    "demons",
+    "dead",
+    "robots",
 ]
 
 LANGUAGE = "fr"
+
+BOXES = {
+    "card_overlay": (0, 0),
+    "background": (0, 0.05),
+    "faction": (0.070, 0.05),
+    "position": (0.930, 0.05),
+}
 
 
 def deep_merge(dict1: dict, dict2: dict) -> dict:
@@ -65,22 +102,22 @@ def extract_icon_name(text: str):
     return text
 
 
-def build_faction(global_data: dict, faction_details: dict):
+def build_faction(faction: str, faction_details: dict, language: str = "fr"):
     # Load properties of the faction
-    faction_name: str = faction_details["name"]
+
     card_layer_path = faction_details["card_layer_path"]
     image_base_path = faction_details["images_folder"]
     faction_path = faction_details["faction_path"]
     cards = faction_details["cards"]
 
     # Create the output folder for the faction
-    output_folder_path = f"output/{faction_name}"
+    output_folder_path = f"output/{language}/{faction}/"
     os.makedirs(output_folder_path, exist_ok=True)
 
     # Building cards for each character
     for character_id in cards:
         print(f"Building card for {character_id}...")
-        card_template = CardTemplate()
+        card_template = Card()
         character_info = cards[character_id]
 
         character_image = image_base_path + character_info["image"].lower()
@@ -91,98 +128,84 @@ def build_faction(global_data: dict, faction_details: dict):
         position_icon_path = f"assets/sprites/positions/{position_icon_name}.png"
 
         card_template.add_image(
-            character_image, "character", h_location=character_info.get("h_location")
+            character_image,
+            BOXES["background"],
+            h_location=character_info.get("h_location"),
         )
-        card_template.add_image(card_layer_path, "core")
+        card_template.add_image(card_layer_path, BOXES["card_overlay"])
         card_template.add_image(
-            faction_path, "faction", centered=True, fit_method="thumbnail"
+            faction_path, BOXES["faction"], centered=True, fit_method="thumbnail"
         )
         card_template.add_image(
             position_icon_path,
-            "position",
+            BOXES["position"],
             centered=True,
             fit_method="thumbnail",
         )
+
+        card_template.pdf_from_card()
 
         # Title
         name: str = character_info["name"]
         count: str = character_info["count"]
         points: str = character_info["points"]
         effect_type: str = character_info["type"]
-        effect_type = replace_text(effect_type, global_data)
 
         effect: str = character_info["effect"]
-        effect = replace_text(effect, global_data)
-        effect, keywords, keyword_keys = replace_keywords(effect, global_data)
-        effect, icons_order, icon_count = replace_icons(effect, global_data)
+        effect = replace_keywords_with_icons(effect, ICONS)
+        effect = replace_keywords_with_bold(effect, BOLD_TEXT)
 
-        # Tytle
+        # Title
         card_template.add_text(
-            name.upper(),
-            "title",
-            h_center=True,
-            v_center=True,
+            name,
+            x_offset_ratio=0.5,
+            y_offset_ratio=0.045,
+            style=TITLE_STYLE,
         )
         # Count
         card_template.add_text(
             count,
-            "count",
-            h_center=True,
-            v_center=True,
+            x_offset_ratio=0.83,
+            y_offset_ratio=0.03,
+            style=COUNT_STYLE,
         )
         # Points
         card_template.add_text(
             points,
-            "points",
-            h_center=True,
-            v_center=True,
+            x_offset_ratio=0.5,
+            y_offset_ratio=0.58,
+            style=POINTS_STYLE,
         )
 
         # Effect type
         card_template.add_text(
             effect_type,
-            "effect_type",
-            h_center=True,
-            v_center=True,
+            x_offset_ratio=0.5,
+            y_offset_ratio=0.77,
+            style=EFFECT_TYPE_STYLE,
         )
 
         # Effect
         card_template.add_text(
             effect,
-            "effect",
-            h_center=True,
-            v_center=True,
-            auto_indentation=True,
-            keywords=keywords,
+            x_offset_ratio=0.5,
+            y_offset_ratio=0.88,
+            style=EFFECT_STYLE,
         )
 
-        # Legend
-        for i, key in enumerate(keyword_keys):
-            legend_text = global_data["legends"][key]
-            legend_text = f"{keywords[i].upper()} : {legend_text}"
-            legend_text, legend_icons, icon_count = replace_icons(
-                legend_text, global_data, icon_count
-            )
-            icons_order = {**icons_order, **legend_icons}
-            card_template.add_text(
-                legend_text,
-                "legend",
-                h_center=True,
-                v_center=True,
-            )
-
-        card_template.insert_icons(icons_order)
-        card_template.save(output_folder_path + f"/{name}.png")
-        print(f"Card for {name} created successfully.")
+        saved_name = f"{count}-{name}.png"
+        card_template.card_from_pdf()
+        card_template.save(output_folder_path + saved_name)
+        print("Done")
 
 
 if __name__ == "__main__":
 
-    global_data = load_global_data(LANGUAGE)
     for faction in FACTIONS:
         faction_data = load_faction(faction, LANGUAGE)
 
         faction_name = faction_data["name"]
         print(f"Loaded data for faction: {faction_name}")
 
-        build_faction(global_data, faction_data)
+        build_faction(faction, faction_data)
+        # eogr

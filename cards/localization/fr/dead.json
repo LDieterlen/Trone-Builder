@@ -3,7 +3,7 @@
     "cards": {
         "death": {
             "name": "Mort",
-            "effect": "Détruisez un personnage en position {{icon:front_i}}."
+            "effect": "Détruisez un personnage en position front_icon."
         },
         "moires": {
             "name": "Moires",
@@ -15,11 +15,11 @@
         },
         "hydra": {
             "name": "Hydre",
-            "effect": "Vous devez détruire un allié en position {{icon:back_i}}."
+            "effect": "Vous devez détruire un allié en position back_icon."
         },
         "companion": {
             "name": "Compagnon",
-            "effect": "Copiez l'effet {{text:play}} d'un allié dans votre cimetière."
+            "effect": "Copiez l'effet JOUÉ d'un allié dans votre cimetière."
         },
         "child": {
             "name": "Enfant",

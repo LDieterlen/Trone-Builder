@@ -9,7 +9,7 @@
             "count": "4",
             "position": "{{icon:any}}",
             "points": "2",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Give the {{keyword:protection}} alteration to a character.",
             "image": "simple.png"
         },
@@ -18,8 +18,8 @@
             "count": "3",
             "position": "{{icon:any}}",
             "points": "2",
-            "type": "{{text:play}}",
-            "effect": "Destroy an other ally then destroy an opponent's character in {{icon:front_i}} position.",
+            "type": "JOUÉ",
+            "effect": "Destroy an other ally then destroy an opponent's character in front_icon position.",
             "image": "nervous.png",
             "h_location": 0.04
         },
@@ -28,7 +28,7 @@
             "count": "2",
             "position": "{{icon:front}}",
             "points": "3",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "This character gains the {{keyword:protection}} alteration.",
             "image": "joyful.png"
         },
@@ -37,7 +37,7 @@
             "count": "2",
             "position": "{{icon:back}}",
             "points": "0",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Move an alteration from one character to another.",
             "image": "allergic.png",
             "h_location": 0.05
@@ -47,7 +47,7 @@
             "count": "2",
             "position": "{{icon:back}}",
             "points": "X",
-            "type": "{{text:permanent}}",
+            "type": "PERMANENT",
             "effect": "If this character has the {{keyword:protection}} alteration, X equals 4, otherwise X equals 0.",
             "image": "fearful.png",
             "h_location": 0.03
@@ -57,7 +57,7 @@
             "count": "1",
             "position": "{{icon:back}}",
             "points": "0",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Give the {{keyword:protection}} alteration to 3 allies.",
             "image": "lazy.png"
         },
@@ -66,7 +66,7 @@
             "count": "1",
             "position": "{{icon:any}}",
             "points": "4",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "All oppent's effect target this character first.",
             "image": "boss.png",
             "h_location": -0.07
@@ -76,8 +76,8 @@
             "count": "1",
             "position": "{{icon:front}}",
             "points": "X",
-            "type": "{{text:permanent}}",
-            "effect": "X equals the number of ally in {{icon:back_i}} position.",
+            "type": "PERMANENT",
+            "effect": "X equals the number of ally in back_icon position.",
             "image": "mascott.png",
             "h_location": 0
         }

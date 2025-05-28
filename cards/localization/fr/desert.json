@@ -3,11 +3,11 @@
     "cards": {
         "monk": {
             "name": "Moine",
-            "effect": "Donnez l'altération {{keyword:strength}} à 2 personnages."
+            "effect": "Donnez l'altération <u>force</u> à 2 personnages."
         },
         "monster": {
             "name": "Monstre",
-            "effect": "Détruisez un allié avec 0 point de base. Ce personnage doit être joué à la même position que l'allié détruit."
+            "effect": "Détruisez un allié avec 0 point de base."
         },
         "trainer": {
             "name": "Dresseur",
@@ -15,7 +15,7 @@
         },
         "gladiator": {
             "name": "Gladiateur",
-            "effect": "X vaut le nombre d'altération {{keyword:strength}} présent sur ce personnage +2."
+            "effect": "X vaut le nombre d'altération <u>force</u> présent sur ce personnage +2."
         },
         "punisher": {
             "name": "Punisseur",
@@ -27,11 +27,11 @@
         },
         "orphans": {
             "name": "Orphelins",
-            "effect": "À la fin de votre tour, donnez l'altération {{keyword:strength}} à un personnage en position {{icon:front_i}}."
+            "effect": "À la fin de votre tour, donnez l'altération <u>force</u> à un personnage en position front_icon."
         },
         "prince": {
             "name": "Prince",
-            "effect": "Donnez l'altération {{keyword:strength}} à tous les autres alliés {{icon:desert}}."
+            "effect": "Donnez l'altération <u>force</u> à tous les autres alliés desert_fac."
         }
     }
 }

@@ -3,7 +3,7 @@
     "cards": {
         "creature": {
             "name": "Bestiole",
-            "effect": "Renvoyez un ennemi en position {{icon:front_i}} dans la main de son propriétaire."
+            "effect": "Renvoyez un ennemi en position front_icon dans la main de son propriétaire."
         },
         "minion": {
             "name": "Mignon",
@@ -11,7 +11,7 @@
         },
         "horned": {
             "name": "Cornu",
-            "effect": "Vous devez renvoyer un allié en position {{icon:back_i}} dans votre main."
+            "effect": "Vous devez renvoyer un allié en position back_icon dans votre main."
         },
         "eye": {
             "name": "Œil",

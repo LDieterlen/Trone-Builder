@@ -1,24 +1,24 @@
 {
     "name": "Robots",
-    "faction_path": "assets/sprites/factions/robots.png",
-    "card_layer_path": "assets/sprites/cards/robots.png",
-    "images_folder": "assets/images/robots/",
+    "faction_path": "assets/sprites/factions/mountain.png",
+    "card_layer_path": "assets/sprites/cards/humans.png",
+    "images_folder": "assets/images/mountain/",
     "cards": {
         "minibot": {
             "name": "Minibot",
             "count": "5",
             "position": "{{icon:any}}",
             "points": "2",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Draw 1 card.",
-            "image": "minibot.png"
+            "image": "snowman.png"
         },
         "drone": {
             "name": "Drone",
             "count": "2",
-            "position": "{{icon:bot}}",
+            "position": "{{icon:back}}",
             "points": "1",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "All opponents must discard 1 card from their hand.",
             "image": "yeti.png",
             "h_location": -0.03
@@ -26,9 +26,9 @@
         "recycler": {
             "name": "Recycler",
             "count": "2",
-            "position": "{{icon:front}}",
+            "position": "{{icon:back}}",
             "points": "2",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Take a card from the discard into your hand.",
             "image": "witch.png",
             "h_location": -0.02
@@ -38,7 +38,7 @@
             "count": "2",
             "position": "{{icon:front}}",
             "points": "4",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "You must discard 1 card from your hand.",
             "image": "ancestor.png",
             "h_location": 0.02
@@ -48,17 +48,17 @@
             "count": "2",
             "position": "{{icon:front}}",
             "points": "0",
-            "type": "{{text:permanent}}",
-            "effect": "At the beginning of your turn, you can discard 1 card from your hand to destroy an enemy in {{icon:front_i}} position.",
+            "type": "PERMANENT",
+            "effect": "At the beginning of your turn, you can discard 1 card from your hand to destroy an enemy in front_icon position.",
             "image": "merchant.png",
             "h_location": -0.03
         },
-        "beast": {
-            "name": "TODO",
+        "mother": {
+            "name": "Mother",
             "count": "1",
-            "position": "{{icon:any}}",
+            "position": "{{icon:back}}",
             "points": "0",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Gain permanent points equal to 5 minus the number of cards in your hand.",
             "image": "beast.png"
         },
@@ -67,17 +67,17 @@
             "count": "1",
             "position": "{{icon:any}}",
             "points": "1",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Draw 3 cards.",
             "image": "lizard.png",
             "h_location": -0.02
         },
-        "giant": {
-            "name": "TODO",
+        "weapon": {
+            "name": "Weapon",
             "count": "1",
             "position": "{{icon:back}}",
             "points": "5",
-            "type": "{{text:permanent}}",
+            "type": "PERMANENT",
             "effect": "You no longer draw at the start of your turn. You may destroy this ally at any time.",
             "image": "giant.png",
             "h_location": -0.02

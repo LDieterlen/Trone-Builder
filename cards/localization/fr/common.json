@@ -16,7 +16,7 @@
         "strength": "Augmente les points de base du personnage à 1.",
         "frozen": "Les points de base du personnage passent à 0.",
         "protection": "Lorsque le personnage est ciblé par un effet adverse, vous pouvez retirer cette altération à la place.",
-        "move": "Un personnage en position {{icon:front_i}} passe à la position {{icon:back_i}} et réciproquement."
+        "move": "Un personnage en position front_icon passe à la position back_icon et réciproquement."
     },
     "positons": {
         "any": {

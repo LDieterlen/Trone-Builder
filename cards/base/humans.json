@@ -10,7 +10,7 @@
             "count": "4",
             "position": "{{icon:any}}",
             "points": "0",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Give the alteration {{keyword:encouraged}} to this character."
         },
         "soldier": {
@@ -19,7 +19,7 @@
             "count": "3",
             "position": "{{icon:front}}",
             "points": "2",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Draw 2 cards then discard 2 cards.",
             "h_location": 0.1
         },
@@ -29,8 +29,8 @@
             "count": "2",
             "position": "{{icon:back}}",
             "points": "1",
-            "type": "{{text:play}}",
-            "effect": "Copy the {{text:play}} effect of an ally in {{icon:front_i}} position."
+            "type": "JOUÉ",
+            "effect": "Copy the JOUÉ effect of an ally in front_icon position."
         },
         "archer": {
             "name": "Archer",
@@ -38,8 +38,8 @@
             "count": "2",
             "position": "{{icon:back}}",
             "points": "1",
-            "type": "{{text:play}}",
-            "effect": "Destroy a character in {{icon:front_i}} position."
+            "type": "JOUÉ",
+            "effect": "Destroy a character in front_icon position."
         },
         "knight": {
             "name": "Knight",
@@ -47,8 +47,8 @@
             "count": "2",
             "position": "{{icon:front}}",
             "points": "3",
-            "type": "{{text:permanent}}",
-            "effect": "If an ally in {{icon:back_i}} position is destroyed, destroy this ally instead."
+            "type": "PERMANENT",
+            "effect": "If an ally in back_icon position is destroyed, destroy this ally instead."
         },
         "king": {
             "name": "King",
@@ -56,7 +56,7 @@
             "count": "1",
             "position": "{{icon:back}}",
             "points": "X",
-            "type": "{{text:permanent}}",
+            "type": "PERMANENT",
             "effect": "If you have more than 3 other {{icon:human_fac}} allies, X is 5, otherwise X is 0.",
             "h_location": 0.08
         },
@@ -66,7 +66,7 @@
             "count": "1",
             "position": "{{icon:any}}",
             "points": "0",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Give the alteration {{keyword:encouraged}} to another ally.",
             "h_location": 0.1
         },
@@ -76,7 +76,7 @@
             "count": "1",
             "position": "{{icon:any}}",
             "points": "2",
-            "type": "{{text:play}}",
+            "type": "JOUÉ",
             "effect": "Reveal 1 card from the deck, you can play it if it's a {{icon:human_fac}}, otherwise keep it in hand."
         }
     }

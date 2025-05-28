@@ -3,15 +3,15 @@
     "cards": {
         "student": {
             "name": "Élève",
-            "effect": "Vous pouvez {{keyword:move}} jusqu'à 2 personnages."
+            "effect": "Vous pouvez repositionner jusqu'à 2 personnages."
         },
         "apprentice": {
             "name": "Apprentie",
-            "effect": "X vaut 4 si ce personnage est en position {{icon:back_i}}, sinon X vaut 1."
+            "effect": "X vaut 4 si ce personnage est en position back_icon, sinon X vaut 1."
         },
         "plotter": {
             "name": "Comploteur",
-            "effect": "Lorsque vous déplacez cet allié, détruisez un personnage en position {{icon:front_i}}."
+            "effect": "Lorsque vous repositionné cet allié, détruisez un personnage en position front_icon."
         },
         "spy": {
             "name": "Espion",
@@ -27,11 +27,11 @@
         },
         "cunning": {
             "name": "Sage",
-            "effect": "Copiez l'effet {{text:play}} d'un personnage dans votre main."
+            "effect": "Copiez l'effet JOUÉ d'un personnage dans votre main."
         },
         "professor": {
             "name": "Professeur",
-            "effect": "À la fin de votre tour, vous pouvez {{keyword:move}} un personnage en position {{icon:back_i}} vers la position {{icon:front_i}}."
+            "effect": "À la fin de votre tour, vous pouvez repositionner un personnage en position back_icon vers la position front_icon."
         }
     }
 }
