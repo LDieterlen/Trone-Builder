@@ -5,8 +5,8 @@ from reportlab.lib.colors import black
 from reportlab.lib.enums import TA_CENTER
 
 DPI = 300
-WIDTH_PX = 750
-HEIGHT_PX = 1050
+WIDTH_PX = 744
+HEIGHT_PX = 1039
 
 pdfmetrics.registerFont(TTFont("Gabriola", "C:/Windows/Fonts/Gabriola.ttf"))
 pdfmetrics.registerFont(

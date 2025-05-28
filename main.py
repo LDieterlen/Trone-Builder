@@ -54,8 +54,8 @@ LANGUAGE = "fr"
 BOXES = {
     "card_overlay": (0, 0),
     "background": (0, 0.05),
-    "faction": (0.070, 0.05),
-    "position": (0.930, 0.05),
+    "faction": (0.070, 0.051),
+    "position": (0.930, 0.051),
 }
 
 
@@ -132,7 +132,9 @@ def build_faction(faction: str, faction_details: dict, language: str = "fr"):
             BOXES["background"],
             h_location=character_info.get("h_location"),
         )
-        card_template.add_image(card_layer_path, BOXES["card_overlay"])
+        card_template.add_image(
+            card_layer_path, BOXES["card_overlay"], fit_method="fill"
+        )
         card_template.add_image(
             faction_path, BOXES["faction"], centered=True, fit_method="thumbnail"
         )

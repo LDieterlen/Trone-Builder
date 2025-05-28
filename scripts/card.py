@@ -8,14 +8,12 @@ from reportlab.pdfbase.pdfmetrics import stringWidth
 import io
 import math
 from scripts.utils import resize_image, smart_box_size, remove_html_tags
-
+from scripts.constants import (
+    WIDTH_PX,
+    HEIGHT_PX,
+    DPI,
+)
 from pdf2image import convert_from_bytes
-
-
-# Constants for image dimensions and DPI
-DPI = 300
-WIDTH_PX = 750
-HEIGHT_PX = 1050
 
 
 class Card:
