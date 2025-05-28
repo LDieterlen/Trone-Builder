@@ -176,4 +176,3 @@ cython_debug/
 _ignore
 
 output/
-print_sheet/

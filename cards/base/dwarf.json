@@ -79,7 +79,7 @@
             "type": "PERMANENT",
             "effect": "X equals the number of ally in back_icon position.",
             "image": "mascott.png",
-            "h_location": 0
+            "h_location": 0.03
         }
     }
 }
