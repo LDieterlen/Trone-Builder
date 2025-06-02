@@ -27,11 +27,11 @@
         },
         "boss": {
             "name": "Patron",
-            "effect": "Les effets adverse ciblent toujours ce personnage."
+            "effect": "Ne fait rien."
         },
         "mascot": {
             "name": "Mascotte",
-            "effect": "X est égal au nombre d'alliés en position back_icon."
+            "effect": "X est égal au nombre d'alliés en position back_icon (max. 5)."
         }
     }
 }

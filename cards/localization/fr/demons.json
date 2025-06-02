@@ -3,7 +3,7 @@
     "cards": {
         "creature": {
             "name": "Bestiole",
-            "effect": "Renvoyez un ennemi en position front_icon dans la main de son propriétaire."
+            "effect": "Vous pouvez renvoyez un ennemi en position front_icon dans la main de son propriétaire."
         },
         "minion": {
             "name": "Mignon",
@@ -19,7 +19,7 @@
         },
         "clever": {
             "name": "Malins",
-            "effect": "Jouez un personnage supplémentaire ce tour."
+            "effect": "Vous pouvez jouer un personnage supplémentaire ce tour."
         },
         "cyclops": {
             "name": "Cyclope",

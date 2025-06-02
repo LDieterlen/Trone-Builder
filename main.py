@@ -3,10 +3,7 @@ import os
 import json
 
 from scripts.card import Card
-from scripts.utils import (
-    replace_keywords_with_bold,
-    replace_keywords_with_icons,
-)
+from scripts.utils import bold_keywords, replace_keywords_with_icons, underline_keywords
 
 from scripts.constants import (
     TITLE_STYLE,
@@ -14,9 +11,17 @@ from scripts.constants import (
     POINTS_STYLE,
     EFFECT_TYPE_STYLE,
     EFFECT_STYLE,
-    LEGEND_STYLE,
-    LEGEND_NAME_STYLE,
 )
+
+UNDERLINED_KEYWORDS = [
+    "allié",
+    "confrère",
+    "ennemi",
+    "encouragé",
+    "gel",
+    "force",
+    "protection",
+]
 
 
 ICONS = {
@@ -153,10 +158,6 @@ def build_faction(faction: str, faction_details: dict, language: str = "fr"):
         points: str = character_info["points"]
         effect_type: str = character_info["type"]
 
-        effect: str = character_info["effect"]
-        effect = replace_keywords_with_icons(effect, ICONS)
-        effect = replace_keywords_with_bold(effect, BOLD_TEXT)
-
         # Title
         card_template.add_text(
             name,
@@ -187,6 +188,11 @@ def build_faction(faction: str, faction_details: dict, language: str = "fr"):
             style=EFFECT_TYPE_STYLE,
         )
 
+        effect: str = character_info["effect"]
+        effect = replace_keywords_with_icons(effect, ICONS)
+        effect = bold_keywords(effect, BOLD_TEXT)
+        effect = underline_keywords(effect, UNDERLINED_KEYWORDS)
+
         # Effect
         card_template.add_text(
             effect,
@@ -207,7 +213,8 @@ if __name__ == "__main__":
         faction_data = load_faction(faction, LANGUAGE)
 
         faction_name = faction_data["name"]
+        print("-" * 20)
         print(f"Loaded data for faction: {faction_name}")
+        print("-" * 20)
 
         build_faction(faction, faction_data)
-        # eogr

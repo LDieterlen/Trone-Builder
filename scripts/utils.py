@@ -7,10 +7,57 @@ import pytesseract
 
 
 def remove_html_tags(text):
+    text = re.sub(r"<img[^>]*>", "XX", text)
     return re.sub(r"<[^>]*>", "", text)
 
 
-def smart_box_size(text_lenght, box_min_lenght, box_max_length):
+def balance_list_weight(list_1: List[float], list_2: List[float]) -> None:
+    updated = False
+    last_element_1 = list_1[-1]
+    while sum(list_1) - last_element_1 > sum(list_2):
+        list_2.append(list_1.pop(-1))
+        last_element_1 = list_1[-1]
+        updated = True
+    return updated
+
+
+def balance_list(lists: List[List[float]]):
+
+    need_update = True
+    while need_update:
+        need_update = False
+        for i in range(len(lists) - 1):
+            updated = balance_list_weight(lists[i], lists[i + 1])
+            need_update = need_update or updated
+
+
+def smart_box_size(
+    total_length,
+    words_lenght,
+    box_max_length,
+    text,
+):
+    if total_length < box_max_length:
+        return box_max_length
+
+    nb_lines = 1
+    balanced_lists = []
+    current_line = []
+    for word in words_lenght:
+        if sum(current_line) + word > box_max_length:
+            balanced_lists.append(current_line)
+            current_line = [word]
+            nb_lines += 1
+        else:
+            current_line.append(word)
+    balanced_lists.append(current_line)
+
+    balance_list(balanced_lists)
+    max_word_length = math.ceil(max(sum(l) for l in balanced_lists))
+    return max_word_length
+
+
+def smart_box_size_old(text_lenght, box_min_lenght, box_max_length):
     if text_lenght < box_max_length:
         return box_max_length
 
@@ -27,16 +74,22 @@ def replace_keywords_with_icons(text, replacements, img_width=12, img_height=12)
         img_path = replacements[word]
         return f"<img src='{img_path}' width='{img_width}' height='{img_height}' valign='bottom'/>"
 
-    # Construire l'expression régulière pour tous les mots-clés
     pattern = r"\b(" + "|".join(map(re.escape, replacements.keys())) + r")\b"
     return re.sub(pattern, replacer, text)
 
 
-def replace_keywords_with_bold(text, replacements):
+def underline_keywords(text, replacements: list, end="(e?s?)"):
+    for keyword in replacements:
+        escaped_keyword = re.escape(keyword)
+        pattern = re.compile(rf"\b{escaped_keyword}{end}\b", re.IGNORECASE)
+        text = pattern.sub(lambda m: f"<u>{m.group(0)}</u>", text)
+    return text
+
+
+def bold_keywords(text, replacements, end="(e?s?)"):
     """Remplace les mots-clés par du texte enrichi."""
     for keyword, style in replacements.items():
-        # Utiliser une expression régulière pour trouver le mot entier
-        pattern = re.compile(rf"\b{re.escape(keyword)}\b")
+        pattern = re.compile(rf"\b{re.escape(keyword)}{end}\b")
         text = pattern.sub(f"<{style}>{keyword}</{style}>", text)
     return text
 
@@ -184,11 +237,6 @@ def replace_keywords(text: str, global_data: dict) -> str:
 
 
 def find_patterns_in_image(image: Image.Image, patterns: List[str]) -> List[tuple]:
-    """
-    Find the bounding boxes of given regex patterns in an image using pytesseract.
-    Returns a list of (x, y, w, h) tuples for each pattern in order.
-    Raises ValueError if any pattern is not found.
-    """
     pytesseract.pytesseract.tesseract_cmd = (
         r"C:\Users\E115606\AppData\Local\Programs\Tesseract-OCR\tesseract"
     )

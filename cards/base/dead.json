@@ -10,7 +10,6 @@
             "position": "{{icon:front}}",
             "points": "1",
             "type": "JOUÉ",
-            "effect": "Destroy a character in front_icon position.",
             "image": "death.png",
             "h_location": 0.06
         },
@@ -20,7 +19,6 @@
             "position": "{{icon:any}}",
             "points": "2",
             "type": "JOUÉ",
-            "effect": "Take a card from your graveyard into your hand.",
             "image": "moires.png",
             "h_location": 0
         },
@@ -30,7 +28,6 @@
             "position": "{{icon:back}}",
             "points": "1",
             "type": "PERMANENT",
-            "effect": "At the end of your turn, you can destroy an ally to gain 1 permanent point.",
             "image": "raven.png",
             "h_location": 0
         },
@@ -40,7 +37,6 @@
             "position": "{{icon:front}}",
             "points": "4",
             "type": "JOUÉ",
-            "effect": "You must destroy an ally in back_icon position.",
             "image": "hydra.png",
             "h_location": 0.03
         },
@@ -50,7 +46,6 @@
             "position": "{{icon:any}}",
             "points": "1",
             "type": "JOUÉ",
-            "effect": "Copy the JOUÉ effect of an ally in your graveyard.",
             "image": "companion.png",
             "h_location": 0.01
         },
@@ -60,7 +55,6 @@
             "position": "{{icon:back}}",
             "points": "6",
             "type": "PERMANENT",
-            "effect": "If you do not win the game at the start of your next turn, this character is destroyed.",
             "image": "child.png"
         },
         "monarch": {
@@ -69,7 +63,6 @@
             "position": "{{icon:front}}",
             "points": "X",
             "type": "PERMANENT",
-            "effect": "X equals the number of cards in your graveyard.",
             "image": "monarch.png",
             "h_location": -0.01
         },
@@ -79,7 +72,6 @@
             "position": "{{icon:back}}",
             "points": "1",
             "type": "JOUÉ",
-            "effect": "Play a character from your graveyard onto your field.",
             "image": "empress.png",
             "h_location": 0.08
         }

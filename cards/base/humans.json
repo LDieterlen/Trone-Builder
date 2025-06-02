@@ -10,8 +10,7 @@
             "count": "4",
             "position": "{{icon:any}}",
             "points": "0",
-            "type": "JOUÉ",
-            "effect": "Give the alteration {{keyword:encouraged}} to this character."
+            "type": "JOUÉ"
         },
         "soldier": {
             "name": "Soldier",
@@ -20,7 +19,6 @@
             "position": "{{icon:front}}",
             "points": "2",
             "type": "JOUÉ",
-            "effect": "Draw 2 cards then discard 2 cards.",
             "h_location": 0.1
         },
         "priest": {
@@ -29,8 +27,7 @@
             "count": "2",
             "position": "{{icon:back}}",
             "points": "1",
-            "type": "JOUÉ",
-            "effect": "Copy the JOUÉ effect of an ally in front_icon position."
+            "type": "JOUÉ"
         },
         "archer": {
             "name": "Archer",
@@ -38,8 +35,7 @@
             "count": "2",
             "position": "{{icon:back}}",
             "points": "1",
-            "type": "JOUÉ",
-            "effect": "Destroy a character in front_icon position."
+            "type": "JOUÉ"
         },
         "knight": {
             "name": "Knight",
@@ -47,8 +43,7 @@
             "count": "2",
             "position": "{{icon:front}}",
             "points": "3",
-            "type": "PERMANENT",
-            "effect": "If an ally in back_icon position is destroyed, destroy this ally instead."
+            "type": "PERMANENT"
         },
         "king": {
             "name": "King",
@@ -57,7 +52,6 @@
             "position": "{{icon:back}}",
             "points": "X",
             "type": "PERMANENT",
-            "effect": "If you have more than 3 other {{icon:human_fac}} allies, X is 5, otherwise X is 0.",
             "h_location": 0.08
         },
         "queen": {
@@ -67,7 +61,6 @@
             "position": "{{icon:any}}",
             "points": "0",
             "type": "JOUÉ",
-            "effect": "Give the alteration {{keyword:encouraged}} to another ally.",
             "h_location": 0.1
         },
         "bard": {
@@ -76,8 +69,7 @@
             "count": "1",
             "position": "{{icon:any}}",
             "points": "2",
-            "type": "JOUÉ",
-            "effect": "Reveal 1 card from the deck, you can play it if it's a {{icon:human_fac}}, otherwise keep it in hand."
+            "type": "JOUÉ"
         }
     }
 }

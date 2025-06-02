@@ -7,20 +7,18 @@
         "creature": {
             "name": "Bugs",
             "count": "4",
-            "position": "{{icon:back}}",
+            "position": "{{icon:front}}",
             "points": "1",
             "type": "JOUÉ",
-            "effect": "Return a character in front_icon position to its owner's hand.",
             "image": "bugs.png",
             "h_location": 0.02
         },
         "minion": {
             "name": "Minion",
             "count": "3",
-            "position": "{{icon:any}}",
+            "position": "{{icon:back}}",
             "points": "0",
             "type": "JOUÉ",
-            "effect": "Gain 2 permanent points.",
             "image": "minions.png",
             "h_location": -0.03
         },
@@ -30,27 +28,24 @@
             "position": "{{icon:front}}",
             "points": "3",
             "type": "JOUÉ",
-            "effect": "You must return an ally in back_icon position to your hand.",
             "image": "horned.png",
             "h_location": 0.05
         },
         "eye": {
             "name": "Eye",
             "count": "2",
-            "position": "{{icon:back}}",
+            "position": "{{icon:front}}",
             "points": "2",
             "type": "JOUÉ",
-            "effect": "You can discard cards from your hand to draw the same number of cards.",
             "image": "eye.png",
             "h_location": -0.03
         },
         "clever": {
             "name": "Clever",
             "count": "2",
-            "position": "{{icon:back}}",
+            "position": "{{icon:any}}",
             "points": "1",
             "type": "JOUÉ",
-            "effect": "Play an additional character this turn.",
             "image": "clever.png",
             "h_location": -0.03
         },
@@ -60,7 +55,6 @@
             "position": "{{icon:front}}",
             "points": "5",
             "type": "JOUÉ",
-            "effect": "Other players gains 1 permanent point.",
             "image": "cyclops.png",
             "h_location": 0
         },
@@ -70,7 +64,6 @@
             "position": "{{icon:back}}",
             "points": "1",
             "type": "PERMANENT",
-            "effect": "At the end of your turn, you can discard a card from your hand to gain 2 permanent points.",
             "image": "octopus.png",
             "h_location": 0
         },
@@ -80,7 +73,6 @@
             "position": "{{icon:front}}",
             "points": "X",
             "type": "PERMANENT",
-            "effect": "X equals half (inferior) of your total permanent points.",
             "image": "collector.png",
             "h_location": -0.1
         }

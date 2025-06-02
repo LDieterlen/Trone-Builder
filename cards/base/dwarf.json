@@ -7,19 +7,17 @@
         "simple": {
             "name": "Simple",
             "count": "4",
-            "position": "{{icon:any}}",
+            "position": "{{icon:front}}",
             "points": "2",
             "type": "JOUÉ",
-            "effect": "Give the {{keyword:protection}} alteration to a character.",
             "image": "simple.png"
         },
         "nervous": {
             "name": "Nervous",
             "count": "3",
-            "position": "{{icon:any}}",
+            "position": "{{icon:front}}",
             "points": "2",
             "type": "JOUÉ",
-            "effect": "Destroy an other ally then destroy an opponent's character in front_icon position.",
             "image": "nervous.png",
             "h_location": 0.04
         },
@@ -29,7 +27,6 @@
             "position": "{{icon:front}}",
             "points": "3",
             "type": "JOUÉ",
-            "effect": "This character gains the {{keyword:protection}} alteration.",
             "image": "joyful.png"
         },
         "allergic": {
@@ -38,36 +35,32 @@
             "position": "{{icon:back}}",
             "points": "0",
             "type": "JOUÉ",
-            "effect": "Move an alteration from one character to another.",
             "image": "allergic.png",
             "h_location": 0.05
         },
         "fearful": {
             "name": "Fearful",
             "count": "2",
-            "position": "{{icon:back}}",
+            "position": "{{icon:any}}",
             "points": "X",
             "type": "PERMANENT",
-            "effect": "If this character has the {{keyword:protection}} alteration, X equals 4, otherwise X equals 0.",
             "image": "fearful.png",
             "h_location": 0.03
         },
         "lazy": {
             "name": "Lazy",
             "count": "1",
-            "position": "{{icon:back}}",
+            "position": "{{icon:any}}",
             "points": "0",
             "type": "JOUÉ",
-            "effect": "Give the {{keyword:protection}} alteration to 3 allies.",
             "image": "lazy.png"
         },
         "boss": {
             "name": "Boss",
             "count": "1",
-            "position": "{{icon:any}}",
+            "position": "{{icon:front}}",
             "points": "4",
-            "type": "JOUÉ",
-            "effect": "All oppent's effect target this character first.",
+            "type": "PERMANENT",
             "image": "boss.png",
             "h_location": -0.07
         },
@@ -77,7 +70,6 @@
             "position": "{{icon:front}}",
             "points": "X",
             "type": "PERMANENT",
-            "effect": "X equals the number of ally in back_icon position.",
             "image": "mascott.png",
             "h_location": 0.03
         }

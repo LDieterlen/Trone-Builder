@@ -10,7 +10,6 @@
             "position": "{{icon:back}}",
             "points": "1",
             "type": "JOUÉ",
-            "effect": "Give the GEL alteration to a character in front_icon position.",
             "image": "snowman.png"
         },
         "yeti": {
@@ -19,7 +18,6 @@
             "position": "{{icon:front}}",
             "points": "2",
             "type": "PERMANENT",
-            "effect": "When this character gains the GEL alteration, gain 2 permanent points.",
             "image": "yeti.png",
             "h_location": -0.03
         },
@@ -29,7 +27,6 @@
             "position": "{{icon:front}}",
             "points": "3",
             "type": "JOUÉ",
-            "effect": "Give the GEL alteration to an ally.",
             "image": "witch.png",
             "h_location": -0.02
         },
@@ -39,7 +36,6 @@
             "position": "{{icon:any}}",
             "points": "0",
             "type": "JOUÉ",
-            "effect": "Remove an alteration from a character and gain 1 permanent point.",
             "image": "ancestor.png",
             "h_location": 0.02
         },
@@ -49,7 +45,6 @@
             "position": "{{icon:back}}",
             "points": "2",
             "type": "JOUÉ",
-            "effect": "Exchange your hand with another player's hand.",
             "image": "merchant.png",
             "h_location": -0.03
         },
@@ -59,7 +54,6 @@
             "position": "{{icon:front}}",
             "points": "X",
             "type": "PERMANENT",
-            "effect": "X equals the number of allies with one or more alteration.",
             "image": "beast.png"
         },
         "lizard": {
@@ -68,7 +62,6 @@
             "position": "{{icon:any}}",
             "points": "0",
             "type": "JOUÉ",
-            "effect": "Remove up to 3 alterations to enemies in front_icon position or allies.",
             "image": "lizard.png",
             "h_location": -0.02
         },
@@ -78,7 +71,6 @@
             "position": "{{icon:back}}",
             "points": "5",
             "type": "PERMANENT",
-            "effect": "At the end of your turn, give the GEL alteration to an ally.",
             "image": "giant.png",
             "h_location": -0.02
         }

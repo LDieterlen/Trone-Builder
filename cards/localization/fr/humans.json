@@ -3,7 +3,7 @@
     "cards": {
         "villagers": {
             "name": "Villageois",
-            "effect": "Donnez l'altération <u>encouragé</u> à ce personnage."
+            "effect": "Donnez l'altération encouragé à ce personnage."
         },
         "soldier": {
             "name": "Soldat",
@@ -15,7 +15,7 @@
         },
         "archer": {
             "name": "Archer",
-            "effect": "Détruisez un personnage en position front_icon."
+            "effect": "Détruisez un personnage en position back_icon."
         },
         "knight": {
             "name": "Chevalier",
@@ -23,15 +23,15 @@
         },
         "king": {
             "name": "Roi",
-            "effect": "Si vous avez plus de 3 autres humans_fac alliés, X vaut 5, sinon X vaut 0."
+            "effect": "S'il y a au moins 3 confrères de ce personnage sur votre terrain, X vaut 5, sinon X vaut 0."
         },
         "queen": {
             "name": "Reine",
-            "effect": "Donnez l'altération <u>encouragé</u> à un autre allié."
+            "effect": "Donnez l'altération encouragé à un autre allié."
         },
         "bard": {
             "name": "Barde",
-            "effect": "Révélez 1 carte de la pioche, vous pouvez la jouer si c'est un humans_fac, sinon gardez-la en main."
+            "effect": "Révélez 1 carte de la pioche, vous pouvez la jouer si c'est un confrère, sinon gardez-la en main."
         }
     }
 }

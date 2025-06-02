@@ -19,7 +19,7 @@
         },
         "companion": {
             "name": "Compagnon",
-            "effect": "Copiez l'effet JOUÉ d'un allié dans votre cimetière."
+            "effect": "Copiez l'effet JOUÉ d'un personnage dans votre cimetière."
         },
         "child": {
             "name": "Enfant",

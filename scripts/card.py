@@ -7,7 +7,12 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.pdfbase.pdfmetrics import stringWidth
 import io
 import math
-from scripts.utils import resize_image, smart_box_size, remove_html_tags
+from scripts.utils import (
+    resize_image,
+    smart_box_size_old,
+    smart_box_size,
+    remove_html_tags,
+)
 from scripts.constants import (
     WIDTH_PX,
     HEIGHT_PX,
@@ -93,27 +98,26 @@ class Card:
         x_offset_ratio,
         y_offset_ratio,
         style: ParagraphStyle,
-        box=None,
         reverse=True,
     ):
-        font = style.fontName
-        size = style.fontSize
-        text_cleaned = remove_html_tags(text)
-        width = stringWidth(text_cleaned, font, size)
-        if box:
-            box_width = self.width_pt * box[0]
-            box_height = self.height_pt * box[1]
-        else:
-            box_width = self.width_pt * 0.92
-            box_height = self.height_pt * 0.25
-
         if reverse:
             y_offset_ratio = 1 - y_offset_ratio
 
-        box_width = smart_box_size(width, self.width_pt * 0.8, self.width_pt * 0.92)
+        font = style.fontName
+        size = style.fontSize
+        text_cleaned = remove_html_tags(text)
 
-        print(f"Largeur du texte : {width} points")
-        print(f"Largeur de la boîte : {box_width} points")
+        # Find the longest word in the text
+        words = text_cleaned.split()
+        space_len = stringWidth(" ", font, size)
+        words_length = [stringWidth(word, font, size) + space_len for word in words]
+        total_length = sum(words_length)
+
+        box_height = self.height_pt
+
+        box_width = smart_box_size(
+            total_length, words_length, self.width_pt * 0.95, words
+        )
 
         x_center = self.width_pt * x_offset_ratio
         y_center = self.height_pt * y_offset_ratio

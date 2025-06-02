@@ -10,7 +10,6 @@
             "position": "{{icon:any}}",
             "points": "2",
             "type": "JOUÉ",
-            "effect": "Draw 1 card.",
             "image": "snowman.png"
         },
         "drone": {
@@ -19,7 +18,6 @@
             "position": "{{icon:back}}",
             "points": "1",
             "type": "JOUÉ",
-            "effect": "All opponents must discard 1 card from their hand.",
             "image": "yeti.png",
             "h_location": -0.03
         },
@@ -29,7 +27,6 @@
             "position": "{{icon:back}}",
             "points": "2",
             "type": "JOUÉ",
-            "effect": "Take a card from the discard into your hand.",
             "image": "witch.png",
             "h_location": -0.02
         },
@@ -39,7 +36,6 @@
             "position": "{{icon:front}}",
             "points": "4",
             "type": "JOUÉ",
-            "effect": "You must discard 1 card from your hand.",
             "image": "ancestor.png",
             "h_location": 0.02
         },
@@ -49,7 +45,6 @@
             "position": "{{icon:front}}",
             "points": "0",
             "type": "PERMANENT",
-            "effect": "At the beginning of your turn, you can discard 1 card from your hand to destroy an enemy in front_icon position.",
             "image": "merchant.png",
             "h_location": -0.03
         },
@@ -59,7 +54,6 @@
             "position": "{{icon:back}}",
             "points": "0",
             "type": "JOUÉ",
-            "effect": "Gain permanent points equal to 5 minus the number of cards in your hand.",
             "image": "beast.png"
         },
         "dome": {
@@ -68,7 +62,6 @@
             "position": "{{icon:any}}",
             "points": "1",
             "type": "JOUÉ",
-            "effect": "Draw 3 cards.",
             "image": "lizard.png",
             "h_location": -0.02
         },
@@ -78,7 +71,6 @@
             "position": "{{icon:back}}",
             "points": "5",
             "type": "PERMANENT",
-            "effect": "You no longer draw at the start of your turn. You may destroy this ally at any time.",
             "image": "giant.png",
             "h_location": -0.02
         }
