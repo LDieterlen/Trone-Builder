@@ -4,7 +4,6 @@ import json
 
 from scripts.card import Card
 from scripts.utils import bold_keywords, replace_keywords_with_icons, underline_keywords
-
 from scripts.constants import (
     TITLE_STYLE,
     COUNT_STYLE,
@@ -23,23 +22,28 @@ UNDERLINED_KEYWORDS = [
     "protection",
 ]
 
-
+ICON_BASE_PATH = "assets/sprites/"
+FACTION_BASE_PATH = ICON_BASE_PATH + "factions/"
+POSITION_BASE_PATH = ICON_BASE_PATH + "positions/"
 ICONS = {
-    "dead_fac": "assets/sprites/factions/dead.png",
-    "humans_fac": "assets/sprites/factions/humans.png",
-    "mages_fac": "assets/sprites/factions/mages.png",
-    "dwarf_fac": "assets/sprites/factions/dwarf.png",
-    "demons_fac": "assets/sprites/factions/demons.png",
-    "desert_fac": "assets/sprites/factions/desert.png",
-    "mountain_fac": "assets/sprites/factions/mountain.png",
-    "front_icon": "assets/sprites/positions/front_i.png",
-    "back_icon": "assets/sprites/positions/back_i.png",
+    "dead_fac": FACTION_BASE_PATH + "dead.png",
+    "humans_fac": FACTION_BASE_PATH + "humans.png",
+    "mages_fac": FACTION_BASE_PATH + "mages.png",
+    "dwarf_fac": FACTION_BASE_PATH + "dwarf.png",
+    "demons_fac": FACTION_BASE_PATH + "demons.png",
+    "desert_fac": FACTION_BASE_PATH + "desert.png",
+    "mountain_fac": FACTION_BASE_PATH + "mountain.png",
+    "robots_fac": FACTION_BASE_PATH + "robots.png",
+    "front_icon": POSITION_BASE_PATH + "front_i.png",
+    "back_icon": POSITION_BASE_PATH + "back_i.png",
 }
 
+CINZEL_EXTRABOLD_STYLE = "font face='Cinzel-ExtraBold' size='10'"
+
 BOLD_TEXT = {
-    "JOUÉ": "font face='Cinzel-ExtraBold' size='10'",
-    "PERMANENT": "font face='Cinzel-ExtraBold' size='10'",
-    "X": "font face='Cinzel-ExtraBold' size='10'",
+    "JOUÉ": CINZEL_EXTRABOLD_STYLE,
+    "PERMANENT": CINZEL_EXTRABOLD_STYLE,
+    "X": CINZEL_EXTRABOLD_STYLE,
 }
 
 
@@ -100,7 +104,6 @@ def load_faction(faction_name: str, language: str = "fr") -> dict:
 
 
 def extract_icon_name(text: str):
-    """Extract the icon identifier from a position string in format {{icon:name}}"""
     match = re.search(r"{{icon:([^}]+)}}", text)
     if match:
         return match.group(1)
@@ -109,40 +112,42 @@ def extract_icon_name(text: str):
 
 def build_faction(faction: str, faction_details: dict, language: str = "fr"):
     # Load properties of the faction
-
-    card_layer_path = faction_details["card_layer_path"]
-    image_base_path = faction_details["images_folder"]
-    faction_path = faction_details["faction_path"]
-    cards = faction_details["cards"]
+    card_layer_path: str = faction_details["card_layer_path"]
+    image_base_path: str = faction_details["images_folder"]
+    faction_path: str = faction_details["faction_path"]
+    cards: dict = faction_details["cards"]
 
     # Create the output folder for the faction
     output_folder_path = f"output/{language}/{faction}/"
     os.makedirs(output_folder_path, exist_ok=True)
 
     # Building cards for each character
-    for character_id in cards:
-        print(f"Building card for {character_id}...")
+    for card_info in cards.values():
+        name: str = card_info["name"]
+        print(f"Building card for {name}...")
         card_template = Card()
-        character_info = cards[character_id]
 
-        character_image = image_base_path + character_info["image"].lower()
-
-        # Handle position with the new format
-        character_position = character_info["position"]
-        position_icon_name = extract_icon_name(character_position)
-        position_icon_path = f"assets/sprites/positions/{position_icon_name}.png"
-
+        # Card background image
+        card_background = image_base_path + card_info["image"].lower()
         card_template.add_image(
-            character_image,
+            card_background,
             BOXES["background"],
-            h_location=character_info.get("h_location"),
+            h_location=card_info.get("h_location"),
         )
+
+        # Card overlay
         card_template.add_image(
             card_layer_path, BOXES["card_overlay"], fit_method="fill"
         )
+
+        # Card faction
         card_template.add_image(
             faction_path, BOXES["faction"], centered=True, fit_method="thumbnail"
         )
+
+        # Card position icon
+        position_icon_name = extract_icon_name(card_info["position"])
+        position_icon_path = f"assets/sprites/positions/{position_icon_name}.png"
         card_template.add_image(
             position_icon_path,
             BOXES["position"],
@@ -150,13 +155,8 @@ def build_faction(faction: str, faction_details: dict, language: str = "fr"):
             fit_method="thumbnail",
         )
 
+        # Convert the card to PDF to add html format text
         card_template.pdf_from_card()
-
-        # Title
-        name: str = character_info["name"]
-        count: str = character_info["count"]
-        points: str = character_info["points"]
-        effect_type: str = character_info["type"]
 
         # Title
         card_template.add_text(
@@ -165,14 +165,18 @@ def build_faction(faction: str, faction_details: dict, language: str = "fr"):
             y_offset_ratio=0.045,
             style=TITLE_STYLE,
         )
+
         # Count
+        count: str = card_info["count"]
         card_template.add_text(
             count,
             x_offset_ratio=0.83,
             y_offset_ratio=0.03,
             style=COUNT_STYLE,
         )
+
         # Points
+        points: str = card_info["points"]
         card_template.add_text(
             points,
             x_offset_ratio=0.5,
@@ -181,6 +185,7 @@ def build_faction(faction: str, faction_details: dict, language: str = "fr"):
         )
 
         # Effect type
+        effect_type: str = card_info["type"]
         card_template.add_text(
             effect_type,
             x_offset_ratio=0.5,
@@ -188,12 +193,11 @@ def build_faction(faction: str, faction_details: dict, language: str = "fr"):
             style=EFFECT_TYPE_STYLE,
         )
 
-        effect: str = character_info["effect"]
+        # Effect
+        effect: str = card_info["effect"]
         effect = replace_keywords_with_icons(effect, ICONS)
         effect = bold_keywords(effect, BOLD_TEXT)
         effect = underline_keywords(effect, UNDERLINED_KEYWORDS)
-
-        # Effect
         card_template.add_text(
             effect,
             x_offset_ratio=0.5,

@@ -9,7 +9,6 @@ import io
 import math
 from scripts.utils import (
     resize_image,
-    smart_box_size_old,
     smart_box_size,
     remove_html_tags,
 )

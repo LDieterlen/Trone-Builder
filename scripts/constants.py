@@ -8,17 +8,46 @@ DPI = 300
 WIDTH_PX = 744
 HEIGHT_PX = 1039
 
-pdfmetrics.registerFont(TTFont("Gabriola", "C:/Windows/Fonts/Gabriola.ttf"))
 pdfmetrics.registerFont(
-    TTFont("Simonetta", "assets/font/Simonetta/Simonetta-Regular.ttf")
+    TTFont(
+        "Gabriola",
+        "C:/Windows/Fonts/Gabriola.ttf",
+    ),
 )
+
 pdfmetrics.registerFont(
-    TTFont("Simonetta-Black", "assets/font/Simonetta/Simonetta-Black.ttf")
+    TTFont(
+        "Simonetta",
+        "assets/font/Simonetta/Simonetta-Regular.ttf",
+    )
 )
-pdfmetrics.registerFont(TTFont("Cinzel-Bold", "assets/font/Cinzel-Bold.ttf"))
-pdfmetrics.registerFont(TTFont("Cinzel-ExtraBold", "assets/font/Cinzel-ExtraBold.ttf"))
+
 pdfmetrics.registerFont(
-    TTFont("Roboto", "assets/font/Roboto/static/Roboto_SemiCondensed-Bold.ttf")
+    TTFont(
+        "Simonetta-Black",
+        "assets/font/Simonetta/Simonetta-Black.ttf",
+    )
+)
+
+pdfmetrics.registerFont(
+    TTFont(
+        "Cinzel-Bold",
+        "assets/font/Cinzel-Bold.ttf",
+    )
+)
+
+pdfmetrics.registerFont(
+    TTFont(
+        "Cinzel-ExtraBold",
+        "assets/font/Cinzel-ExtraBold.ttf",
+    )
+)
+
+pdfmetrics.registerFont(
+    TTFont(
+        "Roboto",
+        "assets/font/Roboto/static/Roboto_SemiCondensed-Bold.ttf",
+    )
 )
 
 EFFECT_STYLE = ParagraphStyle(
@@ -57,22 +86,5 @@ TITLE_STYLE = ParagraphStyle(
     fontName="Cinzel-Bold",
     fontSize=12,
     textColor=black,
-    alignment=TA_CENTER,
-)
-
-LEGEND_NAME_STYLE = ParagraphStyle(
-    name="LegendStyle",
-    fontName="Roboto",
-    fontSize=4,
-    textColor=black,
-    leading=4,
-    alignment=TA_CENTER,
-)
-LEGEND_STYLE = ParagraphStyle(
-    name="LegendStyle",
-    fontName="Roboto",
-    fontSize=4,
-    textColor=black,
-    leading=4,
     alignment=TA_CENTER,
 )
