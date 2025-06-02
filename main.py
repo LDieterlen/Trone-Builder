@@ -1,4 +1,3 @@
-import re
 import os
 import json
 
@@ -103,13 +102,6 @@ def load_faction(faction_name: str, language: str = "fr") -> dict:
     return load_data(faction_name, language)
 
 
-def extract_icon_name(text: str):
-    match = re.search(r"{{icon:([^}]+)}}", text)
-    if match:
-        return match.group(1)
-    return text
-
-
 def build_faction(faction: str, faction_details: dict, language: str = "fr"):
     # Load properties of the faction
     card_layer_path: str = faction_details["card_layer_path"]
@@ -146,7 +138,7 @@ def build_faction(faction: str, faction_details: dict, language: str = "fr"):
         )
 
         # Card position icon
-        position_icon_name = extract_icon_name(card_info["position"])
+        position_icon_name = card_info["position"]
         position_icon_path = f"assets/sprites/positions/{position_icon_name}.png"
         card_template.add_image(
             position_icon_path,
@@ -217,8 +209,8 @@ if __name__ == "__main__":
         faction_data = load_faction(faction, LANGUAGE)
 
         faction_name = faction_data["name"]
-        print("-" * 20)
+        print("-" * 40)
         print(f"Loaded data for faction: {faction_name}")
-        print("-" * 20)
+        print("-" * 40)
 
         build_faction(faction, faction_data)

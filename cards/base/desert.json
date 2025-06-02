@@ -7,7 +7,7 @@
         "monk": {
             "name": "Monk",
             "count": "5",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "0",
             "type": "JOUÉ",
             "image": "monk.png"
@@ -15,7 +15,7 @@
         "monster": {
             "name": "Monster",
             "count": "2",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "3",
             "type": "JOUÉ",
             "image": "monster.png",
@@ -24,7 +24,7 @@
         "trainer": {
             "name": "Trainer",
             "count": "2",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "2",
             "type": "PERMANENT",
             "image": "trainer.png",
@@ -33,7 +33,7 @@
         "gladiator": {
             "name": "Gladiator",
             "count": "2",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "X",
             "type": "PERMANENT",
             "image": "gladiator.png",
@@ -42,7 +42,7 @@
         "punisher": {
             "name": "Punisher",
             "count": "2",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "1",
             "type": "JOUÉ",
             "image": "punisher.png"
@@ -50,7 +50,7 @@
         "worm": {
             "name": "Worm",
             "count": "1",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "6",
             "type": "PERMANENT",
             "image": "worm.png",
@@ -59,7 +59,7 @@
         "orphans": {
             "name": "Orphans",
             "count": "1",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "0",
             "type": "PERMANENT",
             "image": "orphans.png",
@@ -68,7 +68,7 @@
         "prince": {
             "name": "Prince",
             "count": "1",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "0",
             "type": "JOUÉ",
             "image": "prince.png",

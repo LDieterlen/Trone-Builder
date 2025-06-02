@@ -8,7 +8,7 @@
             "name": "Villagers",
             "image": "villagers.png",
             "count": "4",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "0",
             "type": "JOUÉ"
         },
@@ -16,7 +16,7 @@
             "name": "Soldier",
             "image": "soldier.png",
             "count": "3",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "2",
             "type": "JOUÉ",
             "h_location": 0.1
@@ -25,7 +25,7 @@
             "name": "Priest",
             "image": "priest.png",
             "count": "2",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "1",
             "type": "JOUÉ"
         },
@@ -33,7 +33,7 @@
             "name": "Archer",
             "image": "archer.png",
             "count": "2",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "1",
             "type": "JOUÉ"
         },
@@ -41,7 +41,7 @@
             "name": "Knight",
             "image": "knight.png",
             "count": "2",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "3",
             "type": "PERMANENT"
         },
@@ -49,7 +49,7 @@
             "name": "King",
             "image": "king.png",
             "count": "1",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "X",
             "type": "PERMANENT",
             "h_location": 0.08
@@ -58,7 +58,7 @@
             "name": "Queen",
             "image": "queen.png",
             "count": "1",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "0",
             "type": "JOUÉ",
             "h_location": 0.1
@@ -67,7 +67,7 @@
             "name": "Bard",
             "image": "bard.png",
             "count": "1",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "2",
             "type": "JOUÉ"
         }

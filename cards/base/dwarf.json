@@ -7,7 +7,7 @@
         "simple": {
             "name": "Simple",
             "count": "4",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "2",
             "type": "JOUÉ",
             "image": "simple.png"
@@ -15,7 +15,7 @@
         "nervous": {
             "name": "Nervous",
             "count": "3",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "2",
             "type": "JOUÉ",
             "image": "nervous.png",
@@ -24,7 +24,7 @@
         "joyful": {
             "name": "Joyful",
             "count": "2",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "3",
             "type": "JOUÉ",
             "image": "joyful.png"
@@ -32,7 +32,7 @@
         "allergic": {
             "name": "Allergic",
             "count": "2",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "0",
             "type": "JOUÉ",
             "image": "allergic.png",
@@ -41,7 +41,7 @@
         "fearful": {
             "name": "Fearful",
             "count": "2",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "X",
             "type": "PERMANENT",
             "image": "fearful.png",
@@ -50,7 +50,7 @@
         "lazy": {
             "name": "Lazy",
             "count": "1",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "0",
             "type": "JOUÉ",
             "image": "lazy.png"
@@ -58,7 +58,7 @@
         "boss": {
             "name": "Boss",
             "count": "1",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "4",
             "type": "PERMANENT",
             "image": "boss.png",
@@ -67,7 +67,7 @@
         "mascot": {
             "name": "Mascot",
             "count": "1",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "X",
             "type": "PERMANENT",
             "image": "mascott.png",

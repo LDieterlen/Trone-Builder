@@ -7,7 +7,7 @@
         "snowman": {
             "name": "Snowman",
             "count": "4",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "1",
             "type": "JOUÉ",
             "image": "snowman.png"
@@ -15,7 +15,7 @@
         "yeti": {
             "name": "Yeti",
             "count": "3",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "2",
             "type": "PERMANENT",
             "image": "yeti.png",
@@ -24,7 +24,7 @@
         "witch": {
             "name": "Witch",
             "count": "2",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "3",
             "type": "JOUÉ",
             "image": "witch.png",
@@ -33,7 +33,7 @@
         "ancestor": {
             "name": "Ancestor",
             "count": "2",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "0",
             "type": "JOUÉ",
             "image": "ancestor.png",
@@ -42,7 +42,7 @@
         "merchant": {
             "name": "Merchant",
             "count": "2",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "2",
             "type": "JOUÉ",
             "image": "merchant.png",
@@ -51,7 +51,7 @@
         "beast": {
             "name": "Beast",
             "count": "1",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "X",
             "type": "PERMANENT",
             "image": "beast.png"
@@ -59,7 +59,7 @@
         "lizard": {
             "name": "Lizard",
             "count": "1",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "0",
             "type": "JOUÉ",
             "image": "lizard.png",
@@ -68,7 +68,7 @@
         "giant": {
             "name": "Giant",
             "count": "1",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "5",
             "type": "PERMANENT",
             "image": "giant.png",

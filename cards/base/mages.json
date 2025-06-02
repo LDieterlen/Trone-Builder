@@ -7,7 +7,7 @@
         "student": {
             "name": "Student",
             "count": "5",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "2",
             "type": "JOUÉ",
             "image": "student.png",
@@ -16,7 +16,7 @@
         "apprentice": {
             "name": "Apprentice",
             "count": "2",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "X",
             "type": "PERMANENT",
             "image": "apprentice.png",
@@ -25,7 +25,7 @@
         "plotter": {
             "name": "Plotter",
             "count": "2",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "1",
             "type": "PERMANENT",
             "image": "plotter.png"
@@ -33,7 +33,7 @@
         "spy": {
             "name": "Spy",
             "count": "2",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "2",
             "type": "JOUÉ",
             "image": "spy.png",
@@ -42,7 +42,7 @@
         "rats": {
             "name": "Rats",
             "count": "2",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "1",
             "type": "JOUÉ",
             "image": "rats.png",
@@ -51,7 +51,7 @@
         "divinity": {
             "name": "Divinity",
             "count": "1",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "X",
             "type": "PERMANENT",
             "image": "divinity.png",
@@ -60,7 +60,7 @@
         "cunning": {
             "name": "Sage",
             "count": "1",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "2",
             "type": "JOUÉ",
             "image": "cunning.png"
@@ -68,7 +68,7 @@
         "professor": {
             "name": "Professor",
             "count": "1",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "1",
             "type": "PERMANENT",
             "image": "professor.png",

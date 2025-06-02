@@ -7,7 +7,7 @@
         "death": {
             "name": "Death",
             "count": "4",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "1",
             "type": "JOUÉ",
             "image": "death.png",
@@ -16,7 +16,7 @@
         "moires": {
             "name": "Moires",
             "count": "3",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "2",
             "type": "JOUÉ",
             "image": "moires.png",
@@ -25,7 +25,7 @@
         "raven": {
             "name": "Raven",
             "count": "2",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "1",
             "type": "PERMANENT",
             "image": "raven.png",
@@ -34,7 +34,7 @@
         "hydra": {
             "name": "Hydra",
             "count": "2",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "4",
             "type": "JOUÉ",
             "image": "hydra.png",
@@ -43,7 +43,7 @@
         "companion": {
             "name": "Companion",
             "count": "2",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "1",
             "type": "JOUÉ",
             "image": "companion.png",
@@ -52,7 +52,7 @@
         "child": {
             "name": "Child",
             "count": "1",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "6",
             "type": "PERMANENT",
             "image": "child.png"
@@ -60,7 +60,7 @@
         "monarch": {
             "name": "Monarch",
             "count": "1",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "X",
             "type": "PERMANENT",
             "image": "monarch.png",
@@ -69,7 +69,7 @@
         "empress": {
             "name": "Empress",
             "count": "1",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "1",
             "type": "JOUÉ",
             "image": "empress.png",

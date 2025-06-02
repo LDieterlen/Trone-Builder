@@ -7,7 +7,7 @@
         "minibot": {
             "name": "Minibot",
             "count": "5",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "2",
             "type": "JOUÉ",
             "image": "snowman.png"
@@ -15,7 +15,7 @@
         "drone": {
             "name": "Drone",
             "count": "2",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "1",
             "type": "JOUÉ",
             "image": "yeti.png",
@@ -24,7 +24,7 @@
         "recycler": {
             "name": "Recycler",
             "count": "2",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "2",
             "type": "JOUÉ",
             "image": "witch.png",
@@ -33,7 +33,7 @@
         "armor": {
             "name": "Armor",
             "count": "2",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "4",
             "type": "JOUÉ",
             "image": "ancestor.png",
@@ -42,7 +42,7 @@
         "tracker": {
             "name": "Tracker",
             "count": "2",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "0",
             "type": "PERMANENT",
             "image": "merchant.png",
@@ -51,7 +51,7 @@
         "mother": {
             "name": "Mother",
             "count": "1",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "0",
             "type": "JOUÉ",
             "image": "beast.png"
@@ -59,7 +59,7 @@
         "dome": {
             "name": "Dome",
             "count": "1",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "1",
             "type": "JOUÉ",
             "image": "lizard.png",
@@ -68,7 +68,7 @@
         "weapon": {
             "name": "Weapon",
             "count": "1",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "5",
             "type": "PERMANENT",
             "image": "giant.png",

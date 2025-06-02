@@ -7,7 +7,7 @@
         "creature": {
             "name": "Bugs",
             "count": "4",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "1",
             "type": "JOUÉ",
             "image": "bugs.png",
@@ -16,7 +16,7 @@
         "minion": {
             "name": "Minion",
             "count": "3",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "0",
             "type": "JOUÉ",
             "image": "minions.png",
@@ -25,7 +25,7 @@
         "horned": {
             "name": "Horned",
             "count": "2",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "3",
             "type": "JOUÉ",
             "image": "horned.png",
@@ -34,7 +34,7 @@
         "eye": {
             "name": "Eye",
             "count": "2",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "2",
             "type": "JOUÉ",
             "image": "eye.png",
@@ -43,7 +43,7 @@
         "clever": {
             "name": "Clever",
             "count": "2",
-            "position": "{{icon:any}}",
+            "position": "any",
             "points": "1",
             "type": "JOUÉ",
             "image": "clever.png",
@@ -52,7 +52,7 @@
         "cyclops": {
             "name": "Cyclops",
             "count": "1",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "5",
             "type": "JOUÉ",
             "image": "cyclops.png",
@@ -61,7 +61,7 @@
         "octopus": {
             "name": "Octopus",
             "count": "1",
-            "position": "{{icon:back}}",
+            "position": "back",
             "points": "1",
             "type": "PERMANENT",
             "image": "octopus.png",
@@ -70,7 +70,7 @@
         "collector": {
             "name": "Collector",
             "count": "1",
-            "position": "{{icon:front}}",
+            "position": "front",
             "points": "X",
             "type": "PERMANENT",
             "image": "collector.png",

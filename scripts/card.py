@@ -110,9 +110,9 @@ class Card:
 
     def add_text(
         self,
-        text,
-        x_offset_ratio,
-        y_offset_ratio,
+        text: str,
+        x_offset_ratio: float,
+        y_offset_ratio: float,
         style: ParagraphStyle,
         reverse=True,
     ):
