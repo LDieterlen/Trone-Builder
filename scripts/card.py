@@ -37,11 +37,19 @@ class Card:
         if path:
             self.card = Image.open(path).convert("RGBA")
         else:
-            self.card = Image.new("RGBA", (self.width, self.height), "red")
+            self.card = Image.new(
+                "RGBA",
+                (self.width, self.height),
+                "red",
+            )
         self.drawer = ImageDraw.ImageDraw(self.card)
 
         self.canvas = canvas.Canvas(
-            self.pdf_buffer, pagesize=(self.width_pt, self.height_pt)
+            self.pdf_buffer,
+            pagesize=(
+                self.width_pt,
+                self.height_pt,
+            ),
         )
 
     def add_image(
@@ -58,7 +66,12 @@ class Card:
         if h_location is not None:
             layer_box = (layer_box[0], math.floor(self.height * h_location))
 
-        image = resize_image(image, self.width, self.height, fit_method)
+        image = resize_image(
+            image,
+            self.width,
+            self.height,
+            fit_method,
+        )
 
         if centered:
             layer_box = (
@@ -66,7 +79,9 @@ class Card:
                 layer_box[1] - image.height // 2,
             )
         self.card.paste(
-            image, layer_box, image.split()[3] if image.mode == "RGBA" else None
+            image,
+            layer_box,
+            image.split()[3] if image.mode == "RGBA" else None,
         )
 
     def pdf_from_card(self):
@@ -89,7 +104,9 @@ class Card:
         )
 
         self.card = convert_from_bytes(
-            pdf_bytes, poppler_path=poppler_path, size=(self.width, self.height)
+            pdf_bytes,
+            poppler_path=poppler_path,
+            size=(self.width, self.height),
         )[0]
 
     def add_text(
@@ -116,7 +133,9 @@ class Card:
         box_height = self.height_pt
 
         box_width = smart_box_size(
-            total_length, words_length, self.width_pt * 0.95, words
+            total_length,
+            words_length,
+            self.width_pt * 0.95,
         )
 
         x_center = self.width_pt * x_offset_ratio
@@ -127,7 +146,15 @@ class Card:
 
         x = x_center - w / 2
         y = y_center - h / 2
-        para.drawOn(self.canvas, x, y)
+        para.drawOn(
+            self.canvas,
+            x,
+            y,
+        )
 
     def save(self, path, format="PNG"):
-        self.card.save(path, format, dpi=(self.dpi, self.dpi))
+        self.card.save(
+            path,
+            format,
+            dpi=(self.dpi, self.dpi),
+        )

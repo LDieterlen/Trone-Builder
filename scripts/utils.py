@@ -11,17 +11,27 @@ def remove_html_tags(text):
     return re.sub(r"<[^>]*>", "", text)
 
 
-def balance_list_weight(list_1: List[float], list_2: List[float]) -> None:
+def balance_list_weight(list_1: List[float], list_2: List[float]) -> bool:
+    if not list_1 or not list_2:
+        return False
+
+    sum1 = sum(list_1)
+    sum2 = sum(list_2)
     updated = False
-    last_element_1 = list_1[-1]
-    while sum(list_1) - last_element_1 > sum(list_2):
-        list_2.append(list_1.pop(-1))
-        last_element_1 = list_1[-1]
+
+    while len(list_1) > 1 and (sum1 - list_1[-1]) > sum2:
+        moved = list_1.pop(-1)
+        list_2.append(moved)
+        sum1 -= moved
+        sum2 += moved
         updated = True
+
     return updated
 
 
 def balance_list(lists: List[List[float]]):
+    if not lists or len(lists) < 2:
+        return
 
     need_update = True
     while need_update:
@@ -35,7 +45,6 @@ def smart_box_size(
     total_length,
     words_lenght,
     box_max_length,
-    text,
 ):
     if total_length < box_max_length:
         return box_max_length
