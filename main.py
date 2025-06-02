@@ -9,41 +9,12 @@ from scripts.constants import (
     POINTS_STYLE,
     EFFECT_TYPE_STYLE,
     EFFECT_STYLE,
+    CARD_BOXES,
+    ICONS_IN_TEXT,
+    BOLDED_TEXT,
+    UNDERLINED_KEYWORDS,
+    LANGUAGE,
 )
-
-UNDERLINED_KEYWORDS = [
-    "allié",
-    "confrère",
-    "ennemi",
-    "encouragé",
-    "gel",
-    "force",
-    "protection",
-]
-
-ICON_BASE_PATH = "assets/sprites/"
-FACTION_BASE_PATH = ICON_BASE_PATH + "factions/"
-POSITION_BASE_PATH = ICON_BASE_PATH + "positions/"
-ICONS = {
-    "dead_fac": FACTION_BASE_PATH + "dead.png",
-    "humans_fac": FACTION_BASE_PATH + "humans.png",
-    "mages_fac": FACTION_BASE_PATH + "mages.png",
-    "dwarf_fac": FACTION_BASE_PATH + "dwarf.png",
-    "demons_fac": FACTION_BASE_PATH + "demons.png",
-    "desert_fac": FACTION_BASE_PATH + "desert.png",
-    "mountain_fac": FACTION_BASE_PATH + "mountain.png",
-    "robots_fac": FACTION_BASE_PATH + "robots.png",
-    "front_icon": POSITION_BASE_PATH + "front_i.png",
-    "back_icon": POSITION_BASE_PATH + "back_i.png",
-}
-
-CINZEL_EXTRABOLD_STYLE = "font face='Cinzel-ExtraBold' size='10'"
-
-BOLD_TEXT = {
-    "JOUÉ": CINZEL_EXTRABOLD_STYLE,
-    "PERMANENT": CINZEL_EXTRABOLD_STYLE,
-    "X": CINZEL_EXTRABOLD_STYLE,
-}
 
 
 FACTIONS = [
@@ -56,15 +27,6 @@ FACTIONS = [
     "dead",
     "robots",
 ]
-
-LANGUAGE = "fr"
-
-BOXES = {
-    "card_overlay": (0, 0),
-    "background": (0, 0.05),
-    "faction": (0.070, 0.051),
-    "position": (0.930, 0.051),
-}
 
 
 def deep_merge(dict1: dict, dict2: dict) -> dict:
@@ -123,18 +85,18 @@ def build_faction(faction: str, faction_details: dict, language: str = "fr"):
         card_background = image_base_path + card_info["image"].lower()
         card_template.add_image(
             card_background,
-            BOXES["background"],
+            CARD_BOXES["background"],
             h_location=card_info.get("h_location"),
         )
 
         # Card overlay
         card_template.add_image(
-            card_layer_path, BOXES["card_overlay"], fit_method="fill"
+            card_layer_path, CARD_BOXES["card_overlay"], fit_method="fill"
         )
 
         # Card faction
         card_template.add_image(
-            faction_path, BOXES["faction"], centered=True, fit_method="thumbnail"
+            faction_path, CARD_BOXES["faction"], centered=True, fit_method="thumbnail"
         )
 
         # Card position icon
@@ -142,7 +104,7 @@ def build_faction(faction: str, faction_details: dict, language: str = "fr"):
         position_icon_path = f"assets/sprites/positions/{position_icon_name}.png"
         card_template.add_image(
             position_icon_path,
-            BOXES["position"],
+            CARD_BOXES["position"],
             centered=True,
             fit_method="thumbnail",
         )
@@ -187,8 +149,8 @@ def build_faction(faction: str, faction_details: dict, language: str = "fr"):
 
         # Effect
         effect: str = card_info["effect"]
-        effect = replace_keywords_with_icons(effect, ICONS)
-        effect = bold_keywords(effect, BOLD_TEXT)
+        effect = replace_keywords_with_icons(effect, ICONS_IN_TEXT)
+        effect = bold_keywords(effect, BOLDED_TEXT)
         effect = underline_keywords(effect, UNDERLINED_KEYWORDS)
         card_template.add_text(
             effect,

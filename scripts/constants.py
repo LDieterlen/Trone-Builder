@@ -8,6 +8,8 @@ DPI = 300
 WIDTH_PX = 744
 HEIGHT_PX = 1039
 
+LANGUAGE = "fr"
+
 pdfmetrics.registerFont(
     TTFont(
         "Gabriola",
@@ -88,3 +90,46 @@ TITLE_STYLE = ParagraphStyle(
     textColor=black,
     alignment=TA_CENTER,
 )
+
+CARD_BOXES = {
+    "card_overlay": (0, 0),
+    "background": (0, 0.05),
+    "faction": (0.070, 0.051),
+    "position": (0.930, 0.051),
+}
+
+
+UNDERLINED_KEYWORDS = [
+    "allié",
+    "confrère",
+    "ennemi",
+    "encouragé",
+    "gel",
+    "force",
+    "protection",
+]
+
+ICON_BASE_PATH = "assets/sprites/"
+FACTION_BASE_PATH = ICON_BASE_PATH + "factions/"
+POSITION_BASE_PATH = ICON_BASE_PATH + "positions/"
+
+ICONS_IN_TEXT = {
+    "dead_fac": FACTION_BASE_PATH + "dead.png",
+    "humans_fac": FACTION_BASE_PATH + "humans.png",
+    "mages_fac": FACTION_BASE_PATH + "mages.png",
+    "dwarf_fac": FACTION_BASE_PATH + "dwarf.png",
+    "demons_fac": FACTION_BASE_PATH + "demons.png",
+    "desert_fac": FACTION_BASE_PATH + "desert.png",
+    "mountain_fac": FACTION_BASE_PATH + "mountain.png",
+    "robots_fac": FACTION_BASE_PATH + "robots.png",
+    "front_icon": POSITION_BASE_PATH + "front_i.png",
+    "back_icon": POSITION_BASE_PATH + "back_i.png",
+}
+
+CINZEL_EXTRABOLD_STYLE = "font face='Cinzel-ExtraBold' size='10'"
+
+BOLDED_TEXT = {
+    "JOUÉ": CINZEL_EXTRABOLD_STYLE,
+    "PERMANENT": CINZEL_EXTRABOLD_STYLE,
+    "X": CINZEL_EXTRABOLD_STYLE,
+}
