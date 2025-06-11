@@ -1,0 +1,67 @@
+name: Robots
+faction_logo_filename: mountain.png
+card_layer_filename: humans.png
+images_root_folder_name: mountain
+cards:
+    minibot:
+        name: Minibot
+        count: "5"
+        position: any
+        points: "2"
+        type: PLAY
+        image: snowman.png
+    drone:
+        name: Drone
+        count: "2"
+        position: back
+        points: "1"
+        type: PLAY
+        image: yeti.png
+        h_location: -0.03
+    recycler:
+        name: Recycler
+        count: "2"
+        position: back
+        points: "2"
+        type: PLAY
+        image: witch.png
+        h_location: -0.02
+    armor:
+        name: Armor
+        count: "2"
+        position: front
+        points: "4"
+        type: PLAY
+        image: ancestor.png
+        h_location: 0.02
+    tracker:
+        name: Tracker
+        count: "2"
+        position: front
+        points: "0"
+        type: PERMANENT
+        image: merchant.png
+        h_location: -0.03
+    mother:
+        name: Mother
+        count: "1"
+        position: back
+        points: "0"
+        type: PLAY
+        image: beast.png
+    dome:
+        name: Dome
+        count: "1"
+        position: any
+        points: "1"
+        type: PLAY
+        image: lizard.png
+        h_location: -0.02
+    weapon:
+        name: Weapon
+        count: "1"
+        position: back
+        points: "5"
+        type: PERMANENT
+        image: giant.png
+        h_location: -0.02

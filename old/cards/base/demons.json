@@ -1,0 +1,80 @@
+{
+    "name": "Demons",
+    "faction_logo_filename": "demons.png",
+    "card_layer_filename": "demons.png",
+    "images_root_folder_name": "demons",
+    "cards": {
+        "creature": {
+            "name": "Bugs",
+            "count": "4",
+            "position": "front",
+            "points": "1",
+            "type": "PLAY",
+            "image": "bugs.png",
+            "h_location": 0.02
+        },
+        "minion": {
+            "name": "Minion",
+            "count": "3",
+            "position": "back",
+            "points": "0",
+            "type": "PLAY",
+            "image": "minions.png",
+            "h_location": -0.03
+        },
+        "horned": {
+            "name": "Horned",
+            "count": "2",
+            "position": "front",
+            "points": "3",
+            "type": "PLAY",
+            "image": "horned.png",
+            "h_location": 0.05
+        },
+        "eye": {
+            "name": "Eye",
+            "count": "2",
+            "position": "any",
+            "points": "2",
+            "type": "PLAY",
+            "image": "eye.png",
+            "h_location": -0.03
+        },
+        "clever": {
+            "name": "Clever",
+            "count": "2",
+            "position": "any",
+            "points": "1",
+            "type": "PLAY",
+            "image": "clever.png",
+            "h_location": -0.03
+        },
+        "cyclops": {
+            "name": "Cyclops",
+            "count": "1",
+            "position": "front",
+            "points": "5",
+            "type": "PLAY",
+            "image": "cyclops.png",
+            "h_location": 0
+        },
+        "octopus": {
+            "name": "Octopus",
+            "count": "1",
+            "position": "back",
+            "points": "1",
+            "type": "PERMANENT",
+            "image": "octopus.png",
+            "h_location": 0
+        },
+        "collector": {
+            "name": "Collector",
+            "count": "1",
+            "position": "front",
+            "points": "X",
+            "type": "PERMANENT",
+            "image": "collector.png",
+            "h_location": -0.1
+        }
+    }
+}

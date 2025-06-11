@@ -1,0 +1,37 @@
+{
+    "name": "Nains",
+    "cards": {
+        "simple": {
+            "name": "Simple",
+            "effect": "Donnez l'altération protection à un personnage."
+        },
+        "nervous": {
+            "name": "Nerveux",
+            "effect": "Détruisez un autre allié puis détruisez un ennemi en position front_icon."
+        },
+        "joyful": {
+            "name": "Ravi",
+            "effect": "Ce personnage gagne l'altération protection."
+        },
+        "allergic": {
+            "name": "Allergique",
+            "effect": "Déplacez une altération d'un personnage vers un autre personnage."
+        },
+        "fearful": {
+            "name": "Peureux",
+            "effect": "Si ce personnage a l'altération protection, X vaut 4, sinon X vaut 0."
+        },
+        "lazy": {
+            "name": "Fainéant",
+            "effect": "Donnez l'altération protection à 3 alliés."
+        },
+        "boss": {
+            "name": "Patron",
+            "effect": "Ne fait rien."
+        },
+        "mascot": {
+            "name": "Mascotte",
+            "effect": "X est égal au nombre d'alliés en position back_icon (max. 5)."
+        }
+    }
+}

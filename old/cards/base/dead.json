@@ -1,0 +1,79 @@
+{
+    "name": "Dead",
+    "faction_logo_filename": "dead.png",
+    "card_layer_filename": "dead.png",
+    "images_root_folder_name": "dead",
+    "cards": {
+        "death": {
+            "name": "Death",
+            "count": "4",
+            "position": "front",
+            "points": "1",
+            "type": "PLAY",
+            "image": "death.png",
+            "h_location": 0.06
+        },
+        "moires": {
+            "name": "Moires",
+            "count": "3",
+            "position": "any",
+            "points": "2",
+            "type": "PLAY",
+            "image": "moires.png",
+            "h_location": 0
+        },
+        "raven": {
+            "name": "Raven",
+            "count": "2",
+            "position": "back",
+            "points": "1",
+            "type": "PERMANENT",
+            "image": "raven.png",
+            "h_location": 0
+        },
+        "hydra": {
+            "name": "Hydra",
+            "count": "2",
+            "position": "front",
+            "points": "4",
+            "type": "PLAY",
+            "image": "hydra.png",
+            "h_location": 0.03
+        },
+        "companion": {
+            "name": "Companion",
+            "count": "2",
+            "position": "any",
+            "points": "1",
+            "type": "PLAY",
+            "image": "companion.png",
+            "h_location": 0.01
+        },
+        "child": {
+            "name": "Child",
+            "count": "1",
+            "position": "back",
+            "points": "6",
+            "type": "PERMANENT",
+            "image": "child.png"
+        },
+        "monarch": {
+            "name": "Monarch",
+            "count": "1",
+            "position": "front",
+            "points": "X",
+            "type": "PERMANENT",
+            "image": "monarch.png",
+            "h_location": -0.01
+        },
+        "empress": {
+            "name": "Empress",
+            "count": "1",
+            "position": "back",
+            "points": "1",
+            "type": "PLAY",
+            "image": "empress.png",
+            "h_location": 0.08
+        }
+    }
+}

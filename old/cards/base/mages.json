@@ -1,0 +1,78 @@
+{
+    "name": "Mages",
+    "faction_logo_filename": "mages.png",
+    "card_layer_filename": "mages.png",
+    "images_root_folder_name": "mages",
+    "cards": {
+        "student": {
+            "name": "Student",
+            "count": "5",
+            "position": "any",
+            "points": "2",
+            "type": "PLAY",
+            "image": "student.png",
+            "h_location": 0
+        },
+        "apprentice": {
+            "name": "Apprentice",
+            "count": "2",
+            "position": "front",
+            "points": "X",
+            "type": "PERMANENT",
+            "image": "apprentice.png",
+            "h_location": -0.15
+        },
+        "plotter": {
+            "name": "Plotter",
+            "count": "2",
+            "position": "back",
+            "points": "1",
+            "type": "PERMANENT",
+            "image": "plotter.png"
+        },
+        "spy": {
+            "name": "Spy",
+            "count": "2",
+            "position": "front",
+            "points": "2",
+            "type": "PLAY",
+            "image": "spy.png",
+            "h_location": 0.1
+        },
+        "rats": {
+            "name": "Rats",
+            "count": "2",
+            "position": "back",
+            "points": "2",
+            "type": "PLAY",
+            "image": "rats.png",
+            "h_location": 0.1
+        },
+        "divinity": {
+            "name": "Divinity",
+            "count": "1",
+            "position": "front",
+            "points": "X",
+            "type": "PERMANENT",
+            "image": "divinity.png",
+            "h_location": -0.07
+        },
+        "cunning": {
+            "name": "Sage",
+            "count": "1",
+            "position": "any",
+            "points": "2",
+            "type": "PLAY",
+            "image": "cunning.png"
+        },
+        "professor": {
+            "name": "Professor",
+            "count": "1",
+            "position": "any",
+            "points": "1",
+            "type": "PERMANENT",
+            "image": "professor.png",
+            "h_location": 0.08
+        }
+    }
+}

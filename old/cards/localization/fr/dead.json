@@ -1,0 +1,37 @@
+{
+    "name": "Morts",
+    "cards": {
+        "death": {
+            "name": "Mort",
+            "effect": "Détruisez un personnage en position front_icon."
+        },
+        "moires": {
+            "name": "Moires",
+            "effect": "Prenez une carte de votre cimetière dans votre main."
+        },
+        "raven": {
+            "name": "Corbeau",
+            "effect": "À la fin de chaque tour, vous pouvez détruire un allié pour gagner 1 point permanent."
+        },
+        "hydra": {
+            "name": "Hydre",
+            "effect": "Vous devez détruire un allié en position back_icon."
+        },
+        "companion": {
+            "name": "Compagnon",
+            "effect": "Copiez l'effet PLAY d'un personnage dans votre cimetière."
+        },
+        "child": {
+            "name": "Enfant",
+            "effect": "Si vous ne gagnez pas la partie au début de votre prochain tour, ce personnage est détruit."
+        },
+        "monarch": {
+            "name": "Monarque",
+            "effect": "X est égal au nombre de cartes dans votre cimetière."
+        },
+        "empress": {
+            "name": "Impératrice",
+            "effect": "Jouez un personnage de votre cimetière sur votre terrain."
+        }
+    }
+}

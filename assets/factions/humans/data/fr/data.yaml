@@ -1,0 +1,26 @@
+name: Humain
+cards:
+    villagers:
+        name: Villageois
+        effect: Donnez l'altération encouragé à ce personnage.
+    soldier:
+        name: Soldat
+        effect: Piochez 2 cartes puis défaussez 2 cartes.
+    priest:
+        name: Prêtre
+        effect: Copiez l'effet PLAY d'un allié en position front_icon.
+    archer:
+        name: Archer
+        effect: Détruisez un personnage en position back_icon.
+    knight:
+        name: Chevalier
+        effect: Si un allié en position back_icon est détruit par un effet adverse, détruisez ce personnage à la place.
+    king:
+        name: Roi
+        effect: X vaut 5 si ce personnage à 3 autres confrères sur votre terrain, sinon X vaut 0.
+    queen:
+        name: Reine
+        effect: Donnez l'altération encouragé à un autre allié.
+    bard:
+        name: Barde
+        effect: Révélez 1 carte de la pioche, vous pouvez la jouer si c'est un confrère, sinon gardez-la en main.

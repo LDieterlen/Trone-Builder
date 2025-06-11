@@ -1,0 +1,75 @@
+{
+    "name": "humans",
+    "faction_logo_filename": "humans.png",
+    "card_layer_filename": "humans.png",
+    "images_root_folder_name": "humans",
+    "cards": {
+        "villagers": {
+            "name": "Villagers",
+            "image": "villagers.png",
+            "count": "4",
+            "position": "any",
+            "points": "0",
+            "type": "PLAY"
+        },
+        "soldier": {
+            "name": "Soldier",
+            "image": "soldier.png",
+            "count": "3",
+            "position": "front",
+            "points": "2",
+            "type": "PLAY",
+            "h_location": 0.1
+        },
+        "priest": {
+            "name": "Priest",
+            "image": "priest.png",
+            "count": "2",
+            "position": "back",
+            "points": "1",
+            "type": "PLAY"
+        },
+        "archer": {
+            "name": "Archer",
+            "image": "archer.png",
+            "count": "2",
+            "position": "back",
+            "points": "1",
+            "type": "PLAY"
+        },
+        "knight": {
+            "name": "Knight",
+            "image": "knight.png",
+            "count": "2",
+            "position": "front",
+            "points": "3",
+            "type": "PERMANENT"
+        },
+        "king": {
+            "name": "King",
+            "image": "king.png",
+            "count": "1",
+            "position": "back",
+            "points": "X",
+            "type": "PERMANENT",
+            "h_location": 0.08
+        },
+        "queen": {
+            "name": "Queen",
+            "image": "queen.png",
+            "count": "1",
+            "position": "any",
+            "points": "0",
+            "type": "PLAY",
+            "h_location": 0.1
+        },
+        "bard": {
+            "name": "Bard",
+            "image": "bard.png",
+            "count": "1",
+            "position": "any",
+            "points": "2",
+            "type": "PLAY"
+        }
+    }
+}

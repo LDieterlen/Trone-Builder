@@ -1,0 +1,77 @@
+{
+    "name": "Dwarf",
+    "faction_logo_filename": "dwarf.png",
+    "card_layer_filename": "dwarf.png",
+    "images_root_folder_name": "dwarf",
+    "cards": {
+        "simple": {
+            "name": "Simple",
+            "count": "4",
+            "position": "front",
+            "points": "2",
+            "type": "PLAY",
+            "image": "simple.png"
+        },
+        "nervous": {
+            "name": "Nervous",
+            "count": "3",
+            "position": "front",
+            "points": "2",
+            "type": "PLAY",
+            "image": "nervous.png",
+            "h_location": 0.04
+        },
+        "joyful": {
+            "name": "Joyful",
+            "count": "2",
+            "position": "front",
+            "points": "3",
+            "type": "PLAY",
+            "image": "joyful.png"
+        },
+        "allergic": {
+            "name": "Allergic",
+            "count": "2",
+            "position": "back",
+            "points": "0",
+            "type": "PLAY",
+            "image": "allergic.png",
+            "h_location": 0.05
+        },
+        "fearful": {
+            "name": "Fearful",
+            "count": "2",
+            "position": "any",
+            "points": "X",
+            "type": "PERMANENT",
+            "image": "fearful.png",
+            "h_location": 0.03
+        },
+        "lazy": {
+            "name": "Lazy",
+            "count": "1",
+            "position": "any",
+            "points": "0",
+            "type": "PLAY",
+            "image": "lazy.png"
+        },
+        "boss": {
+            "name": "Boss",
+            "count": "1",
+            "position": "front",
+            "points": "4",
+            "type": "PERMANENT",
+            "image": "boss.png",
+            "h_location": -0.07
+        },
+        "mascot": {
+            "name": "Mascot",
+            "count": "1",
+            "position": "front",
+            "points": "X",
+            "type": "PERMANENT",
+            "image": "mascott.png",
+            "h_location": 0.03
+        }
+    }
+}

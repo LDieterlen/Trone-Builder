@@ -1,0 +1,37 @@
+{
+    "name": "Mages",
+    "cards": {
+        "student": {
+            "name": "Élève",
+            "effect": "Vous pouvez repositionner jusqu'à 2 personnages."
+        },
+        "apprentice": {
+            "name": "Apprentie",
+            "effect": "X vaut 4 si ce personnage est en position back_icon, sinon X vaut 1."
+        },
+        "plotter": {
+            "name": "Comploteur",
+            "effect": "Lorsque vous repositionné cet allié, détruisez un personnage en position front_icon."
+        },
+        "spy": {
+            "name": "Espion",
+            "effect": "Défaussez 1 carte, puis piochez 2 cartes."
+        },
+        "rats": {
+            "name": "Rats",
+            "effect": "Détruisez un personnage qui n'est pas à sa position naturelle."
+        },
+        "divinity": {
+            "name": "Divinité",
+            "effect": "X vaut le nombre d'alliés qui ne sont pas à leur position naturelle."
+        },
+        "cunning": {
+            "name": "Sage",
+            "effect": "Copiez l'effet PLAY d'un personnage dans votre main."
+        },
+        "professor": {
+            "name": "Professeur",
+            "effect": "À la fin de chaque tour, vous pouvez repositionner un personnage en position back_icon vers la position front_icon."
+        }
+    }
+}

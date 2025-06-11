@@ -1,0 +1,6 @@
+{
+    "Prettier-SQL.tabSizeOverride": 4,
+    "[yaml]": {
+        "editor.tabSize": 4
+    }
+}

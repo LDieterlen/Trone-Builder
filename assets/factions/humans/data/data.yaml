@@ -1,0 +1,61 @@
+name: Humans
+cards:
+    villagers:
+        name: Villagers
+        type: PLAY
+        count: "4"
+        position: any
+        points: "0"
+        image: villagers.png
+    soldier:
+        name: Soldier
+        image: soldier.png
+        count: "3"
+        position: front
+        points: "2"
+        type: PLAY
+        h_location: 0.1
+    priest:
+        name: Priest
+        image: priest.png
+        count: "2"
+        position: back
+        points: "1"
+        type: PLAY
+    archer:
+        name: Archer
+        image: archer.png
+        count: "2"
+        position: back
+        points: "1"
+        type: PLAY
+    knight:
+        name: Knight
+        image: knight.png
+        count: "2"
+        position: front
+        points: "3"
+        type: PERMANENT
+    king:
+        name: King
+        image: king.png
+        count: "1"
+        position: back
+        points: X
+        type: PERMANENT
+        h_location: 0.08
+    queen:
+        name: Queen
+        image: queen.png
+        count: "1"
+        position: any
+        points: "0"
+        type: PLAY
+        h_location: 0.1
+    bard:
+        name: Bard
+        image: bard.png
+        count: "1"
+        position: any
+        points: "2"
+        type: PLAY
