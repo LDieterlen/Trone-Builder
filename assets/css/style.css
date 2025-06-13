@@ -148,7 +148,7 @@
 
 .effect {
     position: absolute;
-    top: 88%;
+    top: 87%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
@@ -177,7 +177,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
-    font-size: 0.4em;
+    font-size: 0.45em;
     font-family: 'Simonetta';
     color: #000000;
     pointer-events: none;
