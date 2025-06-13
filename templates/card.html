@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ nom_carte }}</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+    <div class="card-border">
+        <div class="card">
+            <img class="character-img" src="{{ character_img }}">
+            <img class="card-layer" src="{{ card_layer }}">
+            <img class="logo-faction" src="{{ logo_faction }}">
+            <span class="name">{{ name }}</span>
+            <span class="count">{{ count }}</span>
+            <img class="position" src="{{ position }}">
+            <span class="type">{{ type }}</span>
+            <span class="point">{{ point }}</span>
+            <span class="effect">
+                {{ effect }}
+            </span>
+            <span class="legend">{{ legend }}</span>
+        </div>
+    </div>
+    <script>
+        // Ajuste dynamiquement la taille de la police de l'effet selon la longueur du texte
+        document.addEventListener('DOMContentLoaded', function () {
+            var effect = document.querySelector('.effect');
+            if (effect) {
+                var baseFontSize = 1; // em
+                var minFontSize = 0.8; // em
+                var maxChars = 90; // nombre de caractères avant de réduire
+                var textLength = effect.textContent.length;
+                var newFontSize = baseFontSize;
+                if (textLength > maxChars) {
+                    newFontSize = Math.max(minFontSize, baseFontSize * (maxChars / textLength));
+                }
+                effect.style.fontSize = newFontSize + 'em';
+            }
+        });
+    </script>
+</body>
+
+</html>

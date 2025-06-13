@@ -1,0 +1,75 @@
+name: Humain
+legend: "Encouragé: +1 point pour chaque autre personnage de la même faction"
+cards:
+    villagers:
+        name: Villageois
+        image: villagers
+        count: "4"
+        position: any
+        points: "0"
+        type: JOUÉ
+        effect: Donnez l'altération encouragé à ce personnage.
+        legend: True
+    soldier:
+        name: Soldat
+        image: soldier
+        count: "3"
+        position: front
+        points: "2"
+        type: JOUÉ
+        effect: Piochez 2 cartes puis défaussez 2 cartes.
+    priest:
+        name: Prêtre
+        image: priest
+        count: "2"
+        position: back
+        points: "1"
+        type: JOUÉ
+        effect: Copiez l'effet JOUÉ d'un allié en position front_icon.
+    archer:
+        name: Archer
+        image: archer
+        count: "2"
+        position: back
+        points: "1"
+        type: JOUÉ
+        effect: Détruisez un personnage en position back_icon.
+    knight:
+        name: Chevalier
+        image: knight
+        count: "2"
+        position: front
+        points: "3"
+        type: PERMANENT
+        effect:
+            Si un allié en position back_icon est détruit par un effet adverse, détruisez
+            ce personnage à la place.
+    king:
+        name: Roi
+        image: king
+        count: "1"
+        position: back
+        points: X
+        type: PERMANENT
+        effect:
+            S'il y a au moins 3 confrères de ce personnage sur votre terrain, X vaut
+            5, sinon X vaut 0.
+    queen:
+        name: Reine
+        image: queen
+        count: "1"
+        position: any
+        points: "0"
+        type: JOUÉ
+        effect: Donnez l'altération encouragé à un autre allié.
+        legend: True
+    bard:
+        name: Barde
+        image: bard
+        count: "1"
+        position: any
+        points: "2"
+        type: JOUÉ
+        effect:
+            Révélez 1 carte de la pioche, vous pouvez la jouer s'il est de la même faction que ce personnage,',
+            sinon gardez-la en main.

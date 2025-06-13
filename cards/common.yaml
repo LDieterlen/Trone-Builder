@@ -1,0 +1,31 @@
+faction_dir: assets/sprites/factions
+cards_layers_dir: assets/sprites/cards
+images_dir: assets/images
+
+positions_dir: assets/sprites/positions
+icons:
+    front_icon: ../../assets/sprites/icons/front.png
+    back_icon: ../../assets/sprites/icons/back.png
+    dead_icon: ../../assets/sprites/icons/dead.png
+    human_icon: ../../assets/sprites/icons/human.png
+    desert_icon: ../../assets/sprites/icons/desert.png
+
+keywords:
+    - allié
+    - confrère
+    - ennemi
+    - encouragé
+    - gel
+    - force
+    - protection
+    - déplacer
+    - déplacez
+    - déplacé
+
+bolded:
+    - PERMANENT
+    - JOUÉ
+    - X
+    - Fin de tour
+    - Début de tour
+    - Contrainte

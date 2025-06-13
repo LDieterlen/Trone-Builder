@@ -1,0 +1,68 @@
+name: Montagne
+cards:
+    snowman:
+        name: Bonhomme
+        count: "4"
+        position: back
+        points: "1"
+        type: JOUÉ
+        image: snowman
+        effect: Donnez l'altération gel à un personnage en position front_icon.
+    yeti:
+        name: Yéti
+        count: "3"
+        position: front
+        points: "2"
+        type: PERMANENT
+        image: yeti
+        effect: Lorsque ce personnage reçoit l'altération gel, gagnez 2 points permanents.
+    witch:
+        name: Sorcière
+        count: "2"
+        position: front
+        points: "3"
+        type: JOUÉ
+        image: witch
+        effect: Donnez l'altération gel à un allié.
+    ancestor:
+        name: Ancêtre
+        count: "2"
+        position: any
+        points: "0"
+        type: JOUÉ
+        image: ancestor
+        effect: Supprimez une altération d'un personnage et gagnez 1 point permanent.
+    merchant:
+        name: Barbare
+        count: "2"
+        position: back
+        points: "2"
+        type: JOUÉ
+        image: merchant
+        effect: Échangez votre main avec celle d'un autre joueur.
+    beast:
+        name: Bête
+        count: "1"
+        position: front
+        points: X
+        type: PERMANENT
+        image: beast
+        effect: X est égal au nombre d'alliés avec une ou plusieurs altérations.
+    lizard:
+        name: Lézard
+        count: "1"
+        position: any
+        points: "0"
+        type: JOUÉ
+        image: lizard
+        effect:
+            Supprimez jusqu'à 3 altérations aux ennemis en position front_icon ou
+            aux alliés.
+    giant:
+        name: Géant
+        count: "1"
+        position: back
+        points: "5"
+        type: PERMANENT
+        image: giant
+        effect: À la fin de votre tour, donnez l'altération gel à un allié.

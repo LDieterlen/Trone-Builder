@@ -1,0 +1,74 @@
+name: Robots
+cards:
+    minibot:
+        name: Minibot
+        count: "5"
+        position: any
+        points: "2"
+        type: JOUÉ
+        image: snowman
+        effect:
+            Au début de votre tour, vous pouvez défausser 1 carte de votre main pour
+            détruire un ennemi en position front_icon.
+    drone:
+        name: Drone
+        count: "2"
+        position: back
+        points: "1"
+        type: JOUÉ
+        image: yeti
+        effect: Tous les adversaires doivent défausser 1 carte de leur main.
+    recycler:
+        name: Recycleur
+        count: "2"
+        position: back
+        points: "2"
+        type: JOUÉ
+        image: witch
+        effect: Prenez une carte de la défausse dans votre main.
+    armor:
+        name: Armure
+        count: "2"
+        position: front
+        points: "4"
+        type: JOUÉ
+        image: ancestor
+        effect: Vous devez défausser 1 carte de votre main.
+    tracker:
+        name: Traqueur
+        count: "2"
+        position: front
+        points: "0"
+        type: PERMANENT
+        image: merchant
+        effect:
+            Au début de votre tour, vous pouvez défausser 1 carte de votre main pour
+            détruire un ennemi en position front_icon.
+    mother:
+        name: Mère
+        count: "1"
+        position: back
+        points: "0"
+        type: JOUÉ
+        image: beast
+        effect:
+            Gagnez des points permanents égaux à 5 moins le nombre de cartes dans
+            votre main.
+    dome:
+        name: Dome
+        count: "1"
+        position: any
+        points: "1"
+        type: JOUÉ
+        image: lizard
+        effect: Piochez 3 cartes.
+    weapon:
+        name: Arme
+        count: "1"
+        position: back
+        points: "5"
+        type: PERMANENT
+        image: giant
+        effect:
+            Vous ne piochez plus au début de votre tour. Vous pouvez détruire cet
+            allié à tout moment.

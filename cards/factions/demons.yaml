@@ -1,0 +1,71 @@
+name: Démons
+cards:
+    creature:
+        name: Bestiole
+        count: "4"
+        position: front
+        points: "1"
+        type: JOUÉ
+        image: bugs
+        effect: Renvoyez un ennemi en position front_icon dans la main de
+            son propriétaire.
+    minion:
+        name: Mignon
+        count: "3"
+        position: back
+        points: "0"
+        type: JOUÉ
+        image: minions
+        effect: Gagnez 2 points permanents.
+    horned:
+        name: Cornu
+        count: "2"
+        position: front
+        points: "3"
+        type: JOUÉ
+        image: horned
+        effect: "Contrainte: renvoyer un allié en position back_icon dans votre main."
+    eye:
+        name: Œil
+        count: "2"
+        position: front
+        points: "2"
+        type: JOUÉ
+        image: eye
+        effect:
+            Vous pouvez défausser des cartes de votre main pour piocher le même nombre
+            de cartes.
+    clever:
+        name: Malins
+        count: "2"
+        position: any
+        points: "1"
+        type: JOUÉ
+        image: clever
+        effect: Vous pouvez jouer un personnage supplémentaire ce tour.
+    cyclops:
+        name: Cyclope
+        count: "1"
+        position: front
+        points: "5"
+        type: JOUÉ
+        image: cyclops
+        effect: Les autres joueurs gagnent 1 point permanent.
+    octopus:
+        name: Poulpe
+        count: "1"
+        position: back
+        points: "1"
+        type: PERMANENT
+        image: octopus
+        effect:
+            À la fin de votre tour, vous pouvez défausser une carte de votre main
+            pour gagner 2 points permanents.
+    collector:
+        name: Protecteur
+        count: "1"
+        position: front
+        points: X
+        type: PERMANENT
+        image: collector
+        effect: X est égal à la moitié (inférieure) de votre total de points permanents.

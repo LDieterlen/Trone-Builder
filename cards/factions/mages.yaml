@@ -1,0 +1,70 @@
+name: Mages
+cards:
+    student:
+        name: Élève
+        count: "5"
+        position: any
+        points: "2"
+        type: JOUÉ
+        image: student
+        effect: Vous pouvez repositionner jusqu'à 2 personnages.
+    apprentice:
+        name: Apprentie
+        count: "2"
+        position: front
+        points: X
+        type: PERMANENT
+        image: apprentice
+        effect: X vaut 4 si ce personnage est en position back_icon, sinon X vaut 1.
+    plotter:
+        name: Comploteur
+        count: "2"
+        position: back
+        points: "1"
+        type: PERMANENT
+        image: plotter
+        effect:
+            Lorsque vous repositionné cet allié, détruisez un personnage en position
+            front_icon.
+    spy:
+        name: Espion
+        count: "2"
+        position: any
+        points: "2"
+        type: JOUÉ
+        image: spy
+        effect: Défaussez 1 carte, puis piochez 2 cartes.
+    rats:
+        name: Rats
+        count: "2"
+        position: back
+        points: "1"
+        type: JOUÉ
+        image: rats
+        effect: Détruisez un personnage qui n'est pas à sa position naturelle.
+    divinity:
+        name: Divinité
+        count: "1"
+        position: front
+        points: X
+        type: PERMANENT
+        image: divinity
+        effect: X vaut le nombre d'alliés qui ne sont pas à leur position naturelle.
+    cunning:
+        name: Sage
+        count: "1"
+        position: any
+        points: "2"
+        type: JOUÉ
+        image: cunning
+        effect: Copiez l'effet JOUÉ d'un personnage dans votre main.
+    professor:
+        name: Professeur
+        count: "1"
+        position: any
+        points: "1"
+        type: PERMANENT
+        image: professor
+        effect:
+            À la fin de votre tour, vous pouvez repositionner un personnage en position
+            back_icon vers la position front_icon.

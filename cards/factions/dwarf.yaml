@@ -1,0 +1,68 @@
+name: Nains
+cards:
+    simple:
+        name: Simple
+        count: "4"
+        position: front
+        points: "2"
+        type: JOUÉ
+        image: simple
+        effect: Donnez l'altération <u>protection</u> à un personnage.
+    nervous:
+        name: Nerveux
+        count: "3"
+        position: front
+        points: "2"
+        type: JOUÉ
+        image: nervous
+        effect: Détruisez un autre allié puis détruisez un ennemi en position front_icon.
+    joyful:
+        name: Ravi
+        count: "2"
+        position: front
+        points: "3"
+        type: JOUÉ
+        image: joyful
+        effect: Ce personnage gagne l'altération <u>protection</u>.
+    allergic:
+        name: Allergique
+        count: "2"
+        position: back
+        points: "0"
+        type: JOUÉ
+        image: allergic
+        effect: Déplacez une altération d'un personnage vers un autre personnage.
+    fearful:
+        name: Peureux
+        count: "2"
+        position: any
+        points: X
+        type: PERMANENT
+        image: fearful
+        effect:
+            Si ce personnage a l'altération <u>protection</u>, X vaut 4, sinon X vaut
+            0.
+    lazy:
+        name: Fainéant
+        count: "1"
+        position: any
+        points: "0"
+        type: JOUÉ
+        image: lazy
+        effect: Donnez l'altération <u>protection</u> à 3 alliés.
+    boss:
+        name: Patron
+        count: "1"
+        position: front
+        points: "4"
+        type: PERMANENT
+        image: boss
+        effect: Ne fait rien.
+    mascot:
+        name: Mascotte
+        count: "1"
+        position: front
+        points: X
+        type: PERMANENT
+        image: mascott
+        effect: X est égal au nombre d'alliés en position back_icon (max. 5).

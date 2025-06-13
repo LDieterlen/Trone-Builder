@@ -1,0 +1,70 @@
+name: Désert
+cards:
+    monk:
+        name: Moine
+        count: "5"
+        position: back
+        points: "0"
+        type: JOUÉ
+        image: monk
+        effect: Donnez l'altération <u>force</u> à 2 personnages.
+    monster:
+        name: Monstre
+        count: "2"
+        position: front
+        points: "3"
+        type: JOUÉ
+        image: monster
+        effect: Détruisez un allié avec 0 point de base.
+    trainer:
+        name: Dresseur
+        count: "2"
+        position: any
+        points: "2"
+        type: PERMANENT
+        image: trainer
+        effect: Lorsque ce personnage reçoit une altération, piochez une carte.
+    gladiator:
+        name: Gladiateur
+        count: "2"
+        position: front
+        points: X
+        type: PERMANENT
+        image: gladiator
+        effect:
+            X vaut le nombre d'altérations <u>force</u> présentes sur ce personnage
+            +2.
+    punisher:
+        name: Punisseur
+        count: "2"
+        position: any
+        points: "1"
+        type: JOUÉ
+        image: punisher
+        effect: Détruisez un personnage avec une altération.
+    worm:
+        name: Ver
+        count: "1"
+        position: front
+        points: "6"
+        type: PERMANENT
+        image: worm
+        effect: Vous devez détruire un allié avec une altération pour jouer ce personnage.
+    orphans:
+        name: Orphelins
+        count: "1"
+        position: back
+        points: "0"
+        type: PERMANENT
+        image: orphans
+        effect:
+            À la fin de votre tour, donnez l'altération <u>force</u> à un personnage
+            en position front_icon.
+    prince:
+        name: Prince
+        count: "1"
+        position: back
+        points: "0"
+        type: JOUÉ
+        image: prince
+        effect: Donnez l'altération <u>force</u> à tous les autres alliés desert_fac.

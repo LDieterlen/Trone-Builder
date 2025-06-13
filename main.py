@@ -3,6 +3,7 @@ import json
 
 from scripts.card import Card
 from scripts.utils import bold_keywords, replace_keywords_with_icons, underline_keywords
+import yaml
 from scripts.constants import (
     TITLE_STYLE,
     COUNT_STYLE,
@@ -169,6 +170,17 @@ if __name__ == "__main__":
 
     for faction in FACTIONS:
         faction_data = load_faction(faction, LANGUAGE)
+        # Dump faction data to cards/data with appropriate name
+        output_data_folder = "cards/data"
+        os.makedirs(output_data_folder, exist_ok=True)
+        faction_data_path = os.path.join(output_data_folder, f"{faction}.json")
+        with open(
+            faction_data_path.replace(".json", ".yaml"), "w", encoding="utf-8"
+        ) as f:
+            yaml.dump(faction_data, f, allow_unicode=True, sort_keys=False)
+        print(faction_data)
+
+        continue
 
         faction_name = faction_data["name"]
         print("-" * 40)

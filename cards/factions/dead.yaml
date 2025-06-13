@@ -1,0 +1,67 @@
+name: Morts
+cards:
+    death:
+        name: Mort
+        count: "4"
+        position: front
+        points: "1"
+        type: JOUÉ
+        image: death
+        effect: Détruisez un personnage en position front_icon.
+    moires:
+        name: Moires
+        count: "3"
+        position: any
+        points: "2"
+        type: JOUÉ
+        image: moires
+        effect: Prenez une carte de votre cimetière dans votre main.
+    raven:
+        name: Corbeau
+        count: "2"
+        position: back
+        points: "1"
+        type: PERMANENT
+        image: raven
+        effect: "Fin de tour: vous pouvez détruire un allié pour gagner 1 point
+            permanent."
+    hydra:
+        name: Hydre
+        count: "2"
+        position: front
+        points: "4"
+        type: JOUÉ
+        image: hydra
+        effect: Vous devez détruire un allié en position back_icon.
+    companion:
+        name: Compagnon
+        count: "2"
+        position: any
+        points: "1"
+        type: JOUÉ
+        image: companion
+        effect: Copiez l'effet JOUÉ d'un personnage dans votre cimetière.
+    child:
+        name: Enfant
+        count: "1"
+        position: back
+        points: "6"
+        type: PERMANENT
+        image: child
+        effect: "Début de tour, Contrainte : si vous ne gagnez pas la partie, détruisez ce personnage."
+    monarch:
+        name: Monarque
+        count: "1"
+        position: front
+        points: X
+        type: PERMANENT
+        image: monarch
+        effect: X est égal au nombre de cartes dans votre cimetière.
+    empress:
+        name: Impératrice
+        count: "1"
+        position: back
+        points: "1"
+        type: JOUÉ
+        image: empress
+        effect: Jouez un personnage de votre cimetière sur votre terrain.
