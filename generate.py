@@ -46,6 +46,10 @@ if __name__ == "__main__":
     ICONS: dict = commun_data["icons"]
 
     KEYWORDS: list = commun_data["keywords"]
+    DEFAULT_IMAGE_PATH = commun_data["default_image_path"]
+    DEFAULT_CARD_LAYER_PATH = commun_data["default_layer_path"]
+    DEFAULT_FACTION_PATH = commun_data["default_faction_path"]
+
     extended_keywords = set(KEYWORDS)
     for kw in KEYWORDS:
         extended_keywords.add(kw + "e")
@@ -75,12 +79,14 @@ if __name__ == "__main__":
         faction_name = data.get("faction_name", file_name)
         faction_path = FACTION_DIR / f"{faction_name}.png"
         if not faction_path.exists():
-            raise FileNotFoundError(f"Faction image not found: {faction_path}")
+            faction_path = DEFAULT_FACTION_PATH
+            # raise FileNotFoundError(f"Faction image not found: {faction_path}")
 
         card_layer_name = data.get("card_layer_name", file_name)
         card_layer_path = CARD_LAYER_DIR / f"{card_layer_name}.png"
         if not card_layer_path.exists():
-            raise FileNotFoundError(f"Card layer image not found: {card_layer_path}")
+            pass
+            # raise FileNotFoundError(f"Card layer image not found: {card_layer_path}")
 
         faction_output_dir = output_base_dir / faction_name
         faction_output_dir.mkdir(parents=True, exist_ok=True)
@@ -90,17 +96,19 @@ if __name__ == "__main__":
             character_image = card.get("image", card_key)
             character_image_path = IMAGES_DIR / faction_name / f"{character_image}.png"
             if not character_image_path.exists():
-                raise FileNotFoundError(
-                    f"Character image not found: {character_image_path}"
-                )
+                character_image_path = DEFAULT_IMAGE_PATH
+                # raise FileNotFoundError(
+                #     f"Character image not found: {character_image_path}"
+                # )
 
             # Card layer
             card_layer_name = card.get("card_layer_name", faction_name)
             card_layer_path = CARD_LAYER_DIR / f"{card_layer_name}.png"
             if not card_layer_path.exists():
-                raise FileNotFoundError(
-                    f"Card layer image not found: {card_layer_path}"
-                )
+                card_layer_path = DEFAULT_CARD_LAYER_PATH
+                # raise FileNotFoundError(
+                #     f"Card layer image not found: {card_layer_path}"
+                # )
 
             # Position
             position = card["position"]

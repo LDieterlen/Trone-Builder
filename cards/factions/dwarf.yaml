@@ -5,7 +5,7 @@ cards:
         count: "4"
         position: front
         points: "2"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: simple
         effect: Donnez l'altération <u>protection</u> à un personnage.
     nervous:
@@ -13,7 +13,7 @@ cards:
         count: "3"
         position: front
         points: "2"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: nervous
         effect: Détruisez un autre allié puis détruisez un ennemi en position front_icon.
     joyful:
@@ -21,7 +21,7 @@ cards:
         count: "2"
         position: front
         points: "3"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: joyful
         effect: Ce personnage gagne l'altération <u>protection</u>.
     allergic:
@@ -29,7 +29,7 @@ cards:
         count: "2"
         position: back
         points: "0"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: allergic
         effect: Déplacez une altération d'un personnage vers un autre personnage.
     fearful:
@@ -47,7 +47,7 @@ cards:
         count: "1"
         position: any
         points: "0"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: lazy
         effect: Donnez l'altération <u>protection</u> à 3 alliés.
     boss:

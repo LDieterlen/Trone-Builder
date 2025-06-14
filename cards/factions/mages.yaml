@@ -5,7 +5,7 @@ cards:
         count: "5"
         position: any
         points: "2"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: student
         effect: Vous pouvez repositionner jusqu'à 2 personnages.
     apprentice:
@@ -31,7 +31,7 @@ cards:
         count: "2"
         position: any
         points: "2"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: spy
         effect: Défaussez 1 carte, puis piochez 2 cartes.
     rats:
@@ -39,7 +39,7 @@ cards:
         count: "2"
         position: back
         points: "1"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: rats
         effect: Détruisez un personnage qui n'est pas à sa position naturelle.
     divinity:
@@ -55,9 +55,9 @@ cards:
         count: "1"
         position: any
         points: "2"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: cunning
-        effect: Copiez l'effet JOUÉ d'un personnage dans votre main.
+        effect: Copiez l'effet IMMÉDIAT d'un personnage dans votre main.
     professor:
         name: Professeur
         count: "1"

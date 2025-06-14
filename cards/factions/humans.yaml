@@ -7,7 +7,7 @@ cards:
         count: "4"
         position: any
         points: "0"
-        type: JOUÉ
+        type: IMMÉDIAT
         effect: Donnez l'altération encouragé à ce personnage.
         legend: True
     soldier:
@@ -16,7 +16,7 @@ cards:
         count: "3"
         position: front
         points: "2"
-        type: JOUÉ
+        type: IMMÉDIAT
         effect: Piochez 2 cartes puis défaussez 2 cartes.
     priest:
         name: Prêtre
@@ -24,15 +24,15 @@ cards:
         count: "2"
         position: back
         points: "1"
-        type: JOUÉ
-        effect: Copiez l'effet JOUÉ d'un allié en position front_icon.
+        type: IMMÉDIAT
+        effect: Copiez l'effet IMMÉDIAT d'un allié en position front_icon.
     archer:
         name: Archer
         image: archer
         count: "2"
         position: back
         points: "1"
-        type: JOUÉ
+        type: IMMÉDIAT
         effect: Détruisez un personnage en position back_icon.
     knight:
         name: Chevalier
@@ -60,7 +60,7 @@ cards:
         count: "1"
         position: any
         points: "0"
-        type: JOUÉ
+        type: IMMÉDIAT
         effect: Donnez l'altération encouragé à un autre allié.
         legend: True
     bard:
@@ -69,7 +69,7 @@ cards:
         count: "1"
         position: any
         points: "2"
-        type: JOUÉ
+        type: IMMÉDIAT
         effect:
             Révélez 1 carte de la pioche, vous pouvez la jouer s'il est de la même faction que ce personnage,',
             sinon gardez-la en main.

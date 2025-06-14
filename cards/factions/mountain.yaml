@@ -5,7 +5,7 @@ cards:
         count: "4"
         position: back
         points: "1"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: snowman
         effect: Donnez l'altération gel à un personnage en position front_icon.
     yeti:
@@ -21,7 +21,7 @@ cards:
         count: "2"
         position: front
         points: "3"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: witch
         effect: Donnez l'altération gel à un allié.
     ancestor:
@@ -29,7 +29,7 @@ cards:
         count: "2"
         position: any
         points: "0"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: ancestor
         effect: Supprimez une altération d'un personnage et gagnez 1 point permanent.
     merchant:
@@ -37,7 +37,7 @@ cards:
         count: "2"
         position: back
         points: "2"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: merchant
         effect: Échangez votre main avec celle d'un autre joueur.
     beast:
@@ -53,7 +53,7 @@ cards:
         count: "1"
         position: any
         points: "0"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: lizard
         effect:
             Supprimez jusqu'à 3 altérations aux ennemis en position front_icon ou

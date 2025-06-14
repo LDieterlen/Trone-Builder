@@ -5,7 +5,7 @@ cards:
         count: "4"
         position: front
         points: "1"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: death
         effect: Détruisez un personnage en position front_icon.
     moires:
@@ -13,7 +13,7 @@ cards:
         count: "3"
         position: any
         points: "2"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: moires
         effect: Prenez une carte de votre cimetière dans votre main.
     raven:
@@ -30,7 +30,7 @@ cards:
         count: "2"
         position: front
         points: "4"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: hydra
         effect: Vous devez détruire un allié en position back_icon.
     companion:
@@ -38,9 +38,9 @@ cards:
         count: "2"
         position: any
         points: "1"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: companion
-        effect: Copiez l'effet JOUÉ d'un personnage dans votre cimetière.
+        effect: Copiez l'effet IMMÉDIAT d'un personnage dans votre cimetière.
     child:
         name: Enfant
         count: "1"
@@ -62,6 +62,6 @@ cards:
         count: "1"
         position: back
         points: "1"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: empress
         effect: Jouez un personnage de votre cimetière sur votre terrain.

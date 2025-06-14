@@ -24,8 +24,12 @@ keywords:
 
 bolded:
     - PERMANENT
-    - JOUÉ
+    - IMMÉDIAT
     - X
     - Fin de tour
     - Début de tour
     - Contrainte
+
+default_image_path: assets/images/default.png
+default_layer_path: assets/sprites/cards/default.png
+default_faction_path: assets/sprites/factions/default.png

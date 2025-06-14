@@ -5,7 +5,7 @@ cards:
         count: "4"
         position: front
         points: "1"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: bugs
         effect: Renvoyez un ennemi en position front_icon dans la main de
             son propriétaire.
@@ -14,7 +14,7 @@ cards:
         count: "3"
         position: back
         points: "0"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: minions
         effect: Gagnez 2 points permanents.
     horned:
@@ -22,7 +22,7 @@ cards:
         count: "2"
         position: front
         points: "3"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: horned
         effect: "Contrainte: renvoyer un allié en position back_icon dans votre main."
     eye:
@@ -30,7 +30,7 @@ cards:
         count: "2"
         position: front
         points: "2"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: eye
         effect:
             Vous pouvez défausser des cartes de votre main pour piocher le même nombre
@@ -40,7 +40,7 @@ cards:
         count: "2"
         position: any
         points: "1"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: clever
         effect: Vous pouvez jouer un personnage supplémentaire ce tour.
     cyclops:
@@ -48,7 +48,7 @@ cards:
         count: "1"
         position: front
         points: "5"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: cyclops
         effect: Les autres joueurs gagnent 1 point permanent.
     octopus:

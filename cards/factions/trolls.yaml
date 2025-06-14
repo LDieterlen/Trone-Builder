@@ -1,0 +1,66 @@
+name: Trolles
+cards:
+    runt:
+        name: Avorton
+        count: "4"
+        position: front
+        points: "3"
+        type: PERMANENT
+        image: runt
+        effect: "Lorsque ce personnage est détruit, piochez 1 carte."
+    prophet:
+        name: Prophete
+        count: "3"
+        position: back
+        points: "1"
+        type: IMMÉDIAT
+        image: prophet
+        effect: "Détruisez un allié puis replacez-le sur votre terrain."
+    dumb:
+        name: Imbécile
+        count: "2"
+        position: any
+        points: "1"
+        type: IMMÉDIAT
+        image: dumb
+        effect: "Contrainte: Détruisez un allié, gagnez ses points de base en points permanents."
+    undertaker:
+        name: Croque-mort
+        count: "2"
+        position: any
+        points: "1"
+        type: PERMANENT
+        image: undertaker
+        effect: "Lorsque ce personnage est détruit, placez un autre personnage de votre cimetière sur votre terrain."
+    kamikaze:
+        name: Kamikaze
+        count: "2"
+        position: front
+        points: "2"
+        type: PERMANENT
+        image: kamikaze
+        effect: "Lorsque ce personnage est détruit, détruisez un personnage en position front_icon."
+    brute:
+        name: Brute
+        count: "1"
+        position: back
+        points: "6"
+        type: PERMANENT
+        image: brute
+        effect: "Début de tour, Contrainte: Détruisez un allié."
+    shaman:
+        name: Chaman
+        count: "1"
+        position: back
+        points: "1"
+        type: PERMANENT
+        image: shaman
+        effect: "Gagnez 1 point permanent chaque fois qu'un autre allié est détruit."
+    thrower:
+        name: Lanceur
+        count: "1"
+        position: front
+        points: "3"
+        type: IMMÉDIAT
+        image: thrower
+        effect: "Contrainte: Détruisez 2 alliés pour détruire un ennemi."

@@ -1,0 +1,67 @@
+name: Enfer
+legend: "Sacrifice: Détruisez un allié avec des points de base à 0"
+cards:
+    shadow:
+        name: Ombre
+        count: "5"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: shadow
+        effect: Rejouez ce tour.
+    ceberus:
+        name: Cerbère
+        count: "2"
+        position: front
+        points: "X"
+        type: PERMANENT
+        image: cerberus
+        effect: X est égal à 1 + le nombre d'alliés avec des points de base à 0.
+    dragon:
+        name: Dragon
+        count: "2"
+        position: front
+        points: "3"
+        type: PERMANENT
+        image: dragon
+        effect: "Fin de tour: vous pouvez faire un sacrifice pour piocher 1 carte."
+    assassin:
+        name: Assassin
+        count: "2"
+        position: back
+        points: "0"
+        type: PERMANENT
+        image: assassin
+        effect: "Début de tour: vous pouvez faire un sacrifice pour détruire un personnage en position front_icon."
+    mad:
+        name: Fou
+        count: "2"
+        position: any
+        points: "0"
+        type: PERMANENT
+        image: mad
+        effect: "Si ce personnage est détruit pendant votre tour, gagnez 3 points permanents."
+    temptress:
+        name: Tentatrice
+        count: "1"
+        position: front
+        points: "2"
+        type: IMMÉDIAT
+        image: temptress
+        effect: "Vous pouvez faire un sacrifice pour pendre un ennemi avec 0 point de base dans votre main."
+    golem:
+        name: Golem
+        count: "1"
+        position: any
+        points: "6"
+        type: PERMANENT
+        image: golem
+        effect: "Fin de tour, Contrainte: faites un sacrifice, sinon détruisez ce personnage."
+    lord:
+        name: Seigneur
+        count: "1"
+        position: front
+        points: "2"
+        type: IMMÉDIAT
+        image: lord
+        effect: "Contrainte: sacrifiez tous vos alliés avec des points de base à 0, gagnez 1 point permanent par allié sacrifié."

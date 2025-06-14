@@ -5,7 +5,7 @@ cards:
         count: "5"
         position: any
         points: "2"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: snowman
         effect:
             Au début de votre tour, vous pouvez défausser 1 carte de votre main pour
@@ -15,7 +15,7 @@ cards:
         count: "2"
         position: back
         points: "1"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: yeti
         effect: Tous les adversaires doivent défausser 1 carte de leur main.
     recycler:
@@ -23,7 +23,7 @@ cards:
         count: "2"
         position: back
         points: "2"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: witch
         effect: Prenez une carte de la défausse dans votre main.
     armor:
@@ -31,7 +31,7 @@ cards:
         count: "2"
         position: front
         points: "4"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: ancestor
         effect: Vous devez défausser 1 carte de votre main.
     tracker:
@@ -49,7 +49,7 @@ cards:
         count: "1"
         position: back
         points: "0"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: beast
         effect:
             Gagnez des points permanents égaux à 5 moins le nombre de cartes dans
@@ -59,7 +59,7 @@ cards:
         count: "1"
         position: any
         points: "1"
-        type: JOUÉ
+        type: IMMÉDIAT
         image: lizard
         effect: Piochez 3 cartes.
     weapon:
