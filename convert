@@ -1,3 +1,0 @@
-import imgkit
-
-imgkit.from_file("output\humans\king.html", "output.png")
