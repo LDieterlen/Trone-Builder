@@ -20,14 +20,14 @@
 }
 
 .card-border {
-    width: 63.5mm;
-    height: 88.5mm;
+    width: 63mm;
+    height: 88mm;
     background: #000;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    border-radius: 0.5mm;
+    border-radius: 0mm;
 }
 
 .card {
@@ -59,9 +59,20 @@
     z-index: 2;
 }
 
+.logo-faction {
+    position: absolute;
+    z-index: 4;
+    top: 5.3%;
+    left: 7.4%;
+    transform: translate(-50%, -50%);
+    height: 8%;
+    aspect-ratio: 1/1;
+    width: auto;
+}
+
 .name {
     position: absolute;
-    top: 5%;
+    top: 5.3%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
@@ -85,52 +96,15 @@
     white-space: nowrap;
 }
 
-.logo-faction {
-    position: absolute;
-    z-index: 4;
-    top: 5%;
-    left: 7%;
-    transform: translate(-50%, -50%);
-    height: 8.5%;
-    aspect-ratio: 1/1;
-    width: auto;
-}
-
 .position {
     position: absolute;
     z-index: 4;
-    top: 5%;
-    right: 7%;
+    top: 5.3%;
+    right: 7.4%;
     transform: translate(50%, -50%);
-    height: 8.5%;
+    height: 8%;
     aspect-ratio: 1/1;
     width: auto;
-}
-
-.type {
-    position: absolute;
-    top: 77%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 4;
-    font-size: 1em;
-    font-family: 'Cinzel-ExtraBold';
-    color: #000000;
-    pointer-events: none;
-    white-space: nowrap;
-}
-
-.point2 {
-    position: absolute;
-    top: 71%;
-    left: 13%;
-    transform: translate(-50%, -50%);
-    z-index: 4;
-    font-size: 3.3em;
-    font-family: 'Cinzel-Bold';
-    color: #000000;
-    pointer-events: none;
-    white-space: nowrap;
 }
 
 .point {
@@ -145,6 +119,20 @@
     pointer-events: none;
     white-space: nowrap;
 }
+
+.type {
+    position: absolute;
+    top: 77%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    font-size: 0.9em;
+    font-family: 'Cinzel-ExtraBold';
+    color: #000000;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
 
 .effect {
     position: absolute;

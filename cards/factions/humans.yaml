@@ -67,9 +67,9 @@ cards:
         name: Barde
         image: bard
         count: "1"
-        position: any
+        position: front
         points: "2"
         type: IMMÉDIAT
         effect:
-            Révélez 1 carte de la pioche, vous pouvez la jouer s'il est de la même faction que ce personnage,',
+            Révélez 1 carte de la pioche, vous pouvez la jouer s'il est de la même faction que ce personnage,
             sinon gardez-la en main.

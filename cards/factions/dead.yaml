@@ -3,7 +3,7 @@ cards:
     death:
         name: Mort
         count: "4"
-        position: front
+        position: any
         points: "1"
         type: IMMÉDIAT
         image: death
@@ -11,11 +11,11 @@ cards:
     moires:
         name: Moires
         count: "3"
-        position: any
+        position: front
         points: "2"
         type: IMMÉDIAT
         image: moires
-        effect: Prenez une carte de votre cimetière dans votre main.
+        effect: Prenez une carte de votre cimetière de votre main.
     raven:
         name: Corbeau
         count: "2"
@@ -36,8 +36,8 @@ cards:
     companion:
         name: Compagnon
         count: "2"
-        position: any
-        points: "1"
+        position: back
+        points: "2"
         type: IMMÉDIAT
         image: companion
         effect: Copiez l'effet IMMÉDIAT d'un personnage dans votre cimetière.
@@ -48,7 +48,7 @@ cards:
         points: "6"
         type: PERMANENT
         image: child
-        effect: "Début de tour, Contrainte : si vous ne gagnez pas la partie, détruisez ce personnage."
+        effect: "Début de tour, Contrainte: si vous ne gagnez pas la partie, détruisez ce personnage."
     monarch:
         name: Monarque
         count: "1"
@@ -60,7 +60,7 @@ cards:
     empress:
         name: Impératrice
         count: "1"
-        position: back
+        position: any
         points: "1"
         type: IMMÉDIAT
         image: empress
