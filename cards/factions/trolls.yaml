@@ -23,12 +23,12 @@ cards:
         points: "1"
         type: IMMÉDIAT
         image: dumb
-        effect: "Contrainte: Détruisez un allié, gagnez ses points de base en points permanents."
+        effect: "Contrainte: détruisez un allié, gagnez ses points de base en points permanents."
     undertaker:
         name: Croque-mort
         count: "2"
         position: any
-        points: "1"
+        points: "2"
         type: PERMANENT
         image: undertaker
         effect: "Lorsque ce personnage est détruit, placez un autre personnage de votre cimetière sur votre terrain."
@@ -47,7 +47,7 @@ cards:
         points: "6"
         type: PERMANENT
         image: brute
-        effect: "Début de tour, Contrainte: Détruisez un allié."
+        effect: "Début de tour, Contrainte&nbsp;: détruisez un allié."
     shaman:
         name: Chaman
         count: "1"
@@ -63,4 +63,4 @@ cards:
         points: "3"
         type: IMMÉDIAT
         image: thrower
-        effect: "Contrainte: Détruisez 2 alliés pour détruire un ennemi."
+        effect: "Contrainte: détruisez 2 alliés pour détruire un ennemi."

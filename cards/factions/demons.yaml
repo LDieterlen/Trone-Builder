@@ -3,7 +3,7 @@ cards:
     creature:
         name: Bestiole
         count: "4"
-        position: front
+        position: any
         points: "1"
         type: IMMÉDIAT
         image: bugs
@@ -24,7 +24,7 @@ cards:
         points: "3"
         type: IMMÉDIAT
         image: horned
-        effect: "Contrainte: renvoyer un allié en position back_icon dans votre main."
+        effect: "Contrainte : renvoyer un allié dans votre main."
     eye:
         name: Œil
         count: "2"
@@ -42,15 +42,15 @@ cards:
         points: "1"
         type: IMMÉDIAT
         image: clever
-        effect: Vous pouvez jouer un personnage supplémentaire ce tour.
+        effect: Jouez un personnage supplémentaire ce tour.
     cyclops:
         name: Cyclope
         count: "1"
         position: front
-        points: "5"
+        points: "6"
         type: IMMÉDIAT
         image: cyclops
-        effect: Les autres joueurs gagnent 1 point permanent.
+        effect: "Contrainte : les autres joueurs gagnent 1 point permanent."
     octopus:
         name: Poulpe
         count: "1"
@@ -58,9 +58,8 @@ cards:
         points: "1"
         type: PERMANENT
         image: octopus
-        effect:
-            À la fin de votre tour, vous pouvez défausser une carte de votre main
-            pour gagner 2 points permanents.
+        effect: "Fin de tour: vous pouvez défausser une carte de votre main
+            pour gagner 2 points permanents."
     collector:
         name: Protecteur
         count: "1"

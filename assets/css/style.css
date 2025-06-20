@@ -24,8 +24,6 @@
     height: 88mm;
     background: #000;
     display: flex;
-    align-items: center;
-    justify-content: center;
     box-sizing: border-box;
     border-radius: 0mm;
 }
@@ -85,8 +83,8 @@
 
 .count {
     position: absolute;
-    top: 2.5%;
-    left: 83%;
+    top: 5.3%;
+    left: 16%;
     transform: translate(-50%, -50%);
     z-index: 4;
     font-size: 0.6em;
@@ -120,9 +118,17 @@
     white-space: nowrap;
 }
 
+.effect .effect-cinzel {
+    font-family: 'Cinzel-ExtraBold';
+    font-size: inherit;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    font-size: 0.8em;
+}
+
 .type {
     position: absolute;
-    top: 77%;
+    top: 78%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
@@ -142,26 +148,21 @@
     z-index: 4;
     font-size: 0.8em;
     font-family: 'Simonetta';
+    width: 90%;
     color: #000000;
     pointer-events: none;
-    width: 90%;
     text-align: center;
     white-space: normal;
     text-wrap: balance;
-    letter-spacing: -0.02em;
+    /* letter-spacing: -0.02em; */
+    line-height: 1em;
+    word-break: keep-all;
 }
 
-.effect .effect-cinzel {
-    font-family: 'Cinzel-ExtraBold';
-    font-size: inherit;
-    font-weight: normal;
-    letter-spacing: 0.01em;
-    font-size: 0.8em;
-}
 
 .legend {
     position: absolute;
-    top: 97%;
+    top: 96%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
@@ -174,6 +175,7 @@
     white-space: normal;
     text-wrap: balance;
     letter-spacing: -0.02em;
+    word-break: keep-all;
 }
 
 .inline-logo {

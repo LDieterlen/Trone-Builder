@@ -11,7 +11,7 @@ cards:
         effect: Donnez l'altération encouragé à ce personnage.
         legend: True
     soldier:
-        name: Soldat
+        name: Garde
         image: soldier
         count: "3"
         position: front
@@ -42,8 +42,8 @@ cards:
         points: "3"
         type: PERMANENT
         effect:
-            Si un allié en position back_icon est détruit par un effet adverse, détruisez
-            ce personnage à la place.
+            "Contrainte: Si un allié en position back_icon est détruit par un effet adverse, détruisez
+            ce personnage à la place."
     king:
         name: Roi
         image: king
@@ -51,14 +51,12 @@ cards:
         position: back
         points: X
         type: PERMANENT
-        effect:
-            S'il y a au moins 3 confrères de ce personnage sur votre terrain, X vaut
-            5, sinon X vaut 0.
+        effect: X vaut 5 si vous avez 4 alliés de la faction human_icon, sinon X vaut 0.
     queen:
         name: Reine
         image: queen
         count: "1"
-        position: any
+        position: back
         points: "0"
         type: IMMÉDIAT
         effect: Donnez l'altération encouragé à un autre allié.

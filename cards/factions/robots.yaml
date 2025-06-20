@@ -2,57 +2,54 @@ name: Robots
 cards:
     minibot:
         name: Minibot
-        count: "5"
+        count: "4"
         position: any
         points: "2"
         type: IMMÉDIAT
-        image: snowman
-        effect:
-            Au début de votre tour, vous pouvez défausser 1 carte de votre main pour
-            détruire un ennemi en position front_icon.
+        image: minibot
+        effect: Piochez 1 carte.
+    recycler:
+        name: Recycleur
+        count: "3"
+        position: front
+        points: "2"
+        type: IMMÉDIAT
+        image: recycler
+        effect: Prenez 1 carte de la défausse dans votre main.
     drone:
         name: Drone
         count: "2"
         position: back
         points: "1"
         type: IMMÉDIAT
-        image: yeti
+        image: drone
         effect: Tous les adversaires doivent défausser 1 carte de leur main.
-    recycler:
-        name: Recycleur
-        count: "2"
-        position: back
-        points: "2"
-        type: IMMÉDIAT
-        image: witch
-        effect: Prenez une carte de la défausse dans votre main.
     armor:
         name: Armure
         count: "2"
         position: front
         points: "4"
         type: IMMÉDIAT
-        image: ancestor
-        effect: Vous devez défausser 1 carte de votre main.
+        image: armor
+        effect: "Contrainte : défaussez 1 carte de votre main."
     tracker:
         name: Traqueur
         count: "2"
-        position: front
+        position: back
         points: "0"
         type: PERMANENT
-        image: merchant
-        effect:
-            Au début de votre tour, vous pouvez défausser 1 carte de votre main pour
-            détruire un ennemi en position front_icon.
+        image: tracker
+        effect: "Fin de tour : vous pouvez défausser 1 carte de votre main pour
+            détruire un ennemi en position front_icon."
     mother:
         name: Mère
         count: "1"
         position: back
         points: "0"
         type: IMMÉDIAT
-        image: beast
+        image: mother
         effect:
-            Gagnez des points permanents égaux à 5 moins le nombre de cartes dans
+            Gagnez des points permanents égaux à 6 - le nombre de cartes dans
             votre main.
     dome:
         name: Dome
@@ -60,15 +57,13 @@ cards:
         position: any
         points: "1"
         type: IMMÉDIAT
-        image: lizard
+        image: dome
         effect: Piochez 3 cartes.
     weapon:
         name: Arme
         count: "1"
-        position: back
+        position: any
         points: "5"
         type: PERMANENT
-        image: giant
-        effect:
-            Vous ne piochez plus au début de votre tour. Vous pouvez détruire cet
-            allié à tout moment.
+        image: weapon
+        effect: "Contrainte : vous ne pouvez plus piocher ou défausser de cartes."

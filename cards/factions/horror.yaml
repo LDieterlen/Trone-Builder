@@ -1,0 +1,66 @@
+name: horreur
+cards:
+    clown:
+        name: Clown
+        count: "4"
+        position: front
+        points: "2"
+        type: PERMANENT
+        image: clown
+        effect: "Fin de tour: si ce personnage est dans votre cimetiere, placez le sur votre terrain."
+    exorcist:
+        name: Exorciste
+        count: "3"
+        position: front
+        points: "1"
+        type: IMMÉDIAT
+        image: exorcist
+        effect: "Détruisez un personnage de la faction horror_icon"
+    nun:
+        name: Nonne
+        count: "2"
+        position: back
+        points: "2"
+        type: IMMÉDIAT
+        image: nun
+        effect: "Prenez le contrôle d'un ennemie en position front_icon.A FINIR"
+    antechrist:
+        name: Antéchrist
+        count: "2"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: antechrist
+        effect: "Détruisez un personnage qui n'est pas de la faction horror_icon."
+    psycho:
+        name: Psychopathe
+        count: "2"
+        position: front
+        points: "4"
+        type: PERMANENT
+        image: psycho
+        effect: "Le joueur qui détruit ce personnage le place sur son terrain."
+    butcher:
+        name: Boucher
+        count: "1"
+        position: any
+        points: "2"
+        type: PERMANENT
+        image: butcher
+        effect: "Gagnez 1 point permanent chaque fois que vous détruisez un ennemie."
+    doll:
+        name: Poupée
+        count: "1"
+        position: front
+        points: "1"
+        type: PERMANENT
+        image: doll
+        effect: TODO
+    devil:
+        name: Diable
+        count: "1"
+        position: front
+        points: "3"
+        type: PERMANENT
+        image: devil
+        effect: "TODO"

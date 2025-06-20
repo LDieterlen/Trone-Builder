@@ -7,13 +7,15 @@ icons:
     front_icon: ../../assets/sprites/icons/front.png
     back_icon: ../../assets/sprites/icons/back.png
     dead_icon: ../../assets/sprites/icons/dead.png
-    human_icon: ../../assets/sprites/icons/human.png
+    human_icon: ../../assets/sprites/icons/humans.png
     desert_icon: ../../assets/sprites/icons/desert.png
+    horror_icon: ../../assets/sprites/icons/horror.png
+    gangster_icon: ../../assets/sprites/icons/gangsters.png
 
 keywords:
-    - allié
-    - confrère
-    - ennemi
+    # - allié
+    # - confrère
+    # - ennemi
     - encouragé
     - gel
     - force
@@ -21,12 +23,17 @@ keywords:
     - déplacer
     - déplacez
     - déplacé
+    - parier
+    - pari
+    - parié
+    - pariez
 
 bolded:
     - PERMANENT
     - IMMÉDIAT
     - X
     - Fin de tour
+    - Une fois par tour
     - Début de tour
     - Contrainte
 

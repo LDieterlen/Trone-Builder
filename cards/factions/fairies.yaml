@@ -1,0 +1,69 @@
+name: Fées
+legend: "Silence: le personnage avec l'altération n'a plus d'effet."
+cards:
+    charmed:
+        name: Charme
+        count: "4"
+        position: any
+        points: "2"
+        type: IMMÉDIAT
+        image: charmed
+        effect: "Donnez l'altération Silence à un personnage."
+        legend: True
+    enchanted:
+        name: Enchanteresse
+        count: "3"
+        position: front
+        points: "X"
+        type: PERMANENT
+        image: enchanted
+        effect: "X vaut 3."
+    deceitful:
+        name: Fourbe
+        count: "2"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: deceitful
+        effect: "Placez un ennemi en position front_icon sur votre terrain. Donnez lui l'altération Silence."
+        legend: True
+    expiatrice:
+        name: Expiatrice
+        count: "2"
+        position: front
+        points: "2"
+        type: IMMÉDIAT
+        image: expiatrice
+        effect: "Déplacez les altérations de vos alliés vers d'autres alliés."
+    godmother:
+        name: Marraine
+        count: "2"
+        position: front
+        points: "3"
+        type: PERMANENT
+        image: godmother
+        effect: "todo"
+    traveller:
+        name: Voyageuse
+        count: "1"
+        position: front
+        points: "3"
+        type: IMMÉDIAT
+        image: traveller
+        effect: "todo"
+    pure:
+        name: Pure
+        count: "1"
+        position: back
+        points: "5"
+        type: PERMANENT
+        image: pure
+        effect: "Fin de tour : donnez 1 point permanent à un autre joueur."
+    maleficent:
+        name: Maléfique
+        count: "1"
+        position: any
+        points: "0"
+        type: PERMANENT
+        image: maleficent
+        effect: "todo"

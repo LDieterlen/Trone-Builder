@@ -1,4 +1,5 @@
 name: Désert
+legend: "Force: augmente de 1 les points de base du personnage."
 cards:
     monk:
         name: Moine
@@ -7,7 +8,8 @@ cards:
         points: "0"
         type: IMMÉDIAT
         image: monk
-        effect: Donnez l'altération <u>force</u> à 2 personnages.
+        effect: Donnez l'altération force à 2 personnages.
+        legend: True
     monster:
         name: Monstre
         count: "2"
@@ -15,7 +17,7 @@ cards:
         points: "3"
         type: IMMÉDIAT
         image: monster
-        effect: Détruisez un allié avec 0 point de base.
+        effect: "Contrainte: détruisez un allié avec des points de base à 0."
     trainer:
         name: Dresseur
         count: "2"
@@ -23,7 +25,7 @@ cards:
         points: "2"
         type: PERMANENT
         image: trainer
-        effect: Lorsque ce personnage reçoit une altération, piochez une carte.
+        effect: Lorsque ce personnage reçoit une altération, piochez 1 carte.
     gladiator:
         name: Gladiateur
         count: "2"
@@ -31,25 +33,24 @@ cards:
         points: X
         type: PERMANENT
         image: gladiator
-        effect:
-            X vaut le nombre d'altérations <u>force</u> présentes sur ce personnage
-            +2.
+        effect: X vaut 2 + le nombre d'altérations force présentes sur ce personnage.
+        legend: True
     punisher:
         name: Punisseur
         count: "2"
-        position: any
+        position: back
         points: "1"
         type: IMMÉDIAT
         image: punisher
-        effect: Détruisez un personnage avec une altération.
+        effect: Détruisez un personnage ayant une altération.
     worm:
         name: Ver
         count: "1"
-        position: front
+        position: back
         points: "6"
         type: PERMANENT
         image: worm
-        effect: Vous devez détruire un allié avec une altération pour jouer ce personnage.
+        effect: "Début de tour, Contrainte&nbsp;: défaussez 1 carte de votre main."
     orphans:
         name: Orphelins
         count: "1"
@@ -57,14 +58,14 @@ cards:
         points: "0"
         type: PERMANENT
         image: orphans
-        effect:
-            À la fin de votre tour, donnez l'altération <u>force</u> à un personnage
-            en position front_icon.
+        effect: "Fin de tour : donnez l'altération force à un personnage en position front_icon."
+        legend: True
     prince:
         name: Prince
         count: "1"
-        position: back
+        position: any
         points: "0"
         type: IMMÉDIAT
         image: prince
-        effect: Donnez l'altération <u>force</u> à tous les autres alliés desert_fac.
+        effect: Donnez l'altération force à tous les alliés de la faction desert_icon.
+        legend: True

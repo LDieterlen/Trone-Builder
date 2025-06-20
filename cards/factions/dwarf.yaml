@@ -1,4 +1,5 @@
 name: Nains
+legend: "Protection: si le personnage doit quitter votre terrain (détruit, échangé, renvoyé en main...), vous pouvez retirer l'altération à la place."
 cards:
     simple:
         name: Simple
@@ -7,7 +8,8 @@ cards:
         points: "2"
         type: IMMÉDIAT
         image: simple
-        effect: Donnez l'altération <u>protection</u> à un personnage.
+        effect: Donnez l'altération protection à un personnage.
+        legend: True
     nervous:
         name: Nerveux
         count: "3"
@@ -23,7 +25,8 @@ cards:
         points: "3"
         type: IMMÉDIAT
         image: joyful
-        effect: Ce personnage gagne l'altération <u>protection</u>.
+        effect: Donnez l'altération protection à ce personnage.
+        legend: True
     allergic:
         name: Allergique
         count: "2"
@@ -39,9 +42,8 @@ cards:
         points: X
         type: PERMANENT
         image: fearful
-        effect:
-            Si ce personnage a l'altération <u>protection</u>, X vaut 4, sinon X vaut
-            0.
+        effect: X vaut 4 si ce personnage a l'altération protection, sinon X vaut 0.
+        legend: True
     lazy:
         name: Fainéant
         count: "1"
@@ -49,7 +51,8 @@ cards:
         points: "0"
         type: IMMÉDIAT
         image: lazy
-        effect: Donnez l'altération <u>protection</u> à 3 alliés.
+        effect: Donnez l'altération protection à 3 alliés.
+        legend: True
     boss:
         name: Patron
         count: "1"

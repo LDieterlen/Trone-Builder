@@ -1,16 +1,24 @@
 name: Morts
 cards:
     death:
-        name: Mort
+        name: Soldat
         count: "4"
         position: any
         points: "1"
         type: IMMÉDIAT
         image: death
         effect: Détruisez un personnage en position front_icon.
+    hydra:
+        name: Hydre
+        count: "3"
+        position: front
+        points: "4"
+        type: IMMÉDIAT
+        image: hydra
+        effect: "Contrainte : détruisez un allié en position back_icon."
     moires:
         name: Moires
-        count: "3"
+        count: "2"
         position: front
         points: "2"
         type: IMMÉDIAT
@@ -23,16 +31,8 @@ cards:
         points: "1"
         type: PERMANENT
         image: raven
-        effect: "Fin de tour: vous pouvez détruire un allié pour gagner 1 point
+        effect: "Fin de tour : vous pouvez détruire un allié pour gagner 1 point
             permanent."
-    hydra:
-        name: Hydre
-        count: "2"
-        position: front
-        points: "4"
-        type: IMMÉDIAT
-        image: hydra
-        effect: Vous devez détruire un allié en position back_icon.
     companion:
         name: Compagnon
         count: "2"
@@ -48,7 +48,7 @@ cards:
         points: "6"
         type: PERMANENT
         image: child
-        effect: "Début de tour, Contrainte: si vous ne gagnez pas la partie, détruisez ce personnage."
+        effect: "Début de tour, Contrainte&nbsp;: si vous ne gagnez pas la partie, détruisez ce personnage."
     monarch:
         name: Monarque
         count: "1"

@@ -1,5 +1,5 @@
 name: Enfer
-legend: "Sacrifice: Détruisez un allié avec des points de base à 0"
+legend: "Sacrifice: détruisez un allié avec des points de base à 0"
 cards:
     shadow:
         name: Ombre
@@ -24,7 +24,8 @@ cards:
         points: "3"
         type: PERMANENT
         image: dragon
-        effect: "Fin de tour: vous pouvez faire un sacrifice pour piocher 1 carte."
+        effect: "Fin de tour : vous pouvez faire un sacrifice pour piocher 1 carte."
+        legend: True
     assassin:
         name: Assassin
         count: "2"
@@ -32,7 +33,8 @@ cards:
         points: "0"
         type: PERMANENT
         image: assassin
-        effect: "Début de tour: vous pouvez faire un sacrifice pour détruire un personnage en position front_icon."
+        effect: "Début de tour : vous pouvez faire un sacrifice pour détruire un ennemi en position front_icon."
+        legend: True
     mad:
         name: Fou
         count: "2"
@@ -49,6 +51,7 @@ cards:
         type: IMMÉDIAT
         image: temptress
         effect: "Vous pouvez faire un sacrifice pour pendre un ennemi avec 0 point de base dans votre main."
+        legend: True
     golem:
         name: Golem
         count: "1"
@@ -56,7 +59,8 @@ cards:
         points: "6"
         type: PERMANENT
         image: golem
-        effect: "Fin de tour, Contrainte: faites un sacrifice, sinon détruisez ce personnage."
+        effect: "Fin de tour, Contrainte&nbsp;: faites un sacrifice, sinon détruisez ce personnage."
+        legend: True
     lord:
         name: Seigneur
         count: "1"
@@ -65,3 +69,4 @@ cards:
         type: IMMÉDIAT
         image: lord
         effect: "Contrainte: sacrifiez tous vos alliés avec des points de base à 0, gagnez 1 point permanent par allié sacrifié."
+        legend: True

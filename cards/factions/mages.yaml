@@ -7,7 +7,7 @@ cards:
         points: "2"
         type: IMMÉDIAT
         image: student
-        effect: Vous pouvez repositionner jusqu'à 2 personnages.
+        effect: Vous pouvez déplacer jusqu'à 2 personnages.
     apprentice:
         name: Apprentie
         count: "2"

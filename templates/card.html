@@ -16,12 +16,18 @@
             <span class="name">{{ name }}</span>
             <span class="count">{{ count }}</span>
             <img class="position" src="{{ position }}">
-            <span class="type">{{ type }}</span>
             <span class="point">{{ point }}</span>
+            <span class="type">{{ type }}</span>
+
             <span class="effect">
                 {{ effect }}
             </span>
+
             <span class="legend">{{ legend }}</span>
+            <span class="typeA">{{ typeA }}</span>
+            <span class="effectA">{{ effectA }}</span>
+            <span class="typeB">{{ typeA }}</span>
+            <span class="effectB">{{ effectB }}</span>
         </div>
     </div>
     <script>
@@ -38,6 +44,15 @@
                     newFontSize = Math.max(minFontSize, baseFontSize * (maxChars / textLength));
                 }
                 effect.style.fontSize = newFontSize + 'em';
+            }
+        });
+
+        document.querySelectorAll('.effect').forEach(effect => {
+            const lineCount = effect.innerText.split('\n').length;
+            if (lineCount > 3) {
+                effect.style.lineHeight = '0.9em';
+            } else {
+                effect.style.lineHeight = '1em';
             }
         });
     </script>

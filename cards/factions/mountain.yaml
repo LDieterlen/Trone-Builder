@@ -1,4 +1,5 @@
 name: Montagne
+legend: "Gel: les points de base du personnage deviennent 0."
 cards:
     snowman:
         name: Bonhomme
@@ -8,6 +9,7 @@ cards:
         type: IMMÉDIAT
         image: snowman
         effect: Donnez l'altération gel à un personnage en position front_icon.
+        legend: True
     yeti:
         name: Yéti
         count: "3"
@@ -16,6 +18,7 @@ cards:
         type: PERMANENT
         image: yeti
         effect: Lorsque ce personnage reçoit l'altération gel, gagnez 2 points permanents.
+        legend: True
     witch:
         name: Sorcière
         count: "2"
@@ -24,6 +27,7 @@ cards:
         type: IMMÉDIAT
         image: witch
         effect: Donnez l'altération gel à un allié.
+        legend: True
     ancestor:
         name: Ancêtre
         count: "2"
@@ -31,23 +35,23 @@ cards:
         points: "0"
         type: IMMÉDIAT
         image: ancestor
-        effect: Supprimez une altération d'un personnage et gagnez 1 point permanent.
+        effect: Supprimez une ou plusieurs altérations d'un personnage puis gagnez 1 point permanent.
     merchant:
         name: Barbare
         count: "2"
-        position: back
-        points: "2"
+        position: front
+        points: "3"
         type: IMMÉDIAT
         image: merchant
-        effect: Échangez votre main avec celle d'un autre joueur.
+        effect: "Contrainte : échangez votre main avec celle d'un autre joueur."
     beast:
         name: Bête
         count: "1"
-        position: front
+        position: back
         points: X
         type: PERMANENT
         image: beast
-        effect: X est égal au nombre d'alliés avec une ou plusieurs altérations.
+        effect: X vaut le nombre d'alliés avec une ou plusieurs altérations.
     lizard:
         name: Lézard
         count: "1"
@@ -56,8 +60,8 @@ cards:
         type: IMMÉDIAT
         image: lizard
         effect:
-            Supprimez jusqu'à 3 altérations aux ennemis en position front_icon ou
-            aux alliés.
+            Supprimez jusqu'à 3 altérations à des ennemis en position front_icon ou
+            à des alliés.
     giant:
         name: Géant
         count: "1"
@@ -65,4 +69,5 @@ cards:
         points: "5"
         type: PERMANENT
         image: giant
-        effect: À la fin de votre tour, donnez l'altération gel à un allié.
+        effect: "Fin de tour, Contrainte&nbsp;: donnez l'altération gel à un allié."
+        legend: True
