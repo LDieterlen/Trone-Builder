@@ -11,6 +11,7 @@ icons:
     desert_icon: ../../assets/sprites/icons/desert.png
     horror_icon: ../../assets/sprites/icons/horror.png
     gangster_icon: ../../assets/sprites/icons/gangsters.png
+    fairies_icon: ../../assets/sprites/icons/fairies.png
 
 keywords:
     # - allié
@@ -20,13 +21,14 @@ keywords:
     - gel
     - force
     - protection
-    - déplacer
-    - déplacez
-    - déplacé
+    # - déplacer
+    # - déplacez
+    # - déplacé
     - parier
     - pari
     - parié
     - pariez
+    - silence
 
 bolded:
     - PERMANENT

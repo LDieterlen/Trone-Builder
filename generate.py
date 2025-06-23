@@ -33,6 +33,13 @@ def bold_keywords(text, replacements):
     return text
 
 
+def format_effect(effect: str) -> str:
+    effect = relace_icons(effect, ICONS)
+    effect = underline_keywords(effect, KEYWORDS)
+    effect = bold_keywords(effect, BOLDED)
+    return effect
+
+
 if __name__ == "__main__":
 
     # Reading common data file
@@ -116,19 +123,32 @@ if __name__ == "__main__":
             if not position_path.exists():
                 raise FileNotFoundError(f"Position image not found: {position_path}")
 
-            effect = card["effect"]
-            effect = relace_icons(effect, ICONS)
-            effect = underline_keywords(effect, KEYWORDS)
-            effect = bold_keywords(effect, BOLDED)
+            effect_type = card.get("type", "")
+            if effect_type == "":
+                effect = ""
+                effect_typeA = card["typeA"]
+                effectA = card["effectA"]
+                effectA = format_effect(effectA)
+
+                effect_typeB = card["typeB"]
+                effectB = card["effectB"]
+                effectB = format_effect(effectB)
+            else:
+                effect_typeA = ""
+                effect_typeB = ""
+
+                effectA = ""
+                effectB = ""
+
+                effect = card["effect"]
+                effect = format_effect(effect)
 
             legend = ""
             write_legend = card.get("legend", False)
             if write_legend:
                 legend = faction_legend
 
-            legend = relace_icons(legend, ICONS)
-            legend = underline_keywords(legend, KEYWORDS)
-            legend = bold_keywords(legend, BOLDED)
+            legend = format_effect(legend)
             context = {
                 "name": card["name"],
                 "count": card["count"],
@@ -136,10 +156,14 @@ if __name__ == "__main__":
                 "card_layer": "../../" + str(card_layer_path),
                 "logo_faction": "../../" + str(faction_path),
                 "position": "../../" + str(position_path),
-                "type": card["type"].upper(),
+                "type": effect_type.upper(),
                 "point": card["points"],
                 "effect": effect,
                 "legend": legend,
+                "typeA": effect_typeA.upper(),
+                "effectA": effectA,
+                "typeB": effect_typeB.upper(),
+                "effectB": effectB,
             }
 
             output_file = faction_output_dir / f"{card_key}.html"

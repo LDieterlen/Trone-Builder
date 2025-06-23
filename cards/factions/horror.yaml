@@ -61,6 +61,6 @@ cards:
         count: "1"
         position: front
         points: "3"
-        type: PERMANENT
+        type: IMMÉDIAT
         image: devil
-        effect: "TODO"
+        effect: "Contrainte : tous les joueurs doivent détruire un de leur personnage."

@@ -8,7 +8,7 @@ cards:
         points: "2"
         type: IMMÉDIAT
         image: charmed
-        effect: "Donnez l'altération Silence à un personnage."
+        effect: "Donnez l'altération silence à un personnage."
         legend: True
     enchanted:
         name: Enchanteresse
@@ -25,7 +25,7 @@ cards:
         points: "0"
         type: IMMÉDIAT
         image: deceitful
-        effect: "Placez un ennemi en position front_icon sur votre terrain. Donnez lui l'altération Silence."
+        effect: "Placez un ennemi en position front_icon sur votre terrain. Donnez lui l'altération silence."
         legend: True
     expiatrice:
         name: Expiatrice
@@ -42,15 +42,17 @@ cards:
         points: "3"
         type: PERMANENT
         image: godmother
-        effect: "todo"
+        effect: "Copiez l'effet IMMÉDIAT d'un allié qui n'est pas de la faction fairies_icon."
     traveller:
         name: Voyageuse
         count: "1"
         position: front
         points: "3"
-        type: IMMÉDIAT
         image: traveller
-        effect: "todo"
+        typeA: IMMÉDIAT
+        effectA: "Gagnez 3 points permanents."
+        typeB: PERMANENT
+        effectB: "Fin de tour, Contrainte : placez ce personnage sur le terrain d'un autre joueur."
     pure:
         name: Pure
         count: "1"
@@ -58,12 +60,12 @@ cards:
         points: "5"
         type: PERMANENT
         image: pure
-        effect: "Fin de tour : donnez 1 point permanent à un autre joueur."
+        effect: "Fin de tour, Contrainte&nbsp;: donnez 1 point permanent à un autre joueur."
     maleficent:
         name: Maléfique
         count: "1"
         position: any
-        points: "0"
+        points: "9"
         type: PERMANENT
         image: maleficent
-        effect: "todo"
+        effect: "Contrainte : vous ne pouvez pas gagner la partie."

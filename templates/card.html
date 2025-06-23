@@ -18,26 +18,35 @@
             <img class="position" src="{{ position }}">
             <span class="point">{{ point }}</span>
             <span class="type">{{ type }}</span>
-
-            <span class="effect">
-                {{ effect }}
-            </span>
-
+            <span class="effect">{{ effect }}</span>
             <span class="legend">{{ legend }}</span>
+
             <span class="typeA">{{ typeA }}</span>
             <span class="effectA">{{ effectA }}</span>
-            <span class="typeB">{{ typeA }}</span>
+            <span class="typeB">{{ typeB }}</span>
             <span class="effectB">{{ effectB }}</span>
+            <div class="vertical-line"></div>
         </div>
     </div>
     <script>
-        // Ajuste dynamiquement la taille de la police de l'effet selon la longueur du texte
         document.addEventListener('DOMContentLoaded', function () {
             var effect = document.querySelector('.effect');
+            var verticalLine = document.querySelector('.vertical-line');
+
+            // Vérifie si le texte de .effect est vide (ignore les espaces et balises)
+            var effectText = effect ? effect.textContent.replace(/\s/g, '') : '';
+            var isEffectEmpty = !effectText;
+
+            // Affiche ou masque la ligne verticale selon le contenu de .effect
+            if (verticalLine) {
+                verticalLine.style.display = isEffectEmpty ? "block" : "none";
+            }
+
+            // Ajuste la taille de la police selon le nombre de lignes (vraies lignes)
             if (effect) {
-                var baseFontSize = 1; // em
+                var baseFontSize = 1.2; // em
                 var minFontSize = 0.8; // em
-                var maxChars = 90; // nombre de caractères avant de réduire
+                var maxChars = 50; // nombre de caractères avant de réduire
                 var textLength = effect.textContent.length;
                 var newFontSize = baseFontSize;
                 if (textLength > maxChars) {
@@ -45,9 +54,7 @@
                 }
                 effect.style.fontSize = newFontSize + 'em';
             }
-        });
 
-        document.querySelectorAll('.effect').forEach(effect => {
             const lineCount = effect.innerText.split('\n').length;
             if (lineCount > 3) {
                 effect.style.lineHeight = '0.9em';
@@ -55,6 +62,8 @@
                 effect.style.lineHeight = '1em';
             }
         });
+
+
     </script>
 </body>
 
