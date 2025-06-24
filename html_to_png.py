@@ -40,7 +40,8 @@ def capture_fixed_card(html_path, output_path, width=744, height=1040, wait_time
     png = driver.get_screenshot_as_png()
     driver.quit()
 
-    X = 239
+    # X = 239
+    X = 241
     # Ouvrir image, rogner exactement à 744x1040 pixels
     im = Image.open(io.BytesIO(png))
     cropped = im.crop((X, 0, X + width, height))  # coin haut gauche
