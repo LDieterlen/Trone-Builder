@@ -176,3 +176,6 @@ cython_debug/
 _ignore
 
 output/
+png_output/
+svg/
+
