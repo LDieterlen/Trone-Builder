@@ -4,7 +4,23 @@ import io
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from PIL import Image
-import glob
+from pathlib import Path
+
+
+INPUT_DIR = "output"
+OUTPUT_DIR = "png_output"
+
+CARDS_NAMES = [
+    # none,
+]
+
+FACTIONS_NAMES = [
+    # name,
+]
+
+FACTIONS_EXCLUDED = [
+    # "faction_name",
+]
 
 
 def capture_fixed_card(html_path, output_path, width=744, height=1040, wait_time=2):
@@ -32,17 +48,21 @@ def capture_fixed_card(html_path, output_path, width=744, height=1040, wait_time
     print(f"✅ Capture carte : {output_path} (dim: {width}x{height})")
 
 
-input_dir = "output"
-output_dir = "png_output"
+if __name__ == "__main__":
+    input_dir = Path(INPUT_DIR)
+    output_dir = Path(OUTPUT_DIR)
 
-for root, dirs, files in os.walk(input_dir):
-    for file in files:
-        if file.endswith(".html"):
-            html_file = os.path.join(root, file)
-            # Conserver la structure du dossier
-            rel_path = os.path.relpath(html_file, input_dir)
-            output_file = os.path.join(
-                output_dir, os.path.splitext(rel_path)[0] + "_fixed.png"
-            )
-            os.makedirs(os.path.dirname(output_file), exist_ok=True)
-            capture_fixed_card(html_file, output_file)
+    for folder in input_dir.iterdir():
+        if not folder.is_dir() or folder.name in FACTIONS_EXCLUDED:
+            continue
+
+        if FACTIONS_NAMES != [] and folder.name not in FACTIONS_NAMES:
+            continue
+
+        for html_file in folder.rglob("*.html"):
+            rel_path = html_file.relative_to(input_dir)
+            output_file = output_dir / rel_path.with_suffix(".png")
+            if CARDS_NAMES != [] and rel_path.stem not in CARDS_NAMES:
+                continue
+            output_file.parent.mkdir(parents=True, exist_ok=True)
+            capture_fixed_card(str(html_file), str(output_file))

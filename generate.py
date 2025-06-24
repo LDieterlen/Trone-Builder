@@ -149,9 +149,10 @@ if __name__ == "__main__":
                 legend = faction_legend
 
             legend = format_effect(legend)
+            count = card["count"]
             context = {
                 "name": card["name"],
-                "count": card["count"],
+                "count": count,
                 "character_img": "../../" + str(character_image_path),
                 "card_layer": "../../" + str(card_layer_path),
                 "logo_faction": "../../" + str(faction_path),
@@ -166,6 +167,6 @@ if __name__ == "__main__":
                 "effectB": effectB,
             }
 
-            output_file = faction_output_dir / f"{card_key}.html"
+            output_file = faction_output_dir / f"{count}_{card_key}.html"
             with open(output_file, "w", encoding="utf-8") as f:
                 f.write(template.render(**context))

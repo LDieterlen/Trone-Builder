@@ -51,7 +51,7 @@ cards:
         points: X
         type: PERMANENT
         image: beast
-        effect: X vaut le nombre d'alliés avec une ou plusieurs altérations.
+        effect: X vaut 2 + le nombre d'alliés avec une ou plusieurs altérations.
     lizard:
         name: Lézard
         count: "1"
