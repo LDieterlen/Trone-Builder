@@ -42,7 +42,7 @@ cards:
         points: "3"
         type: PERMANENT
         effect:
-            "Contrainte: Si un allié en position back_icon est détruit par un effet adverse, détruisez
+            "Contrainte : Si un allié en position back_icon est détruit par un effet adverse, détruisez
             ce personnage à la place."
     king:
         name: Roi

@@ -12,6 +12,7 @@ icons:
     horror_icon: ../../assets/sprites/icons/horror.png
     gangster_icon: ../../assets/sprites/icons/gangsters.png
     fairies_icon: ../../assets/sprites/icons/fairies.png
+    imps_icon: ../../assets/sprites/icons/imps.png
 
 keywords:
     # - allié
@@ -30,11 +31,13 @@ keywords:
     - pariez
     - silence
     - sacrifice
+    - écho
 
 bolded:
     - PERMANENT
     - IMMÉDIAT
     - X
+    - OU
     - Fin de tour
     - Une fois par tour
     - Début de tour

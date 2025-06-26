@@ -72,7 +72,14 @@ if __name__ == "__main__":
     yaml_dir = Path("cards/factions")
     template_path = Path("templates")
     output_base_dir = Path("output/")
-    output_base_dir.mkdir(parents=True, exist_ok=True)
+    if output_base_dir.exists():
+        for item in output_base_dir.iterdir():
+            for subitem in item.iterdir():
+                subitem.unlink()
+            item.rmdir()
+        output_base_dir.rmdir()
+
+    output_base_dir.mkdir(parents=True, exist_ok=False)
     env = Environment(loader=FileSystemLoader(str(template_path)))
     template = env.get_template("card.html")
 

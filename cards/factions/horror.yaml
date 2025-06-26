@@ -7,7 +7,7 @@ cards:
         points: "2"
         type: PERMANENT
         image: clown
-        effect: "Fin de tour: si ce personnage est dans votre cimetiere, placez le sur votre terrain."
+        effect: "Ce personnage ne peut pas être détruit par un effet adversaire."
     exorcist:
         name: Exorciste
         count: "3"
@@ -21,9 +21,11 @@ cards:
         count: "2"
         position: back
         points: "2"
-        type: IMMÉDIAT
         image: nun
-        effect: "Prenez le contrôle d'un ennemie en position front_icon.A FINIR"
+        typeA: IMMÉDIAT
+        effectA: "Placez un ennemie en position front_icon sur votre terrain."
+        typeB: PERMANENT
+        effectB: "Si un adversaire détruit ce personnage, il peut placer un de vos alliés sur son terrain."
     antechrist:
         name: Antéchrist
         count: "2"
@@ -47,15 +49,15 @@ cards:
         points: "2"
         type: PERMANENT
         image: butcher
-        effect: "Gagnez 1 point permanent chaque fois que vous détruisez un ennemie."
+        effect: "Gagnez 1 point permanent chaque fois que vous détruisez un ennemi."
     doll:
         name: Poupée
         count: "1"
-        position: front
-        points: "1"
-        type: PERMANENT
+        position: any
+        points: "2"
+        type: IMMÉDIAT
         image: doll
-        effect: TODO
+        effect: "Révélez une carte de la pioche, si elle a un effet IMMÉDIAT, copiez-le."
     devil:
         name: Diable
         count: "1"
@@ -63,4 +65,4 @@ cards:
         points: "3"
         type: IMMÉDIAT
         image: devil
-        effect: "Contrainte : tous les joueurs doivent détruire un de leur personnage."
+        effect: "Contrainte : tous les joueurs doivent détruire un de leur personnage en position back_icon."

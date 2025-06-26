@@ -1,5 +1,5 @@
 name: Nains
-legend: "Protection: si le personnage doit quitter votre terrain (détruit, échangé, renvoyé en main...), vous pouvez retirer l'altération à la place."
+legend: "Protection : si le personnage doit quitter votre terrain (détruit, échangé, renvoyé en main...), vous pouvez retirer l'altération à la place."
 cards:
     simple:
         name: Simple
@@ -47,7 +47,7 @@ cards:
     lazy:
         name: Fainéant
         count: "1"
-        position: any
+        position: back
         points: "0"
         type: IMMÉDIAT
         image: lazy

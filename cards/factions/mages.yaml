@@ -2,30 +2,28 @@ name: Mages
 cards:
     student:
         name: Élève
-        count: "5"
+        count: "4"
         position: any
-        points: "2"
-        type: IMMÉDIAT
+        points: "X"
+        type: PERMANENT
         image: student
-        effect: Vous pouvez déplacer jusqu'à 2 personnages.
+        effect: X est égale au nombre d'alliés avec X points de base.
     apprentice:
         name: Apprentie
-        count: "2"
+        count: "3"
         position: front
         points: X
         type: PERMANENT
         image: apprentice
-        effect: X vaut 4 si ce personnage est en position back_icon, sinon X vaut 1.
+        effect: X vaut 3.
     plotter:
         name: Comploteur
         count: "2"
-        position: back
-        points: "1"
-        type: PERMANENT
+        position: front
+        points: "4"
+        type: IMMÉDIAT
         image: plotter
-        effect:
-            Lorsque vous repositionné cet allié, détruisez un personnage en position
-            front_icon.
+        effect: "Contrainte : détruisez un allié avec un effet PERMANENT."
     spy:
         name: Espion
         count: "2"
@@ -41,30 +39,28 @@ cards:
         points: "1"
         type: IMMÉDIAT
         image: rats
-        effect: Détruisez un personnage qui n'est pas à sa position naturelle.
+        effect: Détruisez un personnage avec X point de base.
     divinity:
         name: Divinité
         count: "1"
-        position: front
-        points: X
+        position: back
+        points: "X"
         type: PERMANENT
         image: divinity
-        effect: X vaut le nombre d'alliés qui ne sont pas à leur position naturelle.
+        effect: "X est égale aux points de base de votre meilleur allié en position front_icon. Les points X ne sont pas pris en compte."
     cunning:
         name: Sage
         count: "1"
         position: any
-        points: "2"
-        type: IMMÉDIAT
+        points: "1"
+        type: PERMANENT
         image: cunning
-        effect: Copiez l'effet IMMÉDIAT d'un personnage dans votre main.
+        effect: "Regardez la main d'un joueur, vous pouvez échanger une carte de la faction mages_icon avec une carte de votre main."
     professor:
         name: Professeur
         count: "1"
-        position: any
-        points: "1"
+        position: back
+        points: "0"
         type: PERMANENT
         image: professor
-        effect:
-            À la fin de votre tour, vous pouvez repositionner un personnage en position
-            back_icon vers la position front_icon.
+        effect: Gagnez 1 point permanent pour chaque allié avec X points de base.

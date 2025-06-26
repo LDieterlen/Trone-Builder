@@ -17,7 +17,7 @@ cards:
         image: recycler
         effect: Prenez 1 carte de la défausse dans votre main.
     drone:
-        name: Drone
+        name: Drône
         count: "2"
         position: back
         points: "1"
@@ -45,20 +45,20 @@ cards:
         name: Mère
         count: "1"
         position: back
-        points: "0"
-        type: IMMÉDIAT
+        points: "X"
+        type: PERMANENT
         image: mother
-        effect:
-            Gagnez des points permanents égaux à 6 - le nombre de cartes dans
-            votre main.
-    dome:
-        name: Dome
+        effect: "Fin de tour : X vaut 6 si vous n'avez plus de carte en main, sinon X vaut 0."
+    hero:
+        name: Super héro
         count: "1"
         position: any
         points: "1"
-        type: IMMÉDIAT
-        image: dome
-        effect: Piochez 3 cartes.
+        image: hero
+        typeA: IMMÉDIAT
+        effectA: Piochez 3 cartes.
+        typeB: PERMANENT
+        effectB: Vous n'avez plus de limite de cartes en main.
     weapon:
         name: Arme
         count: "1"
@@ -66,4 +66,4 @@ cards:
         points: "5"
         type: PERMANENT
         image: weapon
-        effect: "Contrainte : vous ne pouvez plus piocher ou défausser de cartes."
+        effect: "Contrainte : les effets 'piochez', 'révélez' et 'défaussez' n'ont plus d'effet sur vous."

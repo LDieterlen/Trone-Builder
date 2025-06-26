@@ -1,5 +1,5 @@
 name: Désert
-legend: "Force: augmente de 1 les points de base du personnage."
+legend: "Force : augmente de 1 les points de base du personnage."
 cards:
     monk:
         name: Moine
@@ -17,7 +17,7 @@ cards:
         points: "3"
         type: IMMÉDIAT
         image: monster
-        effect: "Contrainte: détruisez un allié avec des points de base à 0."
+        effect: "Contrainte : détruisez un allié avec des points de base à 0."
     trainer:
         name: Dresseur
         count: "2"

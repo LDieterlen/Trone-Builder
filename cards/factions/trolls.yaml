@@ -9,7 +9,7 @@ cards:
         image: runt
         effect: "Lorsque ce personnage est détruit, piochez 1 carte."
     prophet:
-        name: Prophete
+        name: Prophète
         count: "3"
         position: back
         points: "1"
@@ -23,7 +23,7 @@ cards:
         points: "1"
         type: IMMÉDIAT
         image: dumb
-        effect: "Contrainte: détruisez un allié, gagnez ses points de base en points permanents."
+        effect: "Contrainte : détruisez un allié, gagnez ses points de base en points permanents."
     undertaker:
         name: Croque-mort
         count: "2"
@@ -47,9 +47,9 @@ cards:
         points: "6"
         type: PERMANENT
         image: brute
-        effect: "Début de tour, Contrainte&nbsp;: détruisez un allié."
+        effect: "Début de tour, Contrainte&nbsp;: vous devez détruire un allié."
     shaman:
-        name: Chaman
+        name: Chamane
         count: "1"
         position: back
         points: "1"
@@ -63,4 +63,4 @@ cards:
         points: "3"
         type: IMMÉDIAT
         image: thrower
-        effect: "Contrainte: détruisez 2 alliés pour détruire un ennemi."
+        effect: "Contrainte : détruisez 2 alliés pour détruire un ennemi."

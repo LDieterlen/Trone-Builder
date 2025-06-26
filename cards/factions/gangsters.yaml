@@ -1,5 +1,5 @@
 name: Brigant
-legend: "Parier: lancer un dé et faites l'effet correspondant au résultat."
+legend: "Parier : lancez un dé et faites l'effet correspondant au résultat."
 cards:
     blind:
         name: Aveugle
@@ -8,7 +8,7 @@ cards:
         points: "1"
         type: IMMÉDIAT
         image: blind
-        effect: "Pariez pour détruire :<br> 1) Un allié &emsp;2-3) Un personnage front_icon <br>4-5) Un personnage back_icon 6) Un personnage."
+        effect: "Pariez pour détruire :<br>1) un allié &emsp;2-3) un personnage front_icon <br>4-5) un personnage back_icon 6) un personnage."
         legend: True
     leprechaun:
         name: Leprechaun
@@ -17,7 +17,7 @@ cards:
         points: "1"
         type: IMMÉDIAT
         image: leprechaun
-        effect: "Pariez pour: <br>1-3) Rien 4) Gagnez 1 point permanent <br>5-6) Piocher et jouer une nouvelle carte."
+        effect: "Pariez pour :<br>1-3) rien 4) gagner 1 point permanent <br>5-6) piocher et jouer une nouvelle carte."
         legend: True
     valet:
         name: Valet
@@ -29,7 +29,7 @@ cards:
         effect: "Une fois par tour : vous pouvez relancer un pari."
         legend: True
     dealer:
-        name: Dealer
+        name: Croupier
         count: "2"
         position: front
         points: "3"
@@ -52,7 +52,7 @@ cards:
         points: "2"
         type: PERMANENT
         image: double_face
-        effect: "Fin de tour:<br> pariez pour donner 1 point permanent à:<br>impair) un autre joueur<br>pair) vous-même."
+        effect: "Fin de tour : pariez pour donner 1 point permanent à :<br>impair) un autre joueur<br>pair) vous-même."
         legend: True
     pistolero:
         name: Pistolero
@@ -61,7 +61,7 @@ cards:
         points: "2"
         type: IMMÉDIAT
         image: pistolero
-        effect: "Pariez pour:<br>1-5) Renvoyez cet allié dans votre main<br>6) Détruire un personnage et gagnez ses points de base en points permanents."
+        effect: "Pariez pour :<br>1-5) renvoyer cet allié dans votre main<br>6) détruire un personnage et gagnez ses points de base en points permanents."
         legend: True
     cheater:
         name: Tricheur

@@ -3,12 +3,20 @@ legend: "Sacrifice: détruisez un allié avec des points de base à 0"
 cards:
     shadow:
         name: Ombre
-        count: "5"
+        count: "4"
         position: back
         points: "0"
         type: IMMÉDIAT
         image: shadow
         effect: Rejouez ce tour.
+    mad:
+        name: Fou
+        count: "3"
+        position: any
+        points: "0"
+        type: PERMANENT
+        image: mad
+        effect: "Si ce personnage est détruit pendant votre tour, gagnez 3 points permanents."
     ceberus:
         name: Cerbère
         count: "2"
@@ -16,7 +24,7 @@ cards:
         points: "X"
         type: PERMANENT
         image: cerberus
-        effect: X est égal à 1 + le nombre d'alliés avec des points de base à 0.
+        effect: X vaut à 1 + le nombre d'alliés avec des points de base à 0.
     dragon:
         name: Dragon
         count: "2"
@@ -35,14 +43,6 @@ cards:
         image: assassin
         effect: "Début de tour : vous pouvez faire un sacrifice pour détruire un ennemi en position front_icon."
         legend: True
-    mad:
-        name: Fou
-        count: "2"
-        position: any
-        points: "0"
-        type: PERMANENT
-        image: mad
-        effect: "Si ce personnage est détruit pendant votre tour, gagnez 3 points permanents."
     temptress:
         name: Tentatrice
         count: "1"
@@ -59,7 +59,7 @@ cards:
         points: "6"
         type: PERMANENT
         image: golem
-        effect: "Fin de tour, Contrainte&nbsp;: faites un sacrifice, sinon détruisez ce personnage."
+        effect: "Fin de tour, Contrainte&nbsp;: vous devez faire un sacrifice."
         legend: True
     lord:
         name: Seigneur

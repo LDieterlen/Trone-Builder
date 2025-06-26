@@ -1,23 +1,23 @@
 name: Fées
-legend: "Silence: le personnage avec l'altération n'a plus d'effet."
+legend: "Écho : lorsque vous jouez un allié avec un effet IMMÉDIAT, vous pouvez retirer cette altération pour copier l'effet."
 cards:
     charmed:
-        name: Charme
-        count: "4"
-        position: any
-        points: "2"
+        name: Bienfaitrice
+        count: "5"
+        position: back
+        points: "1"
         type: IMMÉDIAT
         image: charmed
-        effect: "Donnez l'altération silence à un personnage."
+        effect: "Donnez l'altération écho à un personnage en position front_icon."
         legend: True
     enchanted:
         name: Enchanteresse
-        count: "3"
-        position: front
-        points: "X"
-        type: PERMANENT
+        count: "2"
+        position: any
+        points: "1"
+        type: IMMÉDIAT
         image: enchanted
-        effect: "X vaut 3."
+        effect: "Gagnez autant de points permanents que les points de base de ce personnage."
     deceitful:
         name: Fourbe
         count: "2"
@@ -25,47 +25,46 @@ cards:
         points: "0"
         type: IMMÉDIAT
         image: deceitful
-        effect: "Placez un ennemi en position front_icon sur votre terrain. Donnez lui l'altération silence."
-        legend: True
-    expiatrice:
-        name: Expiatrice
-        count: "2"
-        position: front
-        points: "2"
-        type: IMMÉDIAT
-        image: expiatrice
-        effect: "Déplacez les altérations de vos alliés vers d'autres alliés."
+        effect: "Détruisez un ennemi en position front_icon, s'il possède une altération, placez-la sur ce personnage."
     godmother:
         name: Marraine
         count: "2"
         position: front
         points: "3"
-        type: PERMANENT
+        type: IMMÉDIAT
         image: godmother
-        effect: "Copiez l'effet IMMÉDIAT d'un allié qui n'est pas de la faction fairies_icon."
-    traveller:
-        name: Voyageuse
+        effect: "Contrainte : échangez ce personnage avec un personnage en position front_icon d'un autre joueur."
+    expiatrice:
+        name: Expiatrice
+        count: "2"
+        position: any
+        points: "1"
+        type: IMMÉDIAT
+        image: expiatrice
+        effect: "Piochez 1 carte OU défaussez 1 carte de votre main pour gagner 2 points permanents."
+    rider:
+        name: Cavalière
         count: "1"
         position: front
-        points: "3"
-        image: traveller
-        typeA: IMMÉDIAT
-        effectA: "Gagnez 3 points permanents."
-        typeB: PERMANENT
-        effectB: "Fin de tour, Contrainte : placez ce personnage sur le terrain d'un autre joueur."
+        points: "X"
+        type: PERMANENT
+        image: rider
+        effect: "X vaut le nombre d'alliés en position front_icon avec un effet IMMÉDIAT sur votre terrain (max. 5)."
     pure:
         name: Pure
         count: "1"
         position: back
-        points: "5"
+        points: "0"
         type: PERMANENT
         image: pure
-        effect: "Fin de tour, Contrainte&nbsp;: donnez 1 point permanent à un autre joueur."
+        effect: "Vous pouvez choisir d'ignorer les effets IMMÉDIAT des alliés que vous jouez pour leur donner l'altération écho."
+        legend: True
     maleficent:
         name: Maléfique
         count: "1"
-        position: any
-        points: "9"
-        type: PERMANENT
+        position: front
+        points: "6"
+        type: IMMÉDIAT
         image: maleficent
-        effect: "Contrainte : vous ne pouvez pas gagner la partie."
+        effect: "Contrainte : placez l'altération écho sur un personnage en position front_icon de chaque autre joueur."
+        legend: True

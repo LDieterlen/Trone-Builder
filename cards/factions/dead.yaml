@@ -23,7 +23,7 @@ cards:
         points: "2"
         type: IMMÉDIAT
         image: moires
-        effect: Prenez une carte de votre cimetière de votre main.
+        effect: Prenez une carte de votre cimetière dans votre main.
     raven:
         name: Corbeau
         count: "2"
@@ -31,8 +31,7 @@ cards:
         points: "1"
         type: PERMANENT
         image: raven
-        effect: "Fin de tour : vous pouvez détruire un allié pour gagner 1 point
-            permanent."
+        effect: "Fin de tour : vous pouvez détruire un allié pour gagner 1 point permanent."
     companion:
         name: Compagnon
         count: "2"
@@ -40,7 +39,7 @@ cards:
         points: "2"
         type: IMMÉDIAT
         image: companion
-        effect: Copiez l'effet IMMÉDIAT d'un personnage dans votre cimetière.
+        effect: Copiez l'effet IMMÉDIAT d'un personnage de votre cimetière.
     child:
         name: Enfant
         count: "1"
@@ -56,7 +55,7 @@ cards:
         points: X
         type: PERMANENT
         image: monarch
-        effect: X est égal au nombre de cartes dans votre cimetière.
+        effect: X est égale au nombre de cartes dans votre cimetière.
     empress:
         name: Impératrice
         count: "1"
