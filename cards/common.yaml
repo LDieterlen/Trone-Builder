@@ -6,13 +6,13 @@ positions_dir: assets/sprites/positions
 icons:
     front_icon: ../../assets/sprites/icons/front.png
     back_icon: ../../assets/sprites/icons/back.png
-    dead_icon: ../../assets/sprites/icons/dead.png
-    human_icon: ../../assets/sprites/icons/humans.png
-    desert_icon: ../../assets/sprites/icons/desert.png
-    horror_icon: ../../assets/sprites/icons/horror.png
-    gangster_icon: ../../assets/sprites/icons/gangsters.png
-    fairies_icon: ../../assets/sprites/icons/fairies.png
-    imps_icon: ../../assets/sprites/icons/imps.png
+    dead_icon: ../../assets/sprites/factions/dead.png
+    human_icon: ../../assets/sprites/factions/humans.png
+    desert_icon: ../../assets/sprites/factions/desert.png
+    horror_icon: ../../assets/sprites/factions/horror.png
+    gangster_icon: ../../assets/sprites/factions/gangsters.png
+    fairies_icon: ../../assets/sprites/factions/fairies.png
+    imps_icon: ../../assets/sprites/factions/imps.png
 
 keywords:
     # - allié
