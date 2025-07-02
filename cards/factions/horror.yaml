@@ -20,7 +20,7 @@ cards:
         name: Nonne
         count: "2"
         position: back
-        points: "2"
+        points: "0"
         image: nun
         typeA: IMMÉDIAT
         effectA: "Placez un ennemie en position front_icon sur votre terrain."
@@ -54,7 +54,7 @@ cards:
         name: Poupée
         count: "1"
         position: any
-        points: "2"
+        points: "3"
         type: IMMÉDIAT
         image: doll
         effect: "Révélez une carte de la pioche, si elle a un effet IMMÉDIAT, copiez-le."

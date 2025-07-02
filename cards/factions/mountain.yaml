@@ -26,7 +26,7 @@ cards:
         points: "3"
         type: IMMÉDIAT
         image: witch
-        effect: Donnez l'altération gel à un allié.
+        effect: "Contrainte : Donnez l'altération gel à un allié."
         legend: True
     ancestor:
         name: Ancêtre
@@ -59,9 +59,7 @@ cards:
         points: "0"
         type: IMMÉDIAT
         image: lizard
-        effect:
-            Supprimez jusqu'à 3 altérations à des ennemis en position front_icon ou
-            à des alliés.
+        effect: Supprimez jusqu'à 3 altérations à des ennemis ou à des alliés.
     giant:
         name: Géant
         count: "1"

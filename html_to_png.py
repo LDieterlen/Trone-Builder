@@ -16,6 +16,9 @@ CARDS_NAMES = [
 
 FACTIONS_NAMES = [
     # name,
+    "mountain",
+    "robots",
+    "trolls",
 ]
 
 FACTIONS_EXCLUDED = [

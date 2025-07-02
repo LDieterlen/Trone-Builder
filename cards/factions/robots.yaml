@@ -48,7 +48,7 @@ cards:
         points: "X"
         type: PERMANENT
         image: mother
-        effect: "Fin de tour : X vaut 6 si vous n'avez plus de carte en main, sinon X vaut 0."
+        effect: "Fin de tour : X vaut 5 si vous n'avez plus de carte en main, sinon X vaut 0."
     hero:
         name: Super héro
         count: "1"
@@ -66,4 +66,4 @@ cards:
         points: "5"
         type: PERMANENT
         image: weapon
-        effect: "Contrainte : les effets 'piochez', 'révélez' et 'défaussez' n'ont plus d'effet sur vous."
+        effect: "Contrainte : Vous ne piochez plus de carte au début de vos tours."

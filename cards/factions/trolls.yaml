@@ -8,30 +8,30 @@ cards:
         type: PERMANENT
         image: runt
         effect: "Lorsque ce personnage est détruit, piochez 1 carte."
-    prophet:
-        name: Prophète
-        count: "3"
-        position: back
-        points: "1"
-        type: IMMÉDIAT
-        image: prophet
-        effect: "Détruisez un allié puis replacez-le sur votre terrain."
     dumb:
         name: Imbécile
-        count: "2"
+        count: "3"
         position: any
         points: "1"
         type: IMMÉDIAT
         image: dumb
         effect: "Contrainte : détruisez un allié, gagnez ses points de base en points permanents."
+    prophet:
+        name: Prophète
+        count: "2"
+        position: back
+        points: "1"
+        type: IMMÉDIAT
+        image: prophet
+        effect: "Détruisez un allié puis placez un allié de votre cimetière sur votre terrain."
     undertaker:
-        name: Croque-mort
+        name: Comptable
         count: "2"
         position: any
-        points: "2"
+        points: "1"
         type: PERMANENT
         image: undertaker
-        effect: "Lorsque ce personnage est détruit, placez un autre personnage de votre cimetière sur votre terrain."
+        effect: "Lorsque ce personnage est détruit, gagnez 2 points permanents."
     kamikaze:
         name: Kamikaze
         count: "2"
