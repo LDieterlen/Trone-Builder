@@ -10,6 +10,14 @@ cards:
         image: calm
         effect: "Donnez l'altération silence à un personnage."
         legend: True
+    baby:
+        name: Bébé
+        count: "2"
+        position: back
+        points: "1"
+        type: PERMANENT
+        image: baby
+        effect: "Lorsqu'un personnage unique est joué ou placé sur votre terrain, gagnez 1 point permanent."
     merchand:
         name: Marchand
         count: "2"
@@ -17,15 +25,7 @@ cards:
         points: "X"
         type: PERMANENT
         image: merchand
-        effect: "X est égale au nombre de factions différentes sur votre terrain."
-    baby:
-        name: Bébé
-        count: "2"
-        position: back
-        points: "2"
-        type: PERMANENT
-        image: baby
-        effect: "Lorsqu'un personnage unique est joué ou placé sur votre terrain, gagnez 1 point permanent."
+        effect: "X est égal au nombre de factions différentes sur votre terrain."
     musician:
         name: Musicien
         count: "2"
@@ -38,10 +38,10 @@ cards:
         name: Danseur
         count: "2"
         position: front
-        points: "1"
-        type: PERMANENT
+        points: "3"
+        type: IMMÉDIAT
         image: dancer
-        effect: "Copiez l'effet IMMÉDIAT d'un allié qui n'est pas de la faction imps_icon."
+        effect: "Contrainte : Donnez l'altération silence à un allié avec un effet PERMANENT."
     traveller:
         name: Voyageur
         count: "1"
@@ -64,7 +64,7 @@ cards:
         name: Mal
         count: "1"
         position: front
-        points: "9"
+        points: "7"
         type: PERMANENT
         image: evil
         effect: "Contrainte : vous ne pouvez pas gagner la partie. Détruisez ce personnage s'il n'y a plus de carte dans la pioche."

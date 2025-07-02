@@ -61,6 +61,6 @@ cards:
         count: "1"
         position: back
         points: "0"
-        type: PERMANENT
+        type: IMMÉDIAT
         image: professor
         effect: Gagnez 1 point permanent pour chaque allié avec X points de base.
