@@ -7,7 +7,7 @@ cards:
         points: "X"
         type: PERMANENT
         image: student
-        effect: X est égale au nombre d'alliés avec X points de base.
+        effect: X est égal au nombre d'alliés avec X points de base.
     apprentice:
         name: Apprentie
         count: "3"
@@ -47,15 +47,15 @@ cards:
         points: "X"
         type: PERMANENT
         image: divinity
-        effect: "X est égale aux points de base de votre meilleur allié en position front_icon. Les points X ne sont pas pris en compte."
+        effect: "X est égal aux points de base de votre meilleur allié en position front_icon. Les points X ne sont pas pris en compte."
     cunning:
         name: Sage
         count: "1"
         position: any
         points: "1"
-        type: PERMANENT
+        type: IMMÉDIAT
         image: cunning
-        effect: "Regardez la main d'un joueur, vous pouvez échanger une carte de la faction mages_icon avec une carte de votre main."
+        effect: "Regardez la main d'un joueur, vous pouvez échanger une carte de sa main avec une carte la votre."
     professor:
         name: Professeur
         count: "1"

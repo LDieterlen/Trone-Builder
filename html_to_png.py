@@ -10,15 +10,14 @@ from pathlib import Path
 INPUT_DIR = "output"
 OUTPUT_DIR = "png_output"
 
+SKIP_KNOWN_FILES = True
+
 CARDS_NAMES = [
     # none,
 ]
 
 FACTIONS_NAMES = [
     # name,
-    "mountain",
-    "robots",
-    "trolls",
 ]
 
 FACTIONS_EXCLUDED = [
@@ -67,6 +66,10 @@ if __name__ == "__main__":
             rel_path = html_file.relative_to(input_dir)
             output_file = output_dir / rel_path.with_suffix(".png")
             if CARDS_NAMES != [] and rel_path.stem not in CARDS_NAMES:
+                continue
+
+            if SKIP_KNOWN_FILES and output_file.exists():
+                print(f"Skipping known file: {output_file}")
                 continue
             output_file.parent.mkdir(parents=True, exist_ok=True)
             capture_fixed_card(str(html_file), str(output_file))

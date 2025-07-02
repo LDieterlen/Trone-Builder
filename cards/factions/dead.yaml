@@ -8,22 +8,22 @@ cards:
         type: IMMÉDIAT
         image: death
         effect: Détruisez un personnage en position front_icon.
-    hydra:
-        name: Hydre
-        count: "3"
-        position: front
-        points: "4"
-        type: IMMÉDIAT
-        image: hydra
-        effect: "Contrainte : détruisez un allié en position back_icon."
     moires:
         name: Moires
-        count: "2"
+        count: "3"
         position: front
         points: "2"
         type: IMMÉDIAT
         image: moires
         effect: Prenez une carte de votre cimetière dans votre main.
+    hydra:
+        name: Hydre
+        count: "2"
+        position: front
+        points: "4"
+        type: IMMÉDIAT
+        image: hydra
+        effect: "Contrainte : détruisez un allié en position back_icon."
     raven:
         name: Corbeau
         count: "2"
@@ -55,7 +55,7 @@ cards:
         points: X
         type: PERMANENT
         image: monarch
-        effect: X est égale au nombre de cartes dans votre cimetière.
+        effect: X est égal au nombre de cartes dans votre cimetière.
     empress:
         name: Impératrice
         count: "1"

@@ -50,7 +50,7 @@ cards:
         points: "2"
         type: IMMÉDIAT
         image: temptress
-        effect: "Vous pouvez faire un sacrifice pour pendre un ennemi avec 0 point de base dans votre main."
+        effect: "Vous pouvez faire un sacrifice pour prendre un ennemi avec 0 point de base dans votre main."
         legend: True
     golem:
         name: Golem

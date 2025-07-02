@@ -1,5 +1,5 @@
 name: Fées
-legend: "Écho : lorsque vous jouez un allié avec un effet IMMÉDIAT, vous pouvez retirer cette altération pour copier l'effet."
+legend: "Écho : lorsque vous jouez un allié avec un effet IMMÉDIAT, retirez cette altération et copier l'effet."
 cards:
     charmed:
         name: Bienfaitrice

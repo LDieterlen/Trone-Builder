@@ -176,6 +176,7 @@ cython_debug/
 _ignore
 
 output/
+!output/*.*
 png_output/
 svg/
 

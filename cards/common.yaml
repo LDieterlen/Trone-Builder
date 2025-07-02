@@ -13,6 +13,7 @@ icons:
     gangster_icon: ../../assets/sprites/factions/gangsters.png
     fairies_icon: ../../assets/sprites/factions/fairies.png
     imps_icon: ../../assets/sprites/factions/imps.png
+    mages_icon: ../../assets/sprites/factions/mages.png
 
 keywords:
     # - allié

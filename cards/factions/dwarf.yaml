@@ -65,7 +65,7 @@ cards:
         name: Mascotte
         count: "1"
         position: front
-        points: X
+        points: 0
         type: PERMANENT
         image: mascott
-        effect: X est égal au nombre d'alliés en position back_icon (max. 5).
+        effect: Lorsqu'un allié reçoit une altération, gagnez 1 point permanent.
