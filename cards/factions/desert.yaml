@@ -67,5 +67,5 @@ cards:
         points: "0"
         type: IMMÉDIAT
         image: prince
-        effect: Donnez l'altération force à tous les alliés de la faction desert_icon.
+        effect: Donnez l'altération force à tous les alliés de la faction de ce personnage.
         legend: True

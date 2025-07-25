@@ -32,7 +32,7 @@ cards:
         points: "3"
         type: PERMANENT
         image: dragon
-        effect: "Fin de tour : vous pouvez faire un sacrifice pour piocher 1 carte."
+        effect: "Une fois par tour : vous pouvez faire un sacrifice pour piocher 1 carte."
         legend: True
     assassin:
         name: Assassin
