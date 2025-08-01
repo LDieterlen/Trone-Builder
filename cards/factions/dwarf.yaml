@@ -57,14 +57,14 @@ cards:
         name: Patron
         count: "1"
         position: front
-        points: "4"
-        type: PERMANENT
+        points: "2"
+        type: IMMÉDIAT
         image: boss
-        effect: Ne fait rien.
+        effect: Copiez l'effet IMMÉDIAT d'un personnage avec une altération.
     mascot:
         name: Mascotte
         count: "1"
-        position: front
+        position: back
         points: 0
         type: PERMANENT
         image: mascott

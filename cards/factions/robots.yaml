@@ -48,7 +48,7 @@ cards:
         points: "X"
         type: PERMANENT
         image: mother
-        effect: "Fin de tour : X vaut 5 si vous n'avez plus de carte en main, sinon X vaut 0."
+        effect: "Fin de tour : X vaut 5 si vous avez 2 cartes ou moins en main, sinon X vaut 0."
     hero:
         name: Super héro
         count: "1"

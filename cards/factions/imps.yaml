@@ -14,7 +14,7 @@ cards:
         name: Bébé
         count: "2"
         position: back
-        points: "1"
+        points: "2"
         type: PERMANENT
         image: baby
         effect: "Lorsqu'un personnage unique est joué ou placé sur votre terrain, gagnez 1 point permanent."
