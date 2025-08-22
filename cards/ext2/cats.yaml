@@ -67,4 +67,4 @@ cards:
         points: "X"
         type: PERMANENT
         image: "8"
-        effect: "X vaut 5 si toutes les factions en jeu sont présentent sur votre terrain, sinon X vaut 0."
+        effect: "X vaut 5 si toutes les factions en jeu sont présentes sur votre terrain, sinon X vaut 0."

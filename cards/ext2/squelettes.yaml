@@ -55,12 +55,12 @@ cards:
         points: "0"
         type: IMMÉDIAT
         image: "7"
-        effect: "Vous pouvez mélanger jusqu'à 5 cartes de votre cimetière à la pioche pour gagner 1 point permanent par carte ainsi mélangée."
+        effect: "Mélangez jusqu'à 5 cartes de votre cimetière à la pioche pour gagner 1 point permanent par carte ainsi mélangée."
     temps:
         name: Temps
         count: "1"
         position: any
-        points: "0"
+        points: "1"
         image: "8"
         type: PERMANENT
         effect: "Vous n'êtes plus obligé de faire les effets Contrainte de vos personnages."
