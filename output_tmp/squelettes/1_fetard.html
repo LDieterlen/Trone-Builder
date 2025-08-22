@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        @font-face {
+            font-family: 'Cinzel-ExtraBold';
+            src: url('../../assets/font/Cinzel-ExtraBold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Cinzel-Bold';
+            src: url('../../assets/font/Cinzel-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Simonetta';
+            src: url('../../assets/font/Simonetta/Simonetta-Regular.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            /* centre horizontalement */
+            align-items: flex-start;
+            /* centre verticalement */
+            height: 100vh;
+            /* s'étend sur toute la hauteur de la fenêtre */
+            width: 100vw;
+            /* s'étend sur toute la largeur */
+        }
+
+        .card {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 744px;
+            height: 1040px;
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .character-img {
+            position: absolute;
+            left: 50%;
+            top: 10%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: auto;
+            z-index: 1;
+            object-fit: contain;
+        }
+
+        .card-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .logo-faction {
+            position: absolute;
+            z-index: 4;
+            top: 5.3%;
+            left: 7.4%;
+            transform: translate(-50%, -50%);
+            height: 8%;
+            aspect-ratio: 1/1;
+            width: auto;
+        }
+
+        .name {
+            position: absolute;
+            top: 5.3%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            font-size: 3em;
+            font-family: 'Cinzel-ExtraBold';
+            color: #000000;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .count {
+            position: absolute;
+            top: 5.3%;
+            left: 16%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            font-size: 1.8em;
+            font-family: 'Cinzel-ExtraBold';
+            color: #000000;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .position {
+            position: absolute;
+            z-index: 4;
+            top: 5.3%;
+            right: 7.4%;
+            transform: translate(50%, -50%);
+            height: 8%;
+            aspect-ratio: 1/1;
+            width: auto;
+        }
+
+        .point {
+            position: absolute;
+            top: 66%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            font-size: 9.6em;
+            font-family: 'Cinzel-Bold';
+            color: #000000;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .vertical-line {
+            position: absolute;
+            left: 50%;
+            top: 78%;
+            width: 2px;
+            height: 15%;
+            background: #000;
+            transform: translateX(-50%);
+            z-index: 5;
+            border-radius: 1px;
+            pointer-events: none;
+        }
+
+        .effect-cinzel {
+            font-family: 'Cinzel-ExtraBold';
+            font-size: inherit;
+            font-weight: normal;
+            letter-spacing: 0.03em;
+            font-size: 0.8em;
+        }
+
+        .type {
+            position: absolute;
+            top: 78%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            font-size: 2.7em;
+            font-family: 'Cinzel-ExtraBold';
+            color: #000000;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .effect {
+            position: absolute;
+            top: 87%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            font-size: 2.4em;
+            font-family: 'Simonetta';
+            width: 90%;
+            color: #000000;
+            pointer-events: none;
+            text-align: center;
+            white-space: normal;
+            text-wrap: balance;
+            line-height: 1em;
+            word-break: keep-all;
+        }
+
+        .legend {
+            position: absolute;
+            top: 96%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            font-size: 1.35em;
+            font-family: 'Simonetta';
+            color: #000000;
+            pointer-events: none;
+            width: 90%;
+            text-align: center;
+            white-space: normal;
+            text-wrap: balance;
+            letter-spacing: -0.02em;
+            word-break: keep-all;
+        }
+
+        .typeA,
+        .typeB {
+            position: absolute;
+            top: 78%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            font-size: 2.4em;
+            font-family: 'Cinzel-ExtraBold';
+            color: #000000;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .typeA {
+            left: 25%;
+        }
+
+        .typeB {
+            left: 75%;
+        }
+
+        .effectA,
+        .effectB {
+            position: absolute;
+            top: 87%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            font-size: 1.95em;
+            font-family: 'Simonetta';
+            width: 46%;
+            color: #000000;
+            pointer-events: none;
+            text-align: center;
+            white-space: normal;
+            text-wrap: balance;
+            letter-spacing: -0.02em;
+            line-height: 1em;
+            word-break: keep-all;
+        }
+
+        .effectA {
+            left: 25%;
+        }
+
+        .effectB {
+            left: 75%;
+        }
+
+        .inline-logo {
+            display: inline-block;
+            height: 1em;
+            width: auto;
+            vertical-align: middle;
+            margin: 0 0.15em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <img class="character-img" src="../../assets\images\squelettes\6.png">
+        <img class="card-layer" src="../../assets\sprites\cards\squelettes.png">
+        <img class="logo-faction" src="../../assets\sprites\factions\squelettes.png">
+        <span class="name">Fétard</span>
+        <span class="count">1</span>
+        <img class="position" src="../../assets\sprites\positions\front.png">
+        <span class="point">X</span>
+        <span class="type">PERMANENT</span>
+        <span class="effect"><span class='effect-cinzel'>X</span> vaut les points de base de la meilleure carte de votre cimetière.</span>
+        <span class="legend"></span>
+
+        <span class="typeA"></span>
+        <span class="effectA"></span>
+        <span class="typeB"></span>
+        <span class="effectB"></span>
+        <div class="vertical-line"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var effect = document.querySelector('.effect');
+            var verticalLine = document.querySelector('.vertical-line');
+            var legend = document.querySelector('.legend');
+
+            // Vérifie si le texte de .effect est vide (ignore les espaces et balises)
+            var effectText = effect ? effect.textContent.replace(/\s/g, '') : '';
+            var isEffectEmpty = !effectText;
+
+            // Affiche ou masque la ligne verticale selon le contenu de .effect
+            if (verticalLine) {
+                verticalLine.style.display = isEffectEmpty ? "block" : "none";
+            }
+
+            // Ajuste la taille de la police selon le nombre de lignes (vraies lignes)
+            if (effect) {
+                var baseFontSize = 3.6; // em
+                var minFontSize = 2.4; // em
+                var maxChars = 50; // nombre de caractères avant de réduire
+                var textLength = effect.textContent.length;
+                var newFontSize = baseFontSize;
+                if (textLength > maxChars) {
+                    newFontSize = Math.max(minFontSize, baseFontSize * (maxChars / textLength));
+                }
+                effect.style.fontSize = newFontSize + 'em';
+            }
+
+            const lineCount = effect.innerText.split('\n').length;
+            if (lineCount > 3) {
+                effect.style.lineHeight = '0.9em';
+            } else {
+                effect.style.lineHeight = '1em';
+            }
+
+            // Si le texte de legend est vide, on ajuste la position top de effect
+            if (legend && legend.textContent.trim() === "") {
+                effect.style.position = 'absolute';
+                effect.style.top = '88%';
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

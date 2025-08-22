@@ -7,7 +7,7 @@ cards:
         points: "X"
         type: PERMANENT
         image: student
-        effect: X est égal au nombre d'alliés avec X points de base.
+        effect: X est égal au nombre d'alliés avec X en point de base.
     apprentice:
         name: Apprentie
         count: "3"
@@ -19,7 +19,7 @@ cards:
     plotter:
         name: Comploteur
         count: "2"
-        position: front
+        position: back
         points: "4"
         type: IMMÉDIAT
         image: plotter
@@ -52,10 +52,10 @@ cards:
         name: Sage
         count: "1"
         position: any
-        points: "1"
+        points: "2"
         type: IMMÉDIAT
         image: cunning
-        effect: "Regardez la main d'un joueur, vous pouvez échanger une carte de sa main avec une carte la votre."
+        effect: "Regardez la main d'un joueur, vous pouvez échanger une carte de sa main contre une carte de la vôtre."
     professor:
         name: Professeur
         count: "1"
@@ -63,4 +63,4 @@ cards:
         points: "0"
         type: IMMÉDIAT
         image: professor
-        effect: Gagnez 1 point permanent pour chaque allié avec X points de base.
+        effect: Gagnez 1 point permanent pour chaque allié avec X en point de base.

@@ -39,7 +39,7 @@ cards:
         points: "2"
         type: IMMÉDIAT
         image: companion
-        effect: Copiez l'effet IMMÉDIAT d'un personnage de votre cimetière.
+        effect: Prenez jusqu'à 2 cartes du cimetière des autres joueurs et placez-les dans votre cimetière.
     child:
         name: Enfant
         count: "1"

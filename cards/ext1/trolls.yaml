@@ -1,0 +1,66 @@
+name: Trolls
+cards:
+    dumb:
+        name: Imbécile
+        count: "4"
+        position: any
+        points: "1"
+        type: IMMÉDIAT
+        image: dumb
+        effect: "Contrainte : détruisez un allié, gagnez ses points de base en points permanents."
+    undertaker:
+        name: Comptable
+        count: "3"
+        position: any
+        points: "2"
+        type: PERMANENT
+        image: undertaker
+        effect: "Lorsque ce personnage est détruit, gagnez 2 points permanents."
+    prophet:
+        name: Prophète
+        count: "2"
+        position: back
+        points: "X"
+        type: PERMANENT
+        image: prophet
+        effect: "X vaut le nombre d'alliés avec un effet permanent."
+    kamikaze:
+        name: Kamikaze
+        count: "2"
+        position: front
+        points: "2"
+        type: PERMANENT
+        image: kamikaze
+        effect: "Lorsque ce personnage est détruit, détruisez un personnage en position front_icon."
+    runt:
+        name: Avorton
+        count: "2"
+        position: front
+        points: "3"
+        type: PERMANENT
+        image: runt
+        effect: "Lorsque ce personnage est détruit, piochez 1 carte."
+    brute:
+        name: Brute
+        count: "1"
+        position: back
+        points: "6"
+        type: PERMANENT
+        image: brute
+        effect: "Début de tour, Contrainte&nbsp;: vous devez détruire un allié."
+    shaman:
+        name: Chamane
+        count: "1"
+        position: back
+        points: "1"
+        type: PERMANENT
+        image: shaman
+        effect: "Gagnez 1 point permanent chaque fois qu'un autre allié est détruit."
+    thrower:
+        name: Lanceur
+        count: "1"
+        position: front
+        points: "3"
+        type: IMMÉDIAT
+        image: thrower
+        effect: "Contrainte : détruisez 2 alliés pour détruire un ennemi."

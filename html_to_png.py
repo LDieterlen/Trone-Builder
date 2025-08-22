@@ -7,8 +7,8 @@ from PIL import Image
 from pathlib import Path
 
 
-INPUT_DIR = "output"
-OUTPUT_DIR = "png_output"
+INPUT_DIR = "output_tmp"
+OUTPUT_DIR = "png_output_tmp"
 
 SKIP_KNOWN_FILES = True
 

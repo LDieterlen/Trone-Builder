@@ -1,0 +1,72 @@
+name: Araignée
+legend: "Poison : Réduit de 1 les points de base du personnage. Si le personnage a 2 altérations poison, il est détruit."
+cards:
+    venimeuse:
+        name: Venimeuse
+        count: "4"
+        position: back
+        points: "1"
+        type: IMMÉDIAT
+        image: "1"
+        effect: "Donnez l'altération poison à 2 personnages."
+        legend: True
+    nettoyeuse:
+        name: Nettoyeuse
+        count: "3"
+        position: front
+        points: "2"
+        type: IMMÉDIAT
+        image: "2"
+        effect: "Retirez une ou plusieurs altérations d'un allié."
+    devoreuse:
+        name: Dévoreuse
+        count: "2"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: "3"
+        effect: Donnez l'altération poison à un personnage, si l'altération le détruit, gagnez ses points de base en points permanents (en tenant compte des altérations).
+        legend: True
+    maudit:
+        name: Maudit
+        count: "4"
+        position: front
+        points: "1"
+        type: IMMÉDIAT
+        image: "4"
+        effect: "Contrainte : donnez l'altération poison à ce personnage."
+        legend: True
+    nids:
+        name: Nids
+        count: "2"
+        position: front
+        points: "0"
+        type: IMMÉDIAT
+        image: "5"
+        effect: Révélez les 3 premières cartes de la pioche, gagnez 1 point permanent pour chaque carte de la faction araignee_icon et gardez les en main. Mélangez les autres à la pioche.
+    guerisseuse:
+        name: Guérisseuse
+        count: "1"
+        position: back
+        points: "0"
+        type: PERMANENT
+        image: "6"
+        effect: "L'altération poison augmente les points de base des alliés de 1 plutôt que de les réduire."
+        legend: True
+    prisonniere:
+        name: Prisonnière
+        count: "1"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: "7"
+        effect: Gagnez 1 point permanent pour chaque allié avec une altération (max. 5).
+    revenante:
+        name: Revenante
+        count: "1"
+        position: back
+        points: "6"
+        type: PERMANENT
+        image: "8"
+        effect: "Début de tour, Contrainte&nbsp;: donnez l'altération poison à un allié."
+        legend: True

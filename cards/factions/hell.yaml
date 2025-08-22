@@ -24,7 +24,7 @@ cards:
         points: "X"
         type: PERMANENT
         image: cerberus
-        effect: X vaut à 1 + le nombre d'alliés avec des points de base à 0.
+        effect: X vaut 1 + le nombre d'alliés avec des points de base à 0.
     dragon:
         name: Dragon
         count: "2"
@@ -41,7 +41,7 @@ cards:
         points: "0"
         type: PERMANENT
         image: assassin
-        effect: "Début de tour : vous pouvez faire un sacrifice pour détruire un ennemi en position front_icon."
+        effect: "Fin de tour : vous pouvez faire un sacrifice pour détruire un ennemi en position front_icon."
         legend: True
     temptress:
         name: Tentatrice
@@ -68,5 +68,5 @@ cards:
         points: "2"
         type: IMMÉDIAT
         image: lord
-        effect: "Contrainte: sacrifiez tous vos alliés avec des points de base à 0, gagnez 1 point permanent par allié sacrifié."
+        effect: "Vous pouvez faire un sacrifice pour copier l'effet IMMÉDIAT d'un allié."
         legend: True

@@ -1,0 +1,68 @@
+name: Fées
+legend: "Écho : lorsque vous jouez un effet IMMÉDIAT, vous pouvez retirer écho pour remplacer cet effet par celui de l'allié avec l'altération."
+cards:
+    charmed:
+        name: Bienfaitrice
+        count: "5"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: charmed
+        effect: "Donnez l'altération écho à un autre personnage avec un effet IMMÉDIAT."
+        legend: True
+    enchanted:
+        name: Enchanteresse
+        count: "2"
+        position: front
+        points: "2"
+        type: IMMÉDIAT
+        image: enchanted
+        effect: "Gagnez 1 point permanent."
+    deceitful:
+        name: Fourbe
+        count: "2"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: deceitful
+        effect: "Détruisez un ennemi en position front_icon, s'il possède une altération, placez-la sur ce personnage."
+    godmother:
+        name: Marraine
+        count: "2"
+        position: front
+        points: "3"
+        type: IMMÉDIAT
+        image: godmother
+        effect: "Contrainte : échangez ce personnage avec un personnage en position front_icon d'un autre joueur."
+    expiatrice:
+        name: Expiatrice
+        count: "2"
+        position: any
+        points: "1"
+        type: IMMÉDIAT
+        image: expiatrice
+        effect: "Piochez 1 carte OU défaussez 1 carte de votre main pour gagner 2 points permanents."
+    rider:
+        name: Cavalière
+        count: "1"
+        position: front
+        points: "X"
+        type: PERMANENT
+        image: rider
+        effect: "X vaut le nombre d'alliés avec un effet IMMÉDIAT en position front_icon (max. 5)."
+    pure:
+        name: Pure
+        count: "1"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: pure
+        effect: "Retirez une altération d'un allié pour gagner 3 points permanents."
+    maleficent:
+        name: Maléfique
+        count: "1"
+        position: front
+        points: "5"
+        type: IMMÉDIAT
+        image: maleficent
+        effect: "Contrainte : Détruisez 2 alliés."

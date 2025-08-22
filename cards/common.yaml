@@ -14,6 +14,8 @@ icons:
     fairies_icon: ../../assets/sprites/factions/fairies.png
     imps_icon: ../../assets/sprites/factions/imps.png
     mages_icon: ../../assets/sprites/factions/mages.png
+    cats_icon: ../../assets/sprites/factions/cats.png
+    araignee_icon: ../../assets/sprites/factions/araignee.png
 
 keywords:
     # - allié
@@ -23,6 +25,7 @@ keywords:
     - gel
     - force
     - protection
+    - puissant
     # - déplacer
     # - déplacez
     # - déplacé
@@ -33,6 +36,11 @@ keywords:
     - silence
     - sacrifice
     - écho
+    - troquer
+    - troquez
+    - commun
+    - unique
+    - poison
 
 bolded:
     - PERMANENT

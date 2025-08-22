@@ -1,0 +1,71 @@
+name: Nains
+legend: "Protection : si le personnage doit quitter votre terrain (détruit, échangé, renvoyé en main...), vous pouvez retirer l'altération à la place."
+cards:
+    simple:
+        name: Simple
+        count: "4"
+        position: front
+        points: "2"
+        type: IMMÉDIAT
+        image: simple
+        effect: Donnez l'altération protection à un personnage.
+        legend: True
+    nervous:
+        name: Nerveux
+        count: "3"
+        position: front
+        points: "1"
+        type: IMMÉDIAT
+        image: nervous
+        effect: Détruisez un autre allié puis détruisez un ennemi.
+    joyful:
+        name: Ravi
+        count: "2"
+        position: front
+        points: "3"
+        type: IMMÉDIAT
+        image: joyful
+        effect: Donnez l'altération protection à ce personnage.
+        legend: True
+    allergic:
+        name: Allergique
+        count: "2"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: allergic
+        effect: Déplacez une altération d'un personnage vers un autre personnage.
+    fearful:
+        name: Peureux
+        count: "2"
+        position: any
+        points: X
+        type: PERMANENT
+        image: fearful
+        effect: X vaut 4 si ce personnage a l'altération protection, sinon X vaut 0.
+        legend: True
+    lazy:
+        name: Fainéant
+        count: "1"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: lazy
+        effect: Donnez l'altération protection à 3 alliés.
+        legend: True
+    boss:
+        name: Patron
+        count: "1"
+        position: front
+        points: "2"
+        type: IMMÉDIAT
+        image: boss
+        effect: Copiez l'effet IMMÉDIAT d'un personnage avec une altération.
+    mascot:
+        name: Mascotte
+        count: "1"
+        position: back
+        points: 0
+        type: PERMANENT
+        image: mascott
+        effect: Lorsqu'un allié reçoit une altération, gagnez 1 point permanent.

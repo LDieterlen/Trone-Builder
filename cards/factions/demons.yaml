@@ -43,15 +43,15 @@ cards:
     cyclops:
         name: Cyclope
         count: "1"
-        position: front
-        points: "6"
+        position: back
+        points: "5"
         type: IMMÉDIAT
         image: cyclops
         effect: "Contrainte : les autres joueurs gagnent 1 point permanent."
     octopus:
         name: Poulpe
         count: "1"
-        position: back
+        position: front
         points: "1"
         type: PERMANENT
         image: octopus

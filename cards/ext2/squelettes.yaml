@@ -1,0 +1,66 @@
+name: Squelettes
+cards:
+    squelette:
+        name: Squelette
+        count: "5"
+        position: any
+        points: "1"
+        type: IMMÉDIAT
+        image: "1"
+        effect: Détruisez un personnage avec un effet IMMÉDIAT.
+    coffre:
+        name: Coffre
+        count: "2"
+        position: front
+        points: "3"
+        type: IMMÉDIAT
+        image: "2"
+        effect: "Contrainte : placez les 2 premières cartes de la pioche dans votre cimetière."
+    fantome:
+        name: Fantôme
+        count: "2"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: "3"
+        effect: Placez une carte de votre cimetière sur votre terrain.
+    epouvante:
+        name: Épouvante
+        count: "2"
+        position: back
+        points: "5"
+        type: IMMÉDIAT
+        image: "4"
+        effect: "Contrainte : détruisez ce personnage."
+    profanateur:
+        name: Profanateur
+        count: "2"
+        position: front
+        points: "3"
+        type: IMMÉDIAT
+        image: "5"
+        effect: "Contrainte : échangez votre cimetière avec celui d'un adversaire."
+    fetard:
+        name: Fétard
+        count: "1"
+        position: front
+        points: "X"
+        type: PERMANENT
+        image: "6"
+        effect: "X vaut les points de base de la meilleure carte de votre cimetière."
+    sorciere:
+        name: Sorcière
+        count: "1"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: "7"
+        effect: "Vous pouvez mélanger jusqu'à 5 cartes de votre cimetière à la pioche pour gagner 1 point permanent par carte ainsi mélangée."
+    temps:
+        name: Temps
+        count: "1"
+        position: any
+        points: "0"
+        image: "8"
+        type: PERMANENT
+        effect: "Vous n'êtes plus obligé de faire les effets Contrainte de vos personnages."

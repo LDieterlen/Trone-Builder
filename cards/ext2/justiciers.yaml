@@ -1,0 +1,68 @@
+name: Justicier
+cards:
+    kong:
+        name: Kong
+        count: "4"
+        position: front
+        points: "2"
+        type: IMMÉDIAT
+        image: "1"
+        effect: Choisissez un joueur et regardez sa main, si la carte 'Princesse' est sur son terrain ou dans sa main, prenez-la dans votre main.
+    crapaud:
+        name: Crapaud
+        count: "3"
+        position: any
+        points: "2"
+        type: IMMÉDIAT
+        image: "2"
+        effect: Révelez 3 cartes, gardez-en une en main et mélangez les autres dans la pioche.
+    solitaire:
+        name: c
+        count: "2"
+        position: front
+        points: "3"
+        type: IMMÉDIAT
+        image: "3"
+        effect: Choisissez un joueur, il révèlent sa main à tous les joueurs.
+    fidele:
+        name: d
+        count: "2"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: "4"
+        effect: Choisissez un personnage ennemi avec 0 point de base et jouez-le sur votre terrain.
+    provocateur:
+        name: e
+        count: "2"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: "5"
+        effect: Détruisez un personnage en position front_icon et gagnez 1 point permanent.
+    champion:
+        name: Champion
+        count: "1"
+        position: front
+        points: "5"
+        type: PERMANENT
+        image: "6"
+        effect: "Contrainte : révélez en permanence votre main aux autres joueurs."
+    vilain:
+        name: Vilain
+        count: "1"
+        position: back
+        points: "X"
+        type: PERMANENT
+        image: "7"
+        effect: "Si la carte 'Princesse' est sur votre terrain, X vaut 6. Si la carte 'Princesse 'est sur le terrain d'un adversaire, X vaut 0. Sinon X vaut 3"
+    princesse:
+        name: Princesse
+        count: "1"
+        position: any
+        points: "0"
+        image: "8"
+        typeA: IMMÉDIAT
+        effectA: "Gagnez 3 points permanents."
+        typeB: PERMANENT
+        effectB: "Ce personnage ne peut pas être détruit."

@@ -35,11 +35,12 @@ cards:
     tracker:
         name: Traqueur
         count: "2"
-        position: back
+        position: front
         points: "0"
         type: PERMANENT
         image: tracker
-        effect: "Fin de tour : vous pouvez défausser 1 carte de votre main pour
+        effect:
+            "Début de tour : vous pouvez défausser 1 carte de votre main pour
             détruire un ennemi en position front_icon."
     mother:
         name: Mère
@@ -50,7 +51,7 @@ cards:
         image: mother
         effect: "Fin de tour : X vaut 5 si vous avez 2 cartes ou moins en main, sinon X vaut 0."
     hero:
-        name: Super héro
+        name: Super héros
         count: "1"
         position: any
         points: "1"
@@ -62,8 +63,8 @@ cards:
     weapon:
         name: Arme
         count: "1"
-        position: any
+        position: front
         points: "5"
         type: PERMANENT
         image: weapon
-        effect: "Contrainte : Vous ne piochez plus de carte au début de vos tours."
+        effect: "Contrainte : vous ne piochez plus de carte au début de vos tours."

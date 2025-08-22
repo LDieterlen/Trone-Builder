@@ -1,0 +1,70 @@
+name: Lutins
+legend: "Silence : le personnage avec cette altération n'a plus d'effet."
+cards:
+    calm:
+        name: Calme
+        count: "5"
+        position: any
+        points: "2"
+        type: IMMÉDIAT
+        image: calm
+        effect: "Donnez l'altération silence à un personnage."
+        legend: True
+    baby:
+        name: Bébé
+        count: "2"
+        position: back
+        points: "2"
+        type: PERMANENT
+        image: baby
+        effect: "Lorsqu'un personnage unique est joué ou placé sur votre terrain, gagnez 1 point permanent."
+    merchand:
+        name: Marchand
+        count: "2"
+        position: front
+        points: "X"
+        type: PERMANENT
+        image: merchand
+        effect: "X est égal au nombre de factions différentes sur votre terrain."
+    musician:
+        name: Musicien
+        count: "2"
+        position: front
+        points: "2"
+        type: IMMÉDIAT
+        image: musician
+        effect: "Déplacez les altérations de vos alliés vers d'autres alliés."
+    dancer:
+        name: Danseur
+        count: "2"
+        position: front
+        points: "3"
+        type: IMMÉDIAT
+        image: dancer
+        effect: "Contrainte : Donnez l'altération silence à un allié avec un effet PERMANENT."
+    traveller:
+        name: Voyageur
+        count: "1"
+        position: front
+        points: "3"
+        image: traveller
+        typeA: IMMÉDIAT
+        effectA: "Gagnez 3 points permanents."
+        typeB: PERMANENT
+        effectB: "Fin de tour, Contrainte : placez ce personnage sur le terrain d'un autre joueur."
+    deacon:
+        name: Diacre
+        count: "1"
+        position: back
+        points: "5"
+        type: PERMANENT
+        image: deacon
+        effect: "Fin de tour, Contrainte&nbsp;: choisissez un adversaire, il gagne 1 point permanent."
+    evil:
+        name: Mal
+        count: "1"
+        position: front
+        points: "7"
+        type: PERMANENT
+        image: evil
+        effect: "Contrainte : vous ne pouvez pas gagner la partie. Détruisez ce personnage s'il n'y a plus de carte dans la pioche."

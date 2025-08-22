@@ -1,0 +1,70 @@
+name: Chats
+legend: "Troquer : échangez les personnages sans tenir compte de leur effet IMMÉDIAT."
+cards:
+    chaton:
+        name: Chaton
+        count: "4"
+        position: front
+        points: "2"
+        type: IMMÉDIAT
+        image: "1"
+        effect: Troquez ce personnage contre un personnage ennemi en position front_icon.
+        legend: True
+    malice:
+        name: Malice
+        count: "3"
+        position: any
+        points: "1"
+        type: IMMÉDIAT
+        image: "2"
+        effect: Troquez un allié de votre terrain contre une carte de votre main.
+        legend: True
+    solitaire:
+        name: Solitaire
+        count: "2"
+        position: any
+        points: "X"
+        type: PERMANENT
+        image: "3"
+        effect: X vaut 4 s'il n'y a aucun autre allié de la faction cats_icon à la même position que ce personnage, sinon X vaut 2.
+    fidele:
+        name: Fidèle
+        count: "2"
+        position: front
+        points: "3"
+        type: PERMANENT
+        image: "4"
+        effect: Lorsque ce n'est pas votre tour, ce personnage ne peut quitter votre terrain que s'il est détruit.
+    provocateur:
+        name: Provocateur
+        count: "2"
+        position: back
+        points: "1"
+        type: IMMÉDIAT
+        image: "5"
+        effect: Prenez une carte au hasard dans la main d'un adversaire.
+    mere:
+        name: Mère
+        count: "1"
+        position: front
+        points: "X"
+        type: PERMANENT
+        image: "6"
+        effect: "X est égal au nombre d'alliés de la faction cats_icon sur votre terrain."
+    chef:
+        name: Chef
+        count: "1"
+        position: back
+        points: "0"
+        type: IMMÉDIAT
+        image: "7"
+        effect: Troquez n'importe quel allié contre n'importe quel ennemi.
+        legend: True
+    conseil:
+        name: Conseil
+        count: "1"
+        position: front
+        points: "X"
+        type: PERMANENT
+        image: "8"
+        effect: "X vaut 5 si toutes les factions en jeu sont présentent sur votre terrain, sinon X vaut 0."

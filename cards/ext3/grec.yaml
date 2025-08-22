@@ -1,0 +1,66 @@
+name: Grecs
+cards:
+    hoplit:
+        name: Hoplite
+        count: "4"
+        position: front
+        points: "X"
+        type: PERMANENT
+        image: todo
+        effect: X vaut 4 si vous êtes sur le trône, sinon X vaut 2.
+    pirate:
+        name: Minotaure
+        count: "3"
+        position: back
+        points: "1"
+        type: PERMANENT
+        image: todo
+        effect: Gagnez 1 point permanent chaque fois que vous montez sur le trône.
+    plotter:
+        name: Gorgone
+        count: "2"
+        position: any
+        points: "1"
+        type: IMMÉDIAT
+        image: todo
+        effect: Détruisez un personnage en position front_icon au joueur sur le trône.
+    atlete:
+        name: Atlète
+        count: "2"
+        position: any
+        points: "0"
+        type: IMMÉDIAT
+        image: todo
+        effect: Gagnez 3 points permanents si vous avez le score le plus bas.
+    rats:
+        name: todo
+        count: "2"
+        position: front
+        points: "1"
+        type: IMMÉDIAT
+        image: todo
+        effect: Choisissez un personnage en position front_icon de chaque joueur. Mélangez tous les personnages choisis puis redistribuez-les aléatoirement à chaque joueur.
+    lethe:
+        name: Léthé
+        count: "1"
+        position: any
+        points: "0"
+        type: PERMANENT
+        image: todo
+        effect: "Choisissez un joueur, il ne joue pas son prochain tour."
+    zeus:
+        name: Zeus
+        count: "1"
+        position: front
+        points: "3"
+        type: IMMÉDIAT
+        image: todo
+        effect: "En cas d'égalité au score, vous montez sur le trône (lors d'une partie à 2 joueurs, votre adversaire doit avoir au moins 6 points d'avance pour gagner)."
+    poseidon:
+        name: Poséidon
+        count: "1"
+        position: back
+        points: "X"
+        type: PERMANENT
+        image: todo
+        effect: "Fin de tour : X vaut 6 si vous êtes sur le trône, sinon X vaut 0."

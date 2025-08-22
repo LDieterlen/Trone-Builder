@@ -1,0 +1,66 @@
+name: Marin
+cards:
+    mousse:
+        name: Mousse
+        count: "4"
+        position: any
+        points: "0"
+        type: PERMANENT
+        image: todo
+        effect: Gagnez 1 point permanent chaque fois que vous jouez un allié de la faction marin_icon.
+    pirate:
+        name: Pirate
+        count: "3"
+        position: front
+        points: "3"
+        type: PERMANENT
+        image: todo
+        effect: +1 point pour chaque autre allié 'Pirate'.
+    plotter:
+        name: todo
+        count: "2"
+        position: front
+        points: "1"
+        type: IMMÉDIAT
+        image: todo
+        effect: "Détruisez un personnage commun (qui possède 3 exemplaires ou plus)."
+    spy:
+        name: todo
+        count: "2"
+        position: any
+        points: "1"
+        type: IMMÉDIAT
+        image: todo
+        effect: Au prochain tour, vous pouvez jouer deux cartes au lieu d'une.
+    rats:
+        name: todo
+        count: "2"
+        position: back
+        points: "X"
+        type: IMMÉDIAT
+        image: todo
+        effect: X vaut 4 si vous avez au moins 2 personnages identiques sur le terrain, sinon X vaut 0.
+    divinity:
+        name: todo
+        count: "1"
+        position: front
+        points: "5"
+        type: PERMANENT
+        image: todo
+        effect: "Contrainte : vous ne pouvez plus gagner de points permanents."
+    cunning:
+        name: todo
+        count: "1"
+        position: any
+        points: "1"
+        type: IMMÉDIAT
+        image: todo
+        effect: "Détruisez touts les doublons d'un personnage adverse pour qu'il n'en reste plus qu'un exemplaire."
+    navire:
+        name: Navire
+        count: "1"
+        position: back
+        points: "3"
+        type: IMMÉDIAT
+        image: todo
+        effect: Vous ne pouvez être ciblé par aucun effet adverse jusqu'à votre prochain tour.
